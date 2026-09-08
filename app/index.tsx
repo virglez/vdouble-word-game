@@ -586,7 +586,7 @@ function PlayScreen({ styles, seconds }: { styles: ReturnType<typeof createStyle
                 <Text style={styles.cardCategory}>{currentCard.tipo || t.cardCultureType}</Text>
               </View>
               <Text style={styles.wordText}>{currentCard.palabra}</Text>
-              <Text style={styles.cardSubcategory}>{currentCard.subcategoryTranslations?.[state.language] ?? currentCard.subcategoria || t.cardCultureSubcategory}</Text>
+              <Text style={styles.cardSubcategory}>{(currentCard.subcategoryTranslations?.[state.language] ?? currentCard.subcategoria) || t.cardCultureSubcategory}</Text>
             </>
           ) : (
             <Text style={styles.wordText}>{t.cardCurrent}</Text>
