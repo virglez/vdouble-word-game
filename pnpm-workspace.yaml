@@ -1,6 +1,6 @@
-allowBuilds:
-  dtrace-provider: set this to true or false
-  protobufjs: set this to true or false
+onlyBuiltDependencies:
+  - dtrace-provider
+  - protobufjs
 minimumReleaseAgeExclude:
   - '@expo/cli@57.0.23'
   - '@expo/metro-file-map@57.0.3'
