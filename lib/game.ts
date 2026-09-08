@@ -1,6 +1,6 @@
 import { WORD_BANK, type Difficulty, type WordCard } from '../data/wordBank.ts';
 
-export type LanguageCode = 'es' | 'en' | 'fr';
+export type LanguageCode = 'es' | 'en' | 'fr' | 'pt';
 
 export function finishTurn(state: GameState): GameState {
   return state.screen === 'play' ? { ...state, screen: 'review', timeUp: true, turnEndsAt: null } : state;

@@ -1,109 +1,97 @@
-key,es,en,fr
-language,Idioma,Language,Langue
-partyGame,EL PARTY GAME DE 3 RONDAS,TEAM GAME,JEU PAR ÉQUIPES
-heroTitleLine1,Tres rondas.,Three rounds.,Trois tours.
-heroTitleLine2,Una palabra.,One word.,Un mot.
-heroSubtitle,El mismo mazo. Tres formas de jugar. Gana el equipo que mejor se entienda.,The same deck. Three ways to play. Win the team that understands each other best.,Le même paquet. Trois façons de jouer. Gagnez l’équipe qui se comprend le mieux.
-staticStack,TARJETA,CARD,CARTE
-stackWord,ADIVINA,GUESS,DEVINE
-stackHint,habla · resume · actúa,talk · summarize · act,parle · résume · joue
-statsCards,tarjetas,cards,cartes
-statsTurn,por turno,per turn,par tour
-statsRounds,rondas,rounds,rondes
-newGame,Nueva partida,New game,Nouvelle partie
-continueGame,Continuar partida,Continue game,Continuer
-rulesRound1,Ronda 1,Round 1,Ronde 1
-rulesRound2,Ronda 2,Round 2,Ronde 2
-rulesRound3,Ronda 3,Round 3,Ronde 3
-rulesTitle1,Descripción,Description,Description
-rulesDescription1,Explica libremente. Tu equipo puede intentarlo varias veces.,Explain freely. Your team can try as many times as it wants.,Expliquez librement. Votre équipe peut essayer autant de fois que vous voulez.
-rulesTitle2,Una palabra,One word,Un mot
-rulesDescription2,Una sola pista y un único intento por tarjeta.,One clue and one attempt per card.,Un seul indice et une seule tentative par carte.
-rulesTitle3,Mímica,Mime,Mime
-rulesDescription3,Gestos, sonidos y tarareo. Sin decir palabras.,Gestures, sounds, and humming. No words.,Mimiques, sons et fredonnements. Sans mots.
-footnote,Sin registro ni salas. La partida se guarda en este teléfono.,No signups or rooms. The game is saved on this phone.,Pas d’inscription ni de salle. La partie est enregistrée sur ce téléphone.
-setupTitle,Nueva partida,New game,Nouvelle partie
-setupStep,PASO 1 DE 2,STEP 1 OF 2,ÉTAPE 1 SUR 2
-setupPageTitle,Prepara los equipos,Prepare the teams,Préparez les équipes
-setupSubtitle,Elegid los nombres, los iconos y cuántas tarjetas tendrá la partida.,Choose names, icons, and how many cards this match will have.,Choisissez les noms, les icônes et le nombre de cartes de la partie.
-setupTeams,EQUIPOS,TEAMS,ÉQUIPES
-setupCardCount,NÚMERO DE TARJETAS,CARD COUNT,NOMBRE DE CARTES
-cardCountMix,mezcla de categorías y dificultades,category and difficulty mix,mélange de catégories et difficultés
-setupInfo,Se elegirán {count} tarjetas del banco cultural. El mismo mazo se reutiliza en las tres rondas y las partidas nuevas evitan repetir las anteriores.,You will select {count} cards from the cultural deck. The same deck is reused over three rounds and new games avoid repeating the old deck.,Vous choisirez {count} cartes du paquet culturel. Le même paquet est réutilisé pendant les trois tours et les nouvelles parties évitent les cartes déjà utilisées.
-createDeck,Crear mazo,Create deck,Créer le paquet
-startRound,Empezar ronda,Start round,Commencer la ronde
-readyMobile,PASA EL MÓVIL,PASS THE PHONE,PASSEZ LE TÉLÉPHONE
-readyStartTurn,Empezar turno,Start turn,Commencer le tour
-reviewTurn,FIN DEL TURNO · RONDA,END OF TURN · ROUND,FIN DU TOUR · RONDE
-reviewTitle,Revisad las tarjetas,Review the cards,Révisez les cartes
-reviewSubtitle,{team} · Marca las acertadas en verde. Toca cualquier fila para corregirla.,{team} · Mark the right answers in green. Tap a row to correct it.,{team} · Cochez les bonnes réponses en vert. Touchez une ligne pour corriger.
-reviewConfirm,Confirmar y entregar a {team},Confirm and pass to {team},Confirmer et donner à {team}
-reviewConfirmRound,Confirmar y cerrar ronda,Confirm and close round,Confirmer et fermer la ronde
-reviewConfirmFinal,Confirmar y finalizar partida,Confirm and finish game,Confirmer et finir la partie
-reviewNoCard,No se ha marcado ninguna tarjeta en este turno.,No cards were marked this turn.,Aucune carte n’a été marquée ce tour.
-confirmDiscard,¿Empezar una partida nueva?,Start a new game?,Commencer une nouvelle partie ?
-confirmDiscardBody,Tienes una partida guardada en curso. Si continúas, se perderá su marcador y progreso.,You have a saved game in progress. If you continue, its score and progress will be lost.,Vous avez une partie sauvegardée en cours. Si vous continuez, son score et sa progression seront perdus.
-newGameButton,Nueva partida,New game,Nouvelle partie
-cancel,Cancelar,Cancel,Annuler
-byTeams,JUEGO POR EQUIPOS,TEAM GAME,JEU PAR ÉQUIPES
-instructionsTitle,Cómo se juega,How to play,Comment jouer
-instructionsRound,RONDA {n} DE 3,ROUND {n} OF 3,ROUND {n} DE 3
-instructionsBody,En esta ronda, tu equipo habla, resume o actúa. En esta ronda, tu equipo habla, resume o actúa.,In this round, your team talks, summarizes, or acts. In this round, your team talks, summarizes, or acts.,Dans ce tour, votre équipe parle, résume ou joue. Dans ce tour, votre équipe parle, résume ou joue.
-instructionDuration,30 segundos,30 seconds,30 secondes
-reviewRound,RONDA {n},ROUND {n},ROUND {n}
-reviewFootnote,{remaining} {pendingCards} en esta ronda. Los cambios se reflejan en el marcador.,{remaining} {pendingCards} in this round. Changes are reflected in the scoreboard.,{remaining} {pendingCards} dans ce tour. Les changements apparaissent dans le tableau.
-reviewEditHint,Toca para cambiar el resultado,Tap to change the result,Touchez pour changer le résultat
-cardOfCount,TARJETA {n} DE {total},CARD {n} OF {total},CARTE {n} DE {total}
-roundComplete,RONDA COMPLETADA,ROUND COMPLETE,ROUND COMPLETE
-resultsTitle,Resultado,Results,Résultat
-finalTitle,FIN DE LA PARTIDA,END OF GAME,FIN DE LA PARTIE
-roundBreakSubtitle,El mazo vuelve a empezar. Preparad la siguiente forma de jugar.,The deck starts again. Prepare the next way of playing.,Le paquet recommence. Préparez la prochaine façon de jouer.
-nextRound,Ronda {n}: {round},Round {n}: {round},Ronde {n}: {round}
-teamCreateIntro,Equipo {n},Team {n},Équipe {n}
-teamIconPickerLabel,Elegir icono {icon} para equipo {n},Choose icon {icon} for team {n},Choisir l’icône {icon} pour l’équipe {n}
-homeBack,Volver,Back,Retour
-activeTeam,Equipo activo,Active team,Équipe active
-shareSwitch,Idioma,Language,Langue
-setupHeaderTitle,Nueva partida,New game,Nouvelle partie
-setupHeight,No,No,No
-rules,NORMAS,Rules,Règles
-roundTable,RONDA,ROUND,RONDE
-totalTable,TOTAL,TOTAL,TOTAL
-roundBreakButton,Ronda {n}: {round},Round {n}: {round},Ronde {n}: {round}
-scoreboardPoints,puntos,points,points
-scoreboardCorrect,acertadas,correct,correctes
-scoreboardPassed,pasadas,passed,passées
-reviewButtonEnd,Confirmar y finalizar partida,Confirm and finish game,Confirmer et finir la partie
-reviewButtonClose,Confirmar y cerrar ronda,Confirm and close round,Confirmer et fermer la ronde
-reviewButtonPass,Confirmar y entregar a {team},Confirm and pass to {team},Confirmer et donner à {team}
-reviewNoMark,No se ha marcado ninguna tarjeta en este turno.,No cards were marked this turn.,Aucune carte n’a été marquée ce tour.
-createdDeck,Crear mazo,Create deck,Créer le paquet
-pageFinalTitle,FIN DE LA PARTIDA,END OF GAME,FIN DE LA PARTIE
-pageFinalSubtitle,"Tres rondas, un equipo campeón.","Three rounds, one winning team.","Trois tours, une équipe gagnante."
-finalTie,"Habéis quedado igualados. Una revancha lo decide todo.","You are tied. A rematch decides it all.","Vous êtes à égalité. Un match de revanche décide tout."
-finalWinner,"{team} gana","{team} wins","{team} gagne"
-teamScoreTotal,puntos,points,points
-pendingCards,tarjetas pendientes,remaining cards,cartes restantes
-roundBreakDeckInfo,Las mismas {count} tarjetas aparecerán en un orden nuevo.,The same {count} cards will appear in a new order.,Les mêmes {count} cartes apparaîtront dans un ordre nouveau.
-passCard,Pasar / error −5 s,Pass / error −5 s,Passer / erreur −5 s
-correctCard,Correcta,Correct,Correcte
-cardStatusCorrect,Correcta,Correct,Correcte
-cardStatusPassed,Pasada,Passed,Passée
-cardCurrent,Sin tarjetas,No cards,Pas de cartes
-cardCultureType,Cultura,Culture,Culture
-cardCultureSubcategory,Tarjeta cultural,Cultural card,Carte culturelle
-cardTimerUnit,seg,s,sec
-playHeaderRound,Ronda {n},Round {n},Ronde {n}
-readyScreenSubtitle,La tarjeta está oculta. Pulsa cuando estés preparado para empezar tus 30 segundos.,The card is hidden. Press when ready to start your 30 seconds.,La carte est cachée. Appuyez quand vous êtes prêt à commencer vos 30 secondes.
-readyScreenButton,Empezar turno,Start turn,Commencer le tour
-playWaitText,Las pasadas vuelven a salir,Passed cards come back,Les cartes passées reviennent
-exitGame,Salir de la partida,Leave the game,Quitter la partie
-startGameAgain,Iniciar partida de nuevo,Start the game again,Relancer la partie
-startNewGame,Iniciar partida de nuevo,Start the game again,Relancer la partie
-homeScreenTitle,VDOUBLE,VDOUBLE,VDOUBLE
-screenHeaderBack,Volver,Back,Retour
-setupScreenHeaderTitle,Nueva partida,New game,Nouvelle partie
-instructionsHeaderTitle,Cómo se juega,How to play,Comment jouer
-reviewHeaderTitle,Revisad las tarjetas,Review the cards,Révisez les cartes
-roundBreakHeaderTitle,Marcador,Scoreboard,Tableau des scores
-finalScreenHeaderTitle,Resultado,Results,Résultat
+﻿clave,idioma,texto
+app_name,es-ES,VDOUBLE
+round_1_instruction,es-ES,Describe la palabra sin decirla
+round_2_instruction,es-ES,Una sola palabra
+round_3_instruction,es-ES,Haz mímica
+time_up,es-ES,¡Tiempo!
+correct,es-ES,Acierto
+pass,es-ES,Pasar
+start,es-ES,Empezar
+next,es-ES,Siguiente
+back,es-ES,Atrás
+team_1,es-ES,Equipo 1
+team_2,es-ES,Equipo 2
+round,es-ES,Ronda
+score,es-ES,Puntuación
+settings,es-ES,Ajustes
+language,es-ES,Idioma
+new_game,es-ES,Nueva partida
+play_again,es-ES,Jugar de nuevo
+winner,es-ES,Ganador
+room,es-ES,Sala
+join_room,es-ES,Unirse a sala
+create_room,es-ES,Crear sala
+confirm,es-ES,Confirmar
+cancel,es-ES,Cancelar
+app_name,en,VDOUBLE
+round_1_instruction,en,Describe the word without saying it
+round_2_instruction,en,One word only
+round_3_instruction,en,Act it out
+time_up,en,Time's up!
+correct,en,Correct
+pass,en,Pass
+start,en,Start
+next,en,Next
+back,en,Back
+team_1,en,Team 1
+team_2,en,Team 2
+round,en,Round
+score,en,Score
+settings,en,Settings
+language,en,Language
+new_game,en,New game
+play_again,en,Play again
+winner,en,Winner
+room,en,Room
+join_room,en,Join room
+create_room,en,Create room
+confirm,en,Confirm
+cancel,en,Cancel
+app_name,fr,VDOUBLE
+round_1_instruction,fr,Décrivez le mot sans le dire
+round_2_instruction,fr,Un seul mot
+round_3_instruction,fr,Mimez-le
+time_up,fr,Temps écoulé !
+correct,fr,Correct
+pass,fr,Passer
+start,fr,Commencer
+next,fr,Suivant
+back,fr,Retour
+team_1,fr,Équipe 1
+team_2,fr,Équipe 2
+round,fr,Manche
+score,fr,Score
+settings,fr,Paramètres
+language,fr,Langue
+new_game,fr,Nouvelle partie
+play_again,fr,Rejouer
+winner,fr,Gagnant
+room,fr,Salle
+join_room,fr,Rejoindre une salle
+create_room,fr,Créer une salle
+confirm,fr,Confirmer
+cancel,fr,Annuler
+app_name,pt,VDOUBLE
+round_1_instruction,pt,Descreve a palavra sem a dizer
+round_2_instruction,pt,Uma só palavra
+round_3_instruction,pt,Faz mímica
+time_up,pt,Tempo!
+correct,pt,Certo
+pass,pt,Passar
+start,pt,Começar
+next,pt,Seguinte
+back,pt,Voltar
+team_1,pt,Equipa 1
+team_2,pt,Equipa 2
+round,pt,Ronda
+score,pt,Pontuação
+settings,pt,Definições
+language,pt,Idioma
+new_game,pt,Novo jogo
+play_again,pt,Jogar novamente
+winner,pt,Vencedor
+room,pt,Sala
+join_room,pt,Entrar na sala
+create_room,pt,Criar sala
+confirm,pt,Confirmar
+cancel,pt,Cancelar

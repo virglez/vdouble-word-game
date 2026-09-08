@@ -3,13 +3,19 @@ const path = require('path');
 
 const projectRoot = path.resolve(__dirname, '..');
 const workspaceRoot = path.resolve(projectRoot, '../..');
-const localInputPath = path.join(projectRoot, 'data', 'base_palabras_juego_definitiva_3834_1788880342042.csv');
+const localInputPath = path.join(projectRoot, 'data', 'wordBank.csv');
+const legacyLocalInputPath = path.join(projectRoot, 'data', 'base_palabras_juego_definitiva_3834_1788880342042.csv');
 const legacyInputPath = path.join(workspaceRoot, 'attached_assets', 'base_palabras_juego_definitiva_3834_1788880342042.csv');
 const inputPath = process.env.WORD_BANK_CSV
   ? path.resolve(process.env.WORD_BANK_CSV)
   : fs.existsSync(localInputPath)
     ? localInputPath
-    : legacyInputPath;
+    : fs.existsSync(legacyLocalInputPath)
+      ? legacyLocalInputPath
+      : legacyInputPath;
+const translationInputPath = process.env.WORD_BANK_TRANSLATIONS_CSV
+  ? path.resolve(process.env.WORD_BANK_TRANSLATIONS_CSV)
+  : path.join(projectRoot, 'data', 'wordBank_translations.csv');
 const outputPath = path.join(projectRoot, 'data', 'wordBank.ts');
 
 function parseCsv(text) {
@@ -61,21 +67,57 @@ for (const header of requiredHeaders) {
   }
 }
 
+const translations = new Map();
+if (fs.existsSync(translationInputPath)) {
+  const translationRows = parseCsv(fs.readFileSync(translationInputPath, 'utf8').replace(/^\uFEFF/, ''));
+  const translationHeaders = translationRows.shift();
+  const translationIndex = Object.fromEntries(translationHeaders.map((header, index) => [header.trim(), index]));
+  const translationKeys = translationRows.filter((row) => row.length >= 3);
+  for (const row of translationKeys) {
+    const id = String(row[translationIndex.palabra_id] ?? '').trim();
+    const language = String(row[translationIndex.idioma] ?? '').trim();
+    const local = String(row[translationIndex.nombre_localizado] ?? '').trim();
+    if (!id || !language || !local) continue;
+    const target = translations.get(id) ?? {};
+    target[language] = local;
+    translations.set(id, target);
+  }
+}
+
 const cards = rows
-  .map((row) => ({
-    palabra: row[indexes.palabra]?.trim() ?? '',
-    categoria: row[indexes.categoria]?.trim() ?? 'Cultura',
-    subcategoria: row[indexes.subcategoria]?.trim() ?? '',
-    dificultad: row[indexes.dificultad]?.trim() ?? 'Media',
-    tipo: row[indexes.tipo]?.trim() ?? '',
-    internacional: indexes.internacional ? (row[indexes.internacional]?.trim().toLowerCase() === 'sí' || row[indexes.internacional]?.trim().toLowerCase() === 'si' || row[indexes.internacional]?.trim().toLowerCase() === 'yes' || row[indexes.internacional]?.trim().toLowerCase() === 'true' ? true : false) : undefined,
-  }))
+  .map((row) => {
+    const palabra = row[indexes.palabra]?.trim() ?? '';
+    const category = row[indexes.categoria]?.trim() ?? 'Cultura';
+    const subcategory = row[indexes.subcategoria]?.trim() ?? '';
+    const difficulty = row[indexes.dificultad]?.trim() ?? 'Media';
+    const tipo = row[indexes.tipo]?.trim() ?? '';
+    const alcance = row[indexes.alcance]?.trim().toLowerCase() ?? '';
+    const internacionalByAlcance = alcance === 'internacional' || alcance === 'international' || alcance === 'global';
+    const internacionalFlagValue = indexes.internacional
+      ? (row[indexes.internacional]?.trim().toLowerCase() === 'sí' || row[indexes.internacional]?.trim().toLowerCase() === 'si' || row[indexes.internacional]?.trim().toLowerCase() === 'yes' || row[indexes.internacional]?.trim().toLowerCase() === 'true')
+      : internacionalByAlcance;
+    const id = String(row[indexes.id] ?? '').trim();
+    const base = {
+      palabra,
+      categoria: category,
+      subcategoria: subcategory,
+      dificultad: difficulty,
+      tipo,
+      internacional: internacionalFlagValue ? true : undefined,
+      ...(id ? { id } : {}),
+    };
+    const cardTranslations = translations.get(id);
+    if (cardTranslations && Object.keys(cardTranslations).length > 0) {
+      base.translations = cardTranslations;
+    }
+    return base;
+  })
   .filter((card) => card.palabra);
 
 const difficulties = [...new Set(cards.map((card) => card.dificultad))];
 const difficultyType = difficulties.map((difficulty) => JSON.stringify(difficulty)).join(' | ');
 const body = cards.map((card) => `  ${JSON.stringify(card)}`).join(',\n');
-const output = `// Generado desde la base cultural definitiva. No editar a mano.\n// Regenerar con: pnpm --filter @workspace/juego-tres-rondas run generate-word-bank\nexport type Difficulty = ${difficultyType};\n\nexport type WordCard = {\n  palabra: string;\n  categoria: string;\n  subcategoria: string;\n  dificultad: Difficulty;\n  tipo: string;\n  internacional?: boolean;\n};\n\nexport const WORD_BANK: WordCard[] = [\n${body}\n];\n`;
+const output = `// Generado desde la base cultural definitiva. No editar a mano.\n// Regenerar con: pnpm run generate-word-bank\nexport type Difficulty = ${difficultyType};\n\nexport type WordCard = {\n  id?: string;\n  palabra: string;\n  categoria: string;\n  subcategoria: string;\n  dificultad: Difficulty;\n  tipo: string;\n  internacional?: boolean;\n  translations?: Partial<Record<string, string>>;\n};\n\nexport const WORD_BANK: WordCard[] = [\n${body}\n];\n`;
 
 fs.writeFileSync(outputPath, output);
-console.log(`Banco generado: ${cards.length} tarjetas desde ${path.basename(inputPath)}`);
+console.log(`Banco generado: ${cards.length} tarjetas desde ${path.basename(inputPath)}${fs.existsSync(translationInputPath) ? ` y ${path.basename(translationInputPath)}` : ''}`);
