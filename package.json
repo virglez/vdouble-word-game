@@ -6,6 +6,7 @@
   "packageManager": "pnpm@11.19.0",
   "scripts": {
     "generate-word-bank": "node scripts/generate-word-bank.js",
+    "generate-ui-text": "node scripts/generate-ui-text.js",
     "dev": "expo start",
     "android": "expo run:android",
     "build": "expo export --platform android",

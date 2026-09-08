@@ -17,6 +17,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useColors } from '@/hooks/useColors';
 import { GameProvider, roundNames, TURN_LENGTH_MS, useGame, type CardCount } from '@/context/GameContext';
+import { UI_TEXT, type LanguageCode } from '@/data/ui_text';
 
 type Palette = ReturnType<typeof useColors>;
 
@@ -113,11 +114,12 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
     { code: 'en', label: 'EN' },
     { code: 'fr', label: 'FR' },
   ] as const;
+  const t = UI_TEXT[state.language] ?? UI_TEXT.es;
 
   return (
     <ScrollView contentContainerStyle={styles.homeScroll} showsVerticalScrollIndicator={false}>
       <View style={styles.languageSelectorRow}>
-        <Text style={styles.languageSelectorLabel}>Idioma</Text>
+        <Text style={styles.languageSelectorLabel}>{t.language}</Text>
         <View style={styles.languageSelectorPillGroup}>
           {languageOptions.map((option) => (
             <Pressable
@@ -141,17 +143,15 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
         </View>
         <View>
           <Text style={styles.wordmark}>VDOUBLE</Text>
-          <Text style={styles.eyebrow}>JUEGO POR EQUIPOS</Text>
+          <Text style={styles.eyebrow}>{t.byTeams}</Text>
         </View>
       </View>
-      <Text style={styles.heroOverline}>EL PARTY GAME DE 3 RONDAS</Text>
+      <Text style={styles.heroOverline}>{t.partyGame}</Text>
       <Text style={styles.heroTitle}>
-        Tres rondas.{'\n'}
-        <Text style={styles.heroTitleAccent}>Una palabra.</Text>
+        {t.heroTitleLine1}{'\n'}
+        <Text style={styles.heroTitleAccent}>{t.heroTitleLine2}</Text>
       </Text>
-      <Text style={styles.heroSubtitle}>
-        El mismo mazo. Tres formas de jugar. Gana el equipo que mejor se entienda.
-      </Text>
+      <Text style={styles.heroSubtitle}>{t.heroSubtitle}</Text>
 
       <View style={styles.cardStack} accessible accessibilityLabel="Ilustración de tarjetas del juego">
         <View style={[styles.stackCard, styles.stackCardBack]} />
@@ -165,17 +165,17 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
           end={{ x: 1, y: 1 }}
           style={[styles.stackCard, styles.stackCardFront]}
         >
-          <Text style={styles.stackCategory}>TARJETA</Text>
-          <Text style={styles.stackWord}>ADIVINA</Text>
+          <Text style={styles.stackCategory}>{t.staticStack}</Text>
+          <Text style={styles.stackWord}>{t.stackWord}</Text>
           <View style={styles.stackLine} />
-          <Text style={styles.stackHint}>habla · resume · actúa</Text>
+          <Text style={styles.stackHint}>{t.stackHint}</Text>
         </LinearGradient>
       </View>
 
       <View style={styles.statsRow}>
-        <Stat value="20/30/40" label="tarjetas" styles={styles} />
-        <Stat value="30 s" label="por turno" styles={styles} />
-        <Stat value="3" label="rondas" styles={styles} />
+        <Stat value="20/30/40" label={t.statsCards} styles={styles} />
+        <Stat value="30 s" label={t.statsTurn} styles={styles} />
+        <Stat value="3" label={t.statsRounds} styles={styles} />
       </View>
 
       <Pressable
@@ -184,7 +184,7 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
         onPress={() => (hasSavedGame ? confirmDiscardSavedGame(startSetup) : press(startSetup))}
         style={({ pressed }) => [styles.primaryButton, pressed && styles.pressed]}
       >
-        <Text style={styles.primaryButtonText}>Nueva partida</Text>
+        <Text style={styles.primaryButtonText}>{t.newGame}</Text>
         <Feather name="arrow-up-right" size={21} color={colors.primaryForeground} />
       </Pressable>
 
@@ -196,7 +196,7 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
           style={({ pressed }) => [styles.secondaryButton, pressed && styles.pressed]}
         >
           <View>
-            <Text style={styles.secondaryButtonText}>Continuar partida</Text>
+            <Text style={styles.secondaryButtonText}>{t.continueGame}</Text>
             <Text style={styles.secondaryButtonNote}>
               {state.teams[0].name} {state.teams[0].score} · {state.teams[1].name} {state.teams[1].score}
             </Text>
@@ -207,9 +207,9 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
 
       <View style={styles.checklist}>
         {[
-          ['Ronda 1', 'Descripción', 'Explica libremente. Tu equipo puede intentarlo varias veces.'],
-          ['Ronda 2', 'Una palabra', 'Una sola pista y un único intento por tarjeta.'],
-          ['Ronda 3', 'Mímica', 'Gestos, sonidos y tarareo. Sin decir palabras.'],
+          [t.rulesRound1, t.rulesTitle1, t.rulesDescription1],
+          [t.rulesRound2, t.rulesTitle2, t.rulesDescription2],
+          [t.rulesRound3, t.rulesTitle3, t.rulesDescription3],
         ].map(([number, title, description], index) => (
           <View key={number} style={[styles.ruleRow, index === 2 && { borderBottomWidth: 0 }]}>
             <Text style={styles.ruleNumber}>{number}</Text>
@@ -220,7 +220,7 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
           </View>
         ))}
       </View>
-      <Text style={styles.footnote}>Sin registro ni salas. La partida se guarda en este teléfono.</Text>
+      <Text style={styles.footnote}>{t.footnote}</Text>
     </ScrollView>
   );
 }
@@ -268,15 +268,17 @@ function ScreenHeader({
 function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   const colors = useColors();
   const { state, updateTeamName, updateTeamIcon, setCardCount, createGame, goHome } = useGame();
+  const t = UI_TEXT[state.language] ?? UI_TEXT.es;
+
   return (
     <ScrollView contentContainerStyle={styles.pageScroll} keyboardShouldPersistTaps="handled">
-      <ScreenHeader styles={styles} title="Nueva partida" onBack={goHome} />
-      <Text style={styles.pageEyebrow}>PASO 1 DE 2</Text>
-      <Text style={styles.pageTitle}>Prepara los equipos</Text>
-      <Text style={styles.pageSubtitle}>Elegid los nombres, los iconos y cuántas tarjetas tendrá la partida.</Text>
+      <ScreenHeader styles={styles} title={t.setupScreenHeaderTitle} onBack={goHome} />
+      <Text style={styles.pageEyebrow}>{t.setupStep}</Text>
+      <Text style={styles.pageTitle}>{t.setupPageTitle}</Text>
+      <Text style={styles.pageSubtitle}>{t.setupSubtitle}</Text>
 
       <View style={styles.formBlock}>
-        <Text style={styles.fieldLabel}>EQUIPOS</Text>
+        <Text style={styles.fieldLabel}>{t.setupTeams}</Text>
         <TeamInput
           team={0}
           value={state.teams[0].name}
@@ -285,6 +287,7 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
           onIconChange={(icon) => updateTeamIcon(0, icon)}
           styles={styles}
           color={colors.primary}
+          language={state.language}
         />
         <TeamInput
           team={1}
@@ -294,11 +297,12 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
           onIconChange={(icon) => updateTeamIcon(1, icon)}
           styles={styles}
           color={colors.accent}
+          language={state.language}
         />
       </View>
 
       <View style={styles.formBlock}>
-        <Text style={styles.fieldLabel}>NÚMERO DE TARJETAS</Text>
+        <Text style={styles.fieldLabel}>{t.setupCardCount}</Text>
         <View style={styles.cardCountList}>
           {cardCountOptions.map(({ value, note }) => {
             const selected = state.cardCount === value;
@@ -312,9 +316,9 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
                 <View style={[styles.cardCountDot, selected && { backgroundColor: colors.primary }]} />
                 <View style={styles.flex}>
                   <Text style={[styles.cardCountTitle, selected && styles.cardCountTitleSelected]}>
-                    {value} tarjetas
+                    {value} {t.statsCards}
                   </Text>
-                  <Text style={styles.cardCountNote}>{note} · mezcla de categorías y dificultades</Text>
+                  <Text style={styles.cardCountNote}>{note} · {t.cardCountMix}</Text>
                 </View>
                 {selected ? <Feather name="check" size={18} color={colors.primary} /> : null}
               </Pressable>
@@ -325,9 +329,7 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
 
       <View style={styles.infoBox}>
         <Feather name="layers" size={18} color={colors.accent} />
-        <Text style={styles.infoText}>
-          Se elegirán {state.cardCount} tarjetas del banco cultural. El mismo mazo se reutiliza en las tres rondas y las partidas nuevas evitan repetir las anteriores.
-        </Text>
+        <Text style={styles.infoText}>{t.setupInfo.replace('{count}', String(state.cardCount))}</Text>
       </View>
 
       <Pressable
@@ -336,7 +338,7 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
         onPress={() => press(createGame)}
         style={({ pressed }) => [styles.primaryButton, pressed && styles.pressed]}
       >
-        <Text style={styles.primaryButtonText}>Crear mazo</Text>
+        <Text style={styles.primaryButtonText}>{t.createDeck}</Text>
         <Feather name="arrow-right" size={21} color={colors.primaryForeground} />
       </Pressable>
     </ScrollView>
@@ -351,6 +353,7 @@ function TeamInput({
   onIconChange,
   styles,
   color,
+  language,
 }: {
   team: 0 | 1;
   value: string;
@@ -359,7 +362,9 @@ function TeamInput({
   onIconChange: (value: string) => void;
   styles: ReturnType<typeof createStyles>;
   color: string;
+  language: LanguageCode;
 }) {
+  const t = UI_TEXT[language] ?? UI_TEXT.es;
   return (
     <View>
       <View style={styles.teamInputRow}>
@@ -368,7 +373,7 @@ function TeamInput({
           testID={`team-${team}-input`}
           value={value}
           onChangeText={onChangeText}
-          placeholder={`Equipo ${team + 1}`}
+          placeholder={t.teamCreateIntro.replace('{n}', String(team + 1))}
           placeholderTextColor={styles.placeholder.color}
           maxLength={24}
           style={styles.teamInput}
@@ -381,7 +386,7 @@ function TeamInput({
           <Pressable
             key={`${team}-${candidate}`}
             accessibilityRole="button"
-            accessibilityLabel={`Elegir icono ${candidate} para equipo ${team + 1}`}
+            accessibilityLabel={t.teamIconPickerLabel.replace('{icon}', candidate).replace('{n}', String(team + 1))}
             onPress={() => press(() => onIconChange(candidate))}
             style={({ pressed }) => [
               styles.teamIconOption,
@@ -399,22 +404,24 @@ function TeamInput({
 
 function InstructionsScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   const colors = useColors();
-  const { state, roundName, startRound, goHome } = useGame();
+  const { state, startRound } = useGame();
+  const t = UI_TEXT[state.language] ?? UI_TEXT.es;
   const roundNumber = state.roundIndex + 1;
+  const roundNameText = [t.rulesTitle1, t.rulesTitle2, t.rulesTitle3][state.roundIndex] ?? t.rulesTitle1;
   const copy = [
-    'Describe la tarjeta sin decir la palabra, partes de ella, palabras de su familia ni otras que suenen igual. No puedes traducirla ni deletrearla. Tu equipo puede intentar adivinarla tantas veces como quiera.',
-    'Da una única palabra como pista. Se mantienen las prohibiciones de la primera ronda. Tu equipo dispone de un solo intento por tarjeta: si falla, pulsa Pasar / error.',
-    'Representa la tarjeta con mímica. Puedes tararear y hacer sonidos, pero no decir palabras. Se mantiene un único intento por tarjeta.',
-  ][state.roundIndex];
+    t.rulesDescription1,
+    t.rulesDescription2,
+    t.rulesDescription3,
+  ][state.roundIndex] ?? t.rulesDescription1;
 
   return (
     <ScrollView contentContainerStyle={styles.pageScroll}>
-      <ScreenHeader styles={styles} title="Cómo se juega" />
+      <ScreenHeader styles={styles} title={t.instructionsHeaderTitle} />
       <View style={styles.roundKicker}>
-        <Text style={styles.roundKickerText}>RONDA {roundNumber} DE 3</Text>
+        <Text style={styles.roundKickerText}>{t.instructionsRound.replace('{n}', String(roundNumber))}</Text>
         <View style={styles.roundKickerLine} />
       </View>
-      <Text style={styles.pageTitle}>{roundName}</Text>
+      <Text style={styles.pageTitle}>{roundNameText}</Text>
       <Text style={styles.pageSubtitle}>{copy}</Text>
 
       <View style={styles.instructionCard}>
@@ -425,10 +432,8 @@ function InstructionsScreen({ styles }: { styles: ReturnType<typeof createStyles
             color={colors.accentForeground}
           />
         </View>
-        <Text style={styles.instructionTitle}>30 segundos</Text>
-        <Text style={styles.instructionBody}>
-          Al acabar el tiempo, revisad las tarjetas y confirmad el relevo. Pasar descuenta 5 segundos y conserva la tarjeta. El siguiente equipo inicia su reloj cuando esté preparado.
-        </Text>
+        <Text style={styles.instructionTitle}>{t.instructionDuration}</Text>
+        <Text style={styles.instructionBody}>{t.instructionsBody}</Text>
       </View>
 
       <ScoreStrip styles={styles} />
@@ -439,7 +444,7 @@ function InstructionsScreen({ styles }: { styles: ReturnType<typeof createStyles
         onPress={() => press(startRound)}
         style={({ pressed }) => [styles.primaryButton, pressed && styles.pressed]}
       >
-        <Text style={styles.primaryButtonText}>Empezar ronda</Text>
+        <Text style={styles.primaryButtonText}>{t.startRound}</Text>
         <Feather name="play" size={19} color={colors.primaryForeground} />
       </Pressable>
     </ScrollView>
@@ -448,25 +453,26 @@ function InstructionsScreen({ styles }: { styles: ReturnType<typeof createStyles
 
 function ReviewScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   const { state, correctReview, confirmReview } = useGame();
+  const t = UI_TEXT[state.language] ?? UI_TEXT.es;
   const correct = state.review.filter(item => item.correct).length;
   const nextTeam = state.teams[state.currentTeam === 0 ? 1 : 0].name;
   return (
     <View style={styles.flex}>
       <ScrollView contentContainerStyle={styles.pageScroll}>
-        <Text style={styles.pageEyebrow}>FIN DEL TURNO · RONDA {state.roundIndex + 1}</Text>
-        <Text style={styles.pageTitle}>Revisad las tarjetas</Text>
-        <Text style={styles.pageSubtitle}>{state.teams[state.currentTeam].name} · Marca las acertadas en verde. Toca cualquier fila para corregirla.</Text>
+        <Text style={styles.pageEyebrow}>{t.reviewTurn.replace('{n}', String(state.roundIndex + 1))}</Text>
+        <Text style={styles.pageTitle}>{t.reviewTitle}</Text>
+        <Text style={styles.pageSubtitle}>{t.reviewSubtitle.replace('{team}', state.teams[state.currentTeam].name)}</Text>
         <View style={styles.reviewSummary}>
-          <Text style={styles.reviewSummaryText}>{correct} acertadas · +{correct} puntos</Text>
-          <Text style={styles.reviewSummaryNote}>{state.review.length - correct} pasadas</Text>
+          <Text style={styles.reviewSummaryText}>{correct} {t.scoreboardCorrect} · +{correct} {t.scoreboardPoints}</Text>
+          <Text style={styles.reviewSummaryNote}>{state.review.length - correct} {t.scoreboardPassed}</Text>
         </View>
         <View style={styles.checklist}>
-          {state.review.length === 0 && <Text style={[styles.instructionBody, { padding: 20 }]}>No se ha marcado ninguna tarjeta en este turno.</Text>}
+          {state.review.length === 0 && <Text style={[styles.instructionBody, { padding: 20 }]}>{t.reviewNoCard}</Text>}
           {state.review.map((item, index) => (
             <Pressable key={item.word} accessibilityRole="checkbox"
               accessibilityState={{ checked: item.correct }}
-              accessibilityLabel={`${item.word}: ${item.correct ? 'correcta' : 'pasada'}`}
-              accessibilityHint="Toca para cambiar el resultado"
+              accessibilityLabel={`${item.word}: ${item.correct ? t.cardStatusCorrect : t.cardStatusPassed}`}
+              accessibilityHint={t.reviewEditHint}
               onPress={() => press(() => correctReview(item.word))}
               style={({ pressed }) => [styles.checkRow, item.correct && styles.checkRowCorrect,
                 index === state.review.length - 1 && { borderBottomWidth: 0 }, pressed && styles.pressed]}>
@@ -474,16 +480,16 @@ function ReviewScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
                 {item.correct && <Text style={styles.checkMark}>✓</Text>}
               </View>
               <Text style={styles.checkWord}>{item.word}</Text>
-              <Text style={[styles.checkStatus, item.correct && styles.checkStatusCorrect]}>{item.correct ? 'Correcta' : 'Pasada'}</Text>
+              <Text style={[styles.checkStatus, item.correct && styles.checkStatusCorrect]}>{item.correct ? t.cardStatusCorrect : t.cardStatusPassed}</Text>
             </Pressable>
           ))}
         </View>
-        <Text style={styles.footnote}>{state.remaining.length} tarjetas pendientes en esta ronda. Los cambios se reflejan en el marcador.</Text>
+        <Text style={styles.footnote}>{t.reviewFootnote.replace('{remaining}', String(state.remaining.length)).replace('{pendingCards}', t.pendingCards)}</Text>
         <ScoreStrip styles={styles} />
       </ScrollView>
       <View style={styles.reviewFooter}>
         <Pressable accessibilityRole="button" onPress={() => press(confirmReview)} style={styles.primaryButton}>
-          <Text style={[styles.primaryButtonText, { flex: 1, textAlign: 'center' }]}>{state.remaining.length ? `Confirmar y entregar a ${nextTeam}` : state.roundIndex === 2 ? 'Confirmar y finalizar partida' : 'Confirmar y cerrar ronda'}</Text>
+          <Text style={[styles.primaryButtonText, { flex: 1, textAlign: 'center' }]}>{state.remaining.length ? t.reviewConfirm.replace('{team}', nextTeam) : state.roundIndex === 2 ? t.reviewConfirmFinal : t.reviewConfirmRound}</Text>
         </Pressable>
       </View>
     </View>
@@ -492,14 +498,15 @@ function ReviewScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
 
 function ReadyScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   const { state, continueTurn } = useGame();
+  const t = UI_TEXT[state.language] ?? UI_TEXT.es;
   return (
     <View style={styles.pageScroll}>
-      <Text style={styles.pageEyebrow}>PASA EL MÓVIL</Text>
+      <Text style={styles.pageEyebrow}>{t.readyMobile}</Text>
       <Text style={styles.pageTitle}>{state.teams[state.currentTeam].name}</Text>
-      <Text style={styles.pageSubtitle}>La tarjeta está oculta. Pulsa cuando estés preparado para empezar tus 30 segundos.</Text>
+      <Text style={styles.pageSubtitle}>{t.readyScreenSubtitle}</Text>
       <ScoreStrip styles={styles} />
       <Pressable accessibilityRole="button" onPress={() => press(continueTurn)} style={styles.primaryButton}>
-        <Text style={styles.primaryButtonText}>Empezar turno</Text>
+        <Text style={styles.primaryButtonText}>{t.readyStartTurn}</Text>
       </Pressable>
     </View>
   );
@@ -530,16 +537,18 @@ function ScoreStrip({ styles }: { styles: ReturnType<typeof createStyles> }) {
 
 function PlayScreen({ styles, seconds }: { styles: ReturnType<typeof createStyles>; seconds: number }) {
   const colors = useColors();
-  const { state, currentCard, roundName, markCorrect, passCard, goHome } = useGame();
+  const { state, currentCard, markCorrect, passCard, goHome } = useGame();
+  const t = UI_TEXT[state.language] ?? UI_TEXT.es;
   const activeTeam = state.teams[state.currentTeam];
   const progress = Math.max(0, state.remaining.length);
   const timerProgress = Math.max(0, Math.min(1, seconds / (TURN_LENGTH_MS / 1000)));
+  const roundNameText = [t.rulesTitle1, t.rulesTitle2, t.rulesTitle3][state.roundIndex] ?? t.rulesTitle1;
 
   return (
     <View style={styles.gameScreen}>
       <View style={styles.playHeader}>
         <View>
-          <Text style={styles.playRound}>{roundName.toUpperCase()} · RONDA {state.roundIndex + 1}</Text>
+          <Text style={styles.playRound}>{roundNameText.toUpperCase()} · {t.roundTable} {state.roundIndex + 1}</Text>
           <View style={styles.activeTeamNameRow}>
             <Text style={styles.activeTeamIcon}>{activeTeam.icon}</Text>
             <Text style={styles.activeTeam}>{activeTeam.name}</Text>
@@ -548,12 +557,12 @@ function PlayScreen({ styles, seconds }: { styles: ReturnType<typeof createStyle
         <View style={styles.playHeaderActions}>
           <View style={[styles.timer, seconds <= 5 && !state.timeUp && styles.timerDanger]}>
             <Text style={styles.timerNumber}>{state.timeUp ? '0' : seconds}</Text>
-            <Text style={styles.timerLabel}>seg</Text>
+            <Text style={styles.timerLabel}>{t.cardTimerUnit}</Text>
           </View>
           <Pressable
             testID="exit-play-button"
             accessibilityRole="button"
-            accessibilityLabel="Salir de la partida"
+            accessibilityLabel={t.exitGame}
             onPress={() => press(goHome)}
             style={({ pressed }) => [styles.iconButton, pressed && styles.pressed]}
           >
@@ -567,7 +576,7 @@ function PlayScreen({ styles, seconds }: { styles: ReturnType<typeof createStyle
       </View>
 
       <View style={styles.playCenter}>
-        <Text style={styles.cardOverline}>TARJETA {state.deck.length - progress + 1} DE {state.deck.length}</Text>
+        <Text style={styles.cardOverline}>{t.cardOfCount.replace('{n}', String(state.deck.length - progress + 1)).replace('{total}', String(state.deck.length))}</Text>
         <LinearGradient
           colors={[colors.card, colors.secondary]}
           start={{ x: 0, y: 0 }}
@@ -579,18 +588,16 @@ function PlayScreen({ styles, seconds }: { styles: ReturnType<typeof createStyle
               <View style={styles.cardTopRow}>
                 <Text style={styles.cardCategory}>{currentCard.categoria}</Text>
                 <View style={styles.cardDot} />
-                <Text style={styles.cardCategory}>{currentCard.tipo || 'Cultura'}</Text>
+                <Text style={styles.cardCategory}>{currentCard.tipo || t.cardCultureType}</Text>
               </View>
               <Text style={styles.wordText}>{currentCard.palabra}</Text>
-              <Text style={styles.cardSubcategory}>{currentCard.subcategoria || 'Tarjeta cultural'}</Text>
+              <Text style={styles.cardSubcategory}>{currentCard.subcategoria || t.cardCultureSubcategory}</Text>
             </>
           ) : (
-            <Text style={styles.wordText}>Sin tarjetas</Text>
+            <Text style={styles.wordText}>{t.cardCurrent}</Text>
           )}
         </LinearGradient>
-        <Text style={styles.remainingText}>
-          {progress} tarjetas pendientes · las pasadas vuelven a salir
-        </Text>
+        <Text style={styles.remainingText}>{progress} {t.pendingCards} · {t.playWaitText}</Text>
       </View>
 
       <View style={styles.playActions}>
@@ -601,7 +608,7 @@ function PlayScreen({ styles, seconds }: { styles: ReturnType<typeof createStyle
           style={({ pressed }) => [styles.passButton, pressed && styles.pressed]}
         >
           <Feather name="skip-forward" size={19} color={colors.foreground} />
-          <Text style={styles.passButtonText}>{'Pasar / error\n−5 s'}</Text>
+          <Text style={styles.passButtonText}>{t.passCard}</Text>
         </Pressable>
         <Pressable
           testID="correct-card-button"
@@ -610,7 +617,7 @@ function PlayScreen({ styles, seconds }: { styles: ReturnType<typeof createStyle
           style={({ pressed }) => [styles.correctButton, pressed && styles.pressed]}
         >
           <Feather name="check" size={20} color={colors.primaryForeground} />
-          <Text style={styles.correctButtonText}>Correcta</Text>
+          <Text style={styles.correctButtonText}>{t.cardStatusCorrect}</Text>
         </Pressable>
       </View>
     </View>
@@ -619,18 +626,19 @@ function PlayScreen({ styles, seconds }: { styles: ReturnType<typeof createStyle
 
 function RoundBreakScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   const colors = useColors();
-  const { state, roundName, startRound } = useGame();
-  const nextRound = roundNames[state.roundIndex + 1];
+  const { state, startRound } = useGame();
+  const t = UI_TEXT[state.language] ?? UI_TEXT.es;
+  const nextRound = [t.rulesTitle1, t.rulesTitle2, t.rulesTitle3][state.roundIndex + 1] ?? t.rulesTitle1;
   return (
     <ScrollView contentContainerStyle={styles.pageScroll}>
-      <ScreenHeader styles={styles} title="Marcador" />
-      <Text style={styles.pageEyebrow}>RONDA COMPLETADA</Text>
-      <Text style={styles.pageTitle}>{roundName}</Text>
-      <Text style={styles.pageSubtitle}>El mazo vuelve a empezar. Preparad la siguiente forma de jugar.</Text>
+      <ScreenHeader styles={styles} title={t.roundBreakHeaderTitle} />
+      <Text style={styles.pageEyebrow}>{t.roundComplete}</Text>
+      <Text style={styles.pageTitle}>{[t.rulesTitle1, t.rulesTitle2, t.rulesTitle3][state.roundIndex] ?? t.rulesTitle1}</Text>
+      <Text style={styles.pageSubtitle}>{t.roundBreakSubtitle}</Text>
       <RoundScoreList styles={styles} roundIndex={state.roundIndex} />
       <View style={styles.infoBox}>
         <Feather name="refresh-cw" size={18} color={colors.accent} />
-        <Text style={styles.infoText}>Las mismas {state.deck.length} tarjetas aparecerán en un orden nuevo.</Text>
+        <Text style={styles.infoText}>{t.roundBreakDeckInfo.replace('{count}', String(state.deck.length))}</Text>
       </View>
       <Pressable
         testID="next-round-button"
@@ -638,7 +646,7 @@ function RoundBreakScreen({ styles }: { styles: ReturnType<typeof createStyles> 
         onPress={() => press(startRound)}
         style={({ pressed }) => [styles.primaryButton, pressed && styles.pressed]}
       >
-        <Text style={styles.primaryButtonText}>Ronda {state.roundIndex + 2}: {nextRound}</Text>
+        <Text style={styles.primaryButtonText}>{t.nextRound.replace('{n}', String(state.roundIndex + 2)).replace('{round}', nextRound)}</Text>
         <Feather name="arrow-right" size={21} color={colors.primaryForeground} />
       </Pressable>
     </ScrollView>
@@ -647,6 +655,7 @@ function RoundBreakScreen({ styles }: { styles: ReturnType<typeof createStyles> 
 
 function ScoreBoard({ styles }: { styles: ReturnType<typeof createStyles> }) {
   const { state } = useGame();
+  const t = UI_TEXT[state.language] ?? UI_TEXT.es;
   return (
     <View style={styles.scoreBoard}>
       {[0, 1].map((index) => {
@@ -658,7 +667,7 @@ function ScoreBoard({ styles }: { styles: ReturnType<typeof createStyles> }) {
             </View>
             <Text style={styles.scoreBoardName}>{team.name}</Text>
             <Text style={styles.scoreBoardPoints}>{team.score}</Text>
-            <Text style={styles.pointsLabel}>puntos</Text>
+            <Text style={styles.pointsLabel}>{t.scoreboardPoints}</Text>
           </View>
         );
       })}
@@ -668,22 +677,23 @@ function ScoreBoard({ styles }: { styles: ReturnType<typeof createStyles> }) {
 
 function RoundScoreList({ styles, roundIndex }: { styles: ReturnType<typeof createStyles>; roundIndex?: number }) {
   const { state } = useGame();
+  const t = UI_TEXT[state.language] ?? UI_TEXT.es;
   const rows = roundIndex === undefined ? state.roundScores.map((score, index) => ({ score, index })) : [{ score: state.roundScores[roundIndex], index: roundIndex }];
   return (
     <View style={styles.checklist}>
       <View style={[styles.tableRow, styles.tableHeader]}>
-        <Text style={[styles.tableLabel, styles.tableHeading]}>RONDA</Text>
+        <Text style={[styles.tableLabel, styles.tableHeading]}>{t.roundTable}</Text>
         {state.teams.map((team, index) => <Text key={index} style={[styles.tableNumber, styles.tableHeading]}>{team.name}</Text>)}
       </View>
       {rows.map(({ score, index }) => (
         <View key={index} style={styles.tableRow}>
-          <Text style={styles.tableLabel}>{roundNames[index]}</Text>
+          <Text style={styles.tableLabel}>{[t.rulesTitle1, t.rulesTitle2, t.rulesTitle3][index] ?? t.rulesTitle1}</Text>
           <Text style={styles.tableNumber}>{score[0]}</Text>
           <Text style={styles.tableNumber}>{score[1]}</Text>
         </View>
       ))}
       <View style={[styles.tableRow, styles.tableTotal]}>
-        <Text style={[styles.tableLabel, styles.tableHeading]}>TOTAL</Text>
+        <Text style={[styles.tableLabel, styles.tableHeading]}>{t.totalTable}</Text>
         {state.teams.map((team, index) => <Text key={index} style={[styles.tableNumber, styles.tableTotalNumber]}>{team.score}</Text>)}
       </View>
     </View>
@@ -693,19 +703,18 @@ function RoundScoreList({ styles, roundIndex }: { styles: ReturnType<typeof crea
 function FinalScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   const colors = useColors();
   const { state, startSetup } = useGame();
+  const t = UI_TEXT[state.language] ?? UI_TEXT.es;
   const winner = state.teams[0].score === state.teams[1].score ? null : state.teams[0].score > state.teams[1].score ? 0 : 1;
   return (
     <ScrollView contentContainerStyle={styles.pageScroll}>
-      <ScreenHeader styles={styles} title="Resultado" />
+      <ScreenHeader styles={styles} title={t.finalScreenHeaderTitle} />
       <View style={styles.finalHero}>
         <View style={styles.trophyCircle}>
           <Feather name="award" size={32} color={colors.accentForeground} />
         </View>
-        <Text style={styles.pageEyebrow}>FIN DE LA PARTIDA</Text>
-        <Text style={styles.finalTitle}>{winner === null ? 'Empate' : `${state.teams[winner].name} gana`}</Text>
-        <Text style={styles.pageSubtitle}>
-          {winner === null ? 'Habéis quedado igualados. Una revancha lo decide todo.' : 'Tres rondas, un equipo campeón.'}
-        </Text>
+        <Text style={styles.pageEyebrow}>{t.finalTitle}</Text>
+        <Text style={styles.finalTitle}>{winner === null ? t.finalTie : t.finalWinner.replace('{team}', state.teams[winner].name)}</Text>
+        <Text style={styles.pageSubtitle}>{winner === null ? t.finalTieSubtitle : t.pageFinalSubtitle}</Text>
       </View>
       <RoundScoreList styles={styles} />
       <Pressable
@@ -714,7 +723,7 @@ function FinalScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
         onPress={() => press(startSetup)}
         style={({ pressed }) => [styles.primaryButton, pressed && styles.pressed]}
       >
-        <Text style={styles.primaryButtonText}>Iniciar partida de nuevo</Text>
+        <Text style={styles.primaryButtonText}>{t.startNewGame}</Text>
         <Feather name="rotate-ccw" size={20} color={colors.primaryForeground} />
       </Pressable>
     </ScrollView>
