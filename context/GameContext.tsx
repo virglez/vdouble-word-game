@@ -1,7 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { createContext, useContext, useEffect, useRef, useState } from 'react';
 import { AppState } from 'react-native';
-import { answer, buildDeck, confirmReview, correctReview, finishTurn, initialState, normalizedWord, resetRound, returnHome, roundNames, TURN_LENGTH_MS, type CardCount, type GameState, type LanguageCode } from '@/lib/game';
+import { answer, buildDeck, confirmReview, correctReview, finishTurn, initialState, normalizedWord, resetForSetup, resetRound, returnHome, roundNames, TURN_LENGTH_MS, type CardCount, type GameState, type LanguageCode } from '@/lib/game';
 export { roundNames, TURN_LENGTH_MS, type CardCount, type LanguageCode } from '@/lib/game';
 
 const STORAGE_KEY = '@vdouble/state-v2';
@@ -34,8 +34,7 @@ function useGameValue() {
     });
     return () => { clearTimeout(timeout); subscription.remove(); };
   }, [state.screen, state.turnEndsAt]);
-  const reset = (current: GameState): GameState => ({ ...initialState, screen: 'setup', cardCount: current.cardCount,
-    usedWords: current.usedWords, teams: [{ name: current.teams[0].name, score: 0, icon: current.teams[0].icon }, { name: current.teams[1].name, score: 0, icon: current.teams[1].icon }] });
+  const reset = (current: GameState): GameState => resetForSetup(current);
   return {
     state, hydrated,
     currentCard: state.deck.find(card => card.palabra === state.currentCard) ?? null,

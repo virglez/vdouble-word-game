@@ -6,6 +6,20 @@ export function finishTurn(state: GameState): GameState {
   return state.screen === 'play' ? { ...state, screen: 'review', timeUp: true, turnEndsAt: null } : state;
 }
 
+export function resetForSetup(state: GameState): GameState {
+  return {
+    ...initialState,
+    screen: 'setup',
+    cardCount: state.cardCount,
+    usedWords: state.usedWords,
+    language: state.language,
+    teams: [
+      { name: state.teams[0].name, score: 0, icon: state.teams[0].icon },
+      { name: state.teams[1].name, score: 0, icon: state.teams[1].icon },
+    ],
+  };
+}
+
 export function returnHome(state: GameState): GameState {
   return {
     ...initialState,
@@ -150,8 +164,12 @@ export function buildDeck(cardCount: CardCount, excludedWords: string[], languag
   const available = allCandidates.filter((card) => !excluded.has(normalizedWord(card.palabra)));
 
   const internationalOnly = language !== 'es';
-  const source = (available.length >= cardCount ? available : allCandidates)
-    .filter((card) => !internationalOnly || card.internacional === true);
+  const internationalCandidates = available.filter((card) => card.internacional === true);
+  const filteredCandidates = internationalOnly
+    ? (internationalCandidates.length >= cardCount ? internationalCandidates : available)
+    : available;
+  const source = (filteredCandidates.length >= cardCount ? filteredCandidates : available)
+    .filter((card) => !internationalOnly || card.internacional === true || card.internacional === undefined);
 
   // Mientras queden suficientes tarjetas, una nueva partida no reutiliza
   // ninguna palabra de las partidas anteriores guardadas en el teléfono.

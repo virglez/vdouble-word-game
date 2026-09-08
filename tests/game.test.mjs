@@ -1,14 +1,27 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { initialState, answer, correctReview, confirmReview, resetRound, finishTurn, buildDeck, normalizedWord, returnHome } from '../lib/game.ts';
+import { initialState, answer, correctReview, confirmReview, resetRound, finishTurn, buildDeck, normalizedWord, returnHome, resetForSetup } from '../lib/game.ts';
 
 test('Volver al inicio cierra los resultados y conserva preferencias e historial de palabras', () => {
-  const state = returnHome({ ...playing(), screen: 'final', usedWords: ['a'], cardCount: 40 });
+  const state = returnHome({ ...playing(), screen: 'final', usedWords: ['a'], cardCount: 40, language: 'fr' });
   assert.equal(state.screen, 'home');
   assert.deepEqual(state.deck, []);
   assert.equal(state.turnEndsAt, null);
   assert.equal(state.cardCount, 40);
   assert.deepEqual(state.usedWords, ['a']);
+  assert.equal(state.language, 'fr');
+});
+
+test('La preparación del juego conserva el idioma seleccionado desde la home', () => {
+  const source = { ...initialState, screen: 'home', cardCount: 30, language: 'fr', usedWords: ['a'], teams: [
+    { name: 'Equipo A', score: 0, icon: '🌙' },
+    { name: 'Equipo B', score: 0, icon: '⚡' },
+  ] };
+  const next = resetForSetup(source);
+  assert.equal(next.screen, 'setup');
+  assert.equal(next.language, 'fr');
+  assert.equal(next.cardCount, 30);
+  assert.equal(next.teams[0].name, 'Equipo A');
 });
 
 function playing(words = ['A', 'B', 'C']) {
@@ -61,6 +74,10 @@ test('Partida completa: mismo mazo y suma exacta de tres rondas', () => {
   assert.equal(state.screen, 'final');
   assert.equal(state.teams.reduce((sum, team) => sum + team.score, 0), 9);
   assert.equal(state.roundScores.flat().reduce((a, b) => a + b), 9);
+});test('El mazo no queda vacío cuando el juego pide un idioma internacional sin tarjetas marcadas como internacionales', () => {
+  const deck = buildDeck(20, [], 'en');
+  assert.equal(deck.length, 20);
+  assert.ok(deck.every(card => card.palabra));
 });
 test('Mazos distintos de 20, 30 y 40, equilibrados en dificultad', () => {
   for (const size of [20, 30, 40]) {
