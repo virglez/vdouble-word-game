@@ -152,8 +152,8 @@ const cards = rows
 const difficulties = [...new Set(cards.map((card) => card.dificultad))];
 const difficultyType = difficulties.map((difficulty) => JSON.stringify(difficulty)).join(' | ');
 // Each entry is checked separately, avoiding an enormous inferred union.
-const body = cards.map((card) => `  ((card: WordCard): WordCard => card)(${JSON.stringify(card)})`).join(',\n');
+const body = cards.map((card) => `  defineCard(${JSON.stringify(card)})`).join(',\n');
 const output = `// Generado desde la base cultural definitiva. No editar a mano.\n// Regenerar con: pnpm run generate-word-bank\nexport type Difficulty = ${difficultyType};\n\nexport type WordCard = {\n  id?: string;\n  palabra: string;\n  categoria: string;\n  subcategoria: string;\n  dificultad: Difficulty;\n  tipo: string;\n  internacional?: boolean;\n  translations?: Partial<Record<string, string>>;\n  categoryTranslations?: Partial<Record<string, string>>;\n  subcategoryTranslations?: Partial<Record<string, string>>;\n};\n\nexport const WORD_BANK: WordCard[] = [\n${body}\n];\n`;
 
-fs.writeFileSync(outputPath, output);
+fs.writeFileSync(outputPath, output.replace('export const WORD_BANK', 'function defineCard(card: WordCard): WordCard { return card; }\n\nexport const WORD_BANK'));
 console.log(`Banco generado: ${cards.length} tarjetas desde ${path.basename(inputPath)}${fs.existsSync(translationInputPath) ? ` y ${path.basename(translationInputPath)}` : ''}`);
