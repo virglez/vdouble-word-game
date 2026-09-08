@@ -45,13 +45,22 @@ function escape(value) {
   return JSON.stringify(String(value ?? ''));
 }
 
+function normalizeLanguage(language) {
+  const normalized = String(language ?? '').trim().toLowerCase();
+  if (normalized.startsWith('es')) return 'es';
+  if (normalized.startsWith('en')) return 'en';
+  if (normalized.startsWith('fr')) return 'fr';
+  if (normalized.startsWith('pt')) return 'pt';
+  return 'es';
+}
+
 if (!fs.existsSync(csvPath)) {
   throw new Error(`No se encuentra el CSV de textos: ${csvPath}`);
 }
 
 const rows = parseCsv(fs.readFileSync(csvPath, 'utf8').replace(/^\uFEFF/, ''));
 if (rows.length < 2) {
-  throw new Error('El CSV de textos estÃ¡ vacÃ­o.');
+  throw new Error('El CSV de textos está vacío.');
 }
 
 const [headers, ...body] = rows;
@@ -59,28 +68,21 @@ const keyIndex = headers.findIndex((header) => header.trim() === 'key' || header
 const langIndex = headers.findIndex((header) => header.trim() === 'idioma');
 const textIndex = headers.findIndex((header) => header.trim() === 'texto');
 
-if (keyIndex >= 0) {
-  const languageIndexes = headers
-    .map((header, index) => [header.trim(), index])
-    .filter(([name]) => name !== 'key')
-    .reduce((acc, [language, index]) => ({ ...acc, [language]: index }), {});
-
-  const languages = Object.keys(languageIndexes);
-  const uiText = languages.reduce((acc, lang) => {
-    acc[lang] = {};
-    return acc;
-  }, {});
-
+// Preferred new layout: clave,idioma,texto
+if (langIndex >= 0 && textIndex >= 0 && keyIndex >= 0) {
+  const uiText = {};
   for (const row of body) {
-    const key = (row[keyIndex] ?? '').trim();
-    if (!key) continue;
-    for (const lang of languages) {
-      const index = languageIndexes[lang];
-      if (index === undefined) continue;
-      uiText[lang][key] = (row[index] ?? '').trim();
-    }
+    const key = String(row[keyIndex] ?? '').trim();
+    const language = String(row[langIndex] ?? '').trim();
+    const text = String(row[textIndex] ?? '').trim();
+    if (!key || !language || !text) continue;
+
+    const normalizedLanguage = normalizeLanguage(language);
+    if (!uiText[normalizedLanguage]) uiText[normalizedLanguage] = {};
+    uiText[normalizedLanguage][key] = text;
   }
 
+  const languages = ['es', 'en', 'fr', 'pt'].filter((lang) => uiText[lang]);
   const lines = [];
   lines.push('// Auto-generated from data/ui_text.csv. Do not edit by hand.');
   lines.push("export type LanguageCode = 'es' | 'en' | 'fr' | 'pt';");
@@ -95,14 +97,16 @@ if (keyIndex >= 0) {
   lines.push('export const defaultLanguage: LanguageCode = "es";');
   lines.push('');
   lines.push('export const UI_TEXT: Record<LanguageCode, Record<string, string>> = {');
+
   for (const lang of languages) {
     lines.push(`  ${JSON.stringify(lang)}: {`);
-    const keys = Object.keys(uiText[lang]);
+    const keys = Object.keys(uiText[lang] ?? {});
     for (const key of keys) {
       lines.push(`    ${JSON.stringify(key)}: ${escape(uiText[lang][key])},`);
     }
     lines.push('  },');
   }
+
   lines.push('};');
   lines.push('');
   lines.push('export function getText(language: LanguageCode, key: string) {');
@@ -114,20 +118,30 @@ if (keyIndex >= 0) {
   process.exit(0);
 }
 
-if (langIndex >= 0 && textIndex >= 0) {
-  const languageKeyMap = new Map();
-  const uiText = {};
+// Legacy layout fallback: key,es,en,fr
+if (keyIndex >= 0) {
+  const languageIndexes = headers
+    .map((header, index) => [header.trim(), index])
+    .filter(([name]) => name !== 'key' && name !== 'clave')
+    .reduce((acc, [language, index]) => ({ ...acc, [language]: index }), {});
+
+  const languages = Object.keys(languageIndexes);
+  const uiText = languages.reduce((acc, lang) => {
+    acc[lang] = {};
+    return acc;
+  }, {});
+
   for (const row of body) {
     const key = String(row[keyIndex] ?? '').trim();
-    const language = String(row[langIndex] ?? '').trim();
-    const text = String(row[textIndex] ?? '').trim();
-    if (!key || !language || !text) continue;
-    const normalizedLanguage = language.toLowerCase().startsWith('es') ? 'es' : language.toLowerCase().startsWith('en') ? 'en' : language.toLowerCase().startsWith('fr') ? 'fr' : language.toLowerCase().startsWith('pt') ? 'pt' : language;
-    if (!uiText[normalizedLanguage]) uiText[normalizedLanguage] = {};
-    uiText[normalizedLanguage][key] = text;
+    if (!key) continue;
+    for (const lang of languages) {
+      const index = languageIndexes[lang];
+      if (index === undefined) continue;
+      const normalized = normalizeLanguage(lang);
+      uiText[normalized][key] = String(row[index] ?? '').trim();
+    }
   }
 
-  const languages = Object.keys(uiText);
   const lines = [];
   lines.push('// Auto-generated from data/ui_text.csv. Do not edit by hand.');
   lines.push("export type LanguageCode = 'es' | 'en' | 'fr' | 'pt';");
@@ -142,7 +156,8 @@ if (langIndex >= 0 && textIndex >= 0) {
   lines.push('export const defaultLanguage: LanguageCode = "es";');
   lines.push('');
   lines.push('export const UI_TEXT: Record<LanguageCode, Record<string, string>> = {');
-  for (const lang of languages) {
+  for (const lang of ['es', 'en', 'fr', 'pt']) {
+    if (!uiText[lang]) continue;
     lines.push(`  ${JSON.stringify(lang)}: {`);
     const keys = Object.keys(uiText[lang]);
     for (const key of keys) {
@@ -162,47 +177,3 @@ if (langIndex >= 0 && textIndex >= 0) {
 }
 
 throw new Error('El CSV de textos debe tener una de las columnas soportadas: key/es/en/fr o clave/idioma/texto.');
-
-  acc[lang] = {};
-  return acc;
-}, {});
-
-for (const row of body) {
-  const key = (row[keyIndex] ?? '').trim();
-  if (!key) continue;
-  for (const lang of languages) {
-    const index = languageIndexes[lang];
-    if (index === undefined) continue;
-    uiText[lang][key] = (row[index] ?? '').trim();
-  }
-}
-
-const lines = [];
-lines.push('// Auto-generated from data/ui_text.csv. Do not edit by hand.');
-lines.push("export type LanguageCode = 'es' | 'en' | 'fr';");
-lines.push('');
-lines.push('export const LANGUAGE_OPTIONS = [');
-lines.push("  { code: 'es' as const, label: 'ES' },");
-lines.push("  { code: 'en' as const, label: 'EN' },");
-lines.push("  { code: 'fr' as const, label: 'FR' },");
-lines.push('] as const;');
-lines.push('');
-lines.push('export const defaultLanguage: LanguageCode = \"es\";');
-lines.push('');
-lines.push('export const UI_TEXT: Record<LanguageCode, Record<string, string>> = {');
-for (const lang of languages) {
-  lines.push(`  ${JSON.stringify(lang)}: {`);
-  const keys = Object.keys(uiText[lang]);
-  for (const key of keys) {
-    lines.push(`    ${JSON.stringify(key)}: ${escape(uiText[lang][key])},`);
-  }
-  lines.push('  },');
-}
-lines.push('};');
-lines.push('');
-lines.push('export function getText(language: LanguageCode, key: string) {');
-lines.push('  return UI_TEXT[language]?.[key] ?? UI_TEXT.es[key] ?? key;');
-lines.push('}');
-
-fs.writeFileSync(outputPath, `${lines.join('\n')}\n`);
-console.log(`Generado ${outputPath} con ${body.length} claves de texto.`);
