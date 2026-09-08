@@ -17,7 +17,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useColors } from '@/hooks/useColors';
 import { GameProvider, roundNames, TURN_LENGTH_MS, useGame, type CardCount } from '@/context/GameContext';
-import { UI_TEXT, type LanguageCode } from '@/data/ui_text';
+import { LANGUAGE_OPTIONS, UI_TEXT, type LanguageCode } from '@/data/ui_text';
 
 type Palette = ReturnType<typeof useColors>;
 
@@ -32,13 +32,13 @@ function press(action: () => void) {
   action();
 }
 
-function confirmDiscardSavedGame(startNew: () => void) {
+function confirmDiscardSavedGame(startNew: () => void, t: Record<string, string>) {
   Alert.alert(
-    '¿Empezar una partida nueva?',
-    'Tienes una partida guardada en curso. Si continúas, se perderá su marcador y progreso.',
+    t.confirmDiscard ?? '¿Empezar una partida nueva?',
+    t.confirmDiscardBody ?? 'Tienes una partida guardada en curso. Si continúas, se perderá su marcador y progreso.',
     [
-      { text: 'Cancelar', style: 'cancel' },
-      { text: 'Nueva partida', style: 'destructive', onPress: () => press(startNew) },
+      { text: t.cancel ?? 'Cancelar', style: 'cancel' },
+      { text: t.newGameButton ?? 'Nueva partida', style: 'destructive', onPress: () => press(startNew) },
     ],
   );
 }
@@ -109,11 +109,6 @@ function AppContent() {
 function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   const colors = useColors();
   const { state, hasSavedGame, startSetup, continueGame, setLanguage } = useGame();
-  const languageOptions = [
-    { code: 'es', label: 'ES' },
-    { code: 'en', label: 'EN' },
-    { code: 'fr', label: 'FR' },
-  ] as const;
   const t = UI_TEXT[state.language] ?? UI_TEXT.es;
 
   return (
@@ -121,7 +116,7 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
       <View style={styles.languageSelectorRow}>
         <Text style={styles.languageSelectorLabel}>{t.language}</Text>
         <View style={styles.languageSelectorPillGroup}>
-          {languageOptions.map((option) => (
+          {LANGUAGE_OPTIONS.map((option) => (
             <Pressable
               key={option.code}
               accessibilityRole="button"
@@ -181,7 +176,7 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
       <Pressable
         testID="new-game-button"
         accessibilityRole="button"
-        onPress={() => (hasSavedGame ? confirmDiscardSavedGame(startSetup) : press(startSetup))}
+        onPress={() => (hasSavedGame ? confirmDiscardSavedGame(startSetup, t) : press(startSetup))}
         style={({ pressed }) => [styles.primaryButton, pressed && styles.pressed]}
       >
         <Text style={styles.primaryButtonText}>{t.newGame}</Text>
@@ -586,12 +581,12 @@ function PlayScreen({ styles, seconds }: { styles: ReturnType<typeof createStyle
           {currentCard ? (
             <>
               <View style={styles.cardTopRow}>
-                <Text style={styles.cardCategory}>{currentCard.categoria}</Text>
+                <Text style={styles.cardCategory}>{currentCard.categoryTranslations?.[state.language] ?? currentCard.categoria}</Text>
                 <View style={styles.cardDot} />
                 <Text style={styles.cardCategory}>{currentCard.tipo || t.cardCultureType}</Text>
               </View>
               <Text style={styles.wordText}>{currentCard.palabra}</Text>
-              <Text style={styles.cardSubcategory}>{currentCard.subcategoria || t.cardCultureSubcategory}</Text>
+              <Text style={styles.cardSubcategory}>{currentCard.subcategoryTranslations?.[state.language] ?? currentCard.subcategoria || t.cardCultureSubcategory}</Text>
             </>
           ) : (
             <Text style={styles.wordText}>{t.cardCurrent}</Text>

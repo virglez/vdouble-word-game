@@ -1,0 +1,105 @@
+tipo,valor,idioma,texto
+categoria,Deportes,es,Deportes
+categoria,Deportes,en,Sports
+categoria,Deportes,fr,Sports
+categoria,Deportes,pt,Desporto
+categoria,Música,es,Música
+categoria,Música,en,Music
+categoria,Música,fr,Musique
+categoria,Música,pt,Música
+categoria,Cine y TV,es,Cine y TV
+categoria,Cine y TV,en,Cinema & TV
+categoria,Cine y TV,fr,Cinéma & TV
+categoria,Cine y TV,pt,Cinema e TV
+categoria,Arte,es,Arte
+categoria,Arte,en,Art
+categoria,Arte,fr,Art
+categoria,Arte,pt,Arte
+categoria,Literatura,es,Literatura
+categoria,Literatura,en,Literature
+categoria,Literatura,fr,Littérature
+categoria,Literatura,pt,Literatura
+categoria,Personajes,es,Personajes
+categoria,Personajes,en,Characters
+categoria,Personajes,fr,Personnages
+categoria,Personajes,pt,Personagens
+categoria,Naturaleza,es,Naturaleza
+categoria,Naturaleza,en,Nature
+categoria,Naturaleza,fr,Nature
+categoria,Naturaleza,pt,Natureza
+categoria,Comida,es,Comida
+categoria,Comida,en,Food
+categoria,Comida,fr,Nourriture
+categoria,Comida,pt,Comida
+subcategoria,Futbolista,es,Futbolista
+subcategoria,Futbolista,en,Footballer
+subcategoria,Futbolista,fr,Footballeur
+subcategoria,Futbolista,pt,Futebolista
+subcategoria,Tenista,es,Tenista
+subcategoria,Tenista,en,Tennis player
+subcategoria,Tenista,fr,Joueur de tennis
+subcategoria,Tenista,pt,Tenista
+subcategoria,Automovilismo,es,Automovilismo
+subcategoria,Automovilismo,en,Motor racing
+subcategoria,Automovilismo,fr,Course automobile
+subcategoria,Automovilismo,pt,Automobilismo
+subcategoria,Baloncesto,es,Baloncesto
+subcategoria,Baloncesto,en,Basketball
+subcategoria,Baloncesto,fr,Basketball
+subcategoria,Baloncesto,pt,Basquetebol
+subcategoria,Tenis,es,Tenis
+subcategoria,Tenis,en,Tennis
+subcategoria,Tenis,fr,Tennis
+subcategoria,Tenis,pt,Ténis
+subcategoria,Cantante,es,Cantante
+subcategoria,Cantante,en,Singer
+subcategoria,Cantante,fr,Chanteur
+subcategoria,Cantante,pt,Cantor
+subcategoria,Actriz,es,Actriz
+subcategoria,Actriz,en,Actress
+subcategoria,Actriz,fr,Actrice
+subcategoria,Actriz,pt,Atriz
+subcategoria,Actor,es,Actor
+subcategoria,Actor,en,Actor
+subcategoria,Actor,fr,Acteur
+subcategoria,Actor,pt,Ator
+subcategoria,Director,es,Director
+subcategoria,Director,en,Director
+subcategoria,Director,fr,Réalisateur
+subcategoria,Director,pt,Diretor
+subcategoria,Escritor,es,Escritor
+subcategoria,Escritor,en,Writer
+subcategoria,Escritor,fr,Écrivain
+subcategoria,Escritor,pt,Escritor
+subcategoria,Escritora,es,Escritora
+subcategoria,Escritora,en,Writer
+subcategoria,Escritora,fr,Écrivaine
+subcategoria,Escritora,pt,Escritora
+subcategoria,Pintora,es,Pintora
+subcategoria,Pintora,en,Painter
+subcategoria,Pintora,fr,Peintre
+subcategoria,Pintora,pt,Pintora
+subcategoria,Pintor,es,Pintor
+subcategoria,Pintor,en,Painter
+subcategoria,Pintor,fr,Peintre
+subcategoria,Pintor,pt,Pintor
+subcategoria,Artista,es,Artista
+subcategoria,Artista,en,Artist
+subcategoria,Artista,fr,Artiste
+subcategoria,Artista,pt,Artista
+subcategoria,Cómic,es,Cómic
+subcategoria,Cómic,en,Comic
+subcategoria,Cómic,fr,Bande dessinée
+subcategoria,Cómic,pt,Comics
+subcategoria,Animación,es,Animación
+subcategoria,Animación,en,Animation
+subcategoria,Animación,fr,Animation
+subcategoria,Animación,pt,Animação
+subcategoria,Superhéroe,es,Superhéroe
+subcategoria,Superhéroe,en,Superhero
+subcategoria,Superhéroe,fr,Super-héros
+subcategoria,Superhéroe,pt,Super-herói
+subcategoria,Personaje,es,Personaje
+subcategoria,Personaje,en,Character
+subcategoria,Personaje,fr,Personnage
+subcategoria,Personaje,pt,Personagem

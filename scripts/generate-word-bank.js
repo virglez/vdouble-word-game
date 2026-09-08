@@ -16,6 +16,9 @@ const inputPath = process.env.WORD_BANK_CSV
 const translationInputPath = process.env.WORD_BANK_TRANSLATIONS_CSV
   ? path.resolve(process.env.WORD_BANK_TRANSLATIONS_CSV)
   : path.join(projectRoot, 'data', 'wordBank_translations.csv');
+const categorySubcategoryInputPath = process.env.CATEGORY_SUBCATEGORY_TRANSLATIONS_CSV
+  ? path.resolve(process.env.CATEGORY_SUBCATEGORY_TRANSLATIONS_CSV)
+  : path.join(projectRoot, 'data', 'category_subcategory_translations.csv');
 const outputPath = path.join(projectRoot, 'data', 'wordBank.ts');
 
 function parseCsv(text) {
@@ -84,6 +87,30 @@ if (fs.existsSync(translationInputPath)) {
   }
 }
 
+const categoryTranslations = new Map();
+const subcategoryTranslations = new Map();
+if (fs.existsSync(categorySubcategoryInputPath)) {
+  const catRows = parseCsv(fs.readFileSync(categorySubcategoryInputPath, 'utf8').replace(/^\uFEFF/, ''));
+  const catHeaders = catRows.shift();
+  const catIndex = Object.fromEntries(catHeaders.map((header, index) => [header.trim(), index]));
+  for (const row of catRows) {
+    const type = String(row[catIndex.tipo] ?? '').trim().toLowerCase();
+    const value = String(row[catIndex.valor] ?? '').trim();
+    const language = String(row[catIndex.idioma] ?? '').trim();
+    const local = String(row[catIndex.texto] ?? '').trim();
+    if (!type || !value || !language || !local) continue;
+    if (type === 'categoria') {
+      const target = categoryTranslations.get(value) ?? {};
+      target[language] = local;
+      categoryTranslations.set(value, target);
+    } else if (type === 'subcategoria') {
+      const target = subcategoryTranslations.get(value) ?? {};
+      target[language] = local;
+      subcategoryTranslations.set(value, target);
+    }
+  }
+}
+
 const cards = rows
   .map((row) => {
     const palabra = row[indexes.palabra]?.trim() ?? '';
@@ -110,6 +137,14 @@ const cards = rows
     if (cardTranslations && Object.keys(cardTranslations).length > 0) {
       base.translations = cardTranslations;
     }
+    const categoryMap = categoryTranslations.get(category);
+    if (categoryMap && Object.keys(categoryMap).length > 0) {
+      base.categoryTranslations = categoryMap;
+    }
+    const subcategoryMap = subcategoryTranslations.get(subcategory);
+    if (subcategoryMap && Object.keys(subcategoryMap).length > 0) {
+      base.subcategoryTranslations = subcategoryMap;
+    }
     return base;
   })
   .filter((card) => card.palabra);
@@ -117,7 +152,7 @@ const cards = rows
 const difficulties = [...new Set(cards.map((card) => card.dificultad))];
 const difficultyType = difficulties.map((difficulty) => JSON.stringify(difficulty)).join(' | ');
 const body = cards.map((card) => `  ${JSON.stringify(card)}`).join(',\n');
-const output = `// Generado desde la base cultural definitiva. No editar a mano.\n// Regenerar con: pnpm run generate-word-bank\nexport type Difficulty = ${difficultyType};\n\nexport type WordCard = {\n  id?: string;\n  palabra: string;\n  categoria: string;\n  subcategoria: string;\n  dificultad: Difficulty;\n  tipo: string;\n  internacional?: boolean;\n  translations?: Partial<Record<string, string>>;\n};\n\nexport const WORD_BANK: WordCard[] = [\n${body}\n];\n`;
+const output = `// Generado desde la base cultural definitiva. No editar a mano.\n// Regenerar con: pnpm run generate-word-bank\nexport type Difficulty = ${difficultyType};\n\nexport type WordCard = {\n  id?: string;\n  palabra: string;\n  categoria: string;\n  subcategoria: string;\n  dificultad: Difficulty;\n  tipo: string;\n  internacional?: boolean;\n  translations?: Partial<Record<string, string>>;\n  categoryTranslations?: Partial<Record<string, string>>;\n  subcategoryTranslations?: Partial<Record<string, string>>;\n};\n\nexport const WORD_BANK: WordCard[] = [\n${body}\n];\n`;
 
 fs.writeFileSync(outputPath, output);
 console.log(`Banco generado: ${cards.length} tarjetas desde ${path.basename(inputPath)}${fs.existsSync(translationInputPath) ? ` y ${path.basename(translationInputPath)}` : ''}`);
