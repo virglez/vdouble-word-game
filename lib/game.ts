@@ -2,6 +2,22 @@ import { WORD_BANK, type Difficulty, type WordCard } from '../data/wordBank.ts';
 
 export type LanguageCode = 'es' | 'en' | 'fr' | 'pt';
 
+const defaultTeamNames: Record<LanguageCode, [string, string]> = {
+  es: ['Equipo Sol', 'Equipo Luna'],
+  en: ['Team Sun', 'Team Moon'],
+  fr: ['Équipe Soleil', 'Équipe Lune'],
+  pt: ['Equipa Sol', 'Equipa Lua'],
+};
+
+export function changeLanguage(state: GameState, language: LanguageCode): GameState {
+  const teams = state.teams.map((team, index) => ({
+    ...team,
+    name: !team.customName && Object.values(defaultTeamNames).some(names => names[index] === team.name)
+      ? defaultTeamNames[language][index] : team.name,
+  })) as GameState['teams'];
+  return { ...state, language, teams };
+}
+
 export function finishTurn(state: GameState): GameState {
   return state.screen === 'play' ? { ...state, screen: 'review', timeUp: true, turnEndsAt: null } : state;
 }
@@ -14,8 +30,8 @@ export function resetForSetup(state: GameState): GameState {
     usedWords: state.usedWords,
     language: state.language,
     teams: [
-      { name: state.teams[0].name, score: 0, icon: state.teams[0].icon },
-      { name: state.teams[1].name, score: 0, icon: state.teams[1].icon },
+      { customName: state.teams[0].customName, name: state.teams[0].name, score: 0, icon: state.teams[0].icon },
+      { customName: state.teams[1].customName, name: state.teams[1].name, score: 0, icon: state.teams[1].icon },
     ],
   };
 }
@@ -28,8 +44,8 @@ export function returnHome(state: GameState): GameState {
     usedWords: state.usedWords,
     language: state.language,
     teams: [
-      { name: state.teams[0].name, score: 0, icon: state.teams[0].icon },
-      { name: state.teams[1].name, score: 0, icon: state.teams[1].icon },
+      { customName: state.teams[0].customName, name: state.teams[0].name, score: 0, icon: state.teams[0].icon },
+      { customName: state.teams[1].customName, name: state.teams[1].name, score: 0, icon: state.teams[1].icon },
     ],
   };
 }
@@ -86,6 +102,7 @@ export type Screen =
   | 'final';
 
 export type Team = {
+  customName?: boolean;
   name: string;
   score: number;
   icon: string;

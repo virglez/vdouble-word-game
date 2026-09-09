@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import {
   ActivityIndicator,
+  Modal,
   Alert,
   KeyboardAvoidingView,
   Platform,
@@ -22,9 +23,9 @@ import { LANGUAGE_OPTIONS, UI_TEXT, type LanguageCode } from '@/data/ui_text';
 type Palette = ReturnType<typeof useColors>;
 
 const cardCountOptions: Array<{ value: CardCount; note: string }> = [
-  { value: 20, note: 'partida rápida' },
-  { value: 30, note: 'partida estándar' },
-  { value: 40, note: 'partida larga' },
+  { value: 20, note: 'cardCountQuick' },
+  { value: 30, note: 'cardCountStandard' },
+  { value: 40, note: 'cardCountLong' },
 ];
 
 function press(action: () => void) {
@@ -148,7 +149,7 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
       </Text>
       <Text style={styles.heroSubtitle}>{t.heroSubtitle}</Text>
 
-      <View style={styles.cardStack} accessible accessibilityLabel="Ilustración de tarjetas del juego">
+      <View style={styles.cardStack} accessible accessibilityLabel={t.cardIllustration}>
         <View style={[styles.stackCard, styles.stackCardBack]} />
         <View style={[styles.stackCard, styles.stackCardMiddle]}>
           <Feather name="clock" size={30} color={colors.primaryForeground} />
@@ -215,6 +216,7 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
           </View>
         ))}
       </View>
+      <Text style={styles.instructionBody}>{t.instructionsBody}</Text>
       <Text style={styles.footnote}>{t.footnote}</Text>
     </ScrollView>
   );
@@ -239,13 +241,15 @@ function ScreenHeader({
   onBack?: () => void;
 }) {
   const colors = useColors();
+  const { state } = useGame();
+  const t = UI_TEXT[state.language] ?? UI_TEXT.es;
   return (
     <View style={styles.screenHeader}>
       {onBack ? (
         <Pressable
           testID="back-button"
           accessibilityRole="button"
-          accessibilityLabel="Volver"
+          accessibilityLabel={t.screenHeaderBack}
           onPress={() => press(onBack)}
           style={styles.iconButton}
         >
@@ -262,7 +266,7 @@ function ScreenHeader({
 
 function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   const colors = useColors();
-  const { state, updateTeamName, updateTeamIcon, setCardCount, createGame, goHome } = useGame();
+  const { state, updateTeamName, updateTeamIcon, setCardCount, createGame, isCreating, goHome } = useGame();
   const t = UI_TEXT[state.language] ?? UI_TEXT.es;
 
   return (
@@ -313,7 +317,7 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
                   <Text style={[styles.cardCountTitle, selected && styles.cardCountTitleSelected]}>
                     {value} {t.statsCards}
                   </Text>
-                  <Text style={styles.cardCountNote}>{note} · {t.cardCountMix}</Text>
+                  <Text style={styles.cardCountNote}>{t[note]} · {t.cardCountMix}</Text>
                 </View>
                 {selected ? <Feather name="check" size={18} color={colors.primary} /> : null}
               </Pressable>
@@ -330,12 +334,22 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
       <Pressable
         testID="create-game-button"
         accessibilityRole="button"
-        onPress={() => press(createGame)}
+        disabled={isCreating}
+        accessibilityState={{ disabled: isCreating, busy: isCreating }}
+        onPress={() => { void createGame().catch(() => Alert.alert(t.createGameError)); }}
         style={({ pressed }) => [styles.primaryButton, pressed && styles.pressed]}
       >
-        <Text style={styles.primaryButtonText}>{t.createDeck}</Text>
+        <Text style={styles.primaryButtonText}>{isCreating ? t.creatingGame : t.createDeck}</Text>
         <Feather name="arrow-right" size={21} color={colors.primaryForeground} />
       </Pressable>
+      <Modal visible={isCreating} transparent animationType="none" onRequestClose={() => {}}>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0,0,0,0.55)' }}>
+          <View style={{ padding: 28, borderRadius: 20, backgroundColor: colors.background, alignItems: 'center', gap: 16 }} accessibilityViewIsModal>
+            <ActivityIndicator size="large" color={colors.primary} />
+            <Text accessibilityLiveRegion="polite" style={styles.pageSubtitle}>{t.creatingGame}</Text>
+          </View>
+        </View>
+      </Modal>
     </ScrollView>
   );
 }
@@ -583,7 +597,7 @@ function PlayScreen({ styles, seconds }: { styles: ReturnType<typeof createStyle
               <View style={styles.cardTopRow}>
                 <Text style={styles.cardCategory}>{currentCard.categoryTranslations?.[state.language] ?? currentCard.categoria}</Text>
                 <View style={styles.cardDot} />
-                <Text style={styles.cardCategory}>{currentCard.tipo || t.cardCultureType}</Text>
+                <Text style={styles.cardCategory}>{t['cardType_' + currentCard.tipo] || t.cardCultureType}</Text>
               </View>
               <Text style={styles.wordText}>{currentCard.palabra}</Text>
               <Text style={styles.cardSubcategory}>{(currentCard.subcategoryTranslations?.[state.language] ?? currentCard.subcategoria) || t.cardCultureSubcategory}</Text>

@@ -1,7 +1,8 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { createContext, useContext, useEffect, useRef, useState } from 'react';
+import { UI_TEXT } from '@/data/ui_text';
 import { AppState } from 'react-native';
-import { answer, buildDeck, confirmReview, correctReview, finishTurn, initialState, normalizedWord, resetForSetup, resetRound, returnHome, roundNames, TURN_LENGTH_MS, type CardCount, type GameState, type LanguageCode } from '@/lib/game';
+import { answer, buildDeck, changeLanguage, confirmReview, correctReview, finishTurn, initialState, normalizedWord, resetForSetup, resetRound, returnHome, roundNames, TURN_LENGTH_MS, type CardCount, type GameState, type LanguageCode } from '@/lib/game';
 export { roundNames, TURN_LENGTH_MS, type CardCount, type LanguageCode } from '@/lib/game';
 
 const STORAGE_KEY = '@vdouble/state-v2';
@@ -9,6 +10,8 @@ const STORAGE_KEY = '@vdouble/state-v2';
 function useGameValue() {
   const [state, setState] = useState<GameState>(initialState);
   const [hydrated, setHydrated] = useState(false);
+  const [isCreating, setIsCreating] = useState(false);
+  const creating = useRef(false);
   const writes = useRef(Promise.resolve());
   useEffect(() => {
     let active = true;
@@ -36,7 +39,7 @@ function useGameValue() {
   }, [state.screen, state.turnEndsAt]);
   const reset = (current: GameState): GameState => resetForSetup(current);
   return {
-    state, hydrated,
+    state, hydrated, isCreating,
     currentCard: state.deck.find(card => card.palabra === state.currentCard) ?? null,
     roundName: roundNames[state.roundIndex],
     hasSavedGame: state.deck.length > 0 && state.screen !== 'final',
@@ -46,7 +49,7 @@ function useGameValue() {
     continueGame: () => setState(current => current.screen === 'home' ? { ...current, screen: current.deck.length ? 'instructions' : 'setup' } : current),
     updateTeamName: (team: 0 | 1, name: string) => setState(current => {
       const teams: GameState['teams'] = [...current.teams];
-      teams[team] = { ...teams[team], name };
+      teams[team] = { ...teams[team], name, customName: true };
       return { ...current, teams };
     }),
     updateTeamIcon: (team: 0 | 1, icon: string) => setState(current => {
@@ -54,18 +57,30 @@ function useGameValue() {
       teams[team] = { ...teams[team], icon };
       return { ...current, teams };
     }),
-    setLanguage: (language: LanguageCode) => setState(current => ({ ...current, language })),
+    setLanguage: (language: LanguageCode) => setState(current => changeLanguage(current, language)),
     setCardCount: (cardCount: CardCount) => setState(current => ({ ...current, cardCount })),
-    createGame: () => setState(current => {
-      const deck = buildDeck(current.cardCount, current.usedWords, current.language);
-      const teams: GameState['teams'] = [
-        { name: current.teams[0].name.trim() || 'Equipo 1', score: 0, icon: current.teams[0].icon || '🌙' },
-        { name: current.teams[1].name.trim() || 'Equipo 2', score: 0, icon: current.teams[1].icon || '⚡' },
-      ];
-      return { ...resetRound({ ...reset(current), deck, teams,
-        usedWords: Array.from(new Set([...current.usedWords, ...deck.map(card => normalizedWord(card.palabra))])) }, 0, 0),
-        screen: 'instructions', turnEndsAt: null };
-    }),
+    createGame: async () => {
+      if (creating.current) return;
+      creating.current = true;
+      setIsCreating(true);
+      const current = state;
+      try {
+        // Give the loading indicator a painted frame before building the deck.
+        await new Promise<void>(resolve => requestAnimationFrame(() => setTimeout(resolve, 80)));
+        const deck = buildDeck(current.cardCount, current.usedWords, current.language);
+        const teams: GameState['teams'] = [
+          { customName: current.teams[0].customName, name: current.teams[0].name.trim() || UI_TEXT[current.language].teamCreateIntro.replace('{n}', '1'), score: 0, icon: current.teams[0].icon || '🌙' },
+          { customName: current.teams[1].customName, name: current.teams[1].name.trim() || UI_TEXT[current.language].teamCreateIntro.replace('{n}', '2'), score: 0, icon: current.teams[1].icon || '⚡' },
+        ];
+        const next: GameState = { ...resetRound({ ...reset(current), deck, teams,
+          usedWords: Array.from(new Set([...current.usedWords, ...deck.map(card => normalizedWord(card.palabra))])) }, 0, 0),
+          screen: 'instructions', turnEndsAt: null };
+        setState(latest => latest === current ? next : latest);
+      } finally {
+        creating.current = false;
+        setIsCreating(false);
+      }
+    },
     startRound: () => setState(current => {
       if (current.screen !== 'instructions' && current.screen !== 'roundBreak') return current;
       const next = resetRound(current, current.roundIndex + (current.screen === 'roundBreak' ? 1 : 0), current.currentTeam);

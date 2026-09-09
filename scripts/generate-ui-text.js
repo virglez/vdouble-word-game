@@ -70,6 +70,12 @@ const langIndex = headers.findIndex((header) => header.trim() === 'idioma');
 const textIndex = headers.findIndex((header) => header.trim() === 'texto');
 
 const writeUiText = (languages, uiText) => {
+  const missingPortuguese = Object.keys(uiText.es ?? {}).filter(key => !uiText.pt?.[key]);
+  if (missingPortuguese.length) {
+    throw new Error(`Faltan traducciones portuguesas en el CSV: ${missingPortuguese.join(', ')}`);
+  }
+  const missingEnglish = Object.keys(uiText.es ?? {}).filter(key => !uiText.en?.[key]);
+  if (missingEnglish.length) throw new Error(`Faltan traducciones inglesas: ${missingEnglish.join(', ')}`);
   languages = ['es', 'en', 'fr', 'pt'];
   for (const language of languages) uiText[language] = { ...uiText.es, ...uiText[language] };
   const lines = [];
@@ -148,4 +154,4 @@ if (keyIndex >= 0) {
   process.exit(0);
 }
 
-throw new Error('El CSV de textos debe tener una de las columnas soportadas: key/es/en/fr o clave/idioma/texto.');
+throw new Error('El CSV de textos debe tener una de las columnas soportadas: key/es/en/fr o clave/idioma/texto.');
