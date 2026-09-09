@@ -1,4 +1,8 @@
-﻿clave,idioma,texto
+clave,idioma,texto
+finalTieSubtitle,es,Habéis quedado igualados. Una revancha lo decide todo.
+finalTieSubtitle,en,You are tied. A rematch will decide it.
+finalTieSubtitle,fr,Vous êtes à égalité. Une revanche vous départagera.
+finalTieSubtitle,pt,Empataram. Uma desforra decide tudo.
 app_name,es-ES,VDOUBLE
 round_1_instruction,es-ES,Describe la palabra sin decirla
 round_2_instruction,es-ES,Una sola palabra
@@ -95,3 +99,322 @@ join_room,pt,Entrar na sala
 create_room,pt,Criar sala
 confirm,pt,Confirmar
 cancel,pt,Cancelar
+partyGame,es,EL PARTY GAME DE 3 RONDAS
+partyGame,en,TEAM GAME
+partyGame,fr,JEU PAR ÉQUIPES
+heroTitleLine1,es,Tres rondas.
+heroTitleLine1,en,Three rounds.
+heroTitleLine1,fr,Trois tours.
+heroTitleLine2,es,Una palabra.
+heroTitleLine2,en,One word.
+heroTitleLine2,fr,Un mot.
+heroSubtitle,es,El mismo mazo. Tres formas de jugar. Gana el equipo que mejor se entienda.
+heroSubtitle,en,The same deck. Three ways to play. Win the team that understands each other best.
+heroSubtitle,fr,Le même paquet. Trois façons de jouer. Gagnez l’équipe qui se comprend le mieux.
+staticStack,es,TARJETA
+staticStack,en,CARD
+staticStack,fr,CARTE
+stackWord,es,ADIVINA
+stackWord,en,GUESS
+stackWord,fr,DEVINE
+stackHint,es,habla · resume · actúa
+stackHint,en,talk · summarize · act
+stackHint,fr,parle · résume · joue
+statsCards,es,tarjetas
+statsCards,en,cards
+statsCards,fr,cartes
+statsTurn,es,por turno
+statsTurn,en,per turn
+statsTurn,fr,par tour
+statsRounds,es,rondas
+statsRounds,en,rounds
+statsRounds,fr,rondes
+newGame,es,Nueva partida
+newGame,en,New game
+newGame,fr,Nouvelle partie
+continueGame,es,Continuar partida
+continueGame,en,Continue game
+continueGame,fr,Continuer
+rulesRound1,es,Ronda 1
+rulesRound1,en,Round 1
+rulesRound1,fr,Ronde 1
+rulesRound2,es,Ronda 2
+rulesRound2,en,Round 2
+rulesRound2,fr,Ronde 2
+rulesRound3,es,Ronda 3
+rulesRound3,en,Round 3
+rulesRound3,fr,Ronde 3
+rulesTitle1,es,Descripción
+rulesTitle1,en,Description
+rulesTitle1,fr,Description
+rulesDescription1,es,Explica libremente. Tu equipo puede intentarlo varias veces.
+rulesDescription1,en,Explain freely. Your team can try as many times as it wants.
+rulesDescription1,fr,Expliquez librement. Votre équipe peut essayer autant de fois que vous voulez.
+rulesTitle2,es,Una palabra
+rulesTitle2,en,One word
+rulesTitle2,fr,Un mot
+rulesDescription2,es,Una sola pista y un único intento por tarjeta.
+rulesDescription2,en,One clue and one attempt per card.
+rulesDescription2,fr,Un seul indice et une seule tentative par carte.
+rulesTitle3,es,Mímica
+rulesTitle3,en,Mime
+rulesTitle3,fr,Mime
+rulesDescription3,es,Gestos
+rulesDescription3,en, sonidos y tarareo. Sin decir palabras.
+rulesDescription3,fr,Gestures
+footnote,es,Sin registro ni salas. La partida se guarda en este teléfono.
+footnote,en,No signups or rooms. The game is saved on this phone.
+footnote,fr,Pas d’inscription ni de salle. La partie est enregistrée sur ce téléphone.
+setupTitle,es,Nueva partida
+setupTitle,en,New game
+setupTitle,fr,Nouvelle partie
+setupStep,es,PASO 1 DE 2
+setupStep,en,STEP 1 OF 2
+setupStep,fr,ÉTAPE 1 SUR 2
+setupPageTitle,es,Prepara los equipos
+setupPageTitle,en,Prepare the teams
+setupPageTitle,fr,Préparez les équipes
+setupSubtitle,es,Elegid los nombres
+setupSubtitle,en, los iconos y cuántas tarjetas tendrá la partida.
+setupSubtitle,fr,Choose names
+setupTeams,es,EQUIPOS
+setupTeams,en,TEAMS
+setupTeams,fr,ÉQUIPES
+setupCardCount,es,NÚMERO DE TARJETAS
+setupCardCount,en,CARD COUNT
+setupCardCount,fr,NOMBRE DE CARTES
+cardCountMix,es,mezcla de categorías y dificultades
+cardCountMix,en,category and difficulty mix
+cardCountMix,fr,mélange de catégories et difficultés
+setupInfo,es,Se elegirán {count} tarjetas del banco cultural. El mismo mazo se reutiliza en las tres rondas y las partidas nuevas evitan repetir las anteriores.
+setupInfo,en,You will select {count} cards from the cultural deck. The same deck is reused over three rounds and new games avoid repeating the old deck.
+setupInfo,fr,Vous choisirez {count} cartes du paquet culturel. Le même paquet est réutilisé pendant les trois tours et les nouvelles parties évitent les cartes déjà utilisées.
+createDeck,es,Crear mazo
+createDeck,en,Create deck
+createDeck,fr,Créer le paquet
+startRound,es,Empezar ronda
+startRound,en,Start round
+startRound,fr,Commencer la ronde
+readyMobile,es,PASA EL MÓVIL
+readyMobile,en,PASS THE PHONE
+readyMobile,fr,PASSEZ LE TÉLÉPHONE
+readyStartTurn,es,Empezar turno
+readyStartTurn,en,Start turn
+readyStartTurn,fr,Commencer le tour
+reviewTurn,es,FIN DEL TURNO · RONDA
+reviewTurn,en,END OF TURN · ROUND
+reviewTurn,fr,FIN DU TOUR · RONDE
+reviewTitle,es,Revisad las tarjetas
+reviewTitle,en,Review the cards
+reviewTitle,fr,Révisez les cartes
+reviewSubtitle,es,{team} · Marca las acertadas en verde. Toca cualquier fila para corregirla.
+reviewSubtitle,en,{team} · Mark the right answers in green. Tap a row to correct it.
+reviewSubtitle,fr,{team} · Cochez les bonnes réponses en vert. Touchez une ligne pour corriger.
+reviewConfirm,es,Confirmar y entregar a {team}
+reviewConfirm,en,Confirm and pass to {team}
+reviewConfirm,fr,Confirmer et donner à {team}
+reviewConfirmRound,es,Confirmar y cerrar ronda
+reviewConfirmRound,en,Confirm and close round
+reviewConfirmRound,fr,Confirmer et fermer la ronde
+reviewConfirmFinal,es,Confirmar y finalizar partida
+reviewConfirmFinal,en,Confirm and finish game
+reviewConfirmFinal,fr,Confirmer et finir la partie
+reviewNoCard,es,No se ha marcado ninguna tarjeta en este turno.
+reviewNoCard,en,No cards were marked this turn.
+reviewNoCard,fr,Aucune carte n’a été marquée ce tour.
+confirmDiscard,es,¿Empezar una partida nueva?
+confirmDiscard,en,Start a new game?
+confirmDiscard,fr,Commencer une nouvelle partie ?
+confirmDiscardBody,es,Tienes una partida guardada en curso. Si continúas
+confirmDiscardBody,en, se perderá su marcador y progreso.
+confirmDiscardBody,fr,You have a saved game in progress. If you continue
+newGameButton,es,Nueva partida
+newGameButton,en,New game
+newGameButton,fr,Nouvelle partie
+byTeams,es,JUEGO POR EQUIPOS
+byTeams,en,TEAM GAME
+byTeams,fr,JEU PAR ÉQUIPES
+instructionsTitle,es,Cómo se juega
+instructionsTitle,en,How to play
+instructionsTitle,fr,Comment jouer
+instructionsRound,es,RONDA {n} DE 3
+instructionsRound,en,ROUND {n} OF 3
+instructionsRound,fr,ROUND {n} DE 3
+instructionsBody,es,En esta ronda
+instructionsBody,en, tu equipo habla
+instructionsBody,fr, resume o actúa. En esta ronda
+instructionDuration,es,30 segundos
+instructionDuration,en,30 seconds
+instructionDuration,fr,30 secondes
+reviewRound,es,RONDA {n}
+reviewRound,en,ROUND {n}
+reviewRound,fr,ROUND {n}
+reviewFootnote,es,{remaining} {pendingCards} en esta ronda. Los cambios se reflejan en el marcador.
+reviewFootnote,en,{remaining} {pendingCards} in this round. Changes are reflected in the scoreboard.
+reviewFootnote,fr,{remaining} {pendingCards} dans ce tour. Les changements apparaissent dans le tableau.
+reviewEditHint,es,Toca para cambiar el resultado
+reviewEditHint,en,Tap to change the result
+reviewEditHint,fr,Touchez pour changer le résultat
+cardOfCount,es,TARJETA {n} DE {total}
+cardOfCount,en,CARD {n} OF {total}
+cardOfCount,fr,CARTE {n} DE {total}
+roundComplete,es,RONDA COMPLETADA
+roundComplete,en,ROUND COMPLETE
+roundComplete,fr,ROUND COMPLETE
+resultsTitle,es,Resultado
+resultsTitle,en,Results
+resultsTitle,fr,Résultat
+finalTitle,es,FIN DE LA PARTIDA
+finalTitle,en,END OF GAME
+finalTitle,fr,FIN DE LA PARTIE
+roundBreakSubtitle,es,El mazo vuelve a empezar. Preparad la siguiente forma de jugar.
+roundBreakSubtitle,en,The deck starts again. Prepare the next way of playing.
+roundBreakSubtitle,fr,Le paquet recommence. Préparez la prochaine façon de jouer.
+nextRound,es,Ronda {n}: {round}
+nextRound,en,Round {n}: {round}
+nextRound,fr,Ronde {n}: {round}
+teamCreateIntro,es,Equipo {n}
+teamCreateIntro,en,Team {n}
+teamCreateIntro,fr,Équipe {n}
+teamIconPickerLabel,es,Elegir icono {icon} para equipo {n}
+teamIconPickerLabel,en,Choose icon {icon} for team {n}
+teamIconPickerLabel,fr,Choisir l’icône {icon} pour l’équipe {n}
+homeBack,es,Volver
+homeBack,en,Back
+homeBack,fr,Retour
+activeTeam,es,Equipo activo
+activeTeam,en,Active team
+activeTeam,fr,Équipe active
+shareSwitch,es,Idioma
+shareSwitch,en,Language
+shareSwitch,fr,Langue
+setupHeaderTitle,es,Nueva partida
+setupHeaderTitle,en,New game
+setupHeaderTitle,fr,Nouvelle partie
+setupHeight,es,No
+setupHeight,en,No
+setupHeight,fr,No
+rules,es,NORMAS
+rules,en,Rules
+rules,fr,Règles
+roundTable,es,RONDA
+roundTable,en,ROUND
+roundTable,fr,RONDE
+totalTable,es,TOTAL
+totalTable,en,TOTAL
+totalTable,fr,TOTAL
+roundBreakButton,es,Ronda {n}: {round}
+roundBreakButton,en,Round {n}: {round}
+roundBreakButton,fr,Ronde {n}: {round}
+scoreboardPoints,es,puntos
+scoreboardPoints,en,points
+scoreboardPoints,fr,points
+scoreboardCorrect,es,acertadas
+scoreboardCorrect,en,correct
+scoreboardCorrect,fr,correctes
+scoreboardPassed,es,pasadas
+scoreboardPassed,en,passed
+scoreboardPassed,fr,passées
+reviewButtonEnd,es,Confirmar y finalizar partida
+reviewButtonEnd,en,Confirm and finish game
+reviewButtonEnd,fr,Confirmer et finir la partie
+reviewButtonClose,es,Confirmar y cerrar ronda
+reviewButtonClose,en,Confirm and close round
+reviewButtonClose,fr,Confirmer et fermer la ronde
+reviewButtonPass,es,Confirmar y entregar a {team}
+reviewButtonPass,en,Confirm and pass to {team}
+reviewButtonPass,fr,Confirmer et donner à {team}
+reviewNoMark,es,No se ha marcado ninguna tarjeta en este turno.
+reviewNoMark,en,No cards were marked this turn.
+reviewNoMark,fr,Aucune carte n’a été marquée ce tour.
+createdDeck,es,Crear mazo
+createdDeck,en,Create deck
+createdDeck,fr,Créer le paquet
+pageFinalTitle,es,FIN DE LA PARTIDA
+pageFinalTitle,en,END OF GAME
+pageFinalTitle,fr,FIN DE LA PARTIE
+pageFinalSubtitle,es,"Tres rondas, un equipo campeón."
+pageFinalSubtitle,en,"Three rounds, one winning team."
+pageFinalSubtitle,fr,"Trois tours, une équipe gagnante."
+finalTie,es,Habéis quedado igualados. Una revancha lo decide todo.
+finalTie,en,You are tied. A rematch decides it all.
+finalTie,fr,Vous êtes à égalité. Un match de revanche décide tout.
+finalWinner,es,{team} gana
+finalWinner,en,{team} wins
+finalWinner,fr,{team} gagne
+teamScoreTotal,es,puntos
+teamScoreTotal,en,points
+teamScoreTotal,fr,points
+pendingCards,es,tarjetas pendientes
+pendingCards,en,remaining cards
+pendingCards,fr,cartes restantes
+roundBreakDeckInfo,es,Las mismas {count} tarjetas aparecerán en un orden nuevo.
+roundBreakDeckInfo,en,The same {count} cards will appear in a new order.
+roundBreakDeckInfo,fr,Les mêmes {count} cartes apparaîtront dans un ordre nouveau.
+passCard,es,Pasar
+passCard,en,Pass
+passCard,fr,Passer
+passCard,pt,Passar
+correctCard,es,Correcta
+correctCard,en,Correct
+correctCard,fr,Correcte
+cardStatusCorrect,es,Correcta
+cardStatusCorrect,en,Correct
+cardStatusCorrect,fr,Correcte
+cardStatusPassed,es,Pasada
+cardStatusPassed,en,Passed
+cardStatusPassed,fr,Passée
+cardCurrent,es,Sin tarjetas
+cardCurrent,en,No cards
+cardCurrent,fr,Pas de cartes
+cardCultureType,es,Cultura
+cardCultureType,en,Culture
+cardCultureType,fr,Culture
+cardCultureSubcategory,es,Tarjeta cultural
+cardCultureSubcategory,en,Cultural card
+cardCultureSubcategory,fr,Carte culturelle
+cardTimerUnit,es,seg
+cardTimerUnit,en,s
+cardTimerUnit,fr,sec
+playHeaderRound,es,Ronda {n}
+playHeaderRound,en,Round {n}
+playHeaderRound,fr,Ronde {n}
+readyScreenSubtitle,es,La tarjeta está oculta. Pulsa cuando estés preparado para empezar tus 30 segundos.
+readyScreenSubtitle,en,The card is hidden. Press when ready to start your 30 seconds.
+readyScreenSubtitle,fr,La carte est cachée. Appuyez quand vous êtes prêt à commencer vos 30 secondes.
+readyScreenButton,es,Empezar turno
+readyScreenButton,en,Start turn
+readyScreenButton,fr,Commencer le tour
+playWaitText,es,Las pasadas vuelven a salir
+playWaitText,en,Passed cards come back
+playWaitText,fr,Les cartes passées reviennent
+exitGame,es,Salir de la partida
+exitGame,en,Leave the game
+exitGame,fr,Quitter la partie
+startGameAgain,es,Iniciar partida de nuevo
+startGameAgain,en,Start the game again
+startGameAgain,fr,Relancer la partie
+startNewGame,es,Iniciar partida de nuevo
+startNewGame,en,Start the game again
+startNewGame,fr,Relancer la partie
+homeScreenTitle,es,VDOUBLE
+homeScreenTitle,en,VDOUBLE
+homeScreenTitle,fr,VDOUBLE
+screenHeaderBack,es,Volver
+screenHeaderBack,en,Back
+screenHeaderBack,fr,Retour
+setupScreenHeaderTitle,es,Nueva partida
+setupScreenHeaderTitle,en,New game
+setupScreenHeaderTitle,fr,Nouvelle partie
+instructionsHeaderTitle,es,Cómo se juega
+instructionsHeaderTitle,en,How to play
+instructionsHeaderTitle,fr,Comment jouer
+reviewHeaderTitle,es,Revisad las tarjetas
+reviewHeaderTitle,en,Review the cards
+reviewHeaderTitle,fr,Révisez les cartes
+roundBreakHeaderTitle,es,Marcador
+roundBreakHeaderTitle,en,Scoreboard
+roundBreakHeaderTitle,fr,Tableau des scores
+finalScreenHeaderTitle,es,Resultado
+finalScreenHeaderTitle,en,Results
+finalScreenHeaderTitle,fr,Résultat

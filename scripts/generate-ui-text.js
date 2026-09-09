@@ -41,10 +41,6 @@ function parseCsv(text) {
   return rows;
 }
 
-function escape(value) {
-  return JSON.stringify(String(value ?? ''));
-}
-
 function normalizeLanguage(language) {
   const normalized = String(language ?? '').trim().toLowerCase();
   if (normalized.startsWith('es')) return 'es';
@@ -54,35 +50,28 @@ function normalizeLanguage(language) {
   return 'es';
 }
 
+function escape(value) {
+  return JSON.stringify(String(value ?? ''));
+}
+
 if (!fs.existsSync(csvPath)) {
   throw new Error(`No se encuentra el CSV de textos: ${csvPath}`);
 }
 
 const rows = parseCsv(fs.readFileSync(csvPath, 'utf8').replace(/^\uFEFF/, ''));
 if (rows.length < 2) {
-  throw new Error('El CSV de textos está vacío.');
+  throw new Error('El CSV de textos estÃ¡ vacÃ­o.');
 }
 
 const [headers, ...body] = rows;
-const keyIndex = headers.findIndex((header) => header.trim() === 'key' || header.trim() === 'clave');
+const claveIndex = headers.findIndex((header) => header.trim() === 'clave');
+const keyIndex = headers.findIndex((header) => header.trim() === 'key');
 const langIndex = headers.findIndex((header) => header.trim() === 'idioma');
 const textIndex = headers.findIndex((header) => header.trim() === 'texto');
 
-// Preferred new layout: clave,idioma,texto
-if (langIndex >= 0 && textIndex >= 0 && keyIndex >= 0) {
-  const uiText = {};
-  for (const row of body) {
-    const key = String(row[keyIndex] ?? '').trim();
-    const language = String(row[langIndex] ?? '').trim();
-    const text = String(row[textIndex] ?? '').trim();
-    if (!key || !language || !text) continue;
-
-    const normalizedLanguage = normalizeLanguage(language);
-    if (!uiText[normalizedLanguage]) uiText[normalizedLanguage] = {};
-    uiText[normalizedLanguage][key] = text;
-  }
-
-  const languages = ['es', 'en', 'fr', 'pt'].filter((lang) => uiText[lang]);
+const writeUiText = (languages, uiText) => {
+  languages = ['es', 'en', 'fr', 'pt'];
+  for (const language of languages) uiText[language] = { ...uiText.es, ...uiText[language] };
   const lines = [];
   lines.push('// Auto-generated from data/ui_text.csv. Do not edit by hand.');
   lines.push("export type LanguageCode = 'es' | 'en' | 'fr' | 'pt';");
@@ -115,6 +104,22 @@ if (langIndex >= 0 && textIndex >= 0 && keyIndex >= 0) {
 
   fs.writeFileSync(outputPath, `${lines.join('\n')}\n`);
   console.log(`Generado ${outputPath} con ${body.length} claves de texto.`);
+};
+
+if (langIndex >= 0 && textIndex >= 0 && (claveIndex >= 0 || keyIndex >= 0)) {
+  const uiText = {};
+  for (const row of body) {
+    const key = String(row[claveIndex >= 0 ? claveIndex : keyIndex] ?? '').trim();
+    const language = String(row[langIndex] ?? '').trim();
+    const text = String(row[textIndex] ?? '').trim();
+    if (!key || !language || !text) continue;
+
+    const normalizedLanguage = normalizeLanguage(language);
+    if (!uiText[normalizedLanguage]) uiText[normalizedLanguage] = {};
+    uiText[normalizedLanguage][key] = text;
+  }
+
+  writeUiText(['es', 'en', 'fr', 'pt'].filter((language) => uiText[language]), uiText);
   process.exit(0);
 }
 
@@ -125,55 +130,22 @@ if (keyIndex >= 0) {
     .filter(([name]) => name !== 'key' && name !== 'clave')
     .reduce((acc, [language, index]) => ({ ...acc, [language]: index }), {});
 
-  const languages = Object.keys(languageIndexes);
-  const uiText = languages.reduce((acc, lang) => {
-    acc[lang] = {};
-    return acc;
-  }, {});
+  const uiText = {};
+  for (const lang of Object.keys(languageIndexes)) {
+    uiText[normalizeLanguage(lang)] = {};
+  }
 
   for (const row of body) {
     const key = String(row[keyIndex] ?? '').trim();
     if (!key) continue;
-    for (const lang of languages) {
-      const index = languageIndexes[lang];
-      if (index === undefined) continue;
+    for (const lang of Object.keys(languageIndexes)) {
       const normalized = normalizeLanguage(lang);
-      uiText[normalized][key] = String(row[index] ?? '').trim();
+      uiText[normalized][key] = String(row[languageIndexes[lang]] ?? '').trim();
     }
   }
 
-  const lines = [];
-  lines.push('// Auto-generated from data/ui_text.csv. Do not edit by hand.');
-  lines.push("export type LanguageCode = 'es' | 'en' | 'fr' | 'pt';");
-  lines.push('');
-  lines.push('export const LANGUAGE_OPTIONS = [');
-  lines.push("  { code: 'es' as const, label: 'ES' },");
-  lines.push("  { code: 'en' as const, label: 'EN' },");
-  lines.push("  { code: 'fr' as const, label: 'FR' },");
-  lines.push("  { code: 'pt' as const, label: 'PT' },");
-  lines.push('] as const;');
-  lines.push('');
-  lines.push('export const defaultLanguage: LanguageCode = "es";');
-  lines.push('');
-  lines.push('export const UI_TEXT: Record<LanguageCode, Record<string, string>> = {');
-  for (const lang of ['es', 'en', 'fr', 'pt']) {
-    if (!uiText[lang]) continue;
-    lines.push(`  ${JSON.stringify(lang)}: {`);
-    const keys = Object.keys(uiText[lang]);
-    for (const key of keys) {
-      lines.push(`    ${JSON.stringify(key)}: ${escape(uiText[lang][key])},`);
-    }
-    lines.push('  },');
-  }
-  lines.push('};');
-  lines.push('');
-  lines.push('export function getText(language: LanguageCode, key: string) {');
-  lines.push('  return UI_TEXT[language]?.[key] ?? UI_TEXT.es[key] ?? key;');
-  lines.push('}');
-
-  fs.writeFileSync(outputPath, `${lines.join('\n')}\n`);
-  console.log(`Generado ${outputPath} con ${body.length} claves de texto.`);
+  writeUiText(['es', 'en', 'fr', 'pt'].filter((language) => uiText[language]), uiText);
   process.exit(0);
 }
 
-throw new Error('El CSV de textos debe tener una de las columnas soportadas: key/es/en/fr o clave/idioma/texto.');
+throw new Error('El CSV de textos debe tener una de las columnas soportadas: key/es/en/fr o clave/idioma/texto.');

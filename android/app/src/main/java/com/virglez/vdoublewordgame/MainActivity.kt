@@ -1,4 +1,4 @@
-package com.anonymous.juegotresrondas
+package com.virglez.vdoublewordgame
 
 import android.os.Build
 import android.os.Bundle

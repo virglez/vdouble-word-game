@@ -1,4 +1,4 @@
 <resources>
-  <string name="app_name">VDOUBLE</string>
+  <string name="app_name">VDOUBLE Word Game</string>
   <string name="expo_system_ui_user_interface_style" translatable="false">dark</string>
 </resources>
