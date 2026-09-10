@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import {
   ActivityIndicator,
+  Image,
   Modal,
   Alert,
   KeyboardAvoidingView,
@@ -113,32 +114,20 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   const { state, hasSavedGame, startSetup, continueGame, setLanguage } = useGame();
   const t = UI_TEXT[state.language] ?? UI_TEXT.es;
 
+  useEffect(() => {
+    if (state.language !== 'es') setLanguage('es');
+  }, [setLanguage, state.language]);
+
   return (
     <ScrollView contentContainerStyle={styles.homeScroll} showsVerticalScrollIndicator={false}>
       <View style={styles.languageSelectorRow}>
-        <Text style={styles.languageSelectorLabel}>{t.language}</Text>
-        <View style={styles.languageSelectorPillGroup}>
-          {LANGUAGE_OPTIONS.map((option) => (
-            <Pressable
-              key={option.code}
-              accessibilityRole="button"
-              onPress={() => press(() => setLanguage(option.code))}
-              style={({ pressed }) => [
-                styles.languageSelectorPill,
-                state.language === option.code && styles.languageSelectorPillActive,
-                pressed && styles.pressed,
-              ]}
-            >
-              <Text style={[styles.languageSelectorText, state.language === option.code && styles.languageSelectorTextActive]}>{option.label}</Text>
-            </Pressable>
-          ))}
-        </View>
+        <View style={[styles.languageSelectorPill, styles.languageSelectorPillActive]}><Text style={styles.languageSelectorTextActive}>◉ ES⌄</Text></View>
+        <Feather name="settings" size={24} color={BRAND.white} />
       </View>
       <View style={styles.homeHero}>
-        <DecabloLogo />
-        <Text style={styles.claim}>{t.decabloClaim}</Text>
+        <Image source={require('@/assets/reference-parts/homeBrand.png')} resizeMode="contain" style={styles.homeBrandImage} />
         <View accessible accessibilityLabel={t.cardIllustration}>
-          <RoundCards labels={[t.decabloRound1, t.decabloRound2, t.decabloRound3]} rounds={[t.rulesRound1, t.rulesRound2, t.rulesRound3]} />
+          <Image source={require('@/assets/reference-parts/homeCards.png')} resizeMode="contain" style={styles.homeRoundCardsImage} />
         </View>
       </View>
 
@@ -463,7 +452,7 @@ function ReadyScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   const t = UI_TEXT[state.language] ?? UI_TEXT.es;
   return (
     <ScrollView contentContainerStyle={styles.readyScroll}>
-      <PartyArt kind="phone" color={ROUND_COLORS[state.roundIndex]} />
+      <Image source={require('@/assets/reference-parts/phone.png')} resizeMode="contain" style={styles.referenceArt} />
       <View style={styles.handoffCard}>
       <Text style={styles.handoffHeadline}>{t.readyMobile}</Text>
       <Text style={styles.handoffTeamLabel}>{t.teamCreateIntro.replace('{n}', String(state.currentTeam + 1))}</Text>
@@ -596,7 +585,7 @@ function RoundBreakScreen({ styles }: { styles: ReturnType<typeof createStyles> 
       <Text style={styles.pageTitle}>{[t.decabloRound1, t.decabloRound2, t.decabloRound3][state.roundIndex]}</Text>
       <Text style={styles.pageSubtitle}>{t.roundBreakSubtitle}</Text>
       <RoundScoreList styles={styles} roundIndex={state.roundIndex} />
-      <PartyArt kind="repeat" color={ROUND_COLORS[state.roundIndex]} />
+      <Image source={require('@/assets/reference-parts/repeat.png')} resizeMode="contain" style={styles.referenceArt} />
       <View style={styles.repeatMessage}>
         <Text style={styles.repeatTitle}>{t.decabloSameDeck}</Text>
         <Text style={styles.pageSubtitle}>{t.roundBreakDeckInfo.replace('{count}', String(state.deck.length))}</Text>
@@ -674,7 +663,7 @@ function FinalScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
     <ScrollView contentContainerStyle={styles.pageScroll}>
       <ScreenHeader styles={styles} title={t.finalScreenHeaderTitle} />
       <View style={styles.finalHero}>
-        <PartyArt kind="award" color={BRAND.yellow} />
+        <Image source={require('@/assets/reference-parts/award.png')} resizeMode="contain" style={styles.referenceArt} />
         <Text style={styles.pageEyebrow}>{t.finalTitle}</Text>
         <Text style={styles.finalTitle}>{winner === null ? t.finalTie : t.finalWinner.replace('{team}', state.teams[winner].name)}</Text>
         <Text style={styles.pageSubtitle}>{winner === null ? t.finalTieSubtitle : t.pageFinalSubtitle}</Text>

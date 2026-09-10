@@ -6,6 +6,9 @@ type Palette = ReturnType<typeof useColors>;
 export function createStyles(colors: Palette, roundColor: string = BRAND.yellow) {
   return StyleSheet.create({
     homeHero: { alignItems: 'stretch' },
+    homeBrandImage: { width: '100%', height: 148, marginTop: 2 },
+    homeRoundCardsImage: { width: '100%', height: 188, marginTop: -8, marginBottom: -4 },
+    referenceArt: { width: '100%', height: 180, alignSelf: 'center' },
     claim: { textAlign: 'center', fontFamily: 'Inter_900Black', fontSize: 18, letterSpacing: 2.2, color: BRAND.white },
     teamCards: { flexDirection: 'row', gap: 10 },
     teamCard: { flex: 1, minWidth: 0, padding: 11, borderRadius: 16, backgroundColor: colors.card, borderTopWidth: 4 },
@@ -45,7 +48,7 @@ export function createStyles(colors: Palette, roundColor: string = BRAND.yellow)
     reviewSummaryNote: { fontFamily: 'Inter_500Medium', fontSize: 13, color: BRAND.navy },
     reviewFooter: { width: '100%', maxWidth: 560, alignSelf: 'center', paddingHorizontal: 24, paddingVertical: 16, backgroundColor: colors.background },
     reviewPrimaryButton: { backgroundColor: BRAND.yellow },
-    languageSelectorRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', gap: 12, marginTop: 8 },
+    languageSelectorRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 12, marginTop: 8 },
     languageSelectorLabel: { display: 'none' },
     languageSelectorPillGroup: { flexDirection: 'row', gap: 6, alignItems: 'center' },
     languageSelectorPill: { minWidth: 34, height: 30, paddingHorizontal: 8, borderRadius: 15, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.card, borderWidth: 1, borderColor: colors.border },
