@@ -14,7 +14,7 @@
       "package": "com.virglez.vdoublewordgame"
     },
     "web": {
-      "favicon": "./assets/images/decablo-favicon.png"
+      "favicon": "./assets/images/icon.png"
     },
     "plugins": [
       "expo-router"
