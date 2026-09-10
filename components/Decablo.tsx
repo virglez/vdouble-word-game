@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 import { Feather, FontAwesome } from '@expo/vector-icons';
 import { ROUND_COLORS, BRAND } from '@/constants/colors';
 
@@ -23,11 +23,14 @@ export function DecabloLogo({ compact = false }: { compact?: boolean }) {
 }
 
 export function RoundCards({ labels, rounds }: { labels: string[]; rounds: string[] }) {
+  const art = [
+    require('@/assets/brand/describe.png'),
+    require('@/assets/brand/one-word-clean.png'),
+    require('@/assets/brand/act-clean.png'),
+  ];
   return <View style={s.cards}>
-    {labels.map((label, index) => <View key={index} style={[s.roundCard, { backgroundColor: ROUND_COLORS[index], transform: [{ rotate: `${(index - 1) * 7}deg` }, { translateY: index === 1 ? -10 : 0 }] }]}>
-      <Text style={s.roundNumber}>{rounds[index]}</Text>
-      <Feather name={index === 1 ? 'sun' : roundIcons[index]} size={34} color={BRAND.navy} />
-      <Text style={s.roundTitle}>{label.toUpperCase()}</Text>
+    {labels.map((label, index) => <View key={index} style={[s.roundCard, { transform: [{ rotate: `${(index - 1) * 7}deg` }, { translateY: index === 1 ? -10 : 0 }] }]}>
+      <Image source={art[index]} resizeMode="contain" style={s.roundCardArt} accessible accessibilityLabel={label} />
     </View>)}
   </View>;
 }
@@ -59,7 +62,8 @@ const s = StyleSheet.create({
   badge: { alignSelf: 'center', flexDirection: 'row', alignItems: 'center', gap: 8, borderRadius: 30, paddingHorizontal: 16, paddingVertical: 10 },
   badgeText: { color: BRAND.navy, fontFamily: 'Inter_700Bold', fontSize: 12, flexShrink: 1 },
   cards: { flexDirection: 'row', gap: 8, paddingVertical: 22, marginVertical: 4 },
-  roundCard: { flex: 1, minWidth: 0, minHeight: 126, borderRadius: 14, paddingVertical: 10, paddingHorizontal: 5, alignItems: 'center', justifyContent: 'space-between', gap: 5, borderBottomWidth: 5, borderBottomColor: '#00000025' },
+  roundCard: { flex: 1, minWidth: 0, height: 148, alignItems: 'center', justifyContent: 'center' },
+  roundCardArt: { width: '122%', height: '122%' },
   roundNumber: { fontFamily: 'Inter_700Bold', fontSize: 8, color: BRAND.navy, textTransform: 'uppercase', textAlign: 'center' },
   roundTitle: { fontFamily: 'Inter_900Black', fontSize: 10, color: BRAND.navy, textAlign: 'center' },
   art: { height: 192, width: '100%', alignItems: 'center', justifyContent: 'center', marginVertical: 12 },

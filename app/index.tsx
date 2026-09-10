@@ -125,9 +125,10 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
         <Feather name="settings" size={24} color={BRAND.white} />
       </View>
       <View style={styles.homeHero}>
-        <Image source={require('@/assets/reference-parts/homeBrand.png')} resizeMode="contain" style={styles.homeBrandImage} />
+        <Image source={require('@/assets/brand/logo-lockup.png')} resizeMode="contain" style={styles.homeBrandImage} />
+        <Text style={styles.claim}>{t.decabloClaim}</Text>
         <View accessible accessibilityLabel={t.cardIllustration}>
-          <Image source={require('@/assets/reference-parts/homeCards.png')} resizeMode="contain" style={styles.homeRoundCardsImage} />
+          <RoundCards labels={[t.decabloRound1, t.decabloRound2, t.decabloRound3]} rounds={[t.rulesRound1, t.rulesRound2, t.rulesRound3]} />
         </View>
       </View>
 

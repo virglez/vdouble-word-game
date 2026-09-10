@@ -6,7 +6,7 @@ type Palette = ReturnType<typeof useColors>;
 export function createStyles(colors: Palette, roundColor: string = BRAND.yellow) {
   return StyleSheet.create({
     homeHero: { alignItems: 'stretch' },
-    homeBrandImage: { width: '100%', height: 148, marginTop: 2 },
+    homeBrandImage: { width: '100%', height: 188, marginTop: 4 },
     homeRoundCardsImage: { width: '100%', height: 188, marginTop: -8, marginBottom: -4 },
     referenceArt: { width: '100%', height: 180, alignSelf: 'center' },
     claim: { textAlign: 'center', fontFamily: 'Inter_900Black', fontSize: 18, letterSpacing: 2.2, color: BRAND.white },

@@ -4,7 +4,7 @@
     "slug": "vdouble-word-game",
     "version": "1.1.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/brand/app-icon.png",
     "scheme": "vdouble-word-game",
     "userInterfaceStyle": "dark",
     "ios": {
@@ -14,7 +14,7 @@
       "package": "com.virglez.vdoublewordgame"
     },
     "web": {
-      "favicon": "./assets/reference-parts/favicon.png"
+      "favicon": "./assets/brand/app-icon.png"
     },
     "plugins": [
       "expo-router"
