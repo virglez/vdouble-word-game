@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import {
   ActivityIndicator,
+  ImageBackground,
   Modal,
   Alert,
   KeyboardAvoidingView,
@@ -26,6 +27,73 @@ const cardCountOptions: Array<{ value: CardCount; note: string }> = [
   { value: 30, note: 'cardCountStandard' },
   { value: 40, note: 'cardCountLong' },
 ];
+
+const REFERENCE_SCREENS = {
+  home: require('@/assets/reference/home.png'),
+  setup: require('@/assets/reference/setup.png'),
+  instructions: require('@/assets/reference/instructions.png'),
+  ready: require('@/assets/reference/ready.png'),
+  play: require('@/assets/reference/play.png'),
+  review: require('@/assets/reference/review.png'),
+  roundBreak: require('@/assets/reference/roundBreak.png'),
+  final: require('@/assets/reference/final.png'),
+} as const;
+
+function ReferenceScreen({ styles, screen, children }: { styles: ReturnType<typeof createStyles>; screen: keyof typeof REFERENCE_SCREENS; children: React.ReactNode }) {
+  return <View style={styles.referenceFrame}>
+    <ImageBackground source={REFERENCE_SCREENS[screen]} resizeMode="stretch" style={styles.referenceImage}>
+      {children}
+    </ImageBackground>
+  </View>;
+}
+
+function ReferenceSetup({ styles }: { styles: ReturnType<typeof createStyles> }) {
+  const { state, updateTeamName, setCardCount, createGame, isCreating, goHome } = useGame();
+  const t = UI_TEXT[state.language] ?? UI_TEXT.es;
+  return <ReferenceScreen styles={styles} screen="setup">
+    <Pressable testID="back-button" accessibilityRole="button" accessibilityLabel={t.screenHeaderBack} onPress={goHome} style={styles.referenceBack} />
+    <TextInput testID="team-0-input" value={state.teams[0].name} onChangeText={(value) => updateTeamName(0, value)} style={styles.referenceTeamOneInput} />
+    <TextInput testID="team-1-input" value={state.teams[1].name} onChangeText={(value) => updateTeamName(1, value)} style={styles.referenceTeamTwoInput} />
+    {[20, 30, 40].map((value, index) => <Pressable key={value} testID={`card-count-${value}`} accessibilityRole="button" onPress={() => press(() => setCardCount(value as CardCount))} style={[styles.referenceCardCount, { left: `${8 + index * 30}%` }]} />)}
+    <Pressable testID="create-game-button" accessibilityRole="button" disabled={isCreating} onPress={() => { void createGame().catch(() => Alert.alert(t.createGameError)); }} style={styles.referenceSetupStart} />
+  </ReferenceScreen>;
+}
+
+function ReferenceInstructions({ styles }: { styles: ReturnType<typeof createStyles> }) {
+  const { startRound } = useGame();
+  return <ReferenceScreen styles={styles} screen="instructions"><Pressable testID="start-round-button" accessibilityRole="button" onPress={() => press(startRound)} style={styles.referenceBottomButton} /></ReferenceScreen>;
+}
+
+function ReferenceReady({ styles }: { styles: ReturnType<typeof createStyles> }) {
+  const { continueTurn } = useGame();
+  return <ReferenceScreen styles={styles} screen="ready"><Pressable accessibilityRole="button" onPress={() => press(continueTurn)} style={styles.referenceBottomButton} /></ReferenceScreen>;
+}
+
+function ReferencePlay({ styles }: { styles: ReturnType<typeof createStyles> }) {
+  const { markCorrect, passCard, goHome } = useGame();
+  const { state } = useGame();
+  const t = UI_TEXT[state.language] ?? UI_TEXT.es;
+  return <ReferenceScreen styles={styles} screen="play">
+    <Pressable testID="exit-play-button" accessibilityRole="button" accessibilityLabel={t.exitGame} onPress={() => press(goHome)} style={styles.referenceExit} />
+    <Pressable testID="pass-card-button" accessibilityRole="button" onPress={() => press(passCard)} style={styles.referencePass} />
+    <Pressable testID="correct-card-button" accessibilityRole="button" onPress={() => press(markCorrect)} style={styles.referenceCorrect} />
+  </ReferenceScreen>;
+}
+
+function ReferenceReview({ styles }: { styles: ReturnType<typeof createStyles> }) {
+  const { confirmReview } = useGame();
+  return <ReferenceScreen styles={styles} screen="review"><Pressable accessibilityRole="button" onPress={() => press(confirmReview)} style={styles.referenceBottomButton} /></ReferenceScreen>;
+}
+
+function ReferenceRoundBreak({ styles }: { styles: ReturnType<typeof createStyles> }) {
+  const { startRound } = useGame();
+  return <ReferenceScreen styles={styles} screen="roundBreak"><Pressable testID="next-round-button" accessibilityRole="button" onPress={() => press(startRound)} style={styles.referenceBottomButton} /></ReferenceScreen>;
+}
+
+function ReferenceFinal({ styles }: { styles: ReturnType<typeof createStyles> }) {
+  const { startSetup } = useGame();
+  return <ReferenceScreen styles={styles} screen="final"><Pressable testID="return-home-button" accessibilityRole="button" onPress={() => press(startSetup)} style={styles.referenceBottomButton} /></ReferenceScreen>;
+}
 
 function press(action: () => void) {
   Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => undefined);
@@ -76,19 +144,19 @@ function AppContent() {
   const content = (() => {
     switch (game.state.screen) {
       case 'setup':
-        return <SetupScreen styles={styles} />;
+        return <ReferenceSetup styles={styles} />;
       case 'instructions':
-        return <InstructionsScreen styles={styles} />;
+        return <ReferenceInstructions styles={styles} />;
       case 'play':
-        return <PlayScreen styles={styles} seconds={seconds} />;
+        return <ReferencePlay styles={styles} />;
       case 'review':
-        return <ReviewScreen styles={styles} />;
+        return <ReferenceReview styles={styles} />;
       case 'ready':
-        return <ReadyScreen styles={styles} />;
+        return <ReferenceReady styles={styles} />;
       case 'roundBreak':
-        return <RoundBreakScreen styles={styles} />;
+        return <ReferenceRoundBreak styles={styles} />;
       case 'final':
-        return <FinalScreen styles={styles} />;
+        return <ReferenceFinal styles={styles} />;
       case 'home':
       default:
         return <HomeScreen styles={styles} />;
@@ -112,6 +180,11 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   const colors = useColors();
   const { state, hasSavedGame, startSetup, continueGame, setLanguage } = useGame();
   const t = UI_TEXT[state.language] ?? UI_TEXT.es;
+
+  return <ReferenceScreen styles={styles} screen="home">
+    <Pressable testID="new-game-button" accessibilityRole="button" onPress={() => (hasSavedGame ? confirmDiscardSavedGame(startSetup, t) : press(startSetup))} style={styles.referenceHomeStart} />
+    {hasSavedGame ? <Pressable testID="continue-game-button" accessibilityRole="button" onPress={() => press(continueGame)} style={styles.referenceHomeContinue} /> : null}
+  </ReferenceScreen>;
 
   return (
     <ScrollView contentContainerStyle={styles.homeScroll} showsVerticalScrollIndicator={false}>
