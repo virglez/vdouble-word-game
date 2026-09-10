@@ -226,12 +226,7 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
       </View>
 
       <View style={styles.setupHeadingWrap}>
-        <Text style={styles.setupTitle}>PREPARA{`\n`}LA PARTIDA</Text>
-        <View style={styles.setupConfettiRow}>
-          <View style={[styles.setupConfetti, { backgroundColor: BRAND.coral, transform: [{ rotate: '-38deg' }] }]} />
-          <View style={[styles.setupConfetti, { backgroundColor: BRAND.yellow, transform: [{ rotate: '22deg' }] }]} />
-          <View style={[styles.setupConfetti, { backgroundColor: BRAND.mint, transform: [{ rotate: '-48deg' }] }]} />
-        </View>
+        <Image source={require('@/assets/branding/setup-title.png')} resizeMode="contain" style={styles.setupTitleArt} accessibilityLabel="Prepara la partida" />
       </View>
 
       <View style={styles.setupTeamCards}>
@@ -446,6 +441,7 @@ function ReviewScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
         <Feather name="arrow-left" size={22} color={BRAND.white} />
       </Pressable>
       <ScrollView contentContainerStyle={styles.pageScroll}>
+        <Image source={require('@/assets/branding/decablo-logo.png')} resizeMode="contain" style={styles.screenBrandLogo} accessibilityLabel="DECABLO by VDOUBLE" />
         <Image source={require('@/assets/reference-parts/tiempo.png')} resizeMode="contain" style={styles.timeUpArt} />
         <Text style={styles.pageSubtitle}>{t.reviewTitle}</Text>
         <Text style={styles.pageSubtitle}>{t.reviewSubtitle.replace('{team}', state.teams[state.currentTeam].name)}</Text>
@@ -785,6 +781,7 @@ function FinalScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
       <Pressable accessibilityRole="button" accessibilityLabel="Volver" onPress={() => press(goHome)} style={styles.backFloating}>
         <Feather name="arrow-left" size={22} color={BRAND.white} />
       </Pressable>
+      <Image source={require('@/assets/branding/decablo-logo.png')} resizeMode="contain" style={styles.screenBrandLogo} accessibilityLabel="DECABLO by VDOUBLE" />
       <Image source={require('@/assets/final/celebration.png')} resizeMode="contain" style={styles.finalCelebrationArt} />
       <View style={styles.finalResultPanel}>
         <Text style={styles.finalResultTitle}>{winner === null ? t.finalTie : t.finalWinner.replace('{team}', state.teams[winner].name)}</Text>
