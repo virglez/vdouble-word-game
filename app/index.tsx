@@ -46,10 +46,10 @@ function confirmDiscardSavedGame(startNew: () => void, t: Record<string, string>
   );
 }
 
-const TEAM_ICONS = ['🌙', '⚡', '🔥', '🌤️', '🌎', '🎯', '🛸', '⚙️', '🐺', '⭐', '🌈', '🎮'];
+const TEAM_ICONS = ['☀️', '⚡', '🔥', '⭐', '🎯', '🎮', '🌙', '🌎', '🛸', '⚙️', '🐺', '🌈'];
 const TEAM_ICON_GLYPHS: React.ComponentProps<typeof Feather>['name'][] = [
-  'moon', 'zap', 'activity', 'sun', 'globe', 'target',
-  'send', 'settings', 'wind', 'star', 'cloud-rain', 'monitor',
+  'sun', 'zap', 'activity', 'star', 'target', 'monitor',
+  'moon', 'globe', 'send', 'settings', 'wind', 'cloud-rain',
 ];
 
 function AppContent() {

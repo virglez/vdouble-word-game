@@ -30,8 +30,8 @@ export function resetForSetup(state: GameState): GameState {
     usedWords: state.usedWords,
     language: state.language,
     teams: [
-      { customName: state.teams[0].customName, name: state.teams[0].name, score: 0, icon: state.teams[0].icon },
-      { customName: state.teams[1].customName, name: state.teams[1].name, score: 0, icon: state.teams[1].icon },
+      { customName: state.teams[0].customName, customIcon: state.teams[0].customIcon, name: state.teams[0].name, score: 0, icon: state.teams[0].customIcon ? state.teams[0].icon : '☀️' },
+      { customName: state.teams[1].customName, customIcon: state.teams[1].customIcon, name: state.teams[1].name, score: 0, icon: state.teams[1].customIcon ? state.teams[1].icon : '🌙' },
     ],
   };
 }
@@ -44,8 +44,8 @@ export function returnHome(state: GameState): GameState {
     usedWords: state.usedWords,
     language: state.language,
     teams: [
-      { customName: state.teams[0].customName, name: state.teams[0].name, score: 0, icon: state.teams[0].icon },
-      { customName: state.teams[1].customName, name: state.teams[1].name, score: 0, icon: state.teams[1].icon },
+      { customName: state.teams[0].customName, customIcon: state.teams[0].customIcon, name: state.teams[0].name, score: 0, icon: state.teams[0].icon },
+      { customName: state.teams[1].customName, customIcon: state.teams[1].customIcon, name: state.teams[1].name, score: 0, icon: state.teams[1].icon },
     ],
   };
 }
@@ -103,6 +103,7 @@ export type Screen =
 
 export type Team = {
   customName?: boolean;
+  customIcon?: boolean;
   name: string;
   score: number;
   icon: string;
@@ -131,8 +132,8 @@ export const initialState: GameState = {
   screen: 'home',
   cardCount: 20,
   teams: [
-    { name: 'Equipo Sol', score: 0, icon: '🌙' },
-    { name: 'Equipo Luna', score: 0, icon: '⚡' },
+    { name: 'Equipo Sol', score: 0, icon: '☀️' },
+    { name: 'Equipo Luna', score: 0, icon: '🌙' },
   ],
   deck: [],
   remaining: [],

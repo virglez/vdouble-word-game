@@ -54,7 +54,7 @@ function useGameValue() {
     }),
     updateTeamIcon: (team: 0 | 1, icon: string) => setState(current => {
       const teams: GameState['teams'] = [...current.teams];
-      teams[team] = { ...teams[team], icon };
+      teams[team] = { ...teams[team], icon, customIcon: true };
       return { ...current, teams };
     }),
     setLanguage: (language: LanguageCode) => setState(current => changeLanguage(current, language)),
@@ -69,8 +69,8 @@ function useGameValue() {
         await new Promise<void>(resolve => requestAnimationFrame(() => setTimeout(resolve, 80)));
         const deck = buildDeck(current.cardCount, current.usedWords, current.language);
         const teams: GameState['teams'] = [
-          { customName: current.teams[0].customName, name: current.teams[0].name.trim() || UI_TEXT[current.language].teamCreateIntro.replace('{n}', '1'), score: 0, icon: current.teams[0].icon || '🌙' },
-          { customName: current.teams[1].customName, name: current.teams[1].name.trim() || UI_TEXT[current.language].teamCreateIntro.replace('{n}', '2'), score: 0, icon: current.teams[1].icon || '⚡' },
+          { customName: current.teams[0].customName, customIcon: current.teams[0].customIcon, name: current.teams[0].name.trim() || UI_TEXT[current.language].teamCreateIntro.replace('{n}', '1'), score: 0, icon: current.teams[0].icon || '☀️' },
+          { customName: current.teams[1].customName, customIcon: current.teams[1].customIcon, name: current.teams[1].name.trim() || UI_TEXT[current.language].teamCreateIntro.replace('{n}', '2'), score: 0, icon: current.teams[1].icon || '🌙' },
         ];
         const next: GameState = { ...resetRound({ ...reset(current), deck, teams,
           usedWords: Array.from(new Set([...current.usedWords, ...deck.map(card => normalizedWord(card.palabra))])) }, 0, 0),
