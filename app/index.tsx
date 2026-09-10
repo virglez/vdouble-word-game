@@ -390,7 +390,7 @@ function InstructionsScreen({ styles }: { styles: ReturnType<typeof createStyles
   ][state.roundIndex] ?? t.rulesDescription1;
 
   return (
-    <ScrollView contentContainerStyle={state.roundIndex <= 1 ? styles.instructionsRoundOneScroll : styles.pageScroll}>
+    <ScrollView contentContainerStyle={styles.instructionsRoundOneScroll}>
       <Pressable accessibilityRole="button" accessibilityLabel="Volver" onPress={() => press(goHome)} style={styles.backFloating}>
         <Feather name="arrow-left" size={22} color={BRAND.white} />
       </Pressable>
@@ -400,8 +400,8 @@ function InstructionsScreen({ styles }: { styles: ReturnType<typeof createStyles
         style={styles.instructionsLogo}
         accessibilityLabel="DECABLO by VDOUBLE"
       />
-      {state.roundIndex <= 1 ? (
-        <Image source={state.roundIndex === 0 ? require('@/assets/rounds/round1-rules.png') : require('@/assets/rounds/round2-rules.png')} resizeMode="contain" style={styles.instructionsRoundOneArt} />
+      {state.roundIndex <= 2 ? (
+        <Image source={state.roundIndex === 0 ? require('@/assets/rounds/round1-rules.png') : state.roundIndex === 1 ? require('@/assets/rounds/round2-rules.png') : require('@/assets/rounds/round3-rules.png')} resizeMode="contain" style={styles.instructionsRoundOneArt} />
       ) : (
         <>
           <Text style={styles.roundInstructionLabel}>{t.instructionsRound.replace('{n}', String(roundNumber))}</Text>
