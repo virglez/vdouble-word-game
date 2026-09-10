@@ -15,7 +15,9 @@ export function RoundBadge({ index, label }: { index: number; label: string }) {
 
 export function DecabloLogo({ compact = false }: { compact?: boolean }) {
   return <View style={s.brand}>
-    <Text style={[s.logo, compact && s.logoSmall]}>DECABLO</Text>
+    <Text style={[s.logo, compact && s.logoSmall]}>
+      <Text style={s.logoLight}>DEC</Text><Text style={s.logoAccent}>A</Text><Text style={s.logoLight}>BLO</Text><Text style={s.logoQuestion}>?</Text>
+    </Text>
     <Text style={s.signature}>by VDOUBLE</Text>
   </View>;
 }
@@ -24,7 +26,7 @@ export function RoundCards({ labels, rounds }: { labels: string[]; rounds: strin
   return <View style={s.cards}>
     {labels.map((label, index) => <View key={index} style={[s.roundCard, { backgroundColor: ROUND_COLORS[index], transform: [{ rotate: `${(index - 1) * 7}deg` }, { translateY: index === 1 ? -10 : 0 }] }]}>
       <Text style={s.roundNumber}>{rounds[index]}</Text>
-      <Feather name={roundIcons[index]} size={34} color={BRAND.navy} />
+      <Feather name={index === 1 ? 'sun' : roundIcons[index]} size={34} color={BRAND.navy} />
       <Text style={s.roundTitle}>{label.toUpperCase()}</Text>
     </View>)}
   </View>;
@@ -48,15 +50,18 @@ export function PartyArt({ kind, color }: { kind: 'phone' | 'award' | 'repeat'; 
 
 const s = StyleSheet.create({
   brand: { alignItems: 'center', paddingVertical: 16 },
-  logo: { fontFamily: 'Inter_900Black', fontSize: 52, letterSpacing: -3, color: BRAND.yellow, textShadowColor: '#806717', textShadowOffset: { width: 0, height: 4 }, textShadowRadius: 0 },
+  logo: { fontFamily: 'Inter_900Black', fontSize: 54, letterSpacing: -5, textShadowColor: '#00000045', textShadowOffset: { width: 0, height: 3 }, textShadowRadius: 0 },
   logoSmall: { fontSize: 21, letterSpacing: -1, textShadowOffset: { width: 0, height: 1 } },
+  logoLight: { color: BRAND.white },
+  logoAccent: { color: BRAND.yellow },
+  logoQuestion: { color: BRAND.white, fontSize: 30, letterSpacing: -2, verticalAlign: 'top' },
   signature: { fontFamily: 'Inter_700Bold', fontSize: 10, letterSpacing: 2, color: BRAND.white, marginTop: 5 },
   badge: { alignSelf: 'center', flexDirection: 'row', alignItems: 'center', gap: 8, borderRadius: 30, paddingHorizontal: 16, paddingVertical: 10 },
   badgeText: { color: BRAND.navy, fontFamily: 'Inter_700Bold', fontSize: 12, flexShrink: 1 },
-  cards: { flexDirection: 'row', gap: 5, paddingVertical: 30, marginVertical: 8 },
-  roundCard: { flex: 1, minWidth: 0, minHeight: 160, borderRadius: 20, paddingVertical: 16, paddingHorizontal: 8, alignItems: 'center', justifyContent: 'space-between', gap: 14, borderBottomWidth: 5, borderBottomColor: '#00000025' },
-  roundNumber: { fontFamily: 'Inter_700Bold', fontSize: 9, color: BRAND.navy, textTransform: 'uppercase', textAlign: 'center' },
-  roundTitle: { fontFamily: 'Inter_900Black', fontSize: 12, color: BRAND.navy, textAlign: 'center' },
+  cards: { flexDirection: 'row', gap: 8, paddingVertical: 22, marginVertical: 4 },
+  roundCard: { flex: 1, minWidth: 0, minHeight: 126, borderRadius: 14, paddingVertical: 10, paddingHorizontal: 5, alignItems: 'center', justifyContent: 'space-between', gap: 5, borderBottomWidth: 5, borderBottomColor: '#00000025' },
+  roundNumber: { fontFamily: 'Inter_700Bold', fontSize: 8, color: BRAND.navy, textTransform: 'uppercase', textAlign: 'center' },
+  roundTitle: { fontFamily: 'Inter_900Black', fontSize: 10, color: BRAND.navy, textAlign: 'center' },
   art: { height: 192, width: '100%', alignItems: 'center', justifyContent: 'center', marginVertical: 12 },
   artDisc: { width: 144, height: 144, borderRadius: 72, alignItems: 'center', justifyContent: 'center', transform: [{ rotate: '-8deg' }] },
   confetti: { position: 'absolute', width: 9, height: 18 },

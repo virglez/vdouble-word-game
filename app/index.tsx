@@ -96,7 +96,7 @@ function AppContent() {
   })();
 
   return (
-    <SafeAreaView style={styles.safe} edges={['top', 'bottom']}>
+    <SafeAreaView style={[styles.safe, game.state.screen === 'instructions' && { backgroundColor: roundColor }]} edges={['top', 'bottom']}>
       <KeyboardAvoidingView
         style={styles.flex}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
@@ -135,7 +135,6 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
         </View>
       </View>
       <View style={styles.homeHero}>
-        <Text style={styles.heroOverline}>{t.partyGame}</Text>
         <DecabloLogo />
         <Text style={styles.claim}>{t.decabloClaim}</Text>
         <View accessible accessibilityLabel={t.cardIllustration}>
@@ -144,9 +143,9 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
       </View>
 
       <View style={styles.statsRow}>
-        <Stat value="20/30/40" label={t.statsCards} styles={styles} />
-        <Stat value="30 s" label={t.statsTurn} styles={styles} />
-        <Stat value="3" label={t.statsRounds} styles={styles} />
+        <Stat value="20/30/40" label={t.statsCards} icon="users" styles={styles} />
+        <Stat value="30 s" label={t.statsTurn} icon="clock" styles={styles} />
+        <Stat value="3" label={t.statsRounds} icon="refresh-cw" styles={styles} />
       </View>
 
       <Pressable
@@ -176,14 +175,14 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
         </Pressable>
       ) : null}
 
-      <Text style={styles.footnote}>{t.heroSubtitle}</Text>
     </ScrollView>
   );
 }
 
-function Stat({ value, label, styles }: { value: string; label: string; styles: ReturnType<typeof createStyles> }) {
+function Stat({ value, label, icon, styles }: { value: string; label: string; icon: React.ComponentProps<typeof Feather>['name']; styles: ReturnType<typeof createStyles> }) {
   return (
     <View style={styles.stat}>
+      <Feather name={icon} size={20} color={BRAND.white} />
       <Text style={styles.statValue}>{value}</Text>
       <Text style={styles.statLabel}>{label}</Text>
     </View>
@@ -202,6 +201,7 @@ function ScreenHeader({
   const colors = useColors();
   const { state } = useGame();
   const t = UI_TEXT[state.language] ?? UI_TEXT.es;
+  const onRoundSurface = state.screen === 'instructions';
   return (
     <View style={styles.screenHeader}>
       {onBack ? (
@@ -210,14 +210,14 @@ function ScreenHeader({
           accessibilityRole="button"
           accessibilityLabel={t.screenHeaderBack}
           onPress={() => press(onBack)}
-          style={styles.iconButton}
+          style={[styles.iconButton, onRoundSurface && styles.iconButtonOnRound]}
         >
-          <Feather name="arrow-left" size={20} color={colors.foreground} />
+          <Feather name="arrow-left" size={20} color={onRoundSurface ? BRAND.navy : colors.foreground} />
         </Pressable>
       ) : (
         <View style={styles.iconButtonPlaceholder} />
       )}
-      <Text style={styles.screenHeaderTitle}>{title}</Text>
+      <Text style={[styles.screenHeaderTitle, onRoundSurface && styles.screenHeaderTitleOnRound]}>{title}</Text>
       <View style={styles.iconButtonPlaceholder} />
     </View>
   );
@@ -231,7 +231,6 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   return (
     <ScrollView contentContainerStyle={styles.pageScroll} keyboardShouldPersistTaps="handled">
       <ScreenHeader styles={styles} title={t.setupScreenHeaderTitle} onBack={goHome} />
-      <Text style={styles.pageEyebrow}>{t.setupStep}</Text>
       <Text style={styles.pageTitle}>{t.setupPageTitle}</Text>
       <Text style={styles.pageSubtitle}>{t.setupSubtitle}</Text>
 
@@ -286,11 +285,6 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
             );
           })}
         </View>
-      </View>
-
-      <View style={styles.infoBox}>
-        <Feather name="layers" size={18} color={colors.accent} />
-        <Text style={styles.infoText}>{t.setupInfo.replace('{count}', String(state.cardCount))}</Text>
       </View>
 
       <Pressable
@@ -352,7 +346,7 @@ function TeamInput({
         />
         <Feather name="edit-3" size={16} color={styles.placeholder.color} />
       </View>
-      <View style={styles.teamIconPicker}>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.teamIconPicker}>
         {TEAM_ICONS.map((candidate) => (
           <Pressable
             key={`${team}-${candidate}`}
@@ -368,7 +362,7 @@ function TeamInput({
             <Text style={styles.teamIconOptionText}>{candidate}</Text>
           </Pressable>
         ))}
-      </View>
+      </ScrollView>
     </View>
   );
 }
@@ -388,15 +382,14 @@ function InstructionsScreen({ styles }: { styles: ReturnType<typeof createStyles
   return (
     <ScrollView contentContainerStyle={styles.pageScroll}>
       <ScreenHeader styles={styles} title={t.instructionsHeaderTitle} />
-      <RoundBadge index={state.roundIndex} label={t.instructionsRound.replace('{n}', String(roundNumber))} />
+      <Text style={styles.roundInstructionLabel}>{t.instructionsRound.replace('{n}', String(roundNumber))}</Text>
       <View style={styles.roundHero}>
         <View style={styles.roundHeroIcon}>
-          <Feather name={state.roundIndex === 0 ? 'message-circle' : state.roundIndex === 1 ? 'zap' : 'smile'} size={60} color={BRAND.navy} />
+          <Feather name={state.roundIndex === 0 ? 'message-circle' : state.roundIndex === 1 ? 'zap' : 'smile'} size={60} color={ROUND_COLORS[state.roundIndex]} />
         </View>
         <Text style={styles.roundHeroTitle}>{[t.decabloRound1, t.decabloRound2, t.decabloRound3][state.roundIndex]}</Text>
       </View>
       <View style={styles.instructionCard}>
-        <Text style={styles.instructionTitle}>{roundNameText}</Text>
         <Text style={styles.instructionBody}>{copy}</Text>
         <View style={styles.durationPill}>
           <Feather name="clock" size={18} color={BRAND.navy} />
@@ -405,16 +398,14 @@ function InstructionsScreen({ styles }: { styles: ReturnType<typeof createStyles
         <Text style={styles.instructionBody}>{t.instructionsBody}</Text>
       </View>
 
-      <ScoreStrip styles={styles} />
-
       <Pressable
         testID="start-round-button"
         accessibilityRole="button"
         onPress={() => press(startRound)}
-        style={({ pressed }) => [styles.primaryButton, pressed && styles.pressed]}
+        style={({ pressed }) => [styles.primaryButton, styles.instructionButton, pressed && styles.pressed]}
       >
         <Text style={styles.primaryButtonText}>{t.startRound}</Text>
-        <Feather name="play" size={19} color={colors.primaryForeground} />
+        <Feather name="play" size={19} color={BRAND.white} />
       </Pressable>
     </ScrollView>
   );
@@ -429,10 +420,7 @@ function ReviewScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
     <View style={styles.flex}>
       <ScrollView contentContainerStyle={styles.pageScroll}>
         <Text style={styles.pageEyebrow}>{t.reviewTurn.replace('{n}', String(state.roundIndex + 1))}</Text>
-        <View style={styles.reviewHeading}>
-          <Feather name="clock" size={36} color={BRAND.coral} />
-          <Text style={styles.pageTitle}>{t.time_up}</Text>
-        </View>
+        <View style={styles.reviewHeading}><Text style={styles.reviewTimeTitle}>{t.time_up}</Text></View>
         <Text style={styles.pageSubtitle}>{t.reviewTitle}</Text>
         <Text style={styles.pageSubtitle}>{t.reviewSubtitle.replace('{team}', state.teams[state.currentTeam].name)}</Text>
         <View style={styles.reviewSummary}>
@@ -462,7 +450,7 @@ function ReviewScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
         <ScoreStrip styles={styles} />
       </ScrollView>
       <View style={styles.reviewFooter}>
-        <Pressable accessibilityRole="button" onPress={() => press(confirmReview)} style={styles.primaryButton}>
+        <Pressable accessibilityRole="button" onPress={() => press(confirmReview)} style={[styles.primaryButton, styles.reviewPrimaryButton]}>
           <Text style={[styles.primaryButtonText, { flex: 1, textAlign: 'center' }]}>{state.remaining.length ? t.reviewConfirm.replace('{team}', nextTeam) : state.roundIndex === 2 ? t.reviewConfirmFinal : t.reviewConfirmRound}</Text>
         </Pressable>
       </View>
@@ -475,16 +463,13 @@ function ReadyScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   const t = UI_TEXT[state.language] ?? UI_TEXT.es;
   return (
     <ScrollView contentContainerStyle={styles.readyScroll}>
-      <DecabloLogo compact />
-      <RoundBadge index={state.roundIndex} label={[t.rulesRound1, t.rulesRound2, t.rulesRound3][state.roundIndex]} />
       <PartyArt kind="phone" color={ROUND_COLORS[state.roundIndex]} />
       <View style={styles.handoffCard}>
-        <Text style={styles.handoffIcon}>{state.teams[state.currentTeam].icon}</Text>
-      <Text style={styles.pageEyebrow}>{t.readyMobile}</Text>
+      <Text style={styles.handoffHeadline}>{t.readyMobile}</Text>
+      <Text style={styles.handoffTeamLabel}>{t.teamCreateIntro.replace('{n}', String(state.currentTeam + 1))}</Text>
       <Text style={styles.handoffName}>{state.teams[state.currentTeam].name}</Text>
       <Text style={styles.pageSubtitle}>{t.readyScreenSubtitle}</Text>
       </View>
-      <ScoreStrip styles={styles} />
       <Pressable accessibilityRole="button" onPress={() => press(continueTurn)} style={styles.primaryButton}>
         <Text style={styles.primaryButtonText}>{t.readyStartTurn}</Text>
       </Pressable>
@@ -591,7 +576,7 @@ function PlayScreen({ styles, seconds }: { styles: ReturnType<typeof createStyle
           onPress={() => press(markCorrect)}
           style={({ pressed }) => [styles.correctButton, pressed && styles.pressed]}
         >
-          <Feather name="check" size={20} color={colors.primaryForeground} />
+          <Feather name="check" size={20} color={BRAND.white} />
           <Text style={styles.correctButtonText}>{t.cardStatusCorrect}</Text>
         </Pressable>
       </View>
