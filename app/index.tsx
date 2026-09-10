@@ -142,7 +142,7 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
       </View>
 
       <View style={styles.statsRow}>
-        <Stat value="20/30/40" label={t.statsCards} asset={require('@/assets/icons/decablo/players.png')} styles={styles} />
+        <Stat value="A partir de 4" label="jugadores" asset={require('@/assets/icons/decablo/players.png')} styles={styles} />
         <Stat value="30 s" label={t.statsTurn} asset={require('@/assets/icons/decablo/clock.png')} styles={styles} />
         <Stat value="3" label={t.statsRounds} asset={require('@/assets/icons/decablo/repeat.png')} styles={styles} />
       </View>
