@@ -47,6 +47,10 @@ function confirmDiscardSavedGame(startNew: () => void, t: Record<string, string>
 }
 
 const TEAM_ICONS = ['🌙', '⚡', '🔥', '🌤️', '🌎', '🎯', '🛸', '⚙️', '🐺', '⭐', '🌈', '🎮'];
+const TEAM_ICON_GLYPHS: React.ComponentProps<typeof Feather>['name'][] = [
+  'moon', 'zap', 'activity', 'sun', 'globe', 'target',
+  'send', 'settings', 'wind', 'star', 'cloud-rain', 'monitor',
+];
 
 function AppContent() {
   const colors = useColors();
@@ -203,14 +207,30 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   const t = UI_TEXT[state.language] ?? UI_TEXT.es;
 
   return (
-    <ScrollView contentContainerStyle={styles.pageScroll} keyboardShouldPersistTaps="handled">
-      <ScreenHeader styles={styles} title={t.setupScreenHeaderTitle} onBack={goHome} />
-      <Text style={styles.pageTitle}>{t.setupPageTitle}</Text>
-      <Text style={styles.pageSubtitle}>{t.setupSubtitle}</Text>
+    <ScrollView contentContainerStyle={styles.setupScroll} keyboardShouldPersistTaps="handled">
+      <View style={styles.setupTopBar}>
+        <Pressable accessibilityRole="button" onPress={() => press(goHome)} style={styles.setupBackButton}>
+          <Feather name="arrow-left" size={22} color={BRAND.white} />
+        </Pressable>
+        <Image
+          source={require('@/assets/branding/decablo-logo.png')}
+          resizeMode="contain"
+          style={styles.setupLogo}
+          accessibilityLabel="DECABLO by VDOUBLE"
+        />
+        <View style={styles.setupBackButtonPlaceholder} />
+      </View>
 
-      <View style={styles.formBlock}>
-        <Text style={styles.fieldLabel}>{t.setupTeams}</Text>
-        <View style={styles.teamCards}>
+      <View style={styles.setupHeadingWrap}>
+        <Text style={styles.setupTitle}>PREPARA{`\n`}LA PARTIDA</Text>
+        <View style={styles.setupConfettiRow}>
+          <View style={[styles.setupConfetti, { backgroundColor: BRAND.coral, transform: [{ rotate: '-38deg' }] }]} />
+          <View style={[styles.setupConfetti, { backgroundColor: BRAND.yellow, transform: [{ rotate: '22deg' }] }]} />
+          <View style={[styles.setupConfetti, { backgroundColor: BRAND.mint, transform: [{ rotate: '-48deg' }] }]} />
+        </View>
+      </View>
+
+      <View style={styles.setupTeamCards}>
         <TeamInput
           team={0}
           value={state.teams[0].name}
@@ -218,7 +238,7 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
           onChangeText={(value) => updateTeamName(0, value)}
           onIconChange={(icon) => updateTeamIcon(0, icon)}
           styles={styles}
-          color={colors.primary}
+          color={BRAND.yellow}
           language={state.language}
         />
         <TeamInput
@@ -228,15 +248,14 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
           onChangeText={(value) => updateTeamName(1, value)}
           onIconChange={(icon) => updateTeamIcon(1, icon)}
           styles={styles}
-          color={colors.accent}
+          color={BRAND.mint}
           language={state.language}
         />
-        </View>
       </View>
 
-      <View style={styles.formBlock}>
-        <Text style={styles.fieldLabel}>{t.setupCardCount}</Text>
-        <View style={styles.cardCountList}>
+      <View style={styles.setupDeckBlock}>
+        <Text style={styles.setupSectionTitle}>NÚMERO DE CARTAS</Text>
+        <View style={styles.setupCardCountList}>
           {cardCountOptions.map(({ value, note }) => {
             const selected = state.cardCount === value;
             return (
@@ -246,15 +265,14 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
                 accessibilityState={{ selected }}
                 testID={`card-count-${value}`}
                 onPress={() => press(() => setCardCount(value))}
-                style={[styles.cardCountOption, selected && styles.cardCountOptionSelected]}
+                style={[styles.setupCardCountOption, selected && styles.setupCardCountOptionSelected]}
               >
                 <View style={styles.deckTileContent}>
-                  <Text style={[styles.cardCountTitle, selected && styles.cardCountTitleSelected]}>
+                  <Text style={[styles.setupCardCountTitle, selected && styles.setupCardCountTitleSelected]}>
                     {value}
                   </Text>
-                  <Text style={styles.cardCountNote}>{t[note]}</Text>
+                  <Text style={[styles.setupCardCountNote, selected && styles.setupCardCountNoteSelected]}>{t[note]}</Text>
                 </View>
-                {selected ? <Feather name="check" size={18} color={colors.primary} /> : null}
               </Pressable>
             );
           })}
@@ -267,9 +285,9 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
         disabled={isCreating}
         accessibilityState={{ disabled: isCreating, busy: isCreating }}
         onPress={() => { void createGame().catch(() => Alert.alert(t.createGameError)); }}
-        style={({ pressed }) => [styles.primaryButton, pressed && styles.pressed]}
+        style={({ pressed }) => [styles.setupCreateButton, pressed && styles.pressed]}
       >
-        <Text style={styles.primaryButtonText}>{isCreating ? t.creatingGame : 'EMPEZAR'}</Text>
+        <Text style={styles.setupCreateButtonText}>{isCreating ? t.creatingGame.toUpperCase() : 'CREAR MAZO'}</Text>
         <View style={styles.ctaArrow}><Feather name="arrow-right" size={21} color={colors.primaryForeground} /></View>
       </Pressable>
       <Modal visible={isCreating} transparent animationType="none" onRequestClose={() => {}}>
@@ -304,39 +322,54 @@ function TeamInput({
   language: LanguageCode;
 }) {
   const t = UI_TEXT[language] ?? UI_TEXT.es;
+  const start = team === 0 ? 0 : 6;
+  const candidates = TEAM_ICONS.slice(start, start + 6);
+  const selectedIndex = Math.max(0, TEAM_ICONS.indexOf(icon));
   return (
-    <View style={[styles.teamCard, { borderTopColor: color }]}>
-      <View style={styles.teamInputRow}>
-        <View style={[styles.teamAvatar, { backgroundColor: color }]}><Text style={styles.teamAvatarText}>{icon}</Text></View>
-        <TextInput
-          testID={`team-${team}-input`}
-          value={value}
-          onChangeText={onChangeText}
-          placeholder={t.teamCreateIntro.replace('{n}', String(team + 1))}
-          placeholderTextColor={styles.placeholder.color}
-          maxLength={24}
-          style={styles.teamInput}
-          returnKeyType="done"
-        />
-        <Feather name="edit-3" size={16} color={styles.placeholder.color} />
+    <View style={[styles.setupTeamCard, { backgroundColor: color }]}>
+      <View style={styles.setupTeamMainRow}>
+        <View style={styles.setupTeamAvatar}>
+          <Feather name={TEAM_ICON_GLYPHS[selectedIndex]} size={58} color={BRAND.navy} />
+          <View style={styles.setupAvatarBurst} />
+        </View>
+        <View style={styles.setupTeamFieldColumn}>
+          <Text style={styles.setupTeamTitle}>EQUIPO {team === 0 ? 'A' : 'B'}</Text>
+          <View style={styles.setupTeamInputShell}>
+            <TextInput
+              testID={`team-${team}-input`}
+              value={value}
+              onChangeText={onChangeText}
+              placeholder={t.teamCreateIntro.replace('{n}', String(team + 1))}
+              placeholderTextColor={styles.placeholder.color}
+              maxLength={24}
+              style={styles.setupTeamInput}
+              returnKeyType="done"
+            />
+            <Feather name="edit-3" size={21} color="#7392A7" />
+          </View>
+        </View>
       </View>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.teamIconPicker}>
-        {TEAM_ICONS.map((candidate) => (
+      <Text style={styles.setupPickerLabel}>ELIGE UN ÍCONO</Text>
+      <View style={styles.setupTeamIconPicker}>
+        {candidates.map((candidate) => {
+          const candidateIndex = TEAM_ICONS.indexOf(candidate);
+          return (
           <Pressable
             key={`${team}-${candidate}`}
             accessibilityRole="button"
             accessibilityLabel={t.teamIconPickerLabel.replace('{icon}', candidate).replace('{n}', String(team + 1))}
             onPress={() => press(() => onIconChange(candidate))}
             style={({ pressed }) => [
-              styles.teamIconOption,
-              candidate === icon && styles.teamIconOptionActive,
+              styles.setupTeamIconOption,
+              candidate === icon && styles.setupTeamIconOptionActive,
               pressed && styles.pressed,
             ]}
           >
-            <Text style={styles.teamIconOptionText}>{candidate}</Text>
+            <Feather name={TEAM_ICON_GLYPHS[candidateIndex]} size={27} color={BRAND.navy} />
           </Pressable>
-        ))}
-      </ScrollView>
+          );
+        })}
+      </View>
     </View>
   );
 }
