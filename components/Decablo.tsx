@@ -24,9 +24,9 @@ export function DecabloLogo({ compact = false }: { compact?: boolean }) {
 
 export function RoundCards({ labels, rounds }: { labels: string[]; rounds: string[] }) {
   const art = [
-    require('@/assets/brand/describe.png'),
-    require('@/assets/brand/one-word-clean.png'),
-    require('@/assets/brand/act-clean.png'),
+    require('@/assets/rounds/card-describelo.png'),
+    require('@/assets/rounds/card-una-palabra.png'),
+    require('@/assets/rounds/card-hazlo.png'),
   ];
   return <View style={s.cards}>
     {labels.map((label, index) => <View key={index} style={[s.roundCard, { transform: [{ rotate: `${(index - 1) * 7}deg` }, { translateY: index === 1 ? -10 : 0 }] }]}>

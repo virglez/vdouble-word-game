@@ -76,6 +76,7 @@ export function createStyles(colors: Palette, roundColor: string = BRAND.yellow)
     heroOverline: { marginTop: 26, textAlign: 'center', fontFamily: 'Inter_700Bold', fontSize: 10, letterSpacing: 2, color: colors.mutedForeground },
     statsRow: { flexDirection: 'row', gap: 8, marginBottom: 18, paddingVertical: 5 },
     stat: { flex: 1, alignItems: 'center', paddingVertical: 8, gap: 3 },
+    statIcon: { width: 30, height: 30 },
     statValue: { fontFamily: 'Inter_900Black', fontSize: 15, textAlign: 'center', color: colors.foreground },
     statLabel: { fontFamily: 'Inter_400Regular', fontSize: 10, color: colors.mutedForeground, textAlign: 'center' },
     primaryButton: { minHeight: 58, borderRadius: 999, paddingHorizontal: 20, paddingVertical: 14, flexDirection: 'row', gap: 12, alignItems: 'center', justifyContent: 'center', backgroundColor: BRAND.yellow, borderBottomWidth: 4, borderBottomColor: '#00000025' },

@@ -12,6 +12,7 @@ import {
   Text,
   TextInput,
   View,
+  type ImageSourcePropType,
 } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
@@ -125,7 +126,7 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
     <ScrollView contentContainerStyle={styles.homeScroll} showsVerticalScrollIndicator={false}>
       <View style={styles.languageSelectorRow} />
       <View style={styles.homeHero}>
-        <Image source={require('@/assets/brand/logo-lockup-approved.png')} resizeMode="contain" style={styles.homeBrandImage} />
+        <Image source={require('@/assets/branding/decablo-logo.png')} resizeMode="contain" style={styles.homeBrandImage} />
         <Text style={styles.claim}>{t.decabloClaim}</Text>
         <View accessible accessibilityLabel={t.cardIllustration}>
           <RoundCards labels={[t.decabloRound1, t.decabloRound2, t.decabloRound3]} rounds={[t.rulesRound1, t.rulesRound2, t.rulesRound3]} />
@@ -133,9 +134,9 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
       </View>
 
       <View style={styles.statsRow}>
-        <Stat value="20/30/40" label={t.statsCards} icon="users" styles={styles} />
-        <Stat value="30 s" label={t.statsTurn} icon="clock" styles={styles} />
-        <Stat value="3" label={t.statsRounds} icon="refresh-cw" styles={styles} />
+        <Stat value="20/30/40" label={t.statsCards} asset={require('@/assets/icons/decablo/players.png')} styles={styles} />
+        <Stat value="30 s" label={t.statsTurn} asset={require('@/assets/icons/decablo/clock.png')} styles={styles} />
+        <Stat value="3" label={t.statsRounds} asset={require('@/assets/icons/decablo/repeat.png')} styles={styles} />
       </View>
 
       <Pressable
@@ -152,10 +153,10 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   );
 }
 
-function Stat({ value, label, icon, styles }: { value: string; label: string; icon: React.ComponentProps<typeof Feather>['name']; styles: ReturnType<typeof createStyles> }) {
+function Stat({ value, label, asset, styles }: { value: string; label: string; asset: ImageSourcePropType; styles: ReturnType<typeof createStyles> }) {
   return (
     <View style={styles.stat}>
-      <Feather name={icon} size={20} color={BRAND.white} />
+      <Image source={asset} resizeMode="contain" style={styles.statIcon} />
       <Text style={styles.statValue}>{value}</Text>
       <Text style={styles.statLabel}>{label}</Text>
     </View>
