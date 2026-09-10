@@ -157,6 +157,11 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
         <View style={styles.ctaArrow}><Feather name="arrow-up-right" size={21} color={colors.primaryForeground} /></View>
       </Pressable>
 
+      <View style={styles.homeFooterClaims} pointerEvents="none">
+        <Image source={require('@/assets/branding/home-footer-left.png')} resizeMode="contain" style={styles.homeFooterClaimLeft} accessibilityLabel="Mismas palabras, más risas" />
+        <Image source={require('@/assets/branding/home-footer-right.png')} resizeMode="contain" style={styles.homeFooterClaimRight} accessibilityLabel="La memoria también juega" />
+      </View>
+
     </ScrollView>
   );
 }
