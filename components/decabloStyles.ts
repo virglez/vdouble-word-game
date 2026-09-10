@@ -234,5 +234,12 @@ export function createStyles(colors: Palette, roundColor: string = BRAND.yellow)
     pointsLabel: { fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.mutedForeground },
     finalHero: { alignItems: 'center' },
     finalTitle: { marginTop: 13, fontFamily: 'Inter_900Black', fontSize: 36, lineHeight: 42, letterSpacing: -1.2, textAlign: 'center', color: BRAND.yellow },
+    finalScroll: { flexGrow: 1, width: '100%', maxWidth: 560, alignSelf: 'center', paddingHorizontal: 20, paddingTop: 10, paddingBottom: 28 },
+    finalCelebrationArt: { width: '100%', height: 405, alignSelf: 'center' },
+    finalResultPanel: { marginTop: -9, padding: 16, borderRadius: 22, backgroundColor: '#FFFFFF12', borderWidth: 1, borderColor: '#FFFFFF20' },
+    finalResultTitle: { fontFamily: 'Inter_900Black', fontSize: 25, lineHeight: 30, textAlign: 'center', color: BRAND.yellow },
+    finalResultSubtitle: { marginTop: 5, fontFamily: 'Inter_500Medium', fontSize: 14, lineHeight: 19, textAlign: 'center', color: BRAND.white },
+    finalButton: { minHeight: 70, marginTop: 18, borderRadius: 35, paddingHorizontal: 20, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', backgroundColor: BRAND.yellow, borderBottomWidth: 5, borderBottomColor: '#D8A800' },
+    finalButtonText: { flexShrink: 1, fontFamily: 'Inter_900Black', fontSize: 20, textAlign: 'center', color: BRAND.navy },
   });
 }

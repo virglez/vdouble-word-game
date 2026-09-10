@@ -777,18 +777,18 @@ function RoundScoreList({ styles, roundIndex }: { styles: ReturnType<typeof crea
 }
 
 function FinalScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
-  const colors = useColors();
   const { state, startSetup, goHome } = useGame();
   const t = UI_TEXT[state.language] ?? UI_TEXT.es;
   const winner = state.teams[0].score === state.teams[1].score ? null : state.teams[0].score > state.teams[1].score ? 0 : 1;
   return (
-    <ScrollView contentContainerStyle={styles.pageScroll}>
-      <ScreenHeader styles={styles} title={t.finalScreenHeaderTitle} onBack={goHome} />
-      <View style={styles.finalHero}>
-        <View style={styles.referenceArt}><Feather name="award" size={96} color={BRAND.yellow} /></View>
-        <Text style={styles.pageEyebrow}>{t.finalTitle}</Text>
-        <Text style={styles.finalTitle}>{winner === null ? t.finalTie : t.finalWinner.replace('{team}', state.teams[winner].name)}</Text>
-        <Text style={styles.pageSubtitle}>{winner === null ? t.finalTieSubtitle : t.pageFinalSubtitle}</Text>
+    <ScrollView contentContainerStyle={styles.finalScroll}>
+      <Pressable accessibilityRole="button" accessibilityLabel="Volver" onPress={() => press(goHome)} style={styles.backFloating}>
+        <Feather name="arrow-left" size={22} color={BRAND.white} />
+      </Pressable>
+      <Image source={require('@/assets/final/celebration.png')} resizeMode="contain" style={styles.finalCelebrationArt} />
+      <View style={styles.finalResultPanel}>
+        <Text style={styles.finalResultTitle}>{winner === null ? t.finalTie : t.finalWinner.replace('{team}', state.teams[winner].name)}</Text>
+        <Text style={styles.finalResultSubtitle}>{winner === null ? t.finalTieSubtitle : t.pageFinalSubtitle}</Text>
       </View>
       <ScoreBoard styles={styles} />
       <RoundScoreList styles={styles} />
@@ -796,12 +796,11 @@ function FinalScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
         testID="return-home-button"
         accessibilityRole="button"
         onPress={() => press(startSetup)}
-        style={({ pressed }) => [styles.primaryButton, pressed && styles.pressed]}
+        style={({ pressed }) => [styles.finalButton, pressed && styles.pressed]}
       >
-        <Text style={styles.primaryButtonText}>{t.startNewGame}</Text>
-        <Feather name="rotate-ccw" size={20} color={colors.primaryForeground} />
+        <Text style={styles.finalButtonText}>{t.startNewGame.toUpperCase()}</Text>
+        <View style={styles.ctaArrow}><Feather name="arrow-right" size={21} color={BRAND.navy} /></View>
       </Pressable>
-      <DecabloLogo compact />
     </ScrollView>
   );
 }
