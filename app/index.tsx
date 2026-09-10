@@ -121,7 +121,7 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   return (
     <ScrollView contentContainerStyle={styles.homeScroll} showsVerticalScrollIndicator={false}>
       <View style={styles.languageSelectorRow}>
-        <View style={[styles.languageSelectorPill, styles.languageSelectorPillActive]}><Text style={styles.languageSelectorTextActive}>◉ ES⌄</Text></View>
+        <View />
         <Feather name="settings" size={24} color={BRAND.white} />
       </View>
       <View style={styles.homeHero}>
