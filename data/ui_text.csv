@@ -619,3 +619,24 @@ cardType_Consola,es,Consola
 cardType_Consola,en,Console
 cardType_Consola,fr,Console
 cardType_Consola,pt,Consola
+
+decabloClaim,es,"¿DE QUÉ HABLO?"
+decabloClaim,en,"WHAT AM I TALKING ABOUT?"
+decabloClaim,fr,"DE QUOI JE PARLE ?"
+decabloClaim,pt,"DE QUE ESTOU A FALAR?"
+decabloRound1,es,"Descríbelo"
+decabloRound1,en,"Describe it"
+decabloRound1,fr,"Décris-le"
+decabloRound1,pt,"Descreve"
+decabloRound2,es,"Una palabra"
+decabloRound2,en,"One word"
+decabloRound2,fr,"Un seul mot"
+decabloRound2,pt,"Uma palavra"
+decabloRound3,es,"Hazlo"
+decabloRound3,en,"Act it out"
+decabloRound3,fr,"Mime-le"
+decabloRound3,pt,"Representa"
+decabloSameDeck,es,"Las mismas palabras vuelven"
+decabloSameDeck,en,"The same words return"
+decabloSameDeck,fr,"Les mêmes mots reviennent"
+decabloSameDeck,pt,"As mesmas palavras voltam"

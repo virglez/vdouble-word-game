@@ -167,6 +167,11 @@ export const UI_TEXT: Record<LanguageCode, Record<string, string>> = {
     "cardType_Libro": "Libro",
     "cardType_Saga": "Saga",
     "cardType_Consola": "Consola",
+    "decabloClaim": "¿DE QUÉ HABLO?",
+    "decabloRound1": "Descríbelo",
+    "decabloRound2": "Una palabra",
+    "decabloRound3": "Hazlo",
+    "decabloSameDeck": "Las mismas palabras vuelven",
   },
   "en": {
     "finalTieSubtitle": "You are tied. A rematch will decide it.",
@@ -324,6 +329,11 @@ export const UI_TEXT: Record<LanguageCode, Record<string, string>> = {
     "cardType_Libro": "Book",
     "cardType_Saga": "Saga",
     "cardType_Consola": "Console",
+    "decabloClaim": "WHAT AM I TALKING ABOUT?",
+    "decabloRound1": "Describe it",
+    "decabloRound2": "One word",
+    "decabloRound3": "Act it out",
+    "decabloSameDeck": "The same words return",
   },
   "fr": {
     "finalTieSubtitle": "Vous êtes à égalité. Une revanche vous départagera.",
@@ -481,6 +491,11 @@ export const UI_TEXT: Record<LanguageCode, Record<string, string>> = {
     "cardType_Libro": "Livre",
     "cardType_Saga": "Saga",
     "cardType_Consola": "Console",
+    "decabloClaim": "DE QUOI JE PARLE ?",
+    "decabloRound1": "Décris-le",
+    "decabloRound2": "Un seul mot",
+    "decabloRound3": "Mime-le",
+    "decabloSameDeck": "Les mêmes mots reviennent",
   },
   "pt": {
     "finalTieSubtitle": "Ficaram empatados. Uma desforra decide tudo.",
@@ -638,6 +653,11 @@ export const UI_TEXT: Record<LanguageCode, Record<string, string>> = {
     "cardType_Libro": "Livro",
     "cardType_Saga": "Saga",
     "cardType_Consola": "Consola",
+    "decabloClaim": "DE QUE ESTOU A FALAR?",
+    "decabloRound1": "Descreve",
+    "decabloRound2": "Uma palavra",
+    "decabloRound3": "Representa",
+    "decabloSameDeck": "As mesmas palavras voltam",
   },
 };
 

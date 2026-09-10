@@ -1,64 +1,23 @@
-/**
- * Semantic design tokens for the mobile app.
- *
- * These tokens mirror the naming conventions used in web artifacts (index.css)
- * so that multi-artifact projects share a cohesive visual identity.
- *
- * Replace the placeholder values below with values that match the project's
- * brand. If a sibling web artifact exists, read its index.css and convert the
- * HSL values to hex so both artifacts use the same palette.
- *
- * To add dark mode, add a `dark` key with the same token names.
- * The useColors() hook will automatically pick it up.
- */
+export const BRAND = {
+  navy: '#0B1B2B', yellow: '#FFD233', coral: '#FF6B6B', mint: '#02C39A', white: '#F7F7F7',
+} as const;
+
+export const ROUND_COLORS = [BRAND.yellow, BRAND.coral, BRAND.mint] as const;
 
 const colors = {
   light: {
-    // Legacy aliases (kept for backward compatibility)
-    text: '#0a0a0a',
-    tint: '#f6c84a',
-
-    // Core surfaces
-    background: '#352342',
-    foreground: '#f7f6ff',
-
-    // Cards / elevated surfaces
-    card: '#513466',
-    cardForeground: '#f7f6ff',
-
-    // Primary action color (buttons, links, active states)
-    primary: '#f6c84a',
-    primaryForeground: '#161d40',
-
-    // Secondary / less-emphasis interactive surfaces
-    secondary: '#634477',
-    secondaryForeground: '#f7f6ff',
-
-    // Muted / subdued elements (dividers, timestamps, placeholders)
-    muted: '#463055',
-    mutedForeground: '#ded0ed',
-
-    // Accent highlights (badges, selected items, focus rings)
-    accent: '#c5a3ed',
-    accentForeground: '#352342',
-    heroGradient: '#ffe08a',
-
-    // Destructive actions (delete, error states)
-    destructive: '#f87171',
-    destructiveForeground: '#fff7f7',
-
-    // Positive action color (correct answers and success states)
-    success: '#4ade80',
-    successForeground: '#10251a',
-
-    // Borders and input outlines
-    border: '#88659c',
-    input: '#88659c',
+    text: BRAND.white, tint: BRAND.yellow,
+    background: BRAND.navy, foreground: BRAND.white,
+    card: '#142B40', cardForeground: BRAND.white,
+    primary: BRAND.yellow, primaryForeground: BRAND.navy,
+    secondary: '#1D374D', secondaryForeground: '#DFE8EE',
+    muted: '#142B40', mutedForeground: '#B4C4D1',
+    accent: BRAND.coral, accentForeground: BRAND.navy, heroGradient: BRAND.yellow,
+    destructive: BRAND.coral, destructiveForeground: BRAND.navy,
+    success: BRAND.mint, successForeground: BRAND.navy,
+    border: '#30495D', input: '#30495D',
   },
-
-  // Border radius (in px). Sync from the sibling web artifact's --radius
-  // CSS variable. This value applies to cards, buttons, inputs, and modals.
-  radius: 18,
+  radius: 24,
 };
 
 export default colors;
