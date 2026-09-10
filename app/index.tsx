@@ -375,7 +375,6 @@ function TeamInput({
 }
 
 function InstructionsScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
-  const colors = useColors();
   const { state, startRound } = useGame();
   const t = UI_TEXT[state.language] ?? UI_TEXT.es;
   const roundNumber = state.roundIndex + 1;
@@ -387,35 +386,42 @@ function InstructionsScreen({ styles }: { styles: ReturnType<typeof createStyles
   ][state.roundIndex] ?? t.rulesDescription1;
 
   return (
-    <ScrollView contentContainerStyle={styles.pageScroll}>
-      <ScreenHeader styles={styles} title={t.instructionsHeaderTitle} />
-      <Text style={styles.roundInstructionLabel}>{t.instructionsRound.replace('{n}', String(roundNumber))}</Text>
+    <ScrollView contentContainerStyle={state.roundIndex === 0 ? styles.instructionsRoundOneScroll : styles.pageScroll}>
+      <Image
+        source={require('@/assets/branding/decablo-logo.png')}
+        resizeMode="contain"
+        style={styles.instructionsLogo}
+        accessibilityLabel="DECABLO by VDOUBLE"
+      />
       {state.roundIndex === 0 ? (
-        <Image source={require('@/assets/reference-parts/round1-instructions.png')} resizeMode="contain" style={styles.round1InstructionsArt} />
+        <Image source={require('@/assets/rounds/round1-rules.png')} resizeMode="contain" style={styles.instructionsRoundOneArt} />
       ) : (
-        <View style={styles.roundHero}>
-          <View style={styles.roundHeroIcon}>
-            <Feather name={state.roundIndex === 1 ? 'zap' : 'smile'} size={60} color={ROUND_COLORS[state.roundIndex]} />
+        <>
+          <Text style={styles.roundInstructionLabel}>{t.instructionsRound.replace('{n}', String(roundNumber))}</Text>
+          <View style={styles.roundHero}>
+            <View style={styles.roundHeroIcon}>
+              <Feather name={state.roundIndex === 1 ? 'zap' : 'smile'} size={60} color={ROUND_COLORS[state.roundIndex]} />
+            </View>
+            <Text style={styles.roundHeroTitle}>{[t.decabloRound1, t.decabloRound2, t.decabloRound3][state.roundIndex]}</Text>
           </View>
-          <Text style={styles.roundHeroTitle}>{[t.decabloRound1, t.decabloRound2, t.decabloRound3][state.roundIndex]}</Text>
-        </View>
+          <View style={styles.instructionCard}>
+            <Text style={styles.instructionBody}>{copy}</Text>
+            <View style={styles.durationPill}>
+              <Feather name="clock" size={18} color={BRAND.navy} />
+              <Text style={styles.durationText}>{t.instructionDuration}</Text>
+            </View>
+            <Text style={styles.instructionBody}>{t.instructionsBody}</Text>
+          </View>
+        </>
       )}
-      <View style={styles.instructionCard}>
-        <Text style={styles.instructionBody}>{copy}</Text>
-        <View style={styles.durationPill}>
-          <Feather name="clock" size={18} color={BRAND.navy} />
-          <Text style={styles.durationText}>{t.instructionDuration}</Text>
-        </View>
-        <Text style={styles.instructionBody}>{t.instructionsBody}</Text>
-      </View>
 
       <Pressable
         testID="start-round-button"
         accessibilityRole="button"
         onPress={() => press(startRound)}
-        style={({ pressed }) => [styles.primaryButton, styles.instructionButton, pressed && styles.pressed]}
+        style={({ pressed }) => [styles.primaryButton, styles.instructionsStartButton, pressed && styles.pressed]}
       >
-        <Text style={styles.primaryButtonText}>{state.roundIndex === 0 ? `EMPIEZA EQUIPO ${state.teams[state.currentTeam].name}` : t.startRound}</Text>
+        <Text style={styles.instructionsStartButtonText}>EMPIEZA {state.teams[state.currentTeam].name.toUpperCase()}</Text>
         <View style={styles.ctaArrow}><Feather name="arrow-right" size={19} color={BRAND.navy} /></View>
       </Pressable>
     </ScrollView>
