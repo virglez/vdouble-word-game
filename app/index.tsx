@@ -52,6 +52,10 @@ const TEAM_ICON_GLYPHS: React.ComponentProps<typeof Feather>['name'][] = [
   'moon', 'globe', 'send', 'settings', 'wind', 'cloud-rain',
 ];
 
+function teamIconGlyph(icon: string): React.ComponentProps<typeof Feather>['name'] {
+  return TEAM_ICON_GLYPHS[Math.max(0, TEAM_ICONS.indexOf(icon))];
+}
+
 function AppContent() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
@@ -479,18 +483,48 @@ function ReviewScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
 
 function ReadyScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   const { state, continueTurn } = useGame();
-  const t = UI_TEXT[state.language] ?? UI_TEXT.es;
+  const activeTeam = state.teams[state.currentTeam];
   return (
     <ScrollView contentContainerStyle={styles.readyScroll}>
-      <Image source={require('@/assets/reference-parts/phone.png')} resizeMode="contain" style={styles.referenceArt} />
-      <View style={styles.handoffCard}>
-      <Text style={styles.handoffHeadline}>{t.readyMobile}</Text>
-      <Text style={styles.handoffTeamLabel}>{t.teamCreateIntro.replace('{n}', String(state.currentTeam + 1))}</Text>
-      <Text style={styles.handoffName}>{state.teams[state.currentTeam].name}</Text>
-      <Text style={styles.pageSubtitle}>{t.readyScreenSubtitle}</Text>
+      <View style={styles.readyHeader}>
+        <Image
+          source={require('@/assets/branding/decablo-logo.png')}
+          resizeMode="contain"
+          style={styles.readyLogo}
+          accessibilityLabel="DECABLO by VDOUBLE"
+        />
+        <View style={styles.readyScoreboard} accessibilityLabel={`${state.teams[0].name} ${state.teams[0].score}, ${state.teams[1].name} ${state.teams[1].score}`}>
+          {state.teams.map((team, index) => (
+            <React.Fragment key={`ready-score-${index}`}>
+              {index > 0 ? <View style={styles.readyScoreDivider} /> : null}
+              <View style={styles.readyScoreTeam}>
+                <Feather name={teamIconGlyph(team.icon)} size={28} color={index === 0 ? BRAND.yellow : BRAND.coral} />
+                <Text style={styles.readyScoreValue}>{team.score}</Text>
+              </View>
+            </React.Fragment>
+          ))}
+        </View>
       </View>
-      <Pressable accessibilityRole="button" onPress={() => press(continueTurn)} style={styles.primaryButton}>
-        <Text style={styles.primaryButtonText}>{t.readyStartTurn}</Text>
+
+      <View style={styles.readyMain}>
+        <Text style={styles.readyHeadline}>PASA EL <Text style={styles.readyHeadlineAccent}>MÓVIL</Text></Text>
+        <Image
+          source={require('@/assets/illustrations/pass-phone.png')}
+          resizeMode="contain"
+          style={styles.readyPhoneArt}
+          accessibilityLabel="Dos manos pasando un teléfono"
+        />
+        <Text style={styles.readyTeamLabel}>EQUIPO</Text>
+        <Text style={styles.readyTeamName}>{activeTeam.name.toUpperCase()}</Text>
+        <View style={styles.readyPrivacyRow}>
+          <Feather name="lock" size={30} color={BRAND.white} />
+          <Text style={styles.readyPrivacyText}>Que nadie mire{`\n`}la pantalla</Text>
+        </View>
+      </View>
+
+      <Pressable testID="ready-start-button" accessibilityRole="button" onPress={() => press(continueTurn)} style={({ pressed }) => [styles.readyButton, pressed && styles.pressed]}>
+        <Text style={styles.readyButtonText}>ESTOY LISTA</Text>
+        <View style={styles.ctaArrow}><Feather name="arrow-right" size={22} color={BRAND.navy} /></View>
       </Pressable>
     </ScrollView>
   );
