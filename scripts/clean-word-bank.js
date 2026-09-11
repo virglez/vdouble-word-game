@@ -116,7 +116,7 @@ function unifySubcategory(r) {
     'Dioses y criaturas': 'Mitología', Cine: 'Película', Videojuego: 'Videojuegos', 'Series internacionales': 'Serie',
   };
   let out = map[s] ?? s;
-  if (c === 'Música' && (s === 'Cantante/Grupo' || s === 'Música')) out = t === 'Grupo' ? 'Grupo' : 'Cantante';
+  if (c === 'Música' && (s === 'Cantante/Grupo' || s === 'Música' || (s === 'Cantante' && t === 'Grupo'))) out = t === 'Grupo' ? 'Grupo' : 'Cantante';
   if (c === 'Historia' && s === 'Historia') out = t === 'Evento' ? 'Evento' : t === 'Lugar' ? 'Lugar' : 'Personaje histórico';
   if (c === 'Literatura' && (s === 'Literatura' || s === 'Autor/Obra')) out = t === 'Persona' ? 'Escritor' : t === 'Personaje' ? 'Personaje' : 'Obra';
   if (c === 'Arte' && s === 'Arte') out = t === 'Obra' ? 'Obra' : 'Artista';
@@ -692,20 +692,140 @@ const MEDIUM = S(
 // Categorías en las que un adulto medio conoce la mayoría de entradas: base Media.
 const BASE_MEDIUM = new Set(['Deportes', 'Música', 'Cine y TV', 'Personajes', 'Películas', 'Series', 'Lugares', 'Marcas', 'Videojuegos', 'Naturaleza']);
 
+// Series conocidas por el gran público (la base de Series es Difícil: los títulos cuestan más de describir).
+const MEDIUM_SERIES = S(
+  'Doctor Who', 'MacGyver', 'El Equipo A', 'Los vigilantes de la playa', 'Alf', 'Malcolm', 'Mujeres desesperadas', 'Sexo en Nueva York',
+  'Anatomía de Grey', 'House', 'Dexter', 'Peaky Blinders', 'The Witcher', 'Narcos', 'Los Bridgerton', 'The Mandalorian', 'The Boys',
+  'Perdidos', 'Prison Break', 'The Office', 'Black Mirror', 'The Crown', 'Vikingos', 'The Last of Us', 'Los Soprano', 'Better Call Saul',
+  'Sherlock', 'Downton Abbey', 'Chernobyl', 'Cobra Kai', 'Loki', 'WandaVision', 'Daredevil', 'Dos hombres y medio', 'Brooklyn Nine-Nine',
+  'Ana y los 7', 'Amar en tiempos revueltos', 'El secreto de Puente Viejo', 'La catedral del mar', 'El tiempo entre costuras', 'South Park',
+  'Futurama', 'Los Supersónicos', 'Inspector Gadget', 'He-Man y los Masters del Universo', 'Digimon', 'One Piece', 'Ataque a los titanes',
+  'Mazinger Z', 'Marco', 'La abeja Maya', 'Al salir de clase', 'Gran Hotel', 'Camera Café', 'Hospital Central', '24', 'The Wire', 'CSI',
+  'NCIS', 'Buffy, cazavampiros', 'Embrujadas', 'Twin Peaks', 'Ally McBeal', 'Salvados por la campana', 'Cosas de casa', 'El coche fantástico',
+  'Xena: la princesa guerrera', 'Smallville', 'Héroes', 'Ted Lasso', "The Handmaid's Tale", 'Mr. Robot', 'Westworld', 'House of the Dragon',
+  'La Casa del Dragón', 'Lupin', 'The White Lotus', 'Bleach', 'Death Note', 'Detective Conan', 'Rugrats', 'Steven Universe', 'BoJack Horseman',
+  'Los misterios de Laura', 'Mentes criminales', 'Bones', 'Sensación de vivir', 'You', 'Fargo', 'True Detective', '7 vidas', 'Seinfeld',
+  'Merlí', 'El Ministerio del Tiempo', 'Un paso adelante', 'Compañeros', 'Los Protegidos', 'Expediente X', 'Dallas', 'Dinastía', 'Cheers',
+  'Embrujada', 'Los Roper', 'Scrubs', 'Hijos de la Anarquía', 'Dark', 'Ozark', 'Succession', 'The Bear', 'Yellowstone', 'The Good Doctor',
+  '30 monedas', 'Antidisturbios', 'Hannibal', 'Los Tudor', 'Mad Men', 'Andor', 'Frasier', 'Will y Grace', 'Acacias 38', 'Yu-Gi-Oh!',
+  'Érase una vez... el hombre', 'Periodistas', 'Arde Madrid', 'Hierro', 'Patria', 'Euphoria', 'Orange Is the New Black', 'Miraculous', 'Winx',
+  'Demon Slayer', 'My Hero Academia', 'Parks and Recreation', 'Ahsoka', 'The Punisher', 'Monk', 'Colombo', 'Melrose Place', 'Gym Tony',
+  'Pulseras rojas', 'Sin tetas no hay paraíso', 'Los mundos de Yupi', 'Los padrinos mágicos', 'American Dad', 'Sex Education', 'Suits',
+  'Fleabag', 'Big Little Lies', 'This Is Us', 'Gossip Girl', 'Glee', 'Matrimonio con hijos', 'Walker, Texas Ranger', 'Homeland',
+  'House of Cards', 'Supernatural', 'Hannah Montana', 'Lizzie McGuire', 'iCarly', 'Sabrina, cosas de brujas', 'ThunderCats', 'The Flash',
+  'Arrow', 'Supergirl', 'Gotham', 'Lucifer', 'Skins', 'Shameless', 'The Vampire Diaries', 'True Blood', 'Teen Wolf', 'Archer', "Bob's Burgers",
+  'The IT Crowd', 'Cowboy Bebop', 'Neon Genesis Evangelion', 'Inazuma Eleven', 'Arcane', 'Castlevania', 'The Sandman', 'Band of Brothers',
+  "The Queen's Gambit", 'American Horror Story', 'Fear the Walking Dead', 'Invincible', 'Moon Knight', 'Ms. Marvel', 'The Rings of Power',
+  'Severance', 'Sons of Anarchy', 'Killing Eve', 'Only Murders in the Building', 'Foundation', 'The Expanse', 'Luther', 'Bodyguard',
+  'Star Trek: Picard', 'Star Trek: Discovery', 'Arrested Development', 'Good Omens', 'Kim Possible', 'Águila Roja', 'Policías', 'La peste',
+  'Obi-Wan Kenobi', 'Entrevías', 'Veneno', 'Fariña', 'Estoy vivo', 'El pueblo', "D'Artacán y los tres mosqueperros", 'Urgencias', 'Mindhunter',
+  'The Umbrella Academy', 'Stargate SG-1', 'Hércules: sus viajes legendarios', 'Spartacus', 'Boardwalk Empire', 'The Good Place', 'Community',
+  'Cristo y Rey', 'Alice in Borderland', 'Fringe', 'La ruta', 'Reina Roja', 'Big Mouth', 'The Falcon and the Winter Soldier',
+  'The Book of Boba Fett', 'The Haunting of Hill House', 'Bodyguard', 'Broadchurch', 'Line of Duty', 'Maid', 'Squid Game',
+);
+
+// Películas, música, cine y personajes de nicho (la base de esas categorías es Media).
+const NICHE = S(
+  // Películas
+  'Viridiana', 'Master and Commander', 'Stardust', 'El emperador y sus locuras', 'Black Hawk derribado', 'El milagro de P. Tinto', 'Plácido',
+  'El verdugo', 'Your Name', 'Zodiac', 'Eragon', 'Desayuno con diamantes', 'Rango', 'Megamind', 'Monstruos contra alienígenas',
+  'El buen dinosaurio', 'Los Mitchell contra las máquinas', 'Oliver y su pandilla', 'El gigante de hierro', 'La princesa Mononoke',
+  'Atlantis: El imperio perdido', 'El planeta del tesoro', 'La huérfana', 'Tron', 'Fama', 'Flashdance', 'El apartamento', 'Doctor Zhivago',
+  'Pagafantas', 'Secretos del corazón', 'El bola', 'Villaviciosa de al lado', 'Kiki, el amor se hace', 'El reino', 'Mientras dure la guerra',
+  'Rocketman', 'Black Adam', 'Shazam!', 'Creed', 'It Follows', 'Hereditary', 'Midsommar', 'Sinister', 'District 9', 'Elysium', 'Pacific Rim',
+  'Deep Impact', 'Stargate', 'Tenet', 'Nomadland', 'Moonlight', 'Spotlight', 'Babel', 'Crash', 'Birdman', 'Blade Runner 2049',
+  'A.I. Inteligencia Artificial', 'Minority Report', 'Arthur Christmas', 'Hop', 'Aviones', 'Klaus', "Five Nights at Freddy's",
+  'Los lunes al sol', 'Mentiroso compulsivo', 'El efecto mariposa', 'Detective Pikachu', 'La novia cadáver', 'Por un puñado de dólares',
+  'Érase una vez en América', 'Érase una vez en el Oeste', 'Drácula de Bram Stoker', 'El corredor del laberinto', 'Los padres de ella',
+  'Piratas', 'Percy Jackson', 'Conan', 'Catwoman', 'Cinema Paradiso', 'Stuart Little', 'American Psycho', 'Full Metal Jacket', 'Con Air',
+  'Face/Off', 'Akira', 'Sospechosos habituales', 'El curioso caso de Benjamin Button', 'Relatos salvajes', 'El secreto de sus ojos',
+  'Divergente', 'La cosa', 'Wallace y Gromit', 'Ready Player One', 'Contact', 'La llegada', 'El patriota', 'Los intocables de Eliot Ness',
+  'Espartaco', 'El gran dictador', 'Tiempos modernos', 'Sin City', 'Watchmen', 'Billy Elliot', 'Full Monty', 'Platoon', 'La ventana indiscreta',
+  'Heat', 'Memento', 'El gran Lebowski', 'El príncipe de Zamunda', 'Willow', 'Cuenta conmigo', 'Footloose', 'Spirit: El corcel indomable',
+  'El príncipe de Egipto', 'Coraline', 'El castillo ambulante', 'Ponyo', 'La lengua de las mariposas', 'Los santos inocentes', 'Primos',
+  'Spanish Movie', 'Hable con ella', '¿Qué he hecho yo para merecer esto?', 'Cantando bajo la lluvia', 'West Side Story', 'Logan',
+  'Encuentros en la tercera fase', '2001: Una odisea del espacio', 'Celda 211', 'La escopeta nacional', 'Amanece, que no es poco',
+  'El quinto elemento', 'El último samurái', 'Chicago', 'Million Dollar Baby', 'Kingsman', 'Erin Brockovich', 'Thelma y Louise', 'Big Fish',
+  'Chicken Run', 'La terminal', 'Apolo 13', 'La vida de Brian', 'Slumdog Millionaire', 'El discurso del rey', 'Amélie', 'Big',
+  'Ángeles y demonios', 'Un lugar tranquilo', 'Déjame salir', 'La bruja', 'El proyecto de la bruja de Blair', 'Réquiem por un sueño',
+  'American History X', 'Todo a la vez en todas partes', 'Monsters University', 'Ralph rompe Internet', '1917', 'Speed', 'Insidious',
+  'Expediente Warren', 'Destino final', 'La profecía', 'Reservoir Dogs', 'Lawrence de Arabia', 'Truman', 'Dolor y gloria', 'Dunkerque',
+  'Dirty Harry', 'Arma letal', 'Paddington', 'La guerra de los mundos', 'Argo', '12 años de esclavitud', 'Cisne negro', 'The Ring',
+  'Asterix y Obelix', 'Mad Max', 'V de Vendetta', 'Uno de los nuestros', 'Casino', 'Apocalypse Now', 'Vértigo', 'Poltergeist',
+  'Robin Hood: príncipe de los ladrones', 'Star Trek', 'Noche en el museo',
+  // Música
+  'Manic Street Preachers', 'Moloko', 'Skunk Anansie', 'Garbage', 'Texas', 'The Corrs', 'The Script', 'Travis', 'Keane', 'Snow Patrol',
+  'The Kooks', 'The Libertines', 'The Hives', 'Placebo', 'Dio', 'Manowar', 'Nightwish', 'Whitesnake', 'Def Leppard', 'Tears for Fears',
+  'Portishead', 'Massive Attack', 'Chemical Brothers', 'The Prodigy', 'Fatboy Slim', 'Moby', 'Alice in Chains', 'Soundgarden',
+  'The Smashing Pumpkins', 'Panic! at the Disco', 'The Cardigans', 'Christine and the Queens', 'Angèle', 'Bette Midler', 'Liza Minnelli',
+  'Carly Simon', 'Fergie', 'Kesha', 'Halsey', 'Lizzo', 'Megan Thee Stallion', 'Mary J. Blige', 'Viva Suecia', 'Pignoise', 'La Casa Azul',
+  'Los Ronaldos', 'Izal', 'Molotov', 'Rubén Blades', 'Yandel', 'Massiel', 'Billie Joe Armstrong', 'Chappell Roan', 'Akon', 'Kortatu',
+  'David Otero', 'S Club 7', 'Sugababes', 'All Saints', 'Girls Aloud', '5 Seconds of Summer', 'Kansas', 'Foreigner', 'Modern Talking',
+  'The Temptations', 'The Supremes', 'Earth, Wind & Fire', 'John Mayer', 'Jason Mraz', 'Paolo Nutini', 'Amy Macdonald', 'Sophie Ellis-Bextor',
+  'The Vamps', 'Bastille', 'Boyzone', 'Blue', 'Journey', 'Survivor', 'Toto', 'Seal', 'Motörhead', 'Judas Priest', 'OneRepublic', 'Café Tacvba',
+  'Los Rodríguez', 'Soda Stereo', 'Alaska y Dinarama', 'Jason Derulo', 'Jennifer Hudson', 'Dr. Dre', 'Kendrick Lamar', 'Notorious B.I.G.',
+  'Presuntos Implicados', 'La Unión', 'Seguridad Social', 'M-Clan', 'Nacha Pop', 'Duncan Dhu', 'Siniestro Total', 'Dover', 'La Quinta Estación',
+  'Twenty One Pilots', 'Keith Richards', 'Bonnie Tyler', 'Nathy Peluso', 'Duki', 'Rels B', 'Rozalén', 'Bebe', 'Soraya Arnelas', 'Vanesa Martín',
+  'India Martínez', 'Pastora Soler', 'Fito Cabrales', 'Dani Fernández', 'Antonio Flores', 'Zahara', 'Bunbury', 'Marvin Gaye', 'Shania Twain',
+  'Los Secretos', 'Ringo Starr', 'Barbra Streisand', 'Dean Martin', 'Nat King Cole', 'Tom Jones', 'Lionel Richie', 'Gorillaz', 'NSYNC', 'RBD',
+  'Rage Against the Machine', 'The Offspring', 'Blink-182', 'Franz Ferdinand', 'The White Stripes', 'The Strokes', 'Kings of Leon', 'Paramore',
+  'Sum 41', 'Fall Out Boy', 'My Chemical Romance', 'System of a Down', 'Slipknot', 'Korn', 'Limp Bizkit', 'Alice Cooper', 'Måneskin', 'Aqua',
+  'Vengaboys', 'Ace of Base', 'Dido', 'Westlife', 'Take That', 'Little Mix', 'Fifth Harmony', 'The Pussycat Dolls', 'Cardi B', 'Travis Scott',
+  'Post Malone', 'Doja Cat', 'Judy Garland', 'Dolly Parton', 'Alanis Morissette', 'The Jackson 5', 'Rammstein', 'Marilyn Manson',
+  'Lenny Kravitz', 'James Blunt', 'Norah Jones', 'Celia Cruz', 'Love of Lesbian', 'La Polla Records', 'Deep Purple', 'Fleetwood Mac',
+  'The Who', 'Blur', 'Jamiroquai', 'Simply Red', 'Pet Shop Boys', 'Ska-P', 'Jarabe de Palo', 'Pereza', 'Vetusta Morla', 'El Último de la Fila',
+  'Celtas Cortos', 'Morad', 'Don Omar', 'Carlos Vives', 'Enya', 'Cyndi Lauper', 'Diana Ross', 'Janis Joplin', 'James Brown', 'Wham!', 'A-ha',
+  'Keith Richards', 'Camila Cabello', 'Evanescence', 'Pearl Jam', 'Jonas Brothers', 'Evanescence', 'Rick Astley', 'Muse', 'Arctic Monkeys',
+  'Radiohead', 'Duran Duran', 'Foo Fighters', 'Iron Maiden', 'The Doors', 'Kiss', 'Daft Punk', 'R.E.M.', 'Dire Straits', 'Eurythmics',
+  'Boney M.', 'Village People', 'Roxette', 'Depeche Mode', 'The Police', 'Anuel AA', 'Rauw Alejandro', 'Ozuna', 'Karol G', 'J Balvin',
+  // Cine y TV (actores y directores secundarios)
+  'Alicia Vikander', 'Viola Davis', 'Gene Kelly', 'Jet Li', 'Christopher Walken', 'Michelle Yeoh', 'Wes Anderson', 'Inma Cuesta',
+  'Adriana Ugarte', 'Mark Ruffalo', 'Rupert Grint', 'Colin Firth', 'Jude Law', 'Ewan McGregor', 'Ian McKellen', 'Patrick Stewart',
+  'Gary Oldman', 'Ralph Fiennes', 'Cillian Murphy', 'Chris Rock', 'Steve Carell', 'Bill Murray', 'Owen Wilson', 'Chris Pratt',
+  'Andrew Garfield', 'Joaquin Phoenix', 'Jake Gyllenhaal', 'Edward Norton', 'Bradley Cooper', 'Jared Leto', 'Matthew McConaughey',
+  'Woody Harrelson', 'Jeff Bridges', 'Jamie Lee Curtis', 'Cate Blanchett', 'Courteney Cox', 'Lisa Kudrow', 'Belén Cuesta', 'Candela Peña',
+  'Najwa Nimri', 'Bárbara Lennie', 'Javier Gutiérrez', 'Karra Elejalde', 'Eduard Fernández', 'Luis Zahera', 'José Sacristán', 'Paco Rabal',
+  'Lola Dueñas', 'Rosa María Sardà', 'Chus Lampreave', 'Agustín González', 'Daniel Day-Lewis', 'Michael Caine', 'Rami Malek', 'Oscar Isaac',
+  'Adam Driver', 'Mads Mikkelsen', 'Christoph Waltz', 'Roger Moore', 'Florence Pugh', 'Anya Taylor-Joy', 'Sydney Sweeney', 'Paul Mescal',
+  'Sigourney Weaver', 'Uma Thurman', 'Michelle Pfeiffer', 'Drew Barrymore', 'Peter Jackson', 'Robert Zemeckis', 'James Wan', 'David Fincher',
+  'Denis Villeneuve', 'Wes Craven', 'Jordan Peele', 'Alejandro González Iñárritu', 'Alfonso Cuarón', 'Juan Antonio Bayona', 'Isabel Coixet',
+  'Fernando León de Aranoa', 'Fernando Trueba', 'Rodrigo Sorogoyen', 'Daniel Monzón', 'Jaime de Armiñán', 'José Luis Garci', 'Carlos Saura',
+  'Víctor Erice', 'Pilar Miró', 'Icíar Bollaín', 'Gracia Querejeta', 'Emilio Martínez Lázaro', 'Javier Fesser', 'José Luis Cuerda',
+  'Agustí Villaronga', 'Bigas Luna', 'Jaime Chávarri', 'Montxo Armendáriz', 'Ken Loach', 'Orson Welles', 'Billy Wilder', 'Akira Kurosawa',
+  'Satoshi Kon', 'Wong Kar-wai', 'Ang Lee', 'Bong Joon-ho', 'Park Chan-wook', 'Hirokazu Kore-eda', 'Federico Fellini', 'Ingmar Bergman',
+  'François Truffaut', 'Jean-Luc Godard', 'Jean Renoir', 'Sofia Coppola', 'Greta Gerwig', 'Kathryn Bigelow', 'Chloé Zhao', 'Jane Campion',
+  'Lana Wachowski', 'Lilly Wachowski', 'Sergio Leone', 'Mel Brooks', 'Spike Lee', 'David Lynch', 'Terry Gilliam', 'Takeshi Kitano',
+  'Miguel Ángel Silvestre', 'Paco León', 'Blanca Suárez', 'Fernando Fernán Gómez', 'José Luis López Vázquez', 'Victoria Abril',
+  // Personajes
+  'Sackboy', 'Q*bert', 'Doomguy', 'Duke Nukem', 'Bobobo', 'Iznogoud', 'Gaston Lagaffe', 'Corto Maltés', 'Pyramid Head', 'Sora', 'Waluigi',
+  'Samus Aran', 'Cloud Strife', 'Sephiroth', 'Arthur Morgan', 'Ezio Auditore', 'Altair', 'Ellie Williams', 'Joel Miller', 'Chun-Li', 'Ryu',
+  'Ken', 'Knuckles', 'Ganondorf', 'Brock', 'Vanellope', 'Hiro Hamada', 'Bruno Madrigal', 'Yzma', 'Oogie Boogie', 'Lotso', 'Forky', 'Pinky',
+  'Omar Little', 'Don Draper', 'Amélie Poulain', 'Vecna', 'Megatron', 'Carmen Sandiego', 'Astroboy', 'Caillou', 'Pepe Le Pew',
+  'Thomas la Locomotora', 'Hipo', 'Chimuelo', 'Calvin', 'Hobbes', 'Calimero', 'Superlópez', 'Capitán Trueno', 'Seiya de Pegaso', 'Eva',
+  'Héctor', 'Ryder', 'Peach', 'Alex', 'Mad Hatter', 'Reina de Corazones', 'Betty Boop', 'Olivia', 'Wally', 'Doc Brown', 'Mandaloriano',
+  'Hawkeye', 'Trinity', 'Dwight Schrute', 'Michael Scott', 'Leonard Hofstadter', 'Katniss Everdeen', 'Darth Maul', 'Zoro', 'Nami', 'Arenita',
+  'Fred', 'Daphne', 'Nobita', 'Trunks', 'Krillin', 'Sasuke', 'Piccolo', 'Luffy', 'Monkey D. Luffy', 'Sailor Moon', 'Zipi', 'Zape',
+  'La Reina Malvada', 'Mr. Potato', 'Jessie', 'She-Ra', 'Skeletor', "D'Artagnan", 'Silvestre', 'Robin', 'Remy', 'Bilbo Bolsón', 'Tails',
+  'Misty', 'Sub-Zero', 'Scorpion', 'Addams', 'Tyler Durden', 'Thomas Shelby', 'Dexter Morgan', 'Tony Montana', 'Solid Snake', 'Nathan Drake',
+  'Kratos', 'Master Chief', 'Geralt de Rivia', 'Hércules Poirot', 'Norman Bates', 'Gulliver', 'Robinson Crusoe',
+);
+
+const HUMANITIES = new Set(['Historia', 'Arte', 'Literatura', 'Mitología', 'Ciencia', 'Cultura']);
+const NICHE_CATEGORIES = new Set(['Películas', 'Música', 'Cine y TV', 'Personajes']);
+
 function difficulty(r) {
   const k = norm(r.palabra);
-  // Las listas de contexto cultural pesan más que la genérica EASY para nombres repetidos entre categorías.
-  if (['Historia', 'Arte', 'Literatura', 'Mitología', 'Ciencia', 'Cultura'].includes(r.categoria)) {
+  if (HUMANITIES.has(r.categoria)) {
     if (VERY_HARD.has(k)) return 'Muy difícil';
     if (EASY.has(k)) return 'Fácil';
     if (MEDIUM.has(k)) return 'Media';
-    if (HARD.has(k)) return 'Difícil';
     return 'Difícil';
   }
+  if (r.categoria === 'Series') return EASY.has(k) ? 'Fácil' : MEDIUM_SERIES.has(k) ? 'Media' : 'Difícil';
+  if (NICHE_CATEGORIES.has(r.categoria)) return EASY.has(k) ? 'Fácil' : NICHE.has(k) ? 'Difícil' : 'Media';
   if (EASY.has(k)) return 'Fácil';
   if (VERY_HARD.has(k)) return 'Muy difícil';
   if (HARD.has(k)) return 'Difícil';
-  if (MEDIUM.has(k)) return 'Media';
   return BASE_MEDIUM.has(r.categoria) ? 'Media' : 'Difícil';
 }
 const POPULARITY = { 'Fácil': 'Muy alta', 'Media': 'Alta', 'Difícil': 'Media', 'Muy difícil': 'Baja' };
@@ -716,8 +836,8 @@ const ADULT = S(
   'American Pie', 'Scary Movie', 'Kill Bill', 'Scarface', 'El precio del poder', 'Casino', 'Uno de los nuestros', 'Heat', 'Apocalypse Now',
   'Platoon', 'El club de la lucha', 'American Beauty', 'Cadena perpetua', 'Django desencadenado', 'Érase una vez en Hollywood', 'Memento',
   'Watchmen', 'Sin City', 'V de Vendetta', 'Superbad', 'Supersalidos', 'Ted', 'Resacón en Las Vegas', 'Full Monty', 'Pesadilla en Elm Street',
-  'Viernes 13', 'La cosa', 'It', 'Carrie', 'Alien', 'Terminator', 'Depredador', 'Robocop', 'Mad Max', 'Blade Runner', '300', 'Troya',
-  'Gladiator', 'Braveheart', 'Salvar al soldado Ryan', 'La lista de Schindler', 'La naranja mecánica', 'Réquiem por un sueño', 'Cisne negro',
+  'Viernes 13', 'La cosa', 'It', 'Carrie', 'Alien', 'Depredador', 'Robocop', 'Mad Max', 'Blade Runner', '300', 'Troya',
+  'Braveheart', 'Salvar al soldado Ryan', 'La lista de Schindler', 'La naranja mecánica', 'Réquiem por un sueño', 'Cisne negro',
   'American History X', 'El lobo de Wall Street', 'Shutter Island', 'Hereditary', 'Midsommar', 'Insidious', 'Sinister', 'Expediente Warren',
   'Poltergeist', 'La profecía', 'Destino final', 'The Ring', 'It Follows', 'La bruja', 'Déjame salir', 'Un lugar tranquilo',
   'El proyecto de la bruja de Blair', 'Parásitos', '12 años de esclavitud', 'Babel', 'Birdman', 'Spotlight', 'Argo', 'Moonlight', 'Crash',
@@ -725,8 +845,8 @@ const ADULT = S(
   'El sexto sentido', 'Sexto sentido', 'Tiburón', 'Drácula de Bram Stoker', 'El bueno, el feo y el malo', 'Por un puñado de dólares',
   'Érase una vez en América', 'Érase una vez en el Oeste', 'Dirty Harry', 'Arma letal', 'Con Air', 'Face/Off', 'Akira', 'American Psycho',
   'Full Metal Jacket', 'Dunkerque', 'Sospechosos habituales', 'John Wick', 'Fast & Furious', 'Rambo', 'La jungla de cristal', 'Kingsman',
-  'Deadpool', 'Logan', 'Escuadrón Suicida', 'Joker', 'Harley Quinn', 'Oppenheimer', 'Dune', 'Interstellar', 'Origen', 'Matrix', 'Avatar',
-  'Titanic', 'Pearl Harbor', 'Black Hawk derribado', 'Master and Commander', 'El efecto mariposa', 'Algo pasa con Mary', 'Zoolander',
+  'Deadpool', 'Logan', 'Escuadrón Suicida', 'Pearl Harbor', 'Black Hawk derribado', 'Master and Commander', 'El efecto mariposa',
+  'Algo pasa con Mary', 'Zoolander',
   'Torrente', 'Airbag', 'El día de la bestia', 'La comunidad', 'Las brujas de Zugarramurdi', 'Abre los ojos', 'Hable con ella',
   'Todo sobre mi madre', 'La mala educación', 'Volver', 'Dolor y gloria', 'Mar adentro', 'Contratiempo', 'Perfectos desconocidos',
   'Relatos salvajes', 'El secreto de sus ojos', 'Tres metros sobre el cielo', 'Sin tetas no hay paraíso', 'Kiki, el amor se hace',
@@ -755,8 +875,8 @@ const ADULT = S(
   'Mao Zedong', 'Lenin', 'Trotski', 'Fidel Castro', 'Calígula', 'Nerón', 'Messalina', 'Agripina', 'Rasputín', 'Sigmund Freud', 'Karl Marx',
   'Friedrich Nietzsche', 'Bad Bunny', 'Bad Gyal', 'Anuel AA', 'Cardi B', 'Nicki Minaj', 'Megan Thee Stallion', 'Doja Cat', 'Travis Scott',
   'Eminem', '50 Cent', 'Dr. Dre', 'Snoop Dogg', 'Tupac', 'Notorious B.I.G.', 'Kendrick Lamar', 'Marilyn Manson', 'Slipknot', 'Rammstein',
-  'Motörhead', 'Korn', 'Limp Bizkit', 'System of a Down', 'La Polla Records', 'Kortatu', 'Extremoduro', 'Ska-P', 'Morad', 'Duki', 'Quevedo',
-  'Mala Rodríguez', 'C. Tangana', 'Rels B', 'Rosalía',
+  'Motörhead', 'Korn', 'Limp Bizkit', 'System of a Down', 'La Polla Records', 'Kortatu', 'Extremoduro', 'Ska-P', 'Morad', 'Duki',
+  'Mala Rodríguez', 'C. Tangana', 'Rels B',
   'La Celestina', 'Madame Bovary', 'American Gothic', 'Saturno devorando a su hijo', 'La maja desnuda', 'El rapto de las sabinas',
   'El jardín de las delicias', 'El retrato de Dorian Gray', 'Misery', 'El cementerio de animales', 'Stephen King', 'Fahrenheit 451', '1984',
   'Rebelión en la granja', 'Crimen y castigo', 'El perfume', 'Millennium', 'La naranja mecánica', 'Neuromante', 'American Psycho',
@@ -764,7 +884,7 @@ const ADULT = S(
   'Guerra Civil Española', 'Segunda Guerra Mundial', 'Primera Guerra Mundial', 'Día D', 'Desembarco de Normandía', 'Hundimiento del Titanic',
   'Cruzadas', 'Batalla de Lepanto', 'Batalla de Waterloo', 'Batalla de Trafalgar', 'Batalla de las Termópilas', 'Guerra Fría',
 );
-const KID_CATEGORIES = new Set(['Personajes', 'Videojuegos', 'Marcas', 'Lugares', 'Deportes', 'Música', 'Naturaleza', 'Mitología', 'Películas', 'Series']);
+const KID_CATEGORIES = new Set(['Personajes', 'Videojuegos', 'Marcas', 'Lugares', 'Deportes', 'Naturaleza', 'Mitología']);
 function infantil(r, dif) {
   const k = norm(r.palabra);
   if (ADULT.has(k)) return 'No';

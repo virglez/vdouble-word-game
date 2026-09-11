@@ -1,4 +1,4 @@
-﻿palabra_id,idioma,nombre_localizado
+palabra_id,idioma,nombre_localizado
 42,en,Tintin
 42,fr,Tintin
 42,pt,Tintim
@@ -112,9 +112,6 @@
 220,en,Mona Lisa
 220,fr,La Joconde
 220,pt,Mona Lisa
-221,en,Guernica
-221,fr,Guernica
-221,pt,Guernica
 222,en,The Scream
 222,fr,Le Cri
 222,pt,O Grito
@@ -123,9 +120,6 @@
 224,en,The Last Supper
 224,fr,La Cène
 224,pt,A Última Ceia
-225,en,David
-225,fr,David
-225,pt,David
 226,en,The Thinker
 226,fr,Le Penseur
 226,pt,O Pensador
@@ -216,9 +210,6 @@
 334,en,The Exorcist
 334,fr,L'Exorciste
 334,pt,O Exorcista
-337,en,The Sixth Sense
-337,fr,Sixième Sens
-337,pt,O Sexto Sentido
 338,en,The Silence of the Lambs
 338,fr,Le Silence des agneaux
 338,pt,O Silêncio dos Inocentes
@@ -260,8 +251,6 @@
 478,en,Sahara Desert
 478,fr,désert du Sahara
 478,pt,Deserto do Saara
-479,en,Amazon
-479,fr,Amazone
 480,en,Canary Islands
 480,fr,îles Canaries
 480,pt,Ilhas Canárias
@@ -428,9 +417,6 @@
 634,en,Attack on Titan
 634,fr,L'Attaque des Titans
 634,pt,Attack on Titan
-636,en,Saint Seiya
-636,fr,Les Chevaliers du Zodiaque
-636,pt,Cavaleiros do Zodíaco
 637,en,Captain Tsubasa
 637,fr,Olive et Tom
 637,pt,Captain Tsubasa
@@ -717,15 +703,9 @@
 1060,en,The House of the Spirits
 1060,fr,La Maison aux esprits
 1060,pt,A Casa dos Espíritos
-1114,en,Pyramids of Egypt
-1114,fr,Pyramides d'Égypte
-1114,pt,Pirâmides do Egito
 1118,en,Prado Museum
 1118,fr,musée du Prado
 1118,pt,Museu do Prado
-1119,en,Canary Islands
-1119,fr,îles Canaries
-1119,pt,Ilhas Canárias
 1120,en,Berlin
 1120,fr,Berlin
 1120,pt,Berlim
@@ -749,9 +729,6 @@
 1129,en,Havana
 1129,fr,La Havane
 1129,pt,Havana
-1130,en,Sahara
-1130,fr,Sahara
-1130,pt,Saara
 1132,en,Grand Canyon
 1132,fr,Grand Canyon
 1132,pt,Grand Canyon
@@ -1009,9 +986,6 @@
 1485,en,The Surrender of Breda
 1485,fr,La Reddition de Bréda
 1485,pt,A Rendição de Breda
-1486,en,Venus de Milo
-1486,fr,Vénus de Milo
-1486,pt,Vénus de Milo
 1487,en,Pietà
 1487,fr,Pietà
 1487,pt,Pietà
@@ -1066,9 +1040,6 @@
 1521,en,Arc de Triomphe
 1521,fr,Arc de Triomphe
 1521,pt,Arco do Triunfo
-1522,en,Great Wall of China
-1522,fr,Grande Muraille de Chine
-1522,pt,Grande Muralha da China
 1523,en,Palace of Versailles
 1523,fr,château de Versailles
 1523,pt,Palácio de Versalhes
@@ -1077,9 +1048,6 @@
 1524,pt,Catedral de Notre-Dame
 1545,fr,Chemins de Compostelle
 1545,pt,Caminho de Santiago
-1546,en,Nile
-1546,fr,Nil
-1547,pt,Evereste
 1548,en,Alps
 1550,en,Victoria Falls
 1550,fr,chutes Victoria
@@ -1105,9 +1073,6 @@
 1565,en,Kathmandu
 1565,fr,Katmandou
 1565,pt,Catmandu
-1568,en,Caribbean
-1568,fr,Caraïbes
-1568,pt,Caraíbas
 1595,en,Hephaestus
 1595,fr,Héphaïstos
 1596,en,Theseus
@@ -1499,15 +1464,9 @@
 2210,en,New Delhi
 2210,fr,New Delhi
 2210,pt,Nova Deli
-2211,en,Odysseus
-2211,fr,Ulysse
-2211,pt,Odisseu
 2213,en,Orphan
 2213,fr,Esther
 2213,pt,A Órfã
-2215,en,The Maze Runner
-2215,fr,Le Labyrinthe
-2215,pt,Maze Runner: Correr ou Morrer
 2217,en,Princess Mononoke
 2217,fr,Princesse Mononoké
 2217,pt,Princesa Mononoke
@@ -1613,9 +1572,6 @@
 2318,en,Pompeii
 2318,fr,Pompéi
 2318,pt,Pompeia
-2319,en,Colosseum
-2319,fr,Colisée
-2319,pt,Coliseu
 2320,en,Brandenburg Gate
 2320,fr,porte de Brandebourg
 2320,pt,Porta de Brandemburgo
@@ -1625,13 +1581,8 @@
 2331,en,Pyrenees
 2331,fr,Pyrénées
 2331,pt,Pirenéus
-2332,en,Atlantic Ocean
-2332,fr,océan Atlantique
-2332,pt,Oceano Atlântico
 2333,en,Himalayas
 2333,pt,Himalaias
-2334,en,Niagara
-2334,fr,Niagara
 2335,en,North Pole
 2335,fr,pôle Nord
 2337,en,Cancun
@@ -2120,9 +2071,6 @@
 2736,en,Once Upon a Time in the West
 2736,fr,Il était une fois dans l'Ouest
 2736,pt,Era Uma Vez no Oeste
-2737,en,Gremlins
-2737,fr,Gremlins
-2737,pt,Gremlins
 2739,en,Bram Stoker's Dracula
 2739,fr,Dracula
 2740,en,The Phantom of the Opera
@@ -2333,9 +2281,6 @@
 3082,en,Rick Sanchez
 3082,fr,Rick Sanchez
 3082,pt,Rick Sanchez
-3098,en,Scarface
-3098,fr,Scarface
-3098,pt,Scarface
 3099,en,Star Wars
 3099,fr,Star Wars
 3099,pt,Star Wars
@@ -2392,8 +2337,6 @@
 3727,en,Cartagena
 3727,fr,Carthagène des Indes
 3727,pt,Cartagena das Índias
-3729,en,Galápagos Islands
-3729,fr,îles Galápagos
 3732,en,Easter Island
 3732,fr,île de Pâques
 3732,pt,Ilha de Páscoa
@@ -2513,5 +2456,3 @@
 4092,en,Sonic the Hedgehog
 4092,fr,"Sonic, le film"
 4092,pt,Sonic - O Filme
-4205,en,Princess Leia
-4205,fr,Princesse Leia

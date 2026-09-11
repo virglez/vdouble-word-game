@@ -51,18 +51,6 @@ subcategoria,Cantante,es,Cantante
 subcategoria,Cantante,en,Singer
 subcategoria,Cantante,fr,Chanteur
 subcategoria,Cantante,pt,Cantor
-subcategoria,Actriz,es,Actriz
-subcategoria,Actriz,en,Actress
-subcategoria,Actriz,fr,Actrice
-subcategoria,Actriz,pt,Atriz
-subcategoria,Actor,es,Actor
-subcategoria,Actor,en,Actor
-subcategoria,Actor,fr,Acteur
-subcategoria,Actor,pt,Ator
-subcategoria,Director,es,Director
-subcategoria,Director,en,Director
-subcategoria,Director,fr,Réalisateur
-subcategoria,Director,pt,Diretor
 subcategoria,Escritor,es,Escritor
 subcategoria,Escritor,en,Writer
 subcategoria,Escritor,fr,Écrivain
@@ -138,23 +126,16 @@ categoria,Videojuegos,pt,Videojogos
 subcategoria,Acción,en,Action
 subcategoria,Activista,en,Activist
 subcategoria,Actor/Actriz,en,Actor
-subcategoria,Actores y actrices,en,Actors
 subcategoria,Alimentación,en,Food
 subcategoria,Animación educativa,en,Educational animation
 subcategoria,Animales,en,Animals
 subcategoria,Anime,en,Anime
-subcategoria,Arcade,en,Arcade
 subcategoria,Arquitectura,en,Architecture
-subcategoria,Arte,en,Art
-subcategoria,Arte y literatura,en,Art and literature
 subcategoria,Artes marciales,en,Martial arts
-subcategoria,Artistas y obras,en,Artists and works
 subcategoria,Astrónomo,en,Astronomer
 subcategoria,Atletismo,en,Athletics
 subcategoria,Automoción,en,Automotive
 subcategoria,Automovilismo y motociclismo,en,Motor racing
-subcategoria,Autor/Obra,en,Author/Work
-subcategoria,Autores,en,Authors
 subcategoria,Aventura,en,Adventure
 subcategoria,Aventura española,en,Spanish adventure
 subcategoria,Aventuras,en,Adventures
@@ -164,20 +145,15 @@ subcategoria,Battle royale,en,Battle royale
 subcategoria,Bebida,en,Drink
 subcategoria,Boxeo,en,Boxing
 subcategoria,Bádminton,en,Badminton
-subcategoria,Cantante/Grupo,en,Singer/Group
-subcategoria,Cantantes españoles,en,Spanish singers
-subcategoria,Cantantes internacionales,en,International singers
 subcategoria,Carreras,en,Racing
 subcategoria,Ciclismo,en,Cycling
 subcategoria,Ciencia ficción,en,Science fiction
 subcategoria,Ciencia ficción española,en,Spanish science fiction
 subcategoria,Científico,en,Scientist
 subcategoria,Científicos e inventores,en,Scientists and inventors
-subcategoria,Cine,en,Cinema
 subcategoria,Cine de atracos,en,Heist films
 subcategoria,Cine y literatura,en,Cinema and literature
 subcategoria,Ciudad,en,City
-subcategoria,Ciudades,en,Cities
 subcategoria,Civilizaciones y acontecimientos,en,Civilisations and events
 subcategoria,Civilización,en,Civilisation
 subcategoria,Comedia,en,Comedy
@@ -194,9 +170,7 @@ subcategoria,Deportes,en,Sports
 subcategoria,Deportista,en,Athlete
 subcategoria,Destino,en,Destination
 subcategoria,Diosa griega,en,Greek goddess
-subcategoria,Dioses y criaturas,en,Gods and creatures
 subcategoria,Director/a,en,Director
-subcategoria,Directores,en,Directors
 subcategoria,Drama,en,Drama
 subcategoria,Drama bélico,en,War drama
 subcategoria,Drama español,en,Spanish drama
@@ -205,7 +179,6 @@ subcategoria,Drama histórico español,en,Spanish historical drama
 subcategoria,Drama juvenil español,en,Spanish teen drama
 subcategoria,Empresa,en,Company
 subcategoria,Entrenador,en,Coach
-subcategoria,Entrenadores,en,Coaches
 subcategoria,Entretenimiento,en,Entertainment
 subcategoria,Equipos y clubes,en,Teams and clubs
 subcategoria,Escalada,en,Climbing
@@ -215,36 +188,27 @@ subcategoria,Evento,en,Event
 subcategoria,Explorador,en,Explorer
 subcategoria,Fantasía,en,Fantasy
 subcategoria,Faraón,en,Pharaoh
-subcategoria,Futbolistas,en,Footballers
 subcategoria,Físico,en,Physicist
 subcategoria,Fútbol,en,Football
 subcategoria,Gimnasia,en,Gymnastics
 subcategoria,Golf,en,Golf
 subcategoria,Grupo,en,Group
-subcategoria,Grupo musical,en,Music group
-subcategoria,Grupos y bandas,en,Groups and bands
-subcategoria,Historia,en,History
-subcategoria,Historia y cultura,en,History and culture
 subcategoria,Histórica,en,Historical
 subcategoria,Hogar,en,Home
 subcategoria,Héroe griego,en,Greek hero
 subcategoria,Infantil,en,Children’s
 subcategoria,Infantil española,en,Spanish children’s
 subcategoria,Infraestructura,en,Infrastructure
-subcategoria,Internacionales,en,International
 subcategoria,Inventor,en,Inventor
 subcategoria,Isla,en,Island
-subcategoria,Juego,en,Game
 subcategoria,Juegos de mesa y cartas,en,Board and card games
 subcategoria,Juguetes,en,Toys
-subcategoria,Libro,en,Book
 subcategoria,Literatura,en,Literature
 subcategoria,Literatura infantil,en,Children’s literature
 subcategoria,Literatura y TV,en,Literature and TV
 subcategoria,Lucha,en,Wrestling
 subcategoria,Lugar,en,Place
 subcategoria,Marca,en,Brand
-subcategoria,Marcas populares,en,Popular brands
 subcategoria,Misterio,en,Mystery
 subcategoria,Mitología,en,Mythology
 subcategoria,Mitología griega,en,Greek mythology
@@ -254,17 +218,12 @@ subcategoria,Moda,en,Fashion
 subcategoria,Monarca,en,Monarch
 subcategoria,Monarquía,en,Monarchy
 subcategoria,Monumento,en,Monument
-subcategoria,Monumentos y lugares famosos,en,Monuments and famous places
 subcategoria,Motociclismo,en,Motorcycling
 subcategoria,Musical,en,Musical
 subcategoria,Móvil,en,Mobile
-subcategoria,Música,en,Music
 subcategoria,Natación,en,Swimming
 subcategoria,Naturaleza,en,Nature
-subcategoria,Novela,en,Novel
 subcategoria,Obra,en,Work
-subcategoria,Obra clásica,en,Classic work
-subcategoria,Obras,en,Works
 subcategoria,Otros deportes,en,Other sports
 subcategoria,Parque temático,en,Theme park
 subcategoria,País,en,Country
@@ -272,11 +231,8 @@ subcategoria,Película,en,Film
 subcategoria,Películas y franquicias,en,Films and franchises
 subcategoria,Persona/Personaje,en,Person/Character
 subcategoria,Personaje histórico,en,Historical figure
-subcategoria,Personajes históricos,en,Historical figures
 subcategoria,Personas y descubrimientos,en,People and discoveries
 subcategoria,Pintura,en,Painting
-subcategoria,Plataformas,en,Platform games
-subcategoria,Pokémon,en,Pokémon
 subcategoria,Policiaca,en,Crime
 subcategoria,Político,en,Politician
 subcategoria,Político romano,en,Roman politician
@@ -291,7 +247,6 @@ subcategoria,Romántica,en,Romantic
 subcategoria,Saga,en,Saga
 subcategoria,Sandbox,en,Sandbox
 subcategoria,Serie,en,Series
-subcategoria,Series internacionales,en,International series
 subcategoria,Simulación,en,Simulation
 subcategoria,Streaming,en,Streaming
 subcategoria,Superhéroes,en,Superheroes
@@ -301,6 +256,5 @@ subcategoria,Terror,en,Horror
 subcategoria,Terror español,en,Spanish horror
 subcategoria,Thriller,en,Thriller
 subcategoria,Thriller español,en,Spanish thriller
-subcategoria,Videojuego,en,Video game
 subcategoria,Videojuegos,en,Video games
 subcategoria,Épica,en,Epic
