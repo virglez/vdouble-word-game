@@ -1,17 +1,17 @@
 {
   "expo": {
     "name": "DECABLO",
-    "slug": "vdouble-word-game",
+    "slug": "decablo",
     "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/branding/decablo-app-icon.png",
-    "scheme": "vdouble-word-game",
+    "scheme": "decablo",
     "userInterfaceStyle": "dark",
     "ios": {
       "supportsTablet": false
     },
     "android": {
-      "package": "com.virglez.vdoublewordgame"
+      "package": "com.vdouble"
     },
     "web": {
       "favicon": "./assets/branding/decablo-app-icon.png"

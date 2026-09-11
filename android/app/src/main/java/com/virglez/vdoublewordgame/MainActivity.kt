@@ -1,4 +1,4 @@
-package com.virglez.vdoublewordgame
+package com.vdouble
 
 import android.os.Build
 import android.os.Bundle
