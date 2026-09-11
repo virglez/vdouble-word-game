@@ -62,7 +62,7 @@ export function answer(state: GameState, correct: boolean, now = Date.now()): Ga
     teams[state.currentTeam].score += 1;
     roundScores[state.roundIndex][state.currentTeam] += 1;
   }
-  const turnEndsAt = state.turnEndsAt - (correct ? 0 : 5_000);
+  const turnEndsAt = state.turnEndsAt - (correct ? 0 : 3_000);
   const next = { ...state, teams, roundScores, review, remaining, currentCard: remaining[0] ?? null, turnEndsAt };
   const allPassed = remaining.every(item => review.some(entry => entry.word === item && !entry.correct));
   return !remaining.length || turnEndsAt <= now || allPassed ? finishTurn(next) : next;
@@ -130,7 +130,7 @@ export type GameState = {
 
 export const initialState: GameState = {
   screen: 'home',
-  cardCount: 20,
+  cardCount: 30,
   teams: [
     { name: 'Equipo Sol', score: 0, icon: '☀️' },
     { name: 'Equipo Luna', score: 0, icon: '🌙' },

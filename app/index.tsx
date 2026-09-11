@@ -17,7 +17,7 @@ import {
 import { Feather } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import { DecabloLogo, RoundBadge, RoundCards, PartyArt } from '@/components/Decablo';
-import { BRAND, ROUND_COLORS } from '@/constants/colors';
+import { BRAND, ROUND_COLORS, TEAM_COLORS } from '@/constants/colors';
 import { createStyles } from '@/components/decabloStyles';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useColors } from '@/hooks/useColors';
@@ -47,14 +47,6 @@ function confirmDiscardSavedGame(startNew: () => void, t: Record<string, string>
 }
 
 const TEAM_ICONS = ['☀️', '⚡', '🔥', '⭐', '🎯', '🎮', '🌙', '🌎', '🛸', '⚙️', '🐺', '🌈'];
-const TEAM_ICON_GLYPHS: React.ComponentProps<typeof Feather>['name'][] = [
-  'sun', 'zap', 'activity', 'star', 'target', 'monitor',
-  'moon', 'globe', 'send', 'settings', 'wind', 'cloud-rain',
-];
-
-function teamIconGlyph(icon: string): React.ComponentProps<typeof Feather>['name'] {
-  return TEAM_ICON_GLYPHS[Math.max(0, TEAM_ICONS.indexOf(icon))];
-}
 
 function AppContent() {
   const colors = useColors();
@@ -78,9 +70,11 @@ function AppContent() {
 
   if (!game.hydrated) {
     return (
-      <View style={[styles.loading, { backgroundColor: colors.background }]}>
-        <ActivityIndicator color={colors.primary} size="large" />
-      </View>
+      <ImageBackground source={require('@/assets/branding/screen-background.png')} resizeMode="cover" style={styles.background}>
+        <View style={styles.loading}>
+          <ActivityIndicator color={colors.primary} size="large" />
+        </View>
+      </ImageBackground>
     );
   }
 
@@ -107,14 +101,26 @@ function AppContent() {
   })();
 
   return (
-    <ImageBackground source={require('@/assets/brand/screen-background.png')} resizeMode="cover" style={styles.background}>
-    <SafeAreaView style={[styles.safe, game.state.screen === 'instructions' && { backgroundColor: 'transparent' }]} edges={['top', 'bottom']}>
+    <ImageBackground source={require('@/assets/branding/screen-background.png')} resizeMode="cover" style={styles.background}>
+    <SafeAreaView style={styles.safe} edges={['top', 'bottom']}>
       <KeyboardAvoidingView
         style={styles.flex}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         keyboardVerticalOffset={insets.top}
       >
-        {content}
+        <View style={styles.flex}>
+          {content}
+          {game.state.screen !== 'home' ? (
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel="Volver al inicio"
+              onPress={() => press(game.goHome)}
+              style={({ pressed }) => [styles.globalHomeButton, pressed && styles.pressed]}
+            >
+              <Feather name="home" size={19} color={BRAND.white} />
+            </Pressable>
+          ) : null}
+        </View>
       </KeyboardAvoidingView>
     </SafeAreaView>
     </ImageBackground>
@@ -212,15 +218,13 @@ function ScreenHeader({
 
 function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   const colors = useColors();
-  const { state, updateTeamName, updateTeamIcon, setCardCount, createGame, isCreating, goHome } = useGame();
+  const { state, updateTeamName, updateTeamIcon, setCardCount, createGame, isCreating } = useGame();
   const t = UI_TEXT[state.language] ?? UI_TEXT.es;
 
   return (
     <ScrollView contentContainerStyle={styles.setupScroll} keyboardShouldPersistTaps="handled">
       <View style={styles.setupTopBar}>
-        <Pressable accessibilityRole="button" onPress={() => press(goHome)} style={styles.setupBackButton}>
-          <Feather name="arrow-left" size={22} color={BRAND.white} />
-        </Pressable>
+        <View style={styles.setupBackButtonPlaceholder} />
         <Image
           source={require('@/assets/branding/decablo-logo.png')}
           resizeMode="contain"
@@ -231,7 +235,7 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
       </View>
 
       <View style={styles.setupHeadingWrap}>
-        <Image source={require('@/assets/branding/setup-title.png')} resizeMode="contain" style={styles.setupTitleArt} accessibilityLabel="Prepara la partida" />
+        <Image source={require('@/assets/illustrations/setup-title.png')} resizeMode="contain" style={styles.setupTitleArt} accessibilityLabel="Prepara la partida" />
       </View>
 
       <View style={styles.setupTeamCards}>
@@ -242,7 +246,7 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
           onChangeText={(value) => updateTeamName(0, value)}
           onIconChange={(icon) => updateTeamIcon(0, icon)}
           styles={styles}
-          color={BRAND.yellow}
+          color={TEAM_COLORS[0]}
           language={state.language}
         />
         <TeamInput
@@ -252,7 +256,7 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
           onChangeText={(value) => updateTeamName(1, value)}
           onIconChange={(icon) => updateTeamIcon(1, icon)}
           styles={styles}
-          color={BRAND.mint}
+          color={TEAM_COLORS[1]}
           language={state.language}
         />
       </View>
@@ -291,7 +295,7 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
         onPress={() => { void createGame().catch(() => Alert.alert(t.createGameError)); }}
         style={({ pressed }) => [styles.setupCreateButton, pressed && styles.pressed]}
       >
-        <Text style={styles.setupCreateButtonText}>{isCreating ? t.creatingGame.toUpperCase() : 'CREAR MAZO'}</Text>
+        <Text style={styles.setupCreateButtonText}>{isCreating ? t.creatingGame.toUpperCase() : 'EMPEZAR'}</Text>
         <View style={styles.ctaArrow}><Feather name="arrow-right" size={21} color={colors.primaryForeground} /></View>
       </Pressable>
       <Modal visible={isCreating} transparent animationType="none" onRequestClose={() => {}}>
@@ -328,13 +332,11 @@ function TeamInput({
   const t = UI_TEXT[language] ?? UI_TEXT.es;
   const start = team === 0 ? 0 : 6;
   const candidates = TEAM_ICONS.slice(start, start + 6);
-  const selectedIndex = Math.max(0, TEAM_ICONS.indexOf(icon));
   return (
     <View style={[styles.setupTeamCard, { backgroundColor: color }]}>
       <View style={styles.setupTeamMainRow}>
         <View style={styles.setupTeamAvatar}>
-          <Feather name={TEAM_ICON_GLYPHS[selectedIndex]} size={58} color={BRAND.navy} />
-          <View style={styles.setupAvatarBurst} />
+          <Text style={styles.setupTeamAvatarEmoji}>{icon}</Text>
         </View>
         <View style={styles.setupTeamFieldColumn}>
           <Text style={styles.setupTeamTitle}>EQUIPO {team === 0 ? 'A' : 'B'}</Text>
@@ -356,7 +358,6 @@ function TeamInput({
       <Text style={styles.setupPickerLabel}>ELIGE UN ÍCONO</Text>
       <View style={styles.setupTeamIconPicker}>
         {candidates.map((candidate) => {
-          const candidateIndex = TEAM_ICONS.indexOf(candidate);
           return (
           <Pressable
             key={`${team}-${candidate}`}
@@ -369,7 +370,7 @@ function TeamInput({
               pressed && styles.pressed,
             ]}
           >
-            <Feather name={TEAM_ICON_GLYPHS[candidateIndex]} size={27} color={BRAND.navy} />
+            <Text style={styles.setupTeamIconText}>{candidate}</Text>
           </Pressable>
           );
         })}
@@ -379,7 +380,7 @@ function TeamInput({
 }
 
 function InstructionsScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
-  const { state, startRound, goHome } = useGame();
+  const { state, startRound } = useGame();
   const t = UI_TEXT[state.language] ?? UI_TEXT.es;
   const roundNumber = state.roundIndex + 1;
   const roundNameText = [t.rulesTitle1, t.rulesTitle2, t.rulesTitle3][state.roundIndex] ?? t.rulesTitle1;
@@ -391,9 +392,6 @@ function InstructionsScreen({ styles }: { styles: ReturnType<typeof createStyles
 
   return (
     <ScrollView contentContainerStyle={styles.instructionsRoundOneScroll}>
-      <Pressable accessibilityRole="button" accessibilityLabel="Volver" onPress={() => press(goHome)} style={styles.backFloating}>
-        <Feather name="arrow-left" size={22} color={BRAND.white} />
-      </Pressable>
       <Image
         source={require('@/assets/branding/decablo-logo.png')}
         resizeMode="contain"
@@ -426,7 +424,12 @@ function InstructionsScreen({ styles }: { styles: ReturnType<typeof createStyles
         testID="start-round-button"
         accessibilityRole="button"
         onPress={() => press(startRound)}
-        style={({ pressed }) => [styles.primaryButton, styles.instructionsStartButton, pressed && styles.pressed]}
+        style={({ pressed }) => [
+          styles.primaryButton,
+          styles.instructionsStartButton,
+          { backgroundColor: ROUND_COLORS[state.roundIndex], borderBottomColor: '#001A2F42' },
+          pressed && styles.pressed,
+        ]}
       >
         <Text style={styles.instructionsStartButtonText}>EMPIEZA {state.teams[state.currentTeam].name.toUpperCase()}</Text>
         <View style={styles.ctaArrow}><Feather name="arrow-right" size={19} color={BRAND.navy} /></View>
@@ -436,18 +439,15 @@ function InstructionsScreen({ styles }: { styles: ReturnType<typeof createStyles
 }
 
 function ReviewScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
-  const { state, correctReview, confirmReview, goHome } = useGame();
+  const { state, correctReview, confirmReview } = useGame();
   const t = UI_TEXT[state.language] ?? UI_TEXT.es;
   const correct = state.review.filter(item => item.correct).length;
   const nextTeam = state.teams[state.currentTeam === 0 ? 1 : 0].name;
   return (
     <View style={styles.flex}>
-      <Pressable accessibilityRole="button" accessibilityLabel="Volver" onPress={() => press(goHome)} style={styles.backFloating}>
-        <Feather name="arrow-left" size={22} color={BRAND.white} />
-      </Pressable>
       <ScrollView contentContainerStyle={styles.pageScroll}>
         <Image source={require('@/assets/branding/decablo-logo.png')} resizeMode="contain" style={styles.screenBrandLogo} accessibilityLabel="DECABLO by VDOUBLE" />
-        <Image source={require('@/assets/reference-parts/tiempo.png')} resizeMode="contain" style={styles.timeUpArt} />
+        <Image source={require('@/assets/illustrations/tiempo.png')} resizeMode="contain" style={styles.timeUpArt} />
         <Text style={styles.pageSubtitle}>{t.reviewTitle}</Text>
         <Text style={styles.pageSubtitle}>{t.reviewSubtitle.replace('{team}', state.teams[state.currentTeam].name)}</Text>
         <View style={styles.reviewSummary}>
@@ -489,13 +489,10 @@ function ReviewScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
 }
 
 function ReadyScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
-  const { state, continueTurn, goHome } = useGame();
+  const { state, continueTurn } = useGame();
   const activeTeam = state.teams[state.currentTeam];
   return (
     <ScrollView contentContainerStyle={styles.readyScroll}>
-      <Pressable accessibilityRole="button" accessibilityLabel="Volver" onPress={() => press(goHome)} style={styles.backFloating}>
-        <Feather name="arrow-left" size={22} color={BRAND.white} />
-      </Pressable>
       <View style={styles.readyHeader}>
         <Image
           source={require('@/assets/branding/decablo-logo.png')}
@@ -508,7 +505,7 @@ function ReadyScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
             <React.Fragment key={`ready-score-${index}`}>
               {index > 0 ? <View style={styles.readyScoreDivider} /> : null}
               <View style={styles.readyScoreTeam}>
-                <Feather name={teamIconGlyph(team.icon)} size={28} color={index === 0 ? BRAND.yellow : BRAND.coral} />
+                <Text style={styles.readyScoreIcon}>{team.icon}</Text>
                 <Text style={styles.readyScoreValue}>{team.score}</Text>
               </View>
             </React.Fragment>
@@ -517,7 +514,12 @@ function ReadyScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
       </View>
 
       <View style={styles.readyMain}>
-        <Text style={styles.readyHeadline}>PASA EL <Text style={styles.readyHeadlineAccent}>MÓVIL</Text></Text>
+        <Image
+          source={require('@/assets/illustrations/pass-mobile.png')}
+          resizeMode="contain"
+          style={styles.readyPassArt}
+          accessibilityLabel="Pasa el móvil"
+        />
         <Image
           source={require('@/assets/illustrations/pass-phone.png')}
           resizeMode="contain"
@@ -565,7 +567,7 @@ function ScoreStrip({ styles }: { styles: ReturnType<typeof createStyles> }) {
 
 function PlayScreen({ styles, seconds }: { styles: ReturnType<typeof createStyles>; seconds: number }) {
   const colors = useColors();
-  const { state, currentCard, markCorrect, passCard, goHome } = useGame();
+  const { state, currentCard, markCorrect, passCard } = useGame();
   const t = UI_TEXT[state.language] ?? UI_TEXT.es;
   const activeTeam = state.teams[state.currentTeam];
   const progress = Math.max(0, state.remaining.length);
@@ -574,7 +576,12 @@ function PlayScreen({ styles, seconds }: { styles: ReturnType<typeof createStyle
 
   return (
     <ScrollView contentContainerStyle={styles.gameScreen} showsVerticalScrollIndicator={false}>
-      <View style={styles.playLogo}><DecabloLogo compact /></View>
+      <Image
+        source={require('@/assets/branding/decablo-logo.png')}
+        resizeMode="contain"
+        style={styles.playBrandLogo}
+        accessibilityLabel="DECABLO by VDOUBLE"
+      />
       <View style={styles.playHeader}>
         <View style={styles.playTeamHeader}>
           <Text style={styles.playRound}>{roundNameText.toUpperCase()} · {t.roundTable} {state.roundIndex + 1}</Text>
@@ -588,15 +595,6 @@ function PlayScreen({ styles, seconds }: { styles: ReturnType<typeof createStyle
             <Text style={styles.timerNumber}>{state.timeUp ? '0' : seconds}</Text>
             <Text style={styles.timerLabel}>{t.cardTimerUnit}</Text>
           </View>
-          <Pressable
-            testID="exit-play-button"
-            accessibilityRole="button"
-            accessibilityLabel={t.exitGame}
-            onPress={() => press(goHome)}
-            style={({ pressed }) => [styles.iconButton, pressed && styles.pressed]}
-          >
-            <Feather name="home" size={18} color={colors.foreground} />
-          </Pressable>
         </View>
       </View>
 
@@ -648,17 +646,16 @@ function PlayScreen({ styles, seconds }: { styles: ReturnType<typeof createStyle
 }
 
 function RoundBreakScreenRedesign({ styles }: { styles: ReturnType<typeof createStyles> }) {
-  const { state, startRound, goHome } = useGame();
+  const { state, startRound } = useGame();
   const t = UI_TEXT[state.language] ?? UI_TEXT.es;
   const nextRound = [t.rulesTitle1, t.rulesTitle2, t.rulesTitle3][state.roundIndex + 1] ?? t.rulesTitle1;
   const completedScores = state.roundScores[state.roundIndex];
   return (
     <ScrollView contentContainerStyle={styles.roundBreakScroll}>
-      <Pressable accessibilityRole="button" accessibilityLabel="Volver" onPress={() => press(goHome)} style={styles.backFloating}>
-        <Feather name="arrow-left" size={22} color={BRAND.white} />
-      </Pressable>
       {state.roundIndex === 0 ? (
         <Image source={require('@/assets/rounds/round1-completed.png')} resizeMode="contain" style={styles.roundBreakHeroArt} />
+      ) : state.roundIndex === 1 ? (
+        <Image source={require('@/assets/rounds/round2-completed.png')} resizeMode="contain" style={styles.roundBreakHeroArt} />
       ) : (
         <>
           <Image source={require('@/assets/branding/decablo-logo.png')} resizeMode="contain" style={styles.roundBreakLogo} />
@@ -667,7 +664,7 @@ function RoundBreakScreenRedesign({ styles }: { styles: ReturnType<typeof create
       )}
       <View style={styles.roundBreakScores}>
         {state.teams.map((team, index) => (
-          <View key={team.name} style={[styles.roundBreakScoreCard, { backgroundColor: index === 0 ? BRAND.yellow : BRAND.mint }]}>
+          <View key={team.name} style={[styles.roundBreakScoreCard, { backgroundColor: TEAM_COLORS[index] }]}>
             <Text style={styles.roundBreakScoreName}>{team.name.toUpperCase()}</Text>
             <Text style={styles.roundBreakScoreValue}>{completedScores[index]}</Text>
           </View>
@@ -676,6 +673,8 @@ function RoundBreakScreenRedesign({ styles }: { styles: ReturnType<typeof create
       <Image source={require('@/assets/rounds/deck-repeats.png')} resizeMode="contain" style={styles.roundBreakRepeatArt} />
       {state.roundIndex === 0 ? (
         <Image source={require('@/assets/rounds/round2-card.png')} resizeMode="contain" style={styles.roundBreakNextArt} />
+      ) : state.roundIndex === 1 ? (
+        <Image source={require('@/assets/rounds/round3-card.png')} resizeMode="contain" style={styles.roundBreakNextArtRound3} />
       ) : (
         <View style={[styles.nextRoundCard, { backgroundColor: ROUND_COLORS[state.roundIndex + 1] }]}>
           <Text style={styles.nextRoundLabel}>{t.roundTable} {state.roundIndex + 2}</Text>
@@ -739,7 +738,7 @@ function ScoreBoard({ styles }: { styles: ReturnType<typeof createStyles> }) {
         const team = state.teams[index as 0 | 1];
         return (
           <View key={index} style={[styles.scoreBoardRow, index === 1 && styles.scoreBoardRowLast]}>
-            <View style={[styles.teamScoreBadge, index === 0 ? styles.teamScoreBadgeWarm : styles.teamScoreBadgeGold]}>
+            <View style={[styles.teamScoreBadge, { backgroundColor: TEAM_COLORS[index] }]}>
               <Text style={styles.teamScoreInitial}>{team.icon}</Text>
             </View>
             <Text style={styles.scoreBoardName}>{team.name}</Text>
@@ -778,19 +777,16 @@ function RoundScoreList({ styles, roundIndex }: { styles: ReturnType<typeof crea
 }
 
 function FinalScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
-  const { state, startSetup, goHome } = useGame();
+  const { state, startSetup } = useGame();
   const t = UI_TEXT[state.language] ?? UI_TEXT.es;
   const winner = state.teams[0].score === state.teams[1].score ? null : state.teams[0].score > state.teams[1].score ? 0 : 1;
   return (
     <ScrollView contentContainerStyle={styles.finalScroll}>
-      <Pressable accessibilityRole="button" accessibilityLabel="Volver" onPress={() => press(goHome)} style={styles.backFloating}>
-        <Feather name="arrow-left" size={22} color={BRAND.white} />
-      </Pressable>
       <Image source={require('@/assets/branding/decablo-logo.png')} resizeMode="contain" style={styles.screenBrandLogo} accessibilityLabel="DECABLO by VDOUBLE" />
       <Image source={require('@/assets/final/celebration.png')} resizeMode="contain" style={styles.finalCelebrationArt} />
       <View style={styles.finalResultPanel}>
-        <Text style={styles.finalResultTitle}>{winner === null ? t.finalTie : t.finalWinner.replace('{team}', state.teams[winner].name)}</Text>
-        <Text style={styles.finalResultSubtitle}>{winner === null ? t.finalTieSubtitle : t.pageFinalSubtitle}</Text>
+        <Text style={styles.finalResultTitle}>{winner === null ? t.finalTie : state.teams[winner].name}</Text>
+        {winner === null ? <Text style={styles.finalResultSubtitle}>{t.finalTieSubtitle}</Text> : null}
       </View>
       <ScoreBoard styles={styles} />
       <RoundScoreList styles={styles} />

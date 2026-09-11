@@ -36,9 +36,9 @@ test('No se puntúa ni pasa con el reloj agotado', () => {
     assert.deepEqual(state.remaining, ['A', 'B', 'C']);
   }
 });
-test('Pasar resta cinco segundos y conserva la carta; dos pendientes no fuerzan relevo', () => {
+test('Pasar resta tres segundos y conserva la carta; dos pendientes no fuerzan relevo', () => {
   const state = answer(playing(['A', 'B']), false, 1_000);
-  assert.equal(state.turnEndsAt, 25_000);
+  assert.equal(state.turnEndsAt, 27_000);
   assert.equal(state.screen, 'play');
   assert.deepEqual(state.remaining, ['B', 'A']);
   assert.equal(answer(state, false, 2_000).screen, 'review');
