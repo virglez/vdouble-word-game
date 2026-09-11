@@ -47,7 +47,7 @@ export const UI_TEXT: Record<LanguageCode, Record<string, string>> = {
     "stackWord": "ADIVINA",
     "stackHint": "habla · resume · actúa",
     "statsCards": "tarjetas",
-    "statsPlayersValue": "4+",
+    "statsPlayersValue": "A partir de 4",
     "statsPlayers": "jugadores",
     "statsTurn": "por turno",
     "statsRounds": "rondas",
@@ -143,7 +143,6 @@ export const UI_TEXT: Record<LanguageCode, Record<string, string>> = {
     "startNewGame": "Iniciar partida de nuevo",
     "homeScreenTitle": "VCSTUDIO",
     "screenHeaderBack": "Volver",
-    "screenHeaderHome": "Volver al inicio",
     "setupScreenHeaderTitle": "Nueva partida",
     "instructionsHeaderTitle": "Cómo se juega",
     "reviewHeaderTitle": "Revisad las tarjetas",
@@ -315,7 +314,6 @@ export const UI_TEXT: Record<LanguageCode, Record<string, string>> = {
     "startNewGame": "Start the game again",
     "homeScreenTitle": "VCSTUDIO",
     "screenHeaderBack": "Back",
-    "screenHeaderHome": "Back to home",
     "setupScreenHeaderTitle": "New game",
     "instructionsHeaderTitle": "How to play",
     "reviewHeaderTitle": "Review the cards",
@@ -391,7 +389,7 @@ export const UI_TEXT: Record<LanguageCode, Record<string, string>> = {
     "stackWord": "DEVINE",
     "stackHint": "parle · résume · joue",
     "statsCards": "cartes",
-    "statsPlayersValue": "4+",
+    "statsPlayersValue": "À partir de 4",
     "statsPlayers": "joueurs",
     "statsTurn": "par tour",
     "statsRounds": "rondes",
@@ -487,7 +485,6 @@ export const UI_TEXT: Record<LanguageCode, Record<string, string>> = {
     "startNewGame": "Relancer la partie",
     "homeScreenTitle": "VCSTUDIO",
     "screenHeaderBack": "Retour",
-    "screenHeaderHome": "Retour à l'accueil",
     "setupScreenHeaderTitle": "Nouvelle partie",
     "instructionsHeaderTitle": "Comment jouer",
     "reviewHeaderTitle": "Révisez les cartes",
@@ -563,7 +560,7 @@ export const UI_TEXT: Record<LanguageCode, Record<string, string>> = {
     "stackWord": "ADIVINHA",
     "stackHint": "fala · resume · representa",
     "statsCards": "cartões",
-    "statsPlayersValue": "4+",
+    "statsPlayersValue": "A partir de 4",
     "statsPlayers": "jogadores",
     "statsTurn": "por turno",
     "statsRounds": "rondas",
@@ -659,7 +656,6 @@ export const UI_TEXT: Record<LanguageCode, Record<string, string>> = {
     "startNewGame": "Começar outra partida",
     "homeScreenTitle": "VCSTUDIO",
     "screenHeaderBack": "Voltar",
-    "screenHeaderHome": "Voltar ao início",
     "setupScreenHeaderTitle": "Nova partida",
     "instructionsHeaderTitle": "Como jogar",
     "reviewHeaderTitle": "Revejam os cartões",
@@ -700,7 +696,3 @@ export const UI_TEXT: Record<LanguageCode, Record<string, string>> = {
     "decabloSameDeck": "As mesmas palavras voltam",
   },
 };
-
-export function getText(language: LanguageCode, key: string) {
-  return UI_TEXT[language]?.[key] ?? UI_TEXT.es[key] ?? key;
-}

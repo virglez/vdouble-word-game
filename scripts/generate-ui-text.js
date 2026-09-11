@@ -103,10 +103,6 @@ const writeUiText = (languages, uiText) => {
   }
 
   lines.push('};');
-  lines.push('');
-  lines.push('export function getText(language: LanguageCode, key: string) {');
-  lines.push('  return UI_TEXT[language]?.[key] ?? UI_TEXT.es[key] ?? key;');
-  lines.push('}');
 
   fs.writeFileSync(outputPath, `${lines.join('\n')}\n`);
   console.log(`Generado ${outputPath} con ${body.length} claves de texto.`);

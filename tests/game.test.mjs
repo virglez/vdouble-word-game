@@ -90,3 +90,8 @@ test('Mazos distintos de 20, 30 y 40, con pocas tarjetas muy difíciles', () => 
     assert.ok((counts['Muy difícil']?.length ?? 0) <= Math.ceil(size / 10));
   }
 });
+test('El paquete inicial usa palabras de popularidad muy alta', () => {
+  const deck = buildDeck(40, [], 'es');
+  assert.equal(deck.length, 40);
+  assert.ok(deck.every(card => card.popularidad === 'Muy alta'));
+});

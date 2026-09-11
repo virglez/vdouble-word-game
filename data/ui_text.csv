@@ -130,10 +130,10 @@ stackHint,fr,parle · résume · joue
 statsCards,es,tarjetas
 statsCards,en,cards
 statsCards,fr,cartes
-statsPlayersValue,es,4+
+statsPlayersValue,es,A partir de 4
 statsPlayersValue,en,4+
-statsPlayersValue,fr,4+
-statsPlayersValue,pt,4+
+statsPlayersValue,fr,À partir de 4
+statsPlayersValue,pt,A partir de 4
 statsPlayers,es,jugadores
 statsPlayers,en,players
 statsPlayers,fr,joueurs
@@ -420,10 +420,6 @@ homeScreenTitle,fr,VCSTUDIO
 screenHeaderBack,es,Volver
 screenHeaderBack,en,Back
 screenHeaderBack,fr,Retour
-screenHeaderHome,es,Volver al inicio
-screenHeaderHome,en,Back to home
-screenHeaderHome,fr,Retour à l'accueil
-screenHeaderHome,pt,Voltar ao início
 setupScreenHeaderTitle,es,Nueva partida
 setupScreenHeaderTitle,en,New game
 setupScreenHeaderTitle,fr,Nouvelle partie

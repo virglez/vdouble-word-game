@@ -1,4 +1,5 @@
 import { WORD_BANK, type Difficulty, type WordCard } from '../data/wordBank.ts';
+import { DEFAULT_WORD_PACKAGE } from '../data/wordPackages.ts';
 
 export type LanguageCode = 'es' | 'en' | 'fr' | 'pt';
 
@@ -183,7 +184,10 @@ export function buildDeck(cardCount: CardCount, excludedWords: string[], languag
   }
   const allCandidates = Array.from(unique.values());
   const excluded = new Set(excludedWords);
-  const available = allCandidates
+  const packageCandidates = DEFAULT_WORD_PACKAGE === 'core'
+    ? allCandidates.filter((card) => card.popularidad === 'Muy alta')
+    : allCandidates;
+  const available = (packageCandidates.length >= cardCount ? packageCandidates : allCandidates)
     .filter((card) => !excluded.has(normalizedWord(card.palabra)))
     .filter((card) => !familyMode || card.infantil === true);
 

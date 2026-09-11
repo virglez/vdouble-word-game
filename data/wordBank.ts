@@ -8,6 +8,7 @@ export type WordCard = {
   categoria: string;
   subcategoria: string;
   dificultad: Difficulty;
+  popularidad: "Muy alta" | "Alta" | "Media" | "Baja";
   infantil: boolean;
   internacional: boolean;
   translations?: Partial<Record<string, string>>;

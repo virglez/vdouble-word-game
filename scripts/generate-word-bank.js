@@ -159,7 +159,7 @@ const difficulties = [...new Set(cards.map((card) => card.dificultad))];
 const difficultyType = difficulties.map((difficulty) => JSON.stringify(difficulty)).join(' | ');
 // Each entry is checked separately, avoiding an enormous inferred union.
 const body = cards.map((card) => `  defineCard(${JSON.stringify(card)})`).join(',\n');
-const output = `// Generado desde la base cultural definitiva. No editar a mano.\n// Regenerar con: pnpm run generate-word-bank\nexport type Difficulty = ${difficultyType};\n\nexport type WordCard = {\n  id?: string;\n  palabra: string;\n  categoria: string;\n  subcategoria: string;\n  dificultad: Difficulty;\n  internacional?: boolean;\n  translations?: Partial<Record<string, string>>;\n  categoryTranslations?: Partial<Record<string, string>>;\n  subcategoryTranslations?: Partial<Record<string, string>>;\n};\n\nexport const WORD_BANK: WordCard[] = [\n${body}\n];\n`;
+const output = `// Generado desde la base cultural definitiva. No editar a mano.\n// Regenerar con: pnpm run generate-word-bank\nexport type Difficulty = ${difficultyType};\n\nexport type WordCard = {\n  id?: string;\n  palabra: string;\n  categoria: string;\n  subcategoria: string;\n  dificultad: Difficulty;\n  popularidad: "Muy alta" | "Alta" | "Media" | "Baja";\n  internacional?: boolean;\n  translations?: Partial<Record<string, string>>;\n  categoryTranslations?: Partial<Record<string, string>>;\n  subcategoryTranslations?: Partial<Record<string, string>>;\n};\n\nexport const WORD_BANK: WordCard[] = [\n${body}\n];\n`;
 
 const typedOutput = output.replace(
   '  internacional?: boolean;',
