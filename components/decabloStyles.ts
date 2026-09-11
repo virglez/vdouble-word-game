@@ -24,7 +24,7 @@ export function createStyles(colors: Palette, roundColor: string = BRAND.yellow)
     instructionsRoundOneScroll: { flexGrow: 1, width: '100%', maxWidth: 560, alignSelf: 'center', paddingHorizontal: 16, paddingTop: 5, paddingBottom: 22 },
     instructionsLogo: { width: 190, height: 78, alignSelf: 'center', marginBottom: 4 },
     instructionsRoundOneArt: { width: '100%', height: 460, maxHeight: '64%', alignSelf: 'center' },
-    instructionsStartButton: { minHeight: 70, marginTop: 14, backgroundColor: BRAND.yellow, borderBottomColor: '#D8A800' },
+    instructionsStartButton: { width: '100%', minHeight: 70, marginTop: 14, backgroundColor: BRAND.yellow, borderBottomColor: '#D8A800' },
     instructionsStartButtonText: { flexShrink: 1, paddingHorizontal: 22, fontFamily: 'Inter_900Black', fontSize: 20, color: BRAND.navy, textAlign: 'center' },
     roundHero: { alignItems: 'center', paddingTop: 16, paddingBottom: 10, gap: 12 },
     roundHeroIcon: { width: 104, height: 104, borderRadius: 52, backgroundColor: BRAND.white, alignItems: 'center', justifyContent: 'center', transform: [{ rotate: '-6deg' }] },
