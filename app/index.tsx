@@ -53,7 +53,6 @@ function AppContent() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const game = useGame();
-  const t = UI_TEXT[game.state.language] ?? UI_TEXT.es;
   const roundColor = ['instructions', 'ready', 'play', 'review', 'roundBreak'].includes(game.state.screen)
     ? ROUND_COLORS[game.state.roundIndex] : BRAND.orange;
   const styles = useMemo(() => createStyles(colors, roundColor), [colors, roundColor]);
@@ -115,7 +114,7 @@ function AppContent() {
           {game.state.screen !== 'home' ? (
             <Pressable
               accessibilityRole="button"
-              accessibilityLabel={t.screenHeaderHome}
+              accessibilityLabel="Volver al inicio"
               onPress={() => press(game.goHome)}
               style={({ pressed }) => [styles.globalHomeButton, pressed && styles.pressed]}
             >
@@ -131,7 +130,7 @@ function AppContent() {
 
 function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   const colors = useColors();
-  const { state, hasSavedGame, startSetup, setLanguage, setFamilyMode } = useGame();
+  const { state, hasSavedGame, startSetup, setLanguage } = useGame();
   const t = UI_TEXT[state.language] ?? UI_TEXT.es;
 
   return (
@@ -184,20 +183,6 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
         <Stat value="30 s" label={t.statsTurn} asset={require('@/assets/icons/decablo/clock.png')} styles={styles} />
         <Stat value="3" label={t.statsRounds} asset={require('@/assets/icons/decablo/repeat.png')} styles={styles} />
       </View>
-
-      <Pressable
-        testID="home-family-mode-toggle"
-        accessibilityRole="switch"
-        accessibilityState={{ checked: state.familyMode }}
-        onPress={() => press(() => setFamilyMode(!state.familyMode))}
-        style={[styles.homeFamilyMode, state.familyMode && styles.homeFamilyModeSelected]}
-      >
-        <Feather name="users" size={18} color={state.familyMode ? BRAND.navy : BRAND.white} />
-        <View style={styles.homeFamilyModeCopy}>
-          <Text style={[styles.homeFamilyModeTitle, state.familyMode && styles.homeFamilyModeTitleSelected]}>{t.familyMode ?? 'MODO FAMILIAR'}</Text>
-        </View>
-        <Feather name={state.familyMode ? 'check-circle' : 'circle'} size={21} color={state.familyMode ? BRAND.navy : '#C7D1D8'} />
-      </Pressable>
 
       <Pressable
         testID="new-game-button"
@@ -259,7 +244,7 @@ function ScreenHeader({
 
 function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   const colors = useColors();
-  const { state, updateTeamName, updateTeamIcon, setCardCount, createGame, isCreating } = useGame();
+  const { state, updateTeamName, updateTeamIcon, setCardCount, setFamilyMode, createGame, isCreating } = useGame();
   const t = UI_TEXT[state.language] ?? UI_TEXT.es;
 
   return (
@@ -303,6 +288,20 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
       </View>
 
       <View style={styles.setupDeckBlock}>
+        <Pressable
+          testID="family-mode-toggle"
+          accessibilityRole="switch"
+          accessibilityState={{ checked: state.familyMode }}
+          onPress={() => press(() => setFamilyMode(!state.familyMode))}
+          style={[styles.familyModeOption, state.familyMode && styles.familyModeOptionSelected]}
+        >
+          <Feather name="users" size={21} color={state.familyMode ? colors.primaryForeground : colors.primary} />
+          <View style={styles.familyModeCopy}>
+            <Text style={[styles.familyModeTitle, state.familyMode && styles.familyModeTitleSelected]}>{t.familyMode ?? 'MODO FAMILIAR'}</Text>
+            <Text style={[styles.familyModeNote, state.familyMode && styles.familyModeNoteSelected]}>{t.familyModeDescription ?? 'Solo tarjetas infantiles'}</Text>
+          </View>
+          <Feather name={state.familyMode ? 'check-circle' : 'circle'} size={22} color={state.familyMode ? colors.primaryForeground : colors.mutedForeground} />
+        </Pressable>
         <Text style={styles.setupSectionTitle}>NÚMERO DE CARTAS</Text>
         <View style={styles.setupCardCountList}>
           {cardCountOptions.map(({ value, note }) => {
@@ -336,7 +335,7 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
         onPress={() => { void createGame().catch(() => Alert.alert(t.createGameError)); }}
         style={({ pressed }) => [styles.setupCreateButton, pressed && styles.pressed]}
       >
-        <Text style={styles.setupCreateButtonText}>{isCreating ? t.creatingGame : t.startRound}</Text>
+        <Text style={styles.setupCreateButtonText}>{isCreating ? t.creatingGame.toUpperCase() : 'EMPEZAR'}</Text>
         <View style={styles.ctaArrow}><Feather name="arrow-right" size={21} color={colors.primaryForeground} /></View>
       </Pressable>
       <Modal visible={isCreating} transparent animationType="none" onRequestClose={() => {}}>
@@ -472,7 +471,7 @@ function InstructionsScreen({ styles }: { styles: ReturnType<typeof createStyles
           pressed && styles.pressed,
         ]}
       >
-        <Text style={styles.instructionsStartButtonText}>{t.startRound} {state.teams[state.currentTeam].name}</Text>
+        <Text style={styles.instructionsStartButtonText}>EMPIEZA {state.teams[state.currentTeam].name.toUpperCase()}</Text>
         <View style={styles.ctaArrow}><Feather name="arrow-right" size={19} color={BRAND.navy} /></View>
       </Pressable>
     </ScrollView>
@@ -515,13 +514,13 @@ function ReviewScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
           ))}
         </View>
         {state.remaining.length > 0 ? (
-          <Text style={styles.reviewWarning}>Asegúrate de darle a <Text style={styles.reviewWarningStrong}>{t.next}</Text> antes de pasar el móvil al equipo <Text style={styles.reviewWarningStrong}>{nextTeam}</Text></Text>
+          <Text style={styles.reviewWarning}>Asegúrate de darle a <Text style={styles.reviewWarningStrong}>SIGUIENTE</Text> antes de pasar el móvil al equipo <Text style={styles.reviewWarningStrong}>{nextTeam}</Text></Text>
         ) : null}
         <ScoreStrip styles={styles} />
       </ScrollView>
       <View style={styles.reviewFooter}>
         <Pressable accessibilityRole="button" onPress={() => press(confirmReview)} style={[styles.primaryButton, styles.reviewPrimaryButton]}>
-          <Text style={[styles.primaryButtonText, { flex: 1, textAlign: 'center' }]}>{t.next}</Text>
+          <Text style={[styles.primaryButtonText, { flex: 1, textAlign: 'center' }]}>SIGUIENTE</Text>
           <View style={styles.ctaArrow}><Feather name="arrow-right" size={21} color={BRAND.navy} /></View>
         </Pressable>
       </View>
@@ -576,7 +575,7 @@ function ReadyScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
       </View>
 
       <Pressable testID="ready-start-button" accessibilityRole="button" onPress={() => press(continueTurn)} style={({ pressed }) => [styles.readyButton, pressed && styles.pressed]}>
-        <Text style={styles.readyButtonText}>{t.readyStartTurn}</Text>
+        <Text style={styles.readyButtonText}>ESTOY LISTA</Text>
         <View style={styles.ctaArrow}><Feather name="arrow-right" size={22} color={BRAND.navy} /></View>
       </Pressable>
     </ScrollView>
