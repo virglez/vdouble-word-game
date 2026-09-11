@@ -43,6 +43,22 @@ test('English has explicit UI translations and translated labels for every card'
   }
 });
 
+test('Category and subcategory translations only reference values used by the word bank', async () => {
+  const csv = readFileSync(new URL('../data/category_subcategory_translations.csv', import.meta.url), 'utf8');
+  const { WORD_BANK } = await import('../data/wordBank.ts');
+  const usedCategories = new Set(WORD_BANK.map(card => card.categoria));
+  const usedSubcategories = new Set(WORD_BANK.map(card => card.subcategoria));
+  const translatedValues = new Map([
+    ['categoria', usedCategories],
+    ['subcategoria', usedSubcategories],
+  ]);
+
+  for (const line of csv.split(/\r?\n/).filter(Boolean).slice(1)) {
+    const [type, value] = line.split(',', 2);
+    assert.ok(translatedValues.get(type)?.has(value), `Translation without word-bank value: ${type}/${value}`);
+  }
+});
+
 test('Changing language translates default teams and preserves custom names', async () => {
   const { initialState, changeLanguage } = await import('../lib/game.ts');
   const en = changeLanguage(initialState, 'en');

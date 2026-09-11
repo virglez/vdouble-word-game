@@ -11,7 +11,11 @@
       "supportsTablet": false
     },
     "android": {
-      "package": "com.vdouble"
+      "package": "com.vdouble",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/branding/decablo-app-icon.png",
+        "backgroundColor": "#091A29"
+      }
     },
     "web": {
       "favicon": "./assets/branding/decablo-app-icon.png"

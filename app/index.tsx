@@ -650,18 +650,25 @@ function RoundBreakScreenRedesign({ styles }: { styles: ReturnType<typeof create
   const t = UI_TEXT[state.language] ?? UI_TEXT.es;
   const nextRound = [t.rulesTitle1, t.rulesTitle2, t.rulesTitle3][state.roundIndex + 1] ?? t.rulesTitle1;
   const completedScores = state.roundScores[state.roundIndex];
+  const isCompletedState = state.roundIndex < 2;
+  const completedRoundArt =
+    state.roundIndex === 0 ? require('@/assets/rounds/round1-completed.png') : require('@/assets/rounds/round2-completed.png');
+  const nextRoundArt =
+    state.roundIndex === 0 ? require('@/assets/rounds/round2-card.png') : require('@/assets/rounds/round3-card.png');
+
   return (
-    <ScrollView contentContainerStyle={styles.roundBreakScroll}>
-      {state.roundIndex === 0 ? (
-        <Image source={require('@/assets/rounds/round1-completed.png')} resizeMode="contain" style={styles.roundBreakHeroArt} />
-      ) : state.roundIndex === 1 ? (
-        <Image source={require('@/assets/rounds/round2-completed.png')} resizeMode="contain" style={styles.roundBreakHeroArt} />
+    <ScrollView contentContainerStyle={styles.roundBreakScroll} showsVerticalScrollIndicator={false}>
+      {isCompletedState ? (
+        <View style={styles.roundBreakHeroWrap}>
+          <Image source={completedRoundArt} resizeMode="contain" style={styles.roundBreakHeroArt} />
+        </View>
       ) : (
         <>
           <Image source={require('@/assets/branding/decablo-logo.png')} resizeMode="contain" style={styles.roundBreakLogo} />
           <Text style={styles.roundBreakDynamicTitle}>RONDA {state.roundIndex + 1}{`\n`}COMPLETADA</Text>
         </>
       )}
+
       <View style={styles.roundBreakScores}>
         {state.teams.map((team, index) => (
           <View key={team.name} style={[styles.roundBreakScoreCard, { backgroundColor: TEAM_COLORS[index] }]}>
@@ -670,17 +677,20 @@ function RoundBreakScreenRedesign({ styles }: { styles: ReturnType<typeof create
           </View>
         ))}
       </View>
+
       <Image source={require('@/assets/rounds/deck-repeats.png')} resizeMode="contain" style={styles.roundBreakRepeatArt} />
-      {state.roundIndex === 0 ? (
-        <Image source={require('@/assets/rounds/round2-card.png')} resizeMode="contain" style={styles.roundBreakNextArt} />
-      ) : state.roundIndex === 1 ? (
-        <Image source={require('@/assets/rounds/round3-card.png')} resizeMode="contain" style={styles.roundBreakNextArtRound3} />
+
+      {isCompletedState ? (
+        <View style={styles.roundBreakNextArtWrap}>
+          <Image source={nextRoundArt} resizeMode="contain" style={styles.roundBreakNextArt} />
+        </View>
       ) : (
         <View style={[styles.nextRoundCard, { backgroundColor: ROUND_COLORS[state.roundIndex + 1] }]}>
           <Text style={styles.nextRoundLabel}>{t.roundTable} {state.roundIndex + 2}</Text>
           <Text style={styles.nextRoundTitle}>{[t.decabloRound1, t.decabloRound2, t.decabloRound3][state.roundIndex + 1]}</Text>
         </View>
       )}
+
       <Pressable
         testID="next-round-button"
         accessibilityRole="button"
