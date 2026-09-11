@@ -2,6 +2,8 @@ import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { Feather, FontAwesome } from '@expo/vector-icons';
 import { ROUND_COLORS, BRAND } from '@/constants/colors';
+import { LOCALIZED_ASSETS } from '@/lib/localizedAssets';
+import type { LanguageCode } from '@/data/ui_text';
 
 const roundIcons = ['message-circle', 'zap', 'smile'] as const;
 
@@ -22,15 +24,10 @@ export function DecabloLogo({ compact = false }: { compact?: boolean }) {
   </View>;
 }
 
-export function RoundCards({ labels, rounds }: { labels: string[]; rounds: string[] }) {
-  const art = [
-    require('@/assets/rounds/card-describelo.png'),
-    require('@/assets/rounds/card-una-palabra.png'),
-    require('@/assets/rounds/card-hazlo.png'),
-  ];
+export function RoundCards({ labels, rounds, language }: { labels: string[]; rounds: string[]; language: LanguageCode }) {
   return <View style={s.cards}>
     {labels.map((label, index) => <View key={index} style={[s.roundCard, { transform: [{ rotate: `${(index - 1) * 7}deg` }, { translateY: index === 1 ? -10 : 0 }] }]}>
-      <Image source={art[index]} resizeMode="contain" style={s.roundCardArt} accessible accessibilityLabel={label} />
+      <Image source={LOCALIZED_ASSETS.roundCards[index][language]} resizeMode="contain" style={s.roundCardArt} accessible accessibilityLabel={label} />
     </View>)}
   </View>;
 }
@@ -56,7 +53,7 @@ const s = StyleSheet.create({
   logo: { fontFamily: 'Inter_900Black', fontSize: 54, letterSpacing: -5, textShadowColor: '#00000045', textShadowOffset: { width: 0, height: 3 }, textShadowRadius: 0 },
   logoSmall: { fontSize: 21, letterSpacing: -1, textShadowOffset: { width: 0, height: 1 } },
   logoLight: { color: BRAND.white },
-  logoAccent: { color: BRAND.yellow },
+  logoAccent: { color: BRAND.orange },
   logoQuestion: { color: BRAND.white, fontSize: 30, letterSpacing: -2, verticalAlign: 'top' },
   signature: { fontFamily: 'Inter_700Bold', fontSize: 10, letterSpacing: 2, color: BRAND.white, marginTop: 5 },
   badge: { alignSelf: 'center', flexDirection: 'row', alignItems: 'center', gap: 8, borderRadius: 30, paddingHorizontal: 16, paddingVertical: 10 },

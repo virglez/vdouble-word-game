@@ -121,6 +121,7 @@ const cards = rows
     const category = row[indexes.categoria]?.trim() ?? 'Cultura';
     const subcategory = row[indexes.subcategoria]?.trim() ?? '';
     const difficulty = row[indexes.dificultad]?.trim() ?? 'Media';
+    const popularity = row[indexes.popularidad]?.trim() ?? 'Media';
     const alcance = row[indexes.alcance]?.trim().toLowerCase() ?? '';
     const internacionalByAlcance = alcance === 'internacional' || alcance === 'international' || alcance === 'global';
     const internacionalFlagValue = indexes.internacional !== undefined
@@ -133,6 +134,7 @@ const cards = rows
       categoria: category,
       subcategoria: subcategory,
       dificultad: difficulty,
+      popularidad: popularity,
       infantil: infantilFlagValue,
       internacional: internacionalFlagValue,
       ...(id ? { id } : {}),

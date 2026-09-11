@@ -79,14 +79,14 @@ test('Partida completa: mismo mazo y suma exacta de tres rondas', () => {
   assert.equal(deck.length, 20);
   assert.ok(deck.every(card => card.palabra));
 });
-test('Mazos distintos de 20, 30 y 40, equilibrados en dificultad', () => {
+test('Mazos distintos de 20, 30 y 40, con pocas tarjetas muy difíciles', () => {
   for (const size of [20, 30, 40]) {
     const deck = buildDeck(size, []);
     assert.equal(deck.length, size);
     assert.equal(new Set(deck.map(card => normalizedWord(card.palabra))).size, size);
     const next = buildDeck(size, deck.map(card => normalizedWord(card.palabra)));
     assert.ok(next.every(card => !deck.some(previous => normalizedWord(previous.palabra) === normalizedWord(card.palabra))));
-    const counts = Object.values(Object.groupBy(deck, card => card.dificultad)).map(group => group.length);
-    assert.ok(Math.max(...counts) - Math.min(...counts) <= 1);
+    const counts = Object.groupBy(deck, card => card.dificultad);
+    assert.ok((counts['Muy difícil']?.length ?? 0) <= Math.ceil(size / 10));
   }
 });

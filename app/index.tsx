@@ -23,6 +23,7 @@ import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context'
 import { useColors } from '@/hooks/useColors';
 import { GameProvider, TURN_LENGTH_MS, useGame, type CardCount } from '@/context/GameContext';
 import { LANGUAGE_OPTIONS, UI_TEXT, type LanguageCode } from '@/data/ui_text';
+import { LOCALIZED_ASSETS } from '@/lib/localizedAssets';
 
 const cardCountOptions: Array<{ value: CardCount; note: string }> = [
   { value: 20, note: 'cardCountQuick' },
@@ -52,8 +53,9 @@ function AppContent() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const game = useGame();
+  const t = UI_TEXT[game.state.language] ?? UI_TEXT.es;
   const roundColor = ['instructions', 'ready', 'play', 'review', 'roundBreak'].includes(game.state.screen)
-    ? ROUND_COLORS[game.state.roundIndex] : BRAND.yellow;
+    ? ROUND_COLORS[game.state.roundIndex] : BRAND.orange;
   const styles = useMemo(() => createStyles(colors, roundColor), [colors, roundColor]);
   const [seconds, setSeconds] = useState(30);
 
@@ -113,7 +115,7 @@ function AppContent() {
           {game.state.screen !== 'home' ? (
             <Pressable
               accessibilityRole="button"
-              accessibilityLabel="Volver al inicio"
+              accessibilityLabel={t.screenHeaderHome}
               onPress={() => press(game.goHome)}
               style={({ pressed }) => [styles.globalHomeButton, pressed && styles.pressed]}
             >
@@ -129,7 +131,7 @@ function AppContent() {
 
 function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   const colors = useColors();
-  const { state, hasSavedGame, startSetup, setLanguage } = useGame();
+  const { state, hasSavedGame, startSetup, setLanguage, setFamilyMode } = useGame();
   const t = UI_TEXT[state.language] ?? UI_TEXT.es;
 
   return (
@@ -158,15 +160,44 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
         <Image source={require('@/assets/branding/decablo-logo.png')} resizeMode="contain" style={styles.homeBrandImage} />
         <Text style={styles.claim}>{t.decabloClaim}</Text>
         <View accessible accessibilityLabel={t.cardIllustration}>
-          <RoundCards labels={[t.decabloRound1, t.decabloRound2, t.decabloRound3]} rounds={[t.rulesRound1, t.rulesRound2, t.rulesRound3]} />
+          <RoundCards labels={[t.decabloRound1, t.decabloRound2, t.decabloRound3]} rounds={[t.rulesRound1, t.rulesRound2, t.rulesRound3]} language={state.language} />
+        </View>
+        <View style={styles.homeMottoList}>
+          {[
+            { text: t.homeMottoWords, icon: 'message-circle' as const, color: BRAND.orange },
+            { text: t.homeMottoWays, icon: 'layers' as const, color: BRAND.lyla },
+            { text: t.homeMottoMemory, icon: 'refresh-cw' as const, color: BRAND.indigo },
+            { text: t.homeMottoWin, icon: 'award' as const, color: BRAND.mint },
+          ].map((motto) => (
+            <View key={motto.text} style={styles.homeMottoRow}>
+              <View style={[styles.homeMottoIcon, { backgroundColor: motto.color }]}>
+                <Feather name={motto.icon} size={16} color={BRAND.navy} />
+              </View>
+              <Text style={styles.homeMottoText}>{motto.text}</Text>
+            </View>
+          ))}
         </View>
       </View>
 
       <View style={styles.statsRow}>
-        <Stat value="A partir de 4" label="jugadores" asset={require('@/assets/icons/decablo/players.png')} styles={styles} />
+        <Stat value={t.statsPlayersValue} label={t.statsPlayers} asset={require('@/assets/icons/decablo/players.png')} styles={styles} />
         <Stat value="30 s" label={t.statsTurn} asset={require('@/assets/icons/decablo/clock.png')} styles={styles} />
         <Stat value="3" label={t.statsRounds} asset={require('@/assets/icons/decablo/repeat.png')} styles={styles} />
       </View>
+
+      <Pressable
+        testID="home-family-mode-toggle"
+        accessibilityRole="switch"
+        accessibilityState={{ checked: state.familyMode }}
+        onPress={() => press(() => setFamilyMode(!state.familyMode))}
+        style={[styles.homeFamilyMode, state.familyMode && styles.homeFamilyModeSelected]}
+      >
+        <Feather name="users" size={18} color={state.familyMode ? BRAND.navy : BRAND.white} />
+        <View style={styles.homeFamilyModeCopy}>
+          <Text style={[styles.homeFamilyModeTitle, state.familyMode && styles.homeFamilyModeTitleSelected]}>{t.familyMode ?? 'MODO FAMILIAR'}</Text>
+        </View>
+        <Feather name={state.familyMode ? 'check-circle' : 'circle'} size={21} color={state.familyMode ? BRAND.navy : '#C7D1D8'} />
+      </Pressable>
 
       <Pressable
         testID="new-game-button"
@@ -174,14 +205,9 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
         onPress={() => (hasSavedGame ? confirmDiscardSavedGame(startSetup, t) : press(startSetup))}
         style={({ pressed }) => [styles.primaryButton, pressed && styles.pressed]}
       >
-        <Text style={styles.primaryButtonText}>NUEVA PARTIDA</Text>
+        <Text style={styles.primaryButtonText}>{t.newGameButton}</Text>
         <View style={styles.ctaArrow}><Feather name="arrow-up-right" size={21} color={colors.primaryForeground} /></View>
       </Pressable>
-
-      <View style={styles.homeFooterClaims} pointerEvents="none">
-        <Image source={require('@/assets/branding/home-footer-left.png')} resizeMode="contain" style={styles.homeFooterClaimLeft} accessibilityLabel="Mismas palabras, más risas" />
-        <Image source={require('@/assets/branding/home-footer-right.png')} resizeMode="contain" style={styles.homeFooterClaimRight} accessibilityLabel="La memoria también juega" />
-      </View>
 
     </ScrollView>
   );
@@ -233,7 +259,7 @@ function ScreenHeader({
 
 function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   const colors = useColors();
-  const { state, updateTeamName, updateTeamIcon, setCardCount, setFamilyMode, createGame, isCreating } = useGame();
+  const { state, updateTeamName, updateTeamIcon, setCardCount, createGame, isCreating } = useGame();
   const t = UI_TEXT[state.language] ?? UI_TEXT.es;
 
   return (
@@ -250,7 +276,7 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
       </View>
 
       <View style={styles.setupHeadingWrap}>
-        <Image source={require('@/assets/illustrations/setup-title.png')} resizeMode="contain" style={styles.setupTitleArt} accessibilityLabel="Prepara la partida" />
+        <Image source={LOCALIZED_ASSETS.setupTitle[state.language]} resizeMode="contain" style={styles.setupTitleArt} accessibilityLabel={t.setupIllustrationTitle} />
       </View>
 
       <View style={styles.setupTeamCards}>
@@ -277,20 +303,6 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
       </View>
 
       <View style={styles.setupDeckBlock}>
-        <Pressable
-          testID="family-mode-toggle"
-          accessibilityRole="switch"
-          accessibilityState={{ checked: state.familyMode }}
-          onPress={() => press(() => setFamilyMode(!state.familyMode))}
-          style={[styles.familyModeOption, state.familyMode && styles.familyModeOptionSelected]}
-        >
-          <Feather name="users" size={21} color={state.familyMode ? colors.primaryForeground : colors.primary} />
-          <View style={styles.familyModeCopy}>
-            <Text style={[styles.familyModeTitle, state.familyMode && styles.familyModeTitleSelected]}>{t.familyMode ?? 'MODO FAMILIAR'}</Text>
-            <Text style={[styles.familyModeNote, state.familyMode && styles.familyModeNoteSelected]}>{t.familyModeDescription ?? 'Solo tarjetas infantiles'}</Text>
-          </View>
-          <Feather name={state.familyMode ? 'check-circle' : 'circle'} size={22} color={state.familyMode ? colors.primaryForeground : colors.mutedForeground} />
-        </Pressable>
         <Text style={styles.setupSectionTitle}>NÚMERO DE CARTAS</Text>
         <View style={styles.setupCardCountList}>
           {cardCountOptions.map(({ value, note }) => {
@@ -324,7 +336,7 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
         onPress={() => { void createGame().catch(() => Alert.alert(t.createGameError)); }}
         style={({ pressed }) => [styles.setupCreateButton, pressed && styles.pressed]}
       >
-        <Text style={styles.setupCreateButtonText}>{isCreating ? t.creatingGame.toUpperCase() : 'EMPEZAR'}</Text>
+        <Text style={styles.setupCreateButtonText}>{isCreating ? t.creatingGame : t.startRound}</Text>
         <View style={styles.ctaArrow}><Feather name="arrow-right" size={21} color={colors.primaryForeground} /></View>
       </Pressable>
       <Modal visible={isCreating} transparent animationType="none" onRequestClose={() => {}}>
@@ -428,7 +440,7 @@ function InstructionsScreen({ styles }: { styles: ReturnType<typeof createStyles
         accessibilityLabel="DECABLO by VCSTUDIO"
       />
       {state.roundIndex <= 2 ? (
-        <Image source={state.roundIndex === 0 ? require('@/assets/rounds/round1-rules.png') : state.roundIndex === 1 ? require('@/assets/rounds/round2-rules.png') : require('@/assets/rounds/round3-rules.png')} resizeMode="contain" style={styles.instructionsRoundOneArt} />
+        <Image source={LOCALIZED_ASSETS.roundRules[state.roundIndex][state.language]} resizeMode="contain" style={styles.instructionsRoundOneArt} />
       ) : (
         <>
           <Text style={styles.roundInstructionLabel}>{t.instructionsRound.replace('{n}', String(roundNumber))}</Text>
@@ -460,7 +472,7 @@ function InstructionsScreen({ styles }: { styles: ReturnType<typeof createStyles
           pressed && styles.pressed,
         ]}
       >
-        <Text style={styles.instructionsStartButtonText}>EMPIEZA {state.teams[state.currentTeam].name.toUpperCase()}</Text>
+        <Text style={styles.instructionsStartButtonText}>{t.startRound} {state.teams[state.currentTeam].name}</Text>
         <View style={styles.ctaArrow}><Feather name="arrow-right" size={19} color={BRAND.navy} /></View>
       </Pressable>
     </ScrollView>
@@ -476,7 +488,7 @@ function ReviewScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
     <View style={styles.flex}>
       <ScrollView contentContainerStyle={styles.pageScroll}>
         <Image source={require('@/assets/branding/decablo-logo.png')} resizeMode="contain" style={styles.screenBrandLogo} accessibilityLabel="DECABLO by VCSTUDIO" />
-        <Image source={require('@/assets/illustrations/tiempo.png')} resizeMode="contain" style={styles.timeUpArt} />
+        <Image source={LOCALIZED_ASSETS.timeUp[state.language]} resizeMode="contain" style={styles.timeUpArt} />
         <Text style={styles.pageSubtitle}>{t.reviewTitle}</Text>
         <Text style={styles.pageSubtitle}>{t.reviewSubtitle.replace('{team}', state.teams[state.currentTeam].name)}</Text>
         <View style={styles.reviewSummary}>
@@ -495,7 +507,7 @@ function ReviewScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
               style={({ pressed }) => [styles.checkRow, item.correct && styles.checkRowCorrect,
                 index === state.review.length - 1 && { borderBottomWidth: 0 }, pressed && styles.pressed]}>
               <View style={[styles.checkBox, item.correct && styles.checkBoxCorrect]}>
-                <Feather name={item.correct ? 'check' : 'minus'} size={19} color={item.correct ? BRAND.navy : BRAND.coral} />
+                <Feather name={item.correct ? 'check' : 'minus'} size={19} color={item.correct ? BRAND.navy : BRAND.orange} />
               </View>
               <Text style={styles.checkWord}>{item.word}</Text>
               <Text style={[styles.checkStatus, item.correct && styles.checkStatusCorrect]}>{item.correct ? t.cardStatusCorrect : t.cardStatusPassed}</Text>
@@ -503,13 +515,13 @@ function ReviewScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
           ))}
         </View>
         {state.remaining.length > 0 ? (
-          <Text style={styles.reviewWarning}>Asegúrate de darle a <Text style={styles.reviewWarningStrong}>SIGUIENTE</Text> antes de pasar el móvil al equipo <Text style={styles.reviewWarningStrong}>{nextTeam}</Text></Text>
+          <Text style={styles.reviewWarning}>Asegúrate de darle a <Text style={styles.reviewWarningStrong}>{t.next}</Text> antes de pasar el móvil al equipo <Text style={styles.reviewWarningStrong}>{nextTeam}</Text></Text>
         ) : null}
         <ScoreStrip styles={styles} />
       </ScrollView>
       <View style={styles.reviewFooter}>
         <Pressable accessibilityRole="button" onPress={() => press(confirmReview)} style={[styles.primaryButton, styles.reviewPrimaryButton]}>
-          <Text style={[styles.primaryButtonText, { flex: 1, textAlign: 'center' }]}>SIGUIENTE</Text>
+          <Text style={[styles.primaryButtonText, { flex: 1, textAlign: 'center' }]}>{t.next}</Text>
           <View style={styles.ctaArrow}><Feather name="arrow-right" size={21} color={BRAND.navy} /></View>
         </Pressable>
       </View>
@@ -544,13 +556,13 @@ function ReadyScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
 
       <View style={styles.readyMain}>
         <Image
-          source={require('@/assets/illustrations/pass-mobile.png')}
+          source={LOCALIZED_ASSETS.passMobile[state.language]}
           resizeMode="contain"
           style={styles.readyPassArt}
-          accessibilityLabel="Pasa el móvil"
+          accessibilityLabel={UI_TEXT[state.language].readyMobile}
         />
         <Image
-          source={require('@/assets/illustrations/pass-phone.png')}
+          source={LOCALIZED_ASSETS.passPhone[state.language]}
           resizeMode="contain"
           style={styles.readyPhoneArt}
           accessibilityLabel="Dos manos pasando un teléfono"
@@ -564,7 +576,7 @@ function ReadyScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
       </View>
 
       <Pressable testID="ready-start-button" accessibilityRole="button" onPress={() => press(continueTurn)} style={({ pressed }) => [styles.readyButton, pressed && styles.pressed]}>
-        <Text style={styles.readyButtonText}>ESTOY LISTA</Text>
+        <Text style={styles.readyButtonText}>{t.readyStartTurn}</Text>
         <View style={styles.ctaArrow}><Feather name="arrow-right" size={22} color={BRAND.navy} /></View>
       </Pressable>
     </ScrollView>
@@ -639,7 +651,7 @@ function PlayScreen({ styles, seconds }: { styles: ReturnType<typeof createStyle
               <View style={styles.cardTopRow}>
                 <Text style={styles.cardCategory}>{currentCard.categoryTranslations?.[state.language] ?? currentCard.categoria}</Text>
                 <View style={styles.cardDot} />
-                <Text style={styles.cardCategory}>{(currentCard.subcategoryTranslations?.[state.language] ?? currentCard.subcategoria) || t.cardCultureSubcategory}</Text>
+                <Text style={styles.cardSubcategory}>{(currentCard.subcategoryTranslations?.[state.language] ?? currentCard.subcategoria) || t.cardCultureSubcategory}</Text>
               </View>
               <Text style={styles.wordText}>{currentCard.palabra}</Text>
             </>

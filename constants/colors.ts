@@ -1,5 +1,6 @@
 export const BRAND = {
   purple: '#180224', orange: '#e88421', lyla: '#a26bfd', indigo: '#0177e5', white: '#F7F7F7',
+  navy: '#091A29', mint: '#63D6B0',
 } as const;
 
 export const TEAM_COLORS = ['#a97ae1', '#459cec'] as const;

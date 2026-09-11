@@ -204,14 +204,15 @@ export function buildDeck(cardCount: CardCount, excludedWords: string[], languag
     byDifficulty.set(card.dificultad, difficultyCards);
   }
 
-  const difficultyOrder = shuffle(['Fácil', 'Media', 'Difícil', 'Muy difícil'] as Difficulty[]);
+  const difficultyOrder = shuffle([
+    'Fácil', 'Media', 'Difícil', 'Muy difícil',
+    'Fácil', 'Media', 'Difícil', 'Media', 'Fácil', 'Difícil',
+  ] as Difficulty[]);
   const categoryCounts = new Map<string, number>();
   const selected: WordCard[] = [];
   const selectedCards = new Set<WordCard>();
 
-  // Cada vuelta alterna las cuatro dificultades y, dentro de ellas, prioriza
-  // las categorías menos usadas. Así no aparece un mazo solo fácil/difícil
-  // ni una partida dominada por una única categoría.
+  // Reduce la presencia de términos muy difíciles y mantiene variedad de categorías.
   while (selected.length < cardCount) {
     const preferredDifficulty = difficultyOrder[selected.length % difficultyOrder.length];
     const difficultyPool = (byDifficulty.get(preferredDifficulty) ?? []).filter(
