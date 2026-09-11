@@ -132,13 +132,28 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   const { state, hasSavedGame, startSetup, setLanguage } = useGame();
   const t = UI_TEXT[state.language] ?? UI_TEXT.es;
 
-  useEffect(() => {
-    if (state.language !== 'es') setLanguage('es');
-  }, [setLanguage, state.language]);
-
   return (
     <ScrollView contentContainerStyle={styles.homeScroll} showsVerticalScrollIndicator={false}>
-      <View style={styles.languageSelectorRow} />
+      <View style={styles.languageSelectorRow}>
+        <Text style={styles.homeControlLabel}>{t.language ?? 'IDIOMA'}</Text>
+        <View style={styles.languageOptions}>
+          {LANGUAGE_OPTIONS.map((option) => {
+            const selected = state.language === option.code;
+            return (
+              <Pressable
+                key={option.code}
+                testID={`language-${option.code}`}
+                accessibilityRole="button"
+                accessibilityState={{ selected }}
+                onPress={() => press(() => setLanguage(option.code))}
+                style={[styles.languageOption, selected && styles.languageOptionSelected]}
+              >
+                <Text style={[styles.languageOptionText, selected && styles.languageOptionTextSelected]}>{option.label}</Text>
+              </Pressable>
+            );
+          })}
+        </View>
+      </View>
       <View style={styles.homeHero}>
         <Image source={require('@/assets/branding/decablo-logo.png')} resizeMode="contain" style={styles.homeBrandImage} />
         <Text style={styles.claim}>{t.decabloClaim}</Text>
@@ -218,7 +233,7 @@ function ScreenHeader({
 
 function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   const colors = useColors();
-  const { state, updateTeamName, updateTeamIcon, setCardCount, createGame, isCreating } = useGame();
+  const { state, updateTeamName, updateTeamIcon, setCardCount, setFamilyMode, createGame, isCreating } = useGame();
   const t = UI_TEXT[state.language] ?? UI_TEXT.es;
 
   return (
@@ -229,7 +244,7 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
           source={require('@/assets/branding/decablo-logo.png')}
           resizeMode="contain"
           style={styles.setupLogo}
-          accessibilityLabel="DECABLO by VDOUBLE"
+          accessibilityLabel="DECABLO by VCSTUDIO"
         />
         <View style={styles.setupBackButtonPlaceholder} />
       </View>
@@ -262,6 +277,20 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
       </View>
 
       <View style={styles.setupDeckBlock}>
+        <Pressable
+          testID="family-mode-toggle"
+          accessibilityRole="switch"
+          accessibilityState={{ checked: state.familyMode }}
+          onPress={() => press(() => setFamilyMode(!state.familyMode))}
+          style={[styles.familyModeOption, state.familyMode && styles.familyModeOptionSelected]}
+        >
+          <Feather name="users" size={21} color={state.familyMode ? colors.primaryForeground : colors.primary} />
+          <View style={styles.familyModeCopy}>
+            <Text style={[styles.familyModeTitle, state.familyMode && styles.familyModeTitleSelected]}>{t.familyMode ?? 'MODO FAMILIAR'}</Text>
+            <Text style={[styles.familyModeNote, state.familyMode && styles.familyModeNoteSelected]}>{t.familyModeDescription ?? 'Solo tarjetas infantiles'}</Text>
+          </View>
+          <Feather name={state.familyMode ? 'check-circle' : 'circle'} size={22} color={state.familyMode ? colors.primaryForeground : colors.mutedForeground} />
+        </Pressable>
         <Text style={styles.setupSectionTitle}>NÚMERO DE CARTAS</Text>
         <View style={styles.setupCardCountList}>
           {cardCountOptions.map(({ value, note }) => {
@@ -396,7 +425,7 @@ function InstructionsScreen({ styles }: { styles: ReturnType<typeof createStyles
         source={require('@/assets/branding/decablo-logo.png')}
         resizeMode="contain"
         style={styles.instructionsLogo}
-        accessibilityLabel="DECABLO by VDOUBLE"
+        accessibilityLabel="DECABLO by VCSTUDIO"
       />
       {state.roundIndex <= 2 ? (
         <Image source={state.roundIndex === 0 ? require('@/assets/rounds/round1-rules.png') : state.roundIndex === 1 ? require('@/assets/rounds/round2-rules.png') : require('@/assets/rounds/round3-rules.png')} resizeMode="contain" style={styles.instructionsRoundOneArt} />
@@ -446,7 +475,7 @@ function ReviewScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   return (
     <View style={styles.flex}>
       <ScrollView contentContainerStyle={styles.pageScroll}>
-        <Image source={require('@/assets/branding/decablo-logo.png')} resizeMode="contain" style={styles.screenBrandLogo} accessibilityLabel="DECABLO by VDOUBLE" />
+        <Image source={require('@/assets/branding/decablo-logo.png')} resizeMode="contain" style={styles.screenBrandLogo} accessibilityLabel="DECABLO by VCSTUDIO" />
         <Image source={require('@/assets/illustrations/tiempo.png')} resizeMode="contain" style={styles.timeUpArt} />
         <Text style={styles.pageSubtitle}>{t.reviewTitle}</Text>
         <Text style={styles.pageSubtitle}>{t.reviewSubtitle.replace('{team}', state.teams[state.currentTeam].name)}</Text>
@@ -498,7 +527,7 @@ function ReadyScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
           source={require('@/assets/branding/decablo-logo.png')}
           resizeMode="contain"
           style={styles.readyLogo}
-          accessibilityLabel="DECABLO by VDOUBLE"
+          accessibilityLabel="DECABLO by VCSTUDIO"
         />
         <View style={styles.readyScoreboard} accessibilityLabel={`${state.teams[0].name} ${state.teams[0].score}, ${state.teams[1].name} ${state.teams[1].score}`}>
           {state.teams.map((team, index) => (
@@ -580,7 +609,7 @@ function PlayScreen({ styles, seconds }: { styles: ReturnType<typeof createStyle
         source={require('@/assets/branding/decablo-logo.png')}
         resizeMode="contain"
         style={styles.playBrandLogo}
-        accessibilityLabel="DECABLO by VDOUBLE"
+        accessibilityLabel="DECABLO by VCSTUDIO"
       />
       <View style={styles.playHeader}>
         <View style={styles.playTeamHeader}>
@@ -792,7 +821,7 @@ function FinalScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   const winner = state.teams[0].score === state.teams[1].score ? null : state.teams[0].score > state.teams[1].score ? 0 : 1;
   return (
     <ScrollView contentContainerStyle={styles.finalScroll}>
-      <Image source={require('@/assets/branding/decablo-logo.png')} resizeMode="contain" style={styles.screenBrandLogo} accessibilityLabel="DECABLO by VDOUBLE" />
+      <Image source={require('@/assets/branding/decablo-logo.png')} resizeMode="contain" style={styles.screenBrandLogo} accessibilityLabel="DECABLO by VCSTUDIO" />
       <Image source={require('@/assets/final/celebration.png')} resizeMode="contain" style={styles.finalCelebrationArt} />
       <View style={styles.finalResultPanel}>
         <Text style={styles.finalResultTitle}>{winner === null ? t.finalTie : state.teams[winner].name}</Text>

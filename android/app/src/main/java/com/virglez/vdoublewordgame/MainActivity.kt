@@ -1,4 +1,4 @@
-package com.vdouble
+package com.vcstudio.games
 
 import android.os.Build
 import android.os.Bundle

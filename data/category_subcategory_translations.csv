@@ -27,6 +27,7 @@ categoria,Naturaleza,es,Naturaleza
 categoria,Naturaleza,en,Nature
 categoria,Naturaleza,fr,Nature
 categoria,Naturaleza,pt,Natureza
+categoria,Ocio,en,Leisure
 subcategoria,Futbolista,es,Futbolista
 subcategoria,Futbolista,en,Footballer
 subcategoria,Futbolista,fr,Footballeur
@@ -125,9 +126,10 @@ categoria,Videojuegos,fr,Jeux vidéo
 categoria,Videojuegos,pt,Videojogos
 subcategoria,Acción,en,Action
 subcategoria,Activista,en,Activist
+subcategoria,Actor,en,Actor
+subcategoria,Actriz,en,Actress
 subcategoria,Actor/Actriz,en,Actor
 subcategoria,Alimentación,en,Food
-subcategoria,Animación educativa,en,Educational animation
 subcategoria,Animales,en,Animals
 subcategoria,Anime,en,Anime
 subcategoria,Arquitectura,en,Architecture
@@ -215,8 +217,6 @@ subcategoria,Mitología griega,en,Greek mythology
 subcategoria,Mitología nórdica,en,Norse mythology
 subcategoria,Mitología romana,en,Roman mythology
 subcategoria,Moda,en,Fashion
-subcategoria,Monarca,en,Monarch
-subcategoria,Monarquía,en,Monarchy
 subcategoria,Monumento,en,Monument
 subcategoria,Motociclismo,en,Motorcycling
 subcategoria,Musical,en,Musical
@@ -257,4 +257,27 @@ subcategoria,Terror español,en,Spanish horror
 subcategoria,Thriller,en,Thriller
 subcategoria,Thriller español,en,Spanish thriller
 subcategoria,Videojuegos,en,Video games
+subcategoria,Arquitecto,en,Architect
+subcategoria,Científica,en,Scientist
+subcategoria,Costa/Playa,en,Coast/Beach
+subcategoria,Cuadro,en,Painting
+subcategoria,Desierto,en,Desert
+subcategoria,Director,en,Director
+subcategoria,Entrenador de fútbol,en,Football coach
+subcategoria,Evento histórico,en,Historical event
+subcategoria,Filósofo,en,Philosopher
+subcategoria,Golfista,en,Golfer
+subcategoria,Humorista,en,Comedian
+subcategoria,Inventores,en,Inventors
+subcategoria,Isla/archipiélago,en,Island/Archipelago
+subcategoria,Modelo,en,Model
+subcategoria,Montaña,en,Mountain
+subcategoria,Novela,en,Novel
+subcategoria,Obra musical,en,Musical work
+subcategoria,Paisaje natural,en,Natural landscape
+subcategoria,Piloto de automovilismo,en,Racing driver
+subcategoria,Poema,en,Poem
+subcategoria,Presentador,en,Presenter
+subcategoria,Reina,en,Queen
+subcategoria,Videojuego,en,Video game
 subcategoria,Épica,en,Epic

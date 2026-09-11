@@ -8,7 +8,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 7,Diego Maradona,Deportes,Futbolista,Muy alta,Fácil,Histórica,Internacional,true,true
 8,Pelé,Deportes,Futbolista,Muy alta,Fácil,Histórica,Internacional,true,true
 9,Iker Casillas,Deportes,Futbolista,Muy alta,Fácil,Histórica,Internacional,false,true
-10,Rosalía,Música,Cantante,Muy alta,Fácil,Actual,Internacional,true,false
 11,Shakira,Música,Cantante,Muy alta,Fácil,Actual,Internacional,true,true
 12,Michael Jackson,Música,Cantante,Muy alta,Fácil,Histórica,Internacional,true,true
 13,Freddie Mercury,Música,Cantante,Muy alta,Fácil,Histórica,Internacional,true,true
@@ -24,7 +23,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 23,Meryl Streep,Cine y TV,Actor/Actriz,Alta,Media,Histórica,Internacional,false,true
 24,Marilyn Monroe,Cine y TV,Actor/Actriz,Muy alta,Fácil,Histórica,Internacional,false,true
 25,Tom Hanks,Cine y TV,Actor/Actriz,Muy alta,Fácil,Histórica,Internacional,true,true
-26,Pedro Almodóvar,Cine y TV,Director/a,Muy alta,Fácil,Actual,Internacional,false,false
 27,Al Pacino,Cine y TV,Actor/Actriz,Alta,Media,Histórica,Internacional,false,true
 28,Frida Kahlo,Arte,Pintora,Muy alta,Fácil,Histórica,Internacional,true,true
 29,Pablo Picasso,Arte,Pintor,Muy alta,Fácil,Histórica,Internacional,true,true
@@ -85,6 +83,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 84,Frankenstein,Personajes,Literatura,Muy alta,Fácil,Histórica,Internacional,false,true
 85,Pinocho,Personajes,Cuento,Muy alta,Fácil,Histórica,Internacional,true,true
 86,Caperucita Roja,Personajes,Cuento,Muy alta,Fácil,Histórica,Internacional,true,true
+87,Alicia,Personajes,Cuento,Muy alta,Fácil,Histórica,Internacional,false,true
 90,Vegeta,Personajes,Anime,Muy alta,Fácil,Histórica,Internacional,false,true
 91,Doraemon,Personajes,Anime,Muy alta,Fácil,Actual,Internacional,true,true
 92,Friends,Series,Comedia,Muy alta,Fácil,Clásica,Internacional,false,true
@@ -97,19 +96,15 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 99,La casa de papel,Series,Drama,Muy alta,Fácil,Actual,Internacional,false,true
 100,Juego de Tronos,Series,Fantasía,Muy alta,Fácil,Histórica,Internacional,false,true
 101,Breaking Bad,Series,Drama,Muy alta,Fácil,Histórica,Internacional,false,true
-102,Aquí no hay quien viva,Series,Comedia,Muy alta,Fácil,Clásica,Nacional,false,false
-103,La que se avecina,Series,Comedia,Muy alta,Fácil,Actual,Nacional,false,false
-104,Aída,Series,Comedia,Muy alta,Fácil,Histórica,Nacional,false,false
 105,Élite,Series,Drama,Muy alta,Fácil,Actual,Internacional,false,true
 106,The Office,Series,Comedia,Alta,Media,Histórica,Internacional,false,true
 107,Perdidos,Series,Drama,Alta,Media,Clásica,Internacional,false,true
 108,Prison Break,Series,Drama,Alta,Media,Histórica,Internacional,false,true
 109,The Big Bang Theory,Series,Comedia,Muy alta,Fácil,Histórica,Internacional,false,true
+110,How I Met Your Mother,Series,Comedia,Media,Difícil,Histórica,Internacional,false,true
 111,Black Mirror,Series,Ciencia ficción,Alta,Media,Actual,Internacional,false,true
 112,The Crown,Series,Drama histórico,Alta,Media,Actual,Internacional,false,true
 113,Vikingos,Series,Histórica,Alta,Media,Actual,Internacional,false,true
-114,Física o Química,Series,Drama,Muy alta,Fácil,Histórica,Nacional,false,false
-115,El Internado,Series,Misterio,Muy alta,Fácil,Histórica,Nacional,false,false
 116,Miércoles,Series,Fantasía,Muy alta,Fácil,Actual,Internacional,false,true
 118,The Last of Us,Series,Drama,Alta,Media,Actual,Internacional,false,true
 119,Titanic,Películas,Drama,Muy alta,Fácil,Clásica,Internacional,false,true
@@ -176,20 +171,12 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 182,Ricky Martin,Música,Cantante,Muy alta,Fácil,Clásica,Internacional,false,true
 183,Enrique Iglesias,Música,Cantante,Muy alta,Fácil,Actual,Internacional,false,true
 184,Julio Iglesias,Música,Cantante,Muy alta,Fácil,Clásica,Internacional,false,true
-185,Alejandro Sanz,Música,Cantante,Muy alta,Fácil,Actual,Internacional,false,false
-186,David Bisbal,Música,Cantante,Muy alta,Fácil,Actual,Internacional,false,false
-187,Estopa,Música,Grupo,Muy alta,Fácil,Actual,Internacional,false,false
-188,Hombres G,Música,Grupo,Muy alta,Fácil,Clásica,Internacional,false,false
-189,Mecano,Música,Grupo,Muy alta,Fácil,Clásica,Internacional,false,false
-190,La Oreja de Van Gogh,Música,Grupo,Muy alta,Fácil,Clásica,Internacional,false,false
-191,El Canto del Loco,Música,Grupo,Muy alta,Fácil,Clásica,Internacional,false,false
 192,Maná,Música,Grupo,Muy alta,Fácil,Clásica,Internacional,false,true
 193,Juanes,Música,Cantante,Muy alta,Fácil,Clásica,Internacional,false,true
 194,Daddy Yankee,Música,Reguetón,Muy alta,Fácil,Clásica,Internacional,false,true
 195,Karol G,Música,Reguetón,Muy alta,Fácil,Actual,Internacional,false,true
 196,J Balvin,Música,Reguetón,Muy alta,Fácil,Actual,Internacional,false,true
 197,Ozuna,Música,Reguetón,Muy alta,Fácil,Actual,Internacional,false,true
-198,Aitana,Música,Cantante,Muy alta,Fácil,Actual,Internacional,true,false
 199,Dua Lipa,Música,Cantante,Muy alta,Fácil,Actual,Internacional,true,true
 200,Taylor Swift,Música,Cantante,Muy alta,Fácil,Actual,Internacional,true,true
 201,Fernando Torres,Deportes,Futbolista,Muy alta,Fácil,Histórica,Internacional,false,true
@@ -208,7 +195,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 214,Pep Guardiola,Deportes,Entrenador,Muy alta,Fácil,Actual,Internacional,false,true
 215,Real Madrid,Deportes,Equipos y clubes,Muy alta,Fácil,Actual,Internacional,true,true
 216,FC Barcelona,Deportes,Equipos y clubes,Muy alta,Fácil,Actual,Internacional,true,true
-217,Selección española,Deportes,Equipos y clubes,Muy alta,Fácil,Actual,Internacional,true,false
 218,Mundial de Fútbol,Deportes,Evento,Muy alta,Fácil,Actual,Internacional,true,true
 219,Juegos Olímpicos,Deportes,Evento,Muy alta,Fácil,Histórica,Internacional,true,true
 220,La Gioconda,Arte,Pintura,Muy alta,Fácil,Histórica,Internacional,true,true
@@ -260,8 +246,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 271,Zara,Marcas,Moda,Muy alta,Fácil,Actual,Internacional,true,true
 272,Disney,Marcas,Entretenimiento,Muy alta,Fácil,Actual,Internacional,true,true
 273,Lucky Luke,Personajes,Cómic,Muy alta,Fácil,Histórica,Internacional,true,true
-274,Mortadelo,Personajes,Cómic,Muy alta,Fácil,Histórica,Nacional,true,false
-275,Filemón,Personajes,Cómic,Muy alta,Fácil,Histórica,Nacional,true,false
 276,Garfield,Personajes,Cómic,Muy alta,Fácil,Histórica,Internacional,true,true
 277,Snoopy,Personajes,Cómic,Muy alta,Fácil,Histórica,Internacional,true,true
 278,Charlie Brown,Personajes,Cómic,Muy alta,Fácil,Histórica,Internacional,false,true
@@ -392,21 +376,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 408,Dire Straits,Música,Grupo,Media,Difícil,Histórica,Internacional,false,true
 409,R.E.M.,Música,Grupo,Media,Difícil,Histórica,Internacional,false,true
 410,The Cranberries,Música,Grupo,Alta,Media,Histórica,Internacional,false,true
-411,Nino Bravo,Música,Cantante,Muy alta,Fácil,Histórica,Nacional,false,false
-412,Camilo Sesto,Música,Cantante,Muy alta,Fácil,Histórica,Nacional,false,false
-413,Rocío Jurado,Música,Cantante,Muy alta,Fácil,Histórica,Nacional,false,false
-414,Lola Flores,Música,Cantante,Muy alta,Fácil,Histórica,Nacional,false,false
-415,Isabel Pantoja,Música,Cantante,Muy alta,Fácil,Actual,Nacional,false,false
-416,Raphael,Música,Cantante,Muy alta,Fácil,Histórica,Nacional,false,false
-417,Joan Manuel Serrat,Música,Cantante,Alta,Media,Histórica,Nacional,false,false
-418,Joaquín Sabina,Música,Cantante,Muy alta,Fácil,Actual,Nacional,false,false
-419,Leiva,Música,Cantante,Muy alta,Fácil,Actual,Nacional,false,false
-420,Melendi,Música,Cantante,Muy alta,Fácil,Actual,Nacional,false,false
-421,Pablo Alborán,Música,Cantante,Muy alta,Fácil,Actual,Nacional,false,false
-422,Amaia,Música,Cantante,Muy alta,Fácil,Actual,Nacional,false,false
-423,Lola Índigo,Música,Cantante,Muy alta,Fácil,Actual,Nacional,false,false
-424,Quevedo,Música,Cantante,Muy alta,Fácil,Actual,Nacional,false,false
-425,Bad Gyal,Música,Reguetón,Muy alta,Fácil,Actual,Nacional,false,false
 426,Zlatan Ibrahimović,Deportes,Futbolista,Alta,Media,Actual,Internacional,false,true
 427,David Beckham,Deportes,Futbolista,Muy alta,Fácil,Histórica,Internacional,false,true
 428,Wayne Rooney,Deportes,Futbolista,Alta,Media,Histórica,Internacional,false,true
@@ -444,6 +413,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 461,Martin Luther King,Historia,Activista,Muy alta,Fácil,Histórica,Internacional,false,true
 462,Abraham Lincoln,Historia,Presidente,Muy alta,Fácil,Histórica,Internacional,false,true
 463,George Washington,Historia,Presidente,Alta,Media,Histórica,Internacional,false,true
+464,Reina Isabel II,Historia,Monarquía,Muy alta,Fácil,Histórica,Internacional,false,true
 465,Federico García Lorca,Literatura,Escritor,Alta,Media,Histórica,Internacional,false,true
 466,Oscar Wilde,Literatura,Escritor,Alta,Media,Histórica,Internacional,false,true
 467,Charles Dickens,Literatura,Escritor,Alta,Media,Histórica,Internacional,false,true
@@ -468,7 +438,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 487,Mercedes-Benz,Marcas,Automoción,Muy alta,Fácil,Actual,Internacional,true,true
 488,Volkswagen,Marcas,Automoción,Muy alta,Fácil,Actual,Internacional,true,true
 489,Toyota,Marcas,Automoción,Muy alta,Fácil,Actual,Internacional,false,true
-490,SEAT,Marcas,Automoción,Muy alta,Fácil,Actual,Internacional,false,false
 491,Renault,Marcas,Automoción,Muy alta,Fácil,Actual,Internacional,false,true
 492,Burger King,Marcas,Restauración,Muy alta,Fácil,Actual,Internacional,true,true
 493,Starbucks,Marcas,Restauración,Muy alta,Fácil,Actual,Internacional,false,true
@@ -476,7 +445,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 495,Nutella,Marcas,Alimentación,Muy alta,Fácil,Actual,Internacional,true,true
 496,Kinder,Marcas,Alimentación,Muy alta,Fácil,Actual,Internacional,true,true
 497,Nesquik,Marcas,Alimentación,Muy alta,Fácil,Actual,Internacional,true,true
-498,Colacao,Marcas,Alimentación,Muy alta,Fácil,Actual,Nacional,true,false
 499,Chupa Chups,Marcas,Alimentación,Muy alta,Fácil,Histórica,Internacional,true,true
 500,Donuts,Marcas,Alimentación,Muy alta,Fácil,Actual,Internacional,true,true
 501,Zeus,Mitología,Mitología griega,Muy alta,Fácil,Histórica,Internacional,true,true
@@ -507,18 +475,9 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 530,El gran showman,Películas,Musical,Alta,Media,Actual,Internacional,false,true
 531,Bohemian Rhapsody,Películas,Musical,Muy alta,Fácil,Actual,Internacional,false,true
 532,Mujeres al borde de un ataque de nervios,Películas,Comedia española,Alta,Media,Histórica,Internacional,false,true
-533,¿Qué he hecho yo para merecer esto?,Películas,Comedia española,Media,Difícil,Histórica,Nacional,false,false
 534,Todo sobre mi madre,Películas,Drama español,Alta,Media,Histórica,Internacional,false,true
 535,Hable con ella,Películas,Drama español,Media,Difícil,Actual,Internacional,false,true
-536,Tesis,Películas,Thriller español,Alta,Media,Histórica,Nacional,false,false
 537,Abre los ojos,Películas,Ciencia ficción española,Alta,Media,Histórica,Internacional,false,true
-538,Las brujas de Zugarramurdi,Películas,Comedia española,Alta,Media,Actual,Nacional,false,false
-539,Spanish Movie,Películas,Comedia española,Media,Difícil,Histórica,Nacional,false,false
-540,Primos,Películas,Comedia española,Media,Difícil,Actual,Nacional,false,false
-541,La comunidad,Películas,Comedia española,Alta,Media,Histórica,Nacional,false,false
-542,El día de la bestia,Películas,Comedia española,Alta,Media,Histórica,Nacional,false,false
-543,Los santos inocentes,Películas,Drama español,Media,Difícil,Histórica,Nacional,false,false
-544,La lengua de las mariposas,Películas,Drama español,Media,Difícil,Histórica,Nacional,false,false
 546,Los Soprano,Series,Drama,Alta,Media,Histórica,Internacional,false,true
 547,Better Call Saul,Series,Drama,Alta,Media,Actual,Internacional,false,true
 548,Sherlock,Series,Misterio,Alta,Media,Histórica,Internacional,false,true
@@ -532,16 +491,9 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 558,Cómo conocí a vuestra madre,Series,Comedia,Muy alta,Fácil,Histórica,Internacional,false,true
 559,Dos hombres y medio,Series,Comedia,Alta,Media,Histórica,Internacional,false,true
 560,Brooklyn Nine-Nine,Series,Comedia,Alta,Media,Actual,Internacional,false,true
-561,Ana y los 7,Series,Comedia española,Alta,Media,Histórica,Nacional,false,false
-562,Amar en tiempos revueltos,Series,Drama español,Alta,Media,Actual,Nacional,false,false
-563,El secreto de Puente Viejo,Series,Drama español,Alta,Media,Actual,Nacional,false,false
-564,Velvet,Series,Drama español,Muy alta,Fácil,Actual,Nacional,false,false
-565,La catedral del mar,Series,Drama histórico español,Alta,Media,Actual,Nacional,false,false
-566,El tiempo entre costuras,Series,Drama histórico español,Alta,Media,Actual,Nacional,false,false
-567,Estoy vivo,Series,Ciencia ficción española,Alta,Media,Actual,Nacional,false,false
-568,El pueblo,Series,Comedia española,Alta,Media,Actual,Nacional,false,false
 570,Minnie Mouse,Personajes,Animación,Muy alta,Fácil,Histórica,Internacional,true,true
 571,Pluto,Personajes,Animación,Muy alta,Fácil,Histórica,Internacional,true,true
+572,Olivia,Personajes,Cómic,Muy alta,Fácil,Histórica,Internacional,false,true
 573,Betty Boop,Personajes,Animación,Media,Difícil,Histórica,Internacional,false,true
 574,La Pantera Rosa,Personajes,Animación,Muy alta,Fácil,Histórica,Internacional,true,true
 575,Wally,Personajes,Literatura infantil,Muy alta,Fácil,Histórica,Internacional,true,true
@@ -570,25 +522,14 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 600,La princesa prometida,Películas,Aventura,Alta,Media,Histórica,Internacional,false,true
 601,Cuando Harry encontró a Sally,Películas,Romance,Alta,Media,Histórica,Internacional,false,true
 602,El diario de Noa,Películas,Romance,Alta,Media,Histórica,Internacional,false,true
-603,Tres metros sobre el cielo,Películas,Romance,Alta,Media,Actual,Nacional,false,false
-604,Ocho apellidos vascos,Películas,Comedia española,Muy alta,Fácil,Actual,Nacional,false,false
-605,Ocho apellidos catalanes,Películas,Comedia española,Alta,Media,Actual,Nacional,false,false
-606,"Bienvenido, Mister Marshall",Películas,Comedia española,Alta,Media,Histórica,Nacional,false,false
-607,La escopeta nacional,Películas,Comedia española,Media,Difícil,Histórica,Nacional,false,false
-608,"Amanece, que no es poco",Películas,Comedia española,Media,Difícil,Histórica,Nacional,false,false
-609,Airbag,Películas,Comedia española,Alta,Media,Histórica,Nacional,false,false
-610,Torrente,Películas,Comedia española,Muy alta,Fácil,Actual,Nacional,false,false
 611,El orfanato,Películas,Terror español,Alta,Media,Actual,Internacional,false,true
 612,REC,Películas,Terror español,Alta,Media,Actual,Internacional,false,true
 613,Mar adentro,Películas,Drama español,Alta,Media,Actual,Internacional,false,true
 614,Volver,Películas,Drama español,Alta,Media,Actual,Internacional,false,true
 615,La sociedad de la nieve,Películas,Drama,Alta,Media,Actual,Internacional,false,true
-616,Campeones,Películas,Comedia española,Muy alta,Fácil,Actual,Nacional,false,false
 617,El laberinto del fauno,Películas,Fantasía,Alta,Media,Actual,Internacional,false,true
 618,Los otros,Películas,Terror,Alta,Media,Actual,Internacional,false,true
-619,Celda 211,Películas,Thriller español,Media,Difícil,Actual,Nacional,false,false
 620,Contratiempo,Películas,Thriller español,Alta,Media,Actual,Internacional,false,true
-621,Perfectos desconocidos,Películas,Comedia española,Alta,Media,Actual,Nacional,false,false
 622,South Park,Series,Animación,Alta,Media,Actual,Internacional,false,true
 623,Padre de familia,Series,Animación,Muy alta,Fácil,Actual,Internacional,false,true
 624,Futurama,Series,Animación,Alta,Media,Actual,Internacional,false,true
@@ -606,10 +547,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 638,Mazinger Z,Series,Anime,Alta,Media,Clásica,Internacional,false,true
 639,Marco,Series,Infantil,Alta,Media,Clásica,Internacional,false,true
 640,La abeja Maya,Series,Infantil,Alta,Media,Clásica,Internacional,false,true
-641,Los Lunnis,Series,Infantil española,Muy alta,Fácil,Histórica,Nacional,true,false
-642,Al salir de clase,Series,Drama juvenil español,Alta,Media,Histórica,Nacional,false,false
-643,El barco,Series,Aventura española,Muy alta,Fácil,Actual,Nacional,false,false
-644,Gran Hotel,Series,Drama español,Alta,Media,Actual,Nacional,false,false
 646,Capitán Haddock,Personajes,Cómic,Muy alta,Fácil,Histórica,Internacional,false,true
 647,Papá Pitufo,Personajes,Cómic,Muy alta,Fácil,Histórica,Internacional,false,true
 648,Monkey D. Luffy,Personajes,Anime,Media,Difícil,Actual,Internacional,false,true
@@ -645,10 +582,10 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 679,Gareth Bale,Deportes,Futbolista,Alta,Media,Histórica,Internacional,false,true
 680,Diego Simeone,Deportes,Entrenador,Alta,Media,Actual,Internacional,false,true
 681,Dani Pedrosa,Deportes,Motociclismo,Muy alta,Fácil,Histórica,Internacional,false,true
-682,Mónica Naranjo,Música,Cantante,Alta,Media,Actual,Nacional,false,false
 683,Imagine Dragons,Música,Grupo,Muy alta,Fácil,Actual,Internacional,true,true
 684,Tutankamón,Historia,Faraón,Muy alta,Fácil,Histórica,Internacional,true,true
 685,Nefertiti,Historia,Reina egipcia,Alta,Media,Histórica,Internacional,false,true
+686,Reina Victoria,Historia,Monarca,Alta,Media,Histórica,Internacional,false,true
 687,Winston Churchill,Historia,Político,Alta,Media,Histórica,Internacional,false,true
 688,El nacimiento de Venus,Arte,Pintura,Media,Difícil,Histórica,Internacional,false,true
 689,La persistencia de la memoria,Arte,Pintura,Media,Difícil,Histórica,Internacional,false,true
@@ -656,11 +593,9 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 691,Julieta,Literatura,Personaje,Alta,Media,Histórica,Internacional,false,true
 692,Robinson Crusoe,Literatura,Personaje,Alta,Media,Histórica,Internacional,true,true
 693,Gulliver,Literatura,Personaje,Alta,Media,Histórica,Internacional,false,true
+694,Hercule Poirot,Literatura,Personaje,Alta,Media,Histórica,Internacional,false,true
 695,Miss Marple,Literatura,Personaje,Alta,Media,Histórica,Internacional,false,true
 696,Oliver Twist,Literatura,Personaje,Alta,Media,Histórica,Internacional,false,true
-697,Sevilla,Lugares,Ciudad,Muy alta,Fácil,Actual,Internacional,false,false
-698,Valencia,Lugares,Ciudad,Muy alta,Fácil,Actual,Internacional,false,false
-699,Bilbao,Lugares,Ciudad,Muy alta,Fácil,Actual,Internacional,false,false
 700,Santiago de Compostela,Lugares,Ciudad,Muy alta,Fácil,Actual,Internacional,false,true
 701,Ibiza,Lugares,Isla,Muy alta,Fácil,Actual,Internacional,false,true
 702,Mallorca,Lugares,Isla,Muy alta,Fácil,Actual,Internacional,false,true
@@ -668,6 +603,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 704,Venecia,Lugares,Ciudad,Muy alta,Fácil,Actual,Internacional,true,true
 705,Tokio,Lugares,Ciudad,Muy alta,Fácil,Actual,Internacional,true,true
 706,Hollywood,Lugares,Barrio,Muy alta,Fácil,Actual,Internacional,false,true
+707,Disneyland París,Lugares,Parque temático,Muy alta,Fácil,Actual,Internacional,false,true
 708,Parque Güell,Lugares,Monumento,Muy alta,Fácil,Actual,Internacional,false,true
 709,FIFA,Videojuegos,Fútbol,Muy alta,Fácil,Histórica,Internacional,false,true
 710,Los Sims,Videojuegos,Simulación,Muy alta,Fácil,Histórica,Internacional,false,true
@@ -728,10 +664,12 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 765,Footloose,Películas,Película,Media,Difícil,Histórica,Internacional,false,true
 766,Cuenta conmigo,Películas,Película,Media,Difícil,Histórica,Internacional,false,true
 767,Willow,Películas,Película,Media,Difícil,Histórica,Internacional,false,true
+768,Robin Hood: príncipe de los ladrones,Películas,Película,Media,Difícil,Histórica,Internacional,false,true
 769,El príncipe de Zamunda,Películas,Película,Media,Difícil,Histórica,Internacional,false,true
 770,Dos policías rebeldes,Películas,Película,Alta,Media,Histórica,Internacional,false,true
 771,El gran Lebowski,Películas,Película,Media,Difícil,Histórica,Internacional,false,true
 772,Django desencadenado,Películas,Película,Alta,Media,Histórica,Internacional,false,true
+773,Érase una vez en Hollywood,Películas,Película,Alta,Media,Histórica,Internacional,false,true
 774,Memento,Películas,Película,Media,Difícil,Histórica,Internacional,false,true
 775,El club de la lucha,Películas,Película,Alta,Media,Histórica,Internacional,false,true
 776,American Beauty,Películas,Película,Alta,Media,Histórica,Internacional,false,true
@@ -753,6 +691,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 792,El diablo viste de Prada,Películas,Película,Alta,Media,Histórica,Internacional,false,true
 793,Erin Brockovich,Películas,Película,Media,Difícil,Histórica,Internacional,false,true
 794,Thelma y Louise,Películas,Película,Media,Difícil,Histórica,Internacional,false,true
+795,Legalmente rubia,Películas,Película,Alta,Media,Histórica,Internacional,false,true
 796,Sister Act,Películas,Película,Alta,Media,Histórica,Internacional,false,true
 797,La señora Doubtfire,Películas,Película,Alta,Media,Histórica,Internacional,false,true
 798,Zoolander,Películas,Película,Alta,Media,Histórica,Internacional,false,true
@@ -781,13 +720,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 822,Big Fish,Películas,Película,Media,Difícil,Histórica,Internacional,false,true
 823,Chicken Run,Películas,Película,Media,Difícil,Histórica,Internacional,false,true
 824,Wallace y Gromit,Películas,Película,Media,Difícil,Histórica,Internacional,false,true
-826,Los ladrones van a la oficina,Series,Serie,Media,Difícil,Actual,Nacional,false,false
-827,Manos a la obra,Series,Serie,Media,Difícil,Actual,Nacional,false,false
-828,Camera Café,Series,Serie,Alta,Media,Actual,Nacional,false,false
-829,Hospital Central,Series,Serie,Alta,Media,Actual,Nacional,false,false
-830,"Policías, en el corazón de la calle",Series,Serie,Media,Difícil,Actual,Nacional,false,false
-831,El príncipe,Series,Serie,Media,Difícil,Actual,Nacional,false,false
-832,Rapa,Series,Serie,Media,Difícil,Actual,Nacional,false,false
 833,24,Series,Serie,Alta,Media,Actual,Internacional,false,true
 834,The Wire,Series,Serie,Alta,Media,Actual,Internacional,false,true
 835,Mindhunter,Series,Serie,Alta,Media,Actual,Internacional,false,true
@@ -804,20 +736,21 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 846,El coche fantástico,Series,Serie,Alta,Media,Clásica,Internacional,false,true
 847,Xena: la princesa guerrera,Series,Serie,Alta,Media,Clásica,Internacional,false,true
 848,Hércules: sus viajes legendarios,Series,Serie,Alta,Media,Clásica,Internacional,false,true
+849,Stargate SG-1,Series,Serie,Alta,Media,Actual,Internacional,false,true
 850,Smallville,Series,Serie,Alta,Media,Clásica,Internacional,false,true
 851,Héroes,Series,Serie,Alta,Media,Clásica,Internacional,false,true
 852,Ted Lasso,Series,Serie,Alta,Media,Actual,Internacional,false,true
 854,Spartacus,Series,Serie,Alta,Media,Clásica,Internacional,false,true
 855,Boardwalk Empire,Series,Serie,Alta,Media,Clásica,Internacional,false,true
+856,The Handmaid's Tale,Series,Serie,Alta,Media,Actual,Internacional,false,true
 857,Mr. Robot,Series,Serie,Alta,Media,Actual,Internacional,false,true
 858,Westworld,Series,Serie,Alta,Media,Actual,Internacional,false,true
+859,House of the Dragon,Series,Serie,Alta,Media,Actual,Internacional,false,true
 860,Lupin,Series,Serie,Alta,Media,Actual,Internacional,false,true
 861,La asistenta,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 862,The White Lotus,Series,Serie,Alta,Media,Actual,Internacional,false,true
 863,The Good Place,Series,Serie,Alta,Media,Actual,Internacional,false,true
 864,Community,Series,Serie,Alta,Media,Actual,Internacional,false,true
-865,Manolo García,Música,Cantante,Alta,Media,Actual,Nacional,false,false
-866,Ana Mena,Música,Cantante,Muy alta,Fácil,Actual,Nacional,false,false
 867,John Lennon,Música,Cantante,Alta,Media,Histórica,Internacional,false,true
 868,Paul McCartney,Música,Cantante,Alta,Media,Actual,Internacional,false,true
 869,Rihanna,Música,Cantante,Muy alta,Fácil,Actual,Internacional,false,true
@@ -833,20 +766,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 879,Maluma,Música,Cantante,Muy alta,Fácil,Actual,Internacional,false,true
 880,Don Omar,Música,Cantante,Media,Difícil,Actual,Internacional,false,true
 881,Morad,Música,Cantante,Media,Difícil,Actual,Internacional,false,true
-882,Dani Martín,Música,Cantante,Muy alta,Fácil,Actual,Nacional,false,false
-883,Antonio Orozco,Música,Cantante,Alta,Media,Actual,Nacional,false,false
-884,Marta Sánchez,Música,Cantante,Alta,Media,Actual,Nacional,false,false
-885,Chenoa,Música,Cantante,Muy alta,Fácil,Actual,Nacional,false,false
-886,David Bustamante,Música,Cantante,Muy alta,Fácil,Actual,Nacional,false,false
-887,Rosa López,Música,Cantante,Muy alta,Fácil,Actual,Nacional,false,false
-888,Sergio Dalma,Música,Cantante,Alta,Media,Actual,Nacional,false,false
-889,José Luis Perales,Música,Cantante,Alta,Media,Actual,Nacional,false,false
-890,Ana Belén,Música,Cantante,Alta,Media,Actual,Nacional,false,false
-891,Víctor Manuel,Música,Cantante,Alta,Media,Actual,Nacional,false,false
-892,Luz Casal,Música,Cantante,Alta,Media,Actual,Nacional,false,false
 893,Miguel Bosé,Música,Cantante,Alta,Media,Actual,Internacional,false,true
-894,Dani Fernández,Música,Cantante,Media,Difícil,Actual,Nacional,false,false
-895,Álex Ubago,Música,Cantante,Alta,Media,Actual,Nacional,false,false
 896,Sam Smith,Música,Cantante,Alta,Media,Actual,Internacional,false,true
 897,Harry Styles,Música,Cantante,Muy alta,Fácil,Actual,Internacional,false,true
 898,Selena Gomez,Música,Cantante,Muy alta,Fácil,Actual,Internacional,false,true
@@ -865,15 +785,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 911,Kendrick Lamar,Música,Cantante,Media,Difícil,Actual,Internacional,false,true
 912,Tupac,Música,Cantante,Alta,Media,Actual,Internacional,false,true
 913,Notorious B.I.G.,Música,Cantante,Media,Difícil,Actual,Internacional,false,true
-914,El Último de la Fila,Música,Grupo,Media,Difícil,Histórica,Nacional,false,false
-915,Celtas Cortos,Música,Grupo,Media,Difícil,Histórica,Nacional,false,false
-916,Extremoduro,Música,Grupo,Muy alta,Fácil,Histórica,Nacional,false,false
-917,Fito & Fitipaldis,Música,Grupo,Muy alta,Fácil,Histórica,Nacional,false,false
-918,Vetusta Morla,Música,Grupo,Media,Difícil,Histórica,Nacional,false,false
-919,Amaral,Música,Grupo,Alta,Media,Histórica,Nacional,false,false
-920,Pereza,Música,Grupo,Media,Difícil,Histórica,Nacional,false,false
-921,Jarabe de Palo,Música,Grupo,Media,Difícil,Histórica,Nacional,false,false
-922,Ska-P,Música,Grupo,Media,Difícil,Histórica,Nacional,false,false
 923,The Cure,Música,Grupo,Alta,Media,Histórica,Internacional,false,true
 924,One Direction,Música,Grupo,Muy alta,Fácil,Histórica,Internacional,true,true
 926,Muse,Música,Grupo,Media,Difícil,Histórica,Internacional,false,true
@@ -892,16 +803,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 939,Pet Shop Boys,Música,Grupo,Media,Difícil,Histórica,Internacional,false,true
 940,Jamiroquai,Música,Grupo,Media,Difícil,Histórica,Internacional,false,true
 941,Manic Street Preachers,Música,Grupo,Media,Difícil,Histórica,Internacional,false,true
-942,Dover,Música,Grupo,Media,Difícil,Histórica,Nacional,false,false
-943,La Quinta Estación,Música,Grupo,Media,Difícil,Histórica,Nacional,false,false
-944,La Unión,Música,Grupo,Media,Difícil,Histórica,Nacional,false,false
-945,Presuntos Implicados,Música,Grupo,Media,Difícil,Histórica,Nacional,false,false
-946,Seguridad Social,Música,Grupo,Media,Difícil,Histórica,Nacional,false,false
-947,M-Clan,Música,Grupo,Media,Difícil,Histórica,Nacional,false,false
-948,Nacha Pop,Música,Grupo,Media,Difícil,Histórica,Nacional,false,false
-949,Duncan Dhu,Música,Grupo,Media,Difícil,Histórica,Nacional,false,false
-950,Héroes del Silencio,Música,Grupo,Muy alta,Fácil,Histórica,Nacional,false,false
-951,Siniestro Total,Música,Grupo,Media,Difícil,Histórica,Nacional,false,false
 952,Novak Djokovic,Deportes,Deportista,Muy alta,Fácil,Actual,Internacional,false,true
 953,Roger Federer,Deportes,Deportista,Muy alta,Fácil,Actual,Internacional,false,true
 954,Carlos Alcaraz,Deportes,Deportista,Muy alta,Fácil,Actual,Internacional,false,true
@@ -966,6 +867,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1013,Edvard Munch,Arte,Pintor,Alta,Media,Histórica,Internacional,false,true
 1014,Jackson Pollock,Arte,Pintor,Alta,Media,Histórica,Internacional,false,true
 1015,Roy Lichtenstein,Arte,Pintor,Baja,Muy difícil,Histórica,Internacional,false,true
+1016,Antoni Gaudí,Arte,Arquitectura,Alta,Media,Histórica,Internacional,false,true
 1017,Le Corbusier,Arte,Arquitectura,Media,Difícil,Histórica,Internacional,false,true
 1018,Caravaggio,Arte,Pintor,Alta,Media,Histórica,Internacional,false,true
 1019,Botticelli,Arte,Pintor,Alta,Media,Histórica,Internacional,false,true
@@ -992,7 +894,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1040,Gustavo Adolfo Bécquer,Literatura,Escritor,Alta,Media,Histórica,Internacional,false,true
 1041,Benito Pérez Galdós,Literatura,Escritor,Alta,Media,Histórica,Internacional,false,true
 1042,Emilia Pardo Bazán,Literatura,Escritora,Media,Difícil,Histórica,Internacional,false,true
-1043,Rosalía de Castro,Literatura,Escritora,Alta,Media,Actual,Internacional,false,false
 1044,Calderón de la Barca,Literatura,Escritor,Media,Difícil,Histórica,Internacional,false,true
 1045,El Lazarillo de Tormes,Literatura,Obra,Alta,Media,Histórica,Internacional,false,true
 1046,La Celestina,Literatura,Obra,Alta,Media,Histórica,Internacional,false,true
@@ -1004,7 +905,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1052,Don Juan Tenorio,Literatura,Personaje,Alta,Media,Histórica,Internacional,false,true
 1053,Fuenteovejuna,Literatura,Obra,Alta,Media,Histórica,Internacional,false,true
 1054,Platero y yo,Literatura,Obra,Alta,Media,Histórica,Internacional,false,true
-1055,Campos de Castilla,Literatura,Obra,Media,Difícil,Histórica,Internacional,false,false
 1056,Fortunata y Jacinta,Literatura,Obra,Alta,Media,Histórica,Internacional,false,true
 1057,La Regenta,Literatura,Obra,Alta,Media,Histórica,Internacional,false,true
 1058,Nada,Literatura,Obra,Media,Difícil,Histórica,Internacional,false,true
@@ -1022,6 +922,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1071,Mao Zedong,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
 1072,Nerón,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
 1073,Calígula,Historia,Personaje histórico,Media,Difícil,Histórica,Internacional,false,true
+1074,Ramsés II,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
 1075,Hatshepsut,Historia,Personaje histórico,Baja,Muy difícil,Histórica,Internacional,false,true
 1076,Moisés,Historia,Personaje histórico,Muy alta,Fácil,Histórica,Internacional,false,true
 1077,Confucio,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
@@ -1048,7 +949,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1099,Enrique VIII,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
 1100,Juana la Loca,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
 1101,Carlos V,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
-1102,Alfonso X el Sabio,Historia,Personaje histórico,Alta,Media,Clásica,Nacional,false,false
 1103,Don Pelayo,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
 1104,El Cid,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
 1105,Blas de Lezo,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
@@ -1061,8 +961,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1112,Neil Armstrong,Historia,Personaje histórico,Muy alta,Fácil,Histórica,Internacional,false,true
 1113,Buzz Aldrin,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
 1115,Alhambra,Lugares,Lugar,Muy alta,Fácil,Histórica,Internacional,false,true
-1116,Acueducto de Segovia,Lugares,Lugar,Media,Difícil,Histórica,Nacional,false,false
-1117,Puerta de Alcalá,Lugares,Lugar,Media,Difícil,Histórica,Nacional,false,false
 1118,Museo del Prado,Lugares,Lugar,Muy alta,Fácil,Histórica,Internacional,false,true
 1120,Berlín,Lugares,Lugar,Muy alta,Fácil,Histórica,Internacional,false,true
 1121,Atenas,Lugares,Lugar,Muy alta,Fácil,Histórica,Internacional,false,true
@@ -1085,20 +983,9 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1140,Camp Nou,Lugares,Lugar,Muy alta,Fácil,Histórica,Internacional,false,true
 1141,Santiago Bernabéu,Lugares,Lugar,Muy alta,Fácil,Histórica,Internacional,false,true
 1142,Wembley,Lugares,Lugar,Media,Difícil,Histórica,Internacional,false,true
-1143,Puerta del Sol,Lugares,Lugar,Muy alta,Fácil,Histórica,Nacional,false,false
-1144,Plaza Mayor de Madrid,Lugares,Lugar,Media,Difícil,Histórica,Nacional,false,false
-1145,Plaza de España,Lugares,Lugar,Media,Difícil,Histórica,Nacional,false,false
-1146,Mezquita de Córdoba,Lugares,Lugar,Muy alta,Fácil,Histórica,Nacional,false,false
-1147,Catedral de Santiago,Lugares,Lugar,Muy alta,Fácil,Histórica,Nacional,false,false
-1148,Catedral de Burgos,Lugares,Lugar,Media,Difícil,Histórica,Nacional,false,false
-1149,Guggenheim de Bilbao,Lugares,Lugar,Media,Difícil,Histórica,Nacional,false,false
 1150,Teide,Lugares,Lugar,Muy alta,Fácil,Histórica,Internacional,false,true
-1151,Costa Brava,Lugares,Lugar,Media,Difícil,Histórica,Internacional,false,false
-1152,Costa del Sol,Lugares,Lugar,Media,Difícil,Histórica,Internacional,false,false
 1153,Formentera,Lugares,Lugar,Muy alta,Fácil,Histórica,Internacional,false,true
 1154,Menorca,Lugares,Lugar,Muy alta,Fácil,Histórica,Internacional,false,true
-1155,Picos de Europa,Lugares,Lugar,Media,Difícil,Histórica,Nacional,false,false
-1156,Cabo de Finisterre,Lugares,Lugar,Media,Difícil,Histórica,Nacional,false,false
 1157,Algarve,Lugares,Lugar,Media,Difícil,Histórica,Internacional,false,true
 1158,Lago Ness,Lugares,Lugar,Media,Difícil,Histórica,Internacional,false,true
 1159,Fiordos noruegos,Lugares,Lugar,Media,Difícil,Histórica,Internacional,false,true
@@ -1132,22 +1019,15 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1188,Peugeot,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 1189,Citroën,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 1190,Ford,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
-1191,Cruzcampo,Marcas,Marca,Muy alta,Fácil,Actual,Nacional,false,false
-1192,Mahou,Marcas,Marca,Muy alta,Fácil,Actual,Nacional,false,false
-1193,Estrella Galicia,Marcas,Marca,Muy alta,Fácil,Actual,Nacional,false,false
 1194,Danone,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 1195,KitKat,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 1196,Kleenex,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 1197,Colgate,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 1198,Nivea,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 1199,Gillette,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
-1200,Mango,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,false
 1201,H&M,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 1202,Decathlon,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 1203,Carrefour,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
-1204,Mercadona,Marcas,Marca,Muy alta,Fácil,Actual,Nacional,false,false
-1205,El Corte Inglés,Marcas,Marca,Muy alta,Fácil,Actual,Nacional,false,false
-1206,Wallapop,Marcas,Marca,Muy alta,Fácil,Actual,Nacional,false,false
 1207,Vinted,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 1208,TikTok,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,true,true
 1209,Instagram,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
@@ -1232,6 +1112,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1288,Ares,Mitología,Mitología,Alta,Media,Histórica,Internacional,false,true
 1289,Apolo,Mitología,Mitología,Alta,Media,Histórica,Internacional,false,true
 1290,Artemisa,Mitología,Mitología,Alta,Media,Histórica,Internacional,false,true
+1291,Hermes,Mitología,Mitología,Alta,Media,Histórica,Internacional,false,true
 1293,Hera,Mitología,Mitología,Alta,Media,Histórica,Internacional,false,true
 1294,Deméter,Mitología,Mitología,Media,Difícil,Histórica,Internacional,false,true
 1295,Freya,Mitología,Mitología,Media,Difícil,Histórica,Internacional,false,true
@@ -1301,9 +1182,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1363,Steven Universe,Series,Serie,Alta,Media,Actual,Internacional,false,true
 1364,BoJack Horseman,Series,Serie,Alta,Media,Actual,Internacional,false,true
 1365,Big Mouth,Series,Serie,Alta,Media,Actual,Internacional,false,true
-1366,Águila Roja,Series,Serie,Alta,Media,Actual,Nacional,false,false
 1367,Las chicas del cable,Series,Serie,Muy alta,Fácil,Actual,Internacional,false,true
-1368,Policías,Series,Serie,Alta,Media,Actual,Nacional,false,false
 1369,Los misterios de Laura,Series,Serie,Alta,Media,Actual,Internacional,false,true
 1370,Mentes criminales,Series,Serie,Alta,Media,Actual,Internacional,false,true
 1371,Bones,Series,Serie,Alta,Media,Actual,Internacional,false,true
@@ -1312,19 +1191,16 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1375,You,Series,Serie,Alta,Media,Actual,Internacional,false,true
 1376,Fargo,Series,Serie,Alta,Media,Actual,Internacional,false,true
 1377,True Detective,Series,Serie,Alta,Media,Actual,Internacional,false,true
+1378,Squid Game,Series,Serie,Muy alta,Fácil,Actual,Internacional,false,true
 1379,Alice in Borderland,Series,Serie,Alta,Media,Actual,Internacional,false,true
-1380,La peste,Series,Serie,Alta,Media,Actual,Nacional,false,false
-1381,Cristo y Rey,Series,Serie,Alta,Media,Actual,Nacional,false,false
 1382,Ringo Starr,Música,Cantante,Media,Difícil,Actual,Internacional,false,true
 1383,Bob Dylan,Música,Cantante,Alta,Media,Actual,Internacional,false,true
 1384,Billy Joel,Música,Cantante,Alta,Media,Actual,Internacional,false,true
 1385,Barbra Streisand,Música,Cantante,Media,Difícil,Actual,Internacional,false,true
 1386,Ariana Grande,Música,Cantante,Muy alta,Fácil,Actual,Internacional,false,true
-1388,Mägo de Oz,Música,Grupo,Alta,Media,Actual,Nacional,false,false
 1389,Mediterráneo,Lugares,Lugar,Muy alta,Fácil,Actual,Internacional,false,true
 1391,Atlético de Madrid,Deportes,Equipos y clubes,Muy alta,Fácil,Actual,Internacional,false,true
 1392,Athletic Club,Deportes,Equipos y clubes,Muy alta,Fácil,Actual,Internacional,false,true
-1393,Sevilla FC,Deportes,Equipos y clubes,Muy alta,Fácil,Actual,Internacional,false,false
 1394,Real Betis,Deportes,Equipos y clubes,Muy alta,Fácil,Actual,Internacional,false,true
 1395,Manchester United,Deportes,Equipos y clubes,Muy alta,Fácil,Actual,Internacional,false,true
 1396,Liverpool,Deportes,Equipos y clubes,Muy alta,Fácil,Actual,Internacional,false,true
@@ -1341,7 +1217,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1409,Champions League,Deportes,Evento,Muy alta,Fácil,Actual,Internacional,false,true
 1410,Eurocopa,Deportes,Evento,Muy alta,Fácil,Actual,Internacional,false,true
 1411,Giro de Italia,Deportes,Evento,Media,Difícil,Actual,Internacional,false,true
-1412,Vuelta a España,Deportes,Evento,Media,Difícil,Actual,Internacional,false,false
 1413,Super Bowl,Deportes,Evento,Muy alta,Fácil,Actual,Internacional,false,true
 1414,Wimbledon,Deportes,Evento,Muy alta,Fácil,Actual,Internacional,false,true
 1415,US Open,Deportes,Evento,Media,Difícil,Actual,Internacional,false,true
@@ -1351,7 +1226,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1419,Triatlón,Deportes,Evento,Media,Difícil,Actual,Internacional,false,true
 1420,Balón de Oro,Deportes,Evento,Muy alta,Fácil,Actual,Internacional,false,true
 1421,Copa Davis,Deportes,Evento,Media,Difícil,Actual,Internacional,false,true
-1422,Zipi y Zape,Personajes,Personaje,Muy alta,Fácil,Actual,Nacional,true,false
 1423,Lisa Simpson,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
 1424,Marge Simpson,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
 1425,Bugs Bunny,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,true,true
@@ -1366,7 +1240,11 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1436,Hawkeye,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 1437,Nemo,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,true,true
 1438,Dory,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,true,true
+1439,Elsa,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,true,true
+1440,Anna,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,true,true
+1441,Genio,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,true,true
 1442,Úrsula,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
+1443,Bestia,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,true,true
 1444,Mr. Bean,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,true,true
 1445,Saul Goodman,Personajes,Personaje,Alta,Media,Actual,Internacional,false,true
 1446,Eleven,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
@@ -1395,6 +1273,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1480,El jardín de las delicias,Arte,Obra,Media,Difícil,Actual,Internacional,false,true
 1481,La libertad guiando al pueblo,Arte,Obra,Media,Difícil,Actual,Internacional,false,true
 1482,El beso,Arte,Obra,Alta,Media,Actual,Internacional,false,true
+1483,"Impresión, sol naciente",Arte,Obra,Media,Difícil,Actual,Internacional,false,true
 1484,El entierro del Conde de Orgaz,Arte,Obra,Media,Difícil,Actual,Internacional,false,true
 1485,La rendición de Breda,Arte,Obra,Media,Difícil,Actual,Internacional,false,true
 1487,La Piedad,Arte,Obra,Alta,Media,Actual,Internacional,false,true
@@ -1420,37 +1299,20 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1507,Renacimiento,Historia,Evento,Muy alta,Fácil,Actual,Internacional,false,true
 1508,Antiguo Egipto,Historia,Civilización,Muy alta,Fácil,Actual,Internacional,true,true
 1509,Imperio Romano,Historia,Civilización,Muy alta,Fácil,Actual,Internacional,true,true
+1510,Imperio Azteca,Historia,Civilización,Alta,Media,Actual,Internacional,false,true
+1511,Imperio Inca,Historia,Civilización,Alta,Media,Actual,Internacional,false,true
 1512,Conquista de Granada,Historia,Evento,Alta,Media,Actual,Internacional,false,true
 1513,Reconquista,Historia,Evento,Alta,Media,Actual,Internacional,false,true
 1514,Desembarco de Normandía,Historia,Evento,Alta,Media,Actual,Internacional,false,true
 1515,Batalla de Waterloo,Historia,Evento,Alta,Media,Histórica,Internacional,false,true
 1516,Batalla de Trafalgar,Historia,Evento,Alta,Media,Histórica,Internacional,false,true
+1517,Batalla de las Termópilas,Historia,Evento,Alta,Media,Actual,Internacional,false,true
 1518,Hiroshima,Lugares,Ciudad,Media,Difícil,Actual,Internacional,false,true
 1519,Nagasaki,Lugares,Ciudad,Media,Difícil,Actual,Internacional,false,true
 1520,Partenón,Lugares,Monumento,Media,Difícil,Actual,Internacional,false,true
 1521,Arco de Triunfo,Lugares,Monumento,Media,Difícil,Actual,Internacional,false,true
 1523,Palacio de Versalles,Lugares,Monumento,Media,Difícil,Actual,Internacional,false,true
 1524,Catedral de Notre Dame,Lugares,Monumento,Media,Difícil,Actual,Internacional,false,true
-1525,Alcázar de Sevilla,Lugares,Monumento,Media,Difícil,Actual,Nacional,false,false
-1526,Málaga,Lugares,Lugar,Muy alta,Fácil,Actual,Nacional,false,false
-1527,Granada,Lugares,Lugar,Muy alta,Fácil,Actual,Nacional,false,false
-1528,Salamanca,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-1529,Toledo,Lugares,Lugar,Muy alta,Fácil,Actual,Nacional,false,false
-1530,Alicante,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-1531,Zaragoza,Lugares,Lugar,Muy alta,Fácil,Actual,Nacional,false,false
-1532,Palma,Lugares,Lugar,Muy alta,Fácil,Actual,Nacional,false,false
-1533,Gran Canaria,Lugares,Lugar,Muy alta,Fácil,Actual,Nacional,false,false
-1534,Andalucía,Lugares,Lugar,Muy alta,Fácil,Actual,Nacional,false,false
-1535,Galicia,Lugares,Lugar,Muy alta,Fácil,Actual,Nacional,false,false
-1536,Cantabria,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-1537,País Vasco,Lugares,Lugar,Muy alta,Fácil,Actual,Nacional,false,false
-1538,Aragón,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-1539,Castilla y León,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-1540,Extremadura,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-1541,Navarra,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-1542,Comunidad Valenciana,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-1543,Islas Baleares,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-1544,Sierra Nevada,Lugares,Lugar,Muy alta,Fácil,Actual,Nacional,false,false
 1545,Camino de Santiago,Lugares,Lugar,Muy alta,Fácil,Actual,Internacional,false,true
 1548,Alpes,Lugares,Lugar,Muy alta,Fácil,Actual,Internacional,false,true
 1549,Andes,Lugares,Lugar,Muy alta,Fácil,Actual,Internacional,false,true
@@ -1474,7 +1336,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1570,KFC,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 1571,Nespresso,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 1572,Nestlé,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
-1573,Casa Tarradellas,Marcas,Marca,Media,Difícil,Actual,Nacional,false,false
 1574,Puma,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 1575,Casio,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 1576,Pixar,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,true,true
@@ -1524,6 +1385,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1620,Pedri,Deportes,Futbolista,Alta,Media,Actual,Internacional,false,true
 1621,Rodri,Deportes,Futbolista,Alta,Media,Actual,Internacional,false,true
 1622,Didier Drogba,Deportes,Futbolista,Alta,Media,Actual,Internacional,false,true
+1623,Samuel Eto'o,Deportes,Futbolista,Alta,Media,Actual,Internacional,false,true
 1624,Gennaro Gattuso,Deportes,Futbolista,Alta,Media,Actual,Internacional,false,true
 1625,John Terry,Deportes,Futbolista,Alta,Media,Actual,Internacional,false,true
 1626,Rio Ferdinand,Deportes,Futbolista,Media,Difícil,Actual,Internacional,false,true
@@ -1593,16 +1455,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1691,Floyd Mayweather,Deportes,Otros deportes,Alta,Media,Actual,Internacional,false,true
 1692,Khabib Nurmagomedov,Deportes,Otros deportes,Alta,Media,Actual,Internacional,false,true
 1693,Fernando Romay,Deportes,Baloncesto,Alta,Media,Actual,Internacional,false,true
-1695,Manuel Carrasco,Música,Cantante,Muy alta,Fácil,Actual,Nacional,false,false
-1696,Malú,Música,Cantante,Muy alta,Fácil,Actual,Nacional,false,false
-1697,Vanesa Martín,Música,Cantante,Media,Difícil,Actual,Nacional,false,false
-1698,India Martínez,Música,Cantante,Media,Difícil,Actual,Nacional,false,false
-1699,Pastora Soler,Música,Cantante,Media,Difícil,Actual,Nacional,false,false
-1700,Edurne,Música,Cantante,Alta,Media,Actual,Nacional,false,false
-1701,Soraya Arnelas,Música,Cantante,Media,Difícil,Actual,Nacional,false,false
-1702,Bebe,Música,Cantante,Media,Difícil,Actual,Nacional,false,false
-1703,Rozalén,Música,Cantante,Media,Difícil,Actual,Nacional,false,false
-1704,Rels B,Música,Cantante,Media,Difícil,Actual,Nacional,false,false
 1705,Drake,Música,Cantante,Alta,Media,Actual,Internacional,false,true
 1706,Dean Martin,Música,Cantante,Media,Difícil,Actual,Internacional,false,true
 1707,Nat King Cole,Música,Cantante,Media,Difícil,Actual,Internacional,false,true
@@ -1616,7 +1468,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1715,The Killers,Música,Grupo,Alta,Media,Actual,Internacional,false,true
 1716,Gorillaz,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
 1717,NSYNC,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
-1720,Alaska y Dinarama,Música,Grupo,Media,Difícil,Actual,Nacional,false,false
+1718,Destiny's Child,Música,Grupo,Alta,Media,Actual,Internacional,false,true
 1721,Soda Stereo,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
 1722,Los Rodríguez,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
 1723,Café Tacvba,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
@@ -1625,7 +1477,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1726,Maribel Verdú,Cine y TV,Actor/Actriz,Alta,Media,Actual,Internacional,false,true
 1727,Luis Tosar,Cine y TV,Actor/Actriz,Alta,Media,Actual,Internacional,false,true
 1728,Mario Casas,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,Internacional,false,true
-1729,Paco León,Cine y TV,Actor/Actriz,Media,Difícil,Actual,Nacional,false,false
 1730,Belén Rueda,Cine y TV,Actor/Actriz,Alta,Media,Actual,Internacional,false,true
 1731,Paz Vega,Cine y TV,Actor/Actriz,Alta,Media,Actual,Internacional,false,true
 1732,Inma Cuesta,Cine y TV,Actor/Actriz,Media,Difícil,Actual,Internacional,false,true
@@ -1712,6 +1563,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1813,Arthur Conan Doyle,Literatura,Escritor,Alta,Media,Histórica,Internacional,false,true
 1814,Alexandre Dumas,Literatura,Escritor,Alta,Media,Histórica,Internacional,false,true
 1815,F. Scott Fitzgerald,Literatura,Escritor,Alta,Media,Histórica,Internacional,false,true
+1816,León Tolstói,Literatura,Escritor,Alta,Media,Histórica,Internacional,false,true
 1817,Fiódor Dostoyevski,Literatura,Escritor,Alta,Media,Histórica,Internacional,false,true
 1818,Antón Chéjov,Literatura,Escritor,Baja,Muy difícil,Histórica,Internacional,false,true
 1819,Homero,Literatura,Escritor,Alta,Media,Histórica,Internacional,false,true
@@ -1726,8 +1578,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1828,Paulo Coelho,Literatura,Escritor,Alta,Media,Histórica,Internacional,false,true
 1829,Stieg Larsson,Literatura,Escritor,Media,Difícil,Histórica,Internacional,false,true
 1830,Don Quijote de la Mancha,Literatura,Obra,Muy alta,Fácil,Histórica,Internacional,false,true
-1831,La casa de Bernarda Alba,Literatura,Obra,Alta,Media,Histórica,Nacional,false,false
-1832,Romancero gitano,Literatura,Obra,Media,Difícil,Histórica,Nacional,false,false
 1833,Cien años de soledad,Literatura,Obra,Alta,Media,Histórica,Internacional,false,true
 1834,El amor en los tiempos del cólera,Literatura,Obra,Media,Difícil,Histórica,Internacional,false,true
 1835,David Copperfield,Literatura,Obra,Media,Difícil,Histórica,Internacional,false,true
@@ -1765,13 +1615,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1875,Pablo Gargallo,Arte,Artista,Baja,Muy difícil,Histórica,Internacional,false,true
 1876,Eduardo Chillida,Arte,Artista,Media,Difícil,Histórica,Internacional,false,true
 1877,Palma de Mallorca,Lugares,Ciudad,Muy alta,Fácil,Actual,Internacional,false,true
-1878,Vigo,Lugares,Ciudad,Media,Difícil,Actual,Nacional,false,false
-1879,A Coruña,Lugares,Ciudad,Media,Difícil,Actual,Nacional,false,false
-1880,Oviedo,Lugares,Ciudad,Media,Difícil,Actual,Nacional,false,false
-1881,Gijón,Lugares,Ciudad,Media,Difícil,Actual,Nacional,false,false
-1882,Pamplona,Lugares,Ciudad,Media,Difícil,Actual,Nacional,false,false
-1883,Cádiz,Lugares,Ciudad,Media,Difícil,Actual,Nacional,false,false
-1884,Las Palmas,Lugares,Ciudad,Media,Difícil,Actual,Nacional,false,false
 1885,Copenhague,Lugares,Ciudad,Media,Difícil,Actual,Internacional,false,true
 1886,Estocolmo,Lugares,Ciudad,Media,Difícil,Actual,Internacional,false,true
 1887,Oslo,Lugares,Ciudad,Media,Difícil,Actual,Internacional,false,true
@@ -1801,6 +1644,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1911,Mar Muerto,Lugares,Monumento,Media,Difícil,Actual,Internacional,false,true
 1912,Islas Galápagos,Lugares,Monumento,Media,Difícil,Actual,Internacional,false,true
 1916,Museo Británico,Lugares,Monumento,Media,Difícil,Actual,Internacional,false,true
+1917,Disney World,Lugares,Monumento,Media,Difícil,Actual,Internacional,false,true
 1918,Silicon Valley,Lugares,Monumento,Media,Difícil,Actual,Internacional,false,true
 1919,Área 51,Lugares,Monumento,Media,Difícil,Actual,Internacional,false,true
 1921,Orangután,Naturaleza,Animales,Muy alta,Fácil,Actual,Internacional,true,true
@@ -1813,7 +1657,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1928,Saltamontes,Naturaleza,Animales,Muy alta,Fácil,Actual,Internacional,true,true
 1929,Gusano,Naturaleza,Animales,Muy alta,Fácil,Actual,Internacional,true,true
 1930,Aldi,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
-1931,Renfe,Marcas,Marca,Muy alta,Fácil,Actual,Nacional,false,false
 1932,Jeep,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 1933,Volvo,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 1934,Hyundai,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
@@ -1840,6 +1683,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1955,Carcassonne,Videojuegos,Juegos de mesa y cartas,Media,Difícil,Actual,Internacional,false,true
 1956,Dixit,Videojuegos,Juegos de mesa y cartas,Media,Difícil,Actual,Internacional,false,true
 1957,Pandemic,Videojuegos,Juegos de mesa y cartas,Media,Difícil,Actual,Internacional,false,true
+1958,Dioniso,Mitología,Mitología,Media,Difícil,Histórica,Internacional,false,true
 1960,Cíclope,Mitología,Mitología,Alta,Media,Histórica,Internacional,true,true
 1961,Quimera,Mitología,Mitología,Media,Difícil,Histórica,Internacional,false,true
 1963,Horus,Mitología,Mitología,Media,Difícil,Histórica,Internacional,false,true
@@ -1848,6 +1692,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 1966,Marduk,Mitología,Mitología,Baja,Muy difícil,Histórica,Internacional,false,true
 1967,Huitzilopochtli,Mitología,Mitología,Baja,Muy difícil,Histórica,Internacional,false,true
 1968,Tlaloc,Mitología,Mitología,Baja,Muy difícil,Histórica,Internacional,false,true
+1969,Inti,Mitología,Mitología,Baja,Muy difícil,Histórica,Internacional,false,true
 1970,Real Sociedad,Deportes,Equipos y clubes,Media,Difícil,Actual,Internacional,false,true
 1971,Tottenham,Deportes,Equipos y clubes,Media,Difícil,Actual,Internacional,false,true
 1972,Benfica,Deportes,Equipos y clubes,Media,Difícil,Actual,Internacional,false,true
@@ -1954,7 +1799,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2073,El Principito,Literatura,Obra,Muy alta,Fácil,Histórica,Internacional,true,true
 2074,El código Da Vinci,Literatura,Obra,Alta,Media,Actual,Internacional,false,true
 2075,Carolina Marín,Deportes,Bádminton,Media,Difícil,Actual,Internacional,false,true
-2076,Mala Rodríguez,Música,Rap,Alta,Media,Actual,Nacional,false,false
 2077,C. Tangana,Música,Cantante,Alta,Media,Actual,Internacional,false,true
 2078,Patricio Estrella,Personajes,Animación,Muy alta,Fácil,Actual,Internacional,true,true
 2079,Popeye,Personajes,Animación,Muy alta,Fácil,Histórica,Internacional,true,true
@@ -1962,21 +1806,8 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2081,Peter Griffin,Personajes,Animación,Alta,Media,Actual,Internacional,false,true
 2082,Stewie Griffin,Personajes,Animación,Alta,Media,Actual,Internacional,false,true
 2083,Sailor Moon,Personajes,Anime,Media,Difícil,Histórica,Internacional,false,true
-2084,Farmacia de Guardia,Series,Comedia,Muy alta,Fácil,Histórica,Nacional,false,false
-2085,Cuéntame cómo pasó,Series,Drama,Muy alta,Fácil,Clásica,Nacional,false,false
-2086,Verano Azul,Series,Drama,Muy alta,Fácil,Clásica,Nacional,false,false
-2087,Los Serrano,Series,Comedia,Muy alta,Fácil,Histórica,Nacional,false,false
-2088,7 vidas,Series,Comedia,Alta,Media,Clásica,Nacional,false,false
 2089,La Casa de las Flores,Series,Comedia,Media,Difícil,Actual,Internacional,false,true
 2090,Seinfeld,Series,Comedia,Alta,Media,Clásica,Internacional,false,true
-2091,Merlí,Series,Drama,Alta,Media,Histórica,Nacional,false,false
-2092,Paquita Salas,Series,Comedia,Muy alta,Fácil,Actual,Nacional,false,false
-2093,El Ministerio del Tiempo,Series,Ciencia ficción,Alta,Media,Histórica,Nacional,false,false
-2094,Los hombres de Paco,Series,Comedia,Muy alta,Fácil,Histórica,Nacional,false,false
-2095,Médico de familia,Series,Comedia,Muy alta,Fácil,Histórica,Nacional,false,false
-2096,Un paso adelante,Series,Drama,Alta,Media,Histórica,Nacional,false,false
-2097,Compañeros,Series,Drama,Alta,Media,Histórica,Nacional,false,false
-2098,Los Protegidos,Series,Fantasía,Alta,Media,Histórica,Nacional,false,false
 2099,Los Goonies,Películas,Aventuras,Muy alta,Fácil,Histórica,Internacional,false,true
 2100,Depredador,Películas,Acción,Alta,Media,Histórica,Internacional,false,true
 2102,1984,Literatura,Obra,Alta,Media,Histórica,Internacional,false,true
@@ -1985,9 +1816,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2105,Alexander Fleming,Ciencia,Científico,Alta,Media,Histórica,Internacional,true,true
 2106,Juana de Arco,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
 2107,Gaston Lagaffe,Personajes,Cómic,Media,Difícil,Histórica,Internacional,false,true
-2108,Zipi,Personajes,Cómic,Media,Difícil,Histórica,Nacional,false,false
-2109,Zape,Personajes,Cómic,Media,Difícil,Histórica,Nacional,false,false
-2110,Superlópez,Personajes,Cómic,Media,Difícil,Histórica,Nacional,false,false
 2111,Calimero,Personajes,Animación,Media,Difícil,Histórica,Internacional,false,true
 2112,Tigger,Personajes,Animación,Alta,Media,Histórica,Internacional,true,true
 2113,Po,Personajes,Animación,Alta,Media,Actual,Internacional,true,true
@@ -2006,11 +1834,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2126,Succession,Series,Drama,Alta,Media,Actual,Internacional,false,true
 2127,Yellowstone,Series,Drama,Alta,Media,Actual,Internacional,false,true
 2128,The Good Doctor,Series,Drama,Alta,Media,Actual,Internacional,false,true
-2129,La Unidad,Series,Policiaca,Media,Difícil,Actual,Nacional,false,false
-2130,30 monedas,Series,Terror,Alta,Media,Actual,Nacional,false,false
-2131,Antidisturbios,Series,Drama,Alta,Media,Actual,Nacional,false,false
-2132,La Mesías,Series,Drama,Media,Difícil,Actual,Nacional,false,false
-2134,Los Aurones,Series,Infantil,Media,Difícil,Histórica,Nacional,false,false
 2135,Lawrence de Arabia,Películas,Aventuras,Media,Difícil,Histórica,Internacional,false,true
 2136,Doctor Zhivago,Películas,Drama,Media,Difícil,Histórica,Internacional,false,true
 2137,El apartamento,Películas,Comedia,Media,Difícil,Histórica,Internacional,false,true
@@ -2027,8 +1850,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2148,Foo Fighters,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
 2149,Duran Duran,Música,Grupo,Media,Difícil,Histórica,Internacional,false,true
 2150,Radiohead,Música,Grupo,Media,Difícil,Histórica,Internacional,false,true
-2151,Los Secretos,Música,Grupo,Media,Difícil,Histórica,Nacional,false,false
-2152,Fito Cabrales,Música,Cantante,Media,Difícil,Actual,Nacional,false,false
 2153,Nathy Peluso,Música,Cantante,Media,Difícil,Actual,Internacional,false,true
 2154,Duki,Música,Rap,Media,Difícil,Actual,Internacional,false,true
 2155,Ronald Koeman,Deportes,Futbolista,Media,Difícil,Histórica,Internacional,false,true
@@ -2039,21 +1860,11 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2160,El Greco,Arte,Pintor,Alta,Media,Histórica,Internacional,false,true
 2161,Marco Polo,Historia,Explorador,Alta,Media,Histórica,Internacional,false,true
 2162,Amelia Earhart,Historia,Aviadora,Alta,Media,Histórica,Internacional,false,true
-2163,Miguel de Unamuno,Literatura,Escritor,Alta,Media,Histórica,Nacional,false,false
-2164,Lope de Vega,Literatura,Escritor,Alta,Media,Histórica,Nacional,false,false
 2165,Mark Twain,Literatura,Escritor,Alta,Media,Histórica,Internacional,false,true
 2166,Odin,Mitología,Mitología nórdica,Alta,Media,Histórica,Internacional,false,true
 2167,Shazam!,Películas,Superhéroes,Media,Difícil,Actual,Internacional,false,true
 2168,Black Adam,Películas,Superhéroes,Media,Difícil,Actual,Internacional,false,true
 2169,Rocketman,Películas,Musical,Media,Difícil,Actual,Internacional,false,true
-2170,La mala educación,Películas,Drama español,Alta,Media,Actual,Nacional,false,false
-2171,Mientras dure la guerra,Películas,Drama histórico español,Media,Difícil,Actual,Nacional,false,false
-2172,El reino,Películas,Thriller español,Media,Difícil,Actual,Nacional,false,false
-2173,"Kiki, el amor se hace",Películas,Comedia española,Media,Difícil,Actual,Nacional,false,false
-2174,Pagafantas,Películas,Comedia española,Media,Difícil,Histórica,Nacional,false,false
-2175,Villaviciosa de al lado,Películas,Comedia española,Media,Difícil,Actual,Nacional,false,false
-2176,Secretos del corazón,Películas,Drama español,Media,Difícil,Histórica,Nacional,false,false
-2177,El bola,Películas,Drama español,Media,Difícil,Histórica,Nacional,false,false
 2178,Hannibal,Series,Thriller,Alta,Media,Histórica,Internacional,false,true
 2179,Los Tudor,Series,Histórica,Alta,Media,Histórica,Internacional,false,true
 2180,Mad Men,Series,Drama,Alta,Media,Histórica,Internacional,false,true
@@ -2064,23 +1875,13 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2185,Los informáticos,Series,Comedia,Media,Difícil,Histórica,Internacional,false,true
 2186,Frasier,Series,Comedia,Alta,Media,Clásica,Internacional,false,true
 2187,Will y Grace,Series,Comedia,Alta,Media,Histórica,Internacional,false,true
-2188,Acacias 38,Series,Drama español,Alta,Media,Actual,Nacional,false,false
-2189,Gran Reserva,Series,Drama español,Media,Difícil,Actual,Nacional,false,false
-2190,Los pacientes del doctor García,Series,Drama histórico español,Media,Difícil,Actual,Nacional,false,false
-2191,"Señor, dame paciencia",Series,Comedia española,Media,Difícil,Actual,Nacional,false,false
 2192,Iznogoud,Personajes,Cómic,Media,Difícil,Histórica,Internacional,false,true
 2193,Calvin,Personajes,Cómic,Media,Difícil,Histórica,Internacional,false,true
 2194,Hobbes,Personajes,Cómic,Media,Difícil,Histórica,Internacional,false,true
 2195,Atlantis: El imperio perdido,Películas,Animación,Media,Difícil,Histórica,Internacional,false,true
 2196,El planeta del tesoro,Películas,Animación,Media,Difícil,Histórica,Internacional,false,true
 2197,Yu-Gi-Oh!,Series,Animación,Alta,Media,Histórica,Internacional,false,true
-2199,Periodistas,Series,Drama español,Alta,Media,Histórica,Nacional,false,false
-2200,Arde Madrid,Series,Comedia española,Alta,Media,Actual,Nacional,false,false
-2201,Hierro,Series,Thriller español,Alta,Media,Actual,Nacional,false,false
-2202,Patria,Series,Drama español,Alta,Media,Actual,Nacional,false,false
-2203,La novia gitana,Series,Thriller español,Media,Difícil,Actual,Nacional,false,false
-2204,Reina Roja,Series,Thriller español,Alta,Media,Actual,Nacional,false,false
-2205,El cuerpo en llamas,Series,Thriller español,Media,Difícil,Actual,Nacional,false,false
+2198,Érase una vez... el hombre,Series,Animación educativa,Alta,Media,Histórica,Internacional,false,true
 2206,Corto Maltés,Personajes,Cómic,Media,Difícil,Histórica,Internacional,false,true
 2207,Kratos,Personajes,Videojuegos,Media,Difícil,Actual,Internacional,false,true
 2208,Master Chief,Personajes,Videojuegos,Media,Difícil,Actual,Internacional,false,true
@@ -2107,6 +1908,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2234,Eragon,Películas,Película,Media,Difícil,Actual,Internacional,false,true
 2235,Zodiac,Películas,Película,Media,Difícil,Actual,Internacional,false,true
 2236,La naranja mecánica,Películas,Película,Alta,Media,Actual,Internacional,false,true
+2237,1917,Películas,Película,Media,Difícil,Actual,Internacional,false,true
 2238,Speed,Películas,Película,Media,Difícil,Actual,Internacional,false,true
 2239,Zootrópolis,Películas,Película,Muy alta,Fácil,Actual,Internacional,false,true
 2240,Your Name,Películas,Película,Media,Difícil,Actual,Internacional,false,true
@@ -2118,12 +1920,9 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2247,Fringe,Series,Serie,Alta,Media,Clásica,Internacional,false,true
 2248,Euphoria,Series,Serie,Alta,Media,Actual,Internacional,false,true
 2249,Orange Is the New Black,Series,Serie,Alta,Media,Actual,Internacional,false,true
-2250,La ruta,Series,Serie,Alta,Media,Actual,Nacional,false,false
 2251,George Harrison,Música,Cantante,Alta,Media,Actual,Internacional,false,true
 2252,Rod Stewart,Música,Cantante,Alta,Media,Actual,Internacional,false,true
 2253,Jimi Hendrix,Música,Cantante,Alta,Media,Actual,Internacional,false,true
-2254,Manolo Escobar,Música,Cantante,Muy alta,Fácil,Actual,Nacional,false,false
-2255,Valencia CF,Deportes,Equipos y clubes,Alta,Media,Actual,Internacional,false,false
 2256,Villarreal CF,Deportes,Equipos y clubes,Media,Difícil,Actual,Internacional,false,true
 2257,Manchester City,Deportes,Equipos y clubes,Muy alta,Fácil,Actual,Internacional,false,true
 2258,Bayern de Múnich,Deportes,Equipos y clubes,Muy alta,Fácil,Actual,Internacional,false,true
@@ -2132,15 +1931,18 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2261,Brasil,Lugares,País,Muy alta,Fácil,Actual,Internacional,true,true
 2262,Francia,Lugares,País,Muy alta,Fácil,Actual,Internacional,true,true
 2263,Inglaterra,Lugares,País,Muy alta,Fácil,Actual,Internacional,false,true
-2264,Copa del Rey,Deportes,Evento,Muy alta,Fácil,Actual,Nacional,false,false
 2265,NBA,Deportes,Evento,Muy alta,Fácil,Actual,Internacional,false,true
 2266,Roland Garros,Deportes,Evento,Media,Difícil,Actual,Internacional,false,true
 2267,Fórmula 1,Deportes,Evento,Muy alta,Fácil,Actual,Internacional,false,true
 2268,Maratón,Deportes,Evento,Muy alta,Fácil,Actual,Internacional,false,true
 2269,Bota de Oro,Deportes,Evento,Media,Difícil,Actual,Internacional,false,true
-2270,Capitán Trueno,Personajes,Personaje,Media,Difícil,Actual,Nacional,false,false
+2272,Silvestre,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 2273,Bilbo Bolsón,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
+2275,Robin,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 2276,Rayo McQueen,Personajes,Animación,Muy alta,Fácil,Actual,Internacional,true,true
+2277,Remy,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
+2278,Olaf,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,true,true
+2279,Bella,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,true,true
 2280,Harry el Sucio,Personajes,Personaje,Alta,Media,Actual,Internacional,false,true
 2281,Walter White,Personajes,Personaje,Alta,Media,Actual,Internacional,false,true
 2282,Jon Snow,Personajes,Personaje,Alta,Media,Actual,Internacional,false,true
@@ -2152,10 +1954,10 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2288,El flautista de Hamelín,Literatura,Obra,Media,Difícil,Actual,Internacional,false,true
 2289,Tom Sawyer,Literatura,Personaje,Alta,Media,Actual,Internacional,false,true
 2290,Dr. Jekyll y Mr. Hyde,Literatura,Obra,Media,Difícil,Actual,Internacional,false,true
-2291,Manolito Gafotas,Literatura,Personaje,Media,Difícil,Actual,Nacional,false,false
 2292,Los Pitufos,Series,Animación,Muy alta,Fácil,Actual,Internacional,true,true
 2293,Rafael,Arte,Artista,Alta,Media,Actual,Internacional,false,true
 2294,Murillo,Arte,Artista,Alta,Media,Actual,Internacional,false,true
+2295,Sorolla,Arte,Artista,Alta,Media,Actual,Internacional,false,true
 2300,La joven de la perla,Arte,Obra,Alta,Media,Actual,Internacional,false,true
 2301,Saturno devorando a su hijo,Arte,Obra,Media,Difícil,Actual,Internacional,false,true
 2302,El caballero de la mano en el pecho,Arte,Obra,Media,Difícil,Actual,Internacional,false,true
@@ -2166,24 +1968,14 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2308,Hipatia,Historia,Personaje histórico,Media,Difícil,Histórica,Internacional,false,true
 2309,Américo Vespucio,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
 2310,Revolución Industrial,Historia,Evento,Alta,Media,Histórica,Internacional,false,true
-2311,Guerra Civil Española,Historia,Evento,Muy alta,Fácil,Histórica,Nacional,false,false
 2312,Descubrimiento de América,Historia,Evento,Muy alta,Fácil,Histórica,Internacional,false,true
 2313,Edad Media,Historia,Evento,Muy alta,Fácil,Actual,Internacional,false,true
+2314,Imperio Griego,Historia,Civilización,Alta,Media,Actual,Internacional,false,true
 2315,Cruzadas,Historia,Evento,Alta,Media,Actual,Internacional,false,true
 2316,Tratado de Versalles,Historia,Evento,Alta,Media,Actual,Internacional,false,true
-2317,Batalla de Lepanto,Historia,Evento,Alta,Media,Histórica,Nacional,false,false
 2318,Pompeya,Lugares,Ciudad,Media,Difícil,Actual,Internacional,false,true
 2320,Puerta de Brandeburgo,Lugares,Monumento,Baja,Muy difícil,Actual,Internacional,false,true
 2321,Castillo de Neuschwanstein,Lugares,Monumento,Baja,Muy difícil,Actual,Internacional,false,true
-2322,Teatro Romano de Mérida,Lugares,Monumento,Baja,Muy difícil,Actual,Nacional,false,false
-2323,Córdoba,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-2324,San Sebastián,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-2325,Murcia,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-2326,Lanzarote,Lugares,Lugar,Muy alta,Fácil,Actual,Nacional,false,false
-2327,Asturias,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-2328,Cataluña,Lugares,Lugar,Muy alta,Fácil,Actual,Nacional,false,false
-2329,Castilla-La Mancha,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-2330,La Rioja,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
 2331,Pirineos,Lugares,Lugar,Media,Difícil,Actual,Internacional,false,true
 2333,Himalaya,Lugares,Lugar,Media,Difícil,Actual,Internacional,false,true
 2335,Polo Norte,Lugares,Lugar,Muy alta,Fácil,Actual,Internacional,false,true
@@ -2195,8 +1987,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2342,Bali,Lugares,Lugar,Media,Difícil,Actual,Internacional,false,true
 2343,Hawái,Lugares,Lugar,Muy alta,Fácil,Actual,Internacional,false,true
 2344,Universal Studios,Lugares,Lugar,Media,Difícil,Actual,Internacional,false,true
-2345,Nocilla,Marcas,Marca,Muy alta,Fácil,Actual,Nacional,false,false
-2346,Campofrío,Marcas,Marca,Muy alta,Fácil,Actual,Nacional,false,false
 2347,New Balance,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
 2348,Marvel,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 2349,Atari,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
@@ -2213,7 +2003,11 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2360,Merlín,Mitología,Mitología,Muy alta,Fácil,Actual,Internacional,false,true
 2362,Viracocha,Mitología,Mitología,Baja,Muy difícil,Actual,Internacional,false,true
 2364,Grecia Antigua,Historia,Civilizaciones y acontecimientos,Alta,Media,Histórica,Internacional,false,true
+2365,Imperio Bizantino,Historia,Civilizaciones y acontecimientos,Alta,Media,Histórica,Internacional,false,true
+2366,Imperio Otomano,Historia,Civilizaciones y acontecimientos,Alta,Media,Histórica,Internacional,false,true
+2367,Imperio Mongol,Historia,Civilizaciones y acontecimientos,Alta,Media,Histórica,Internacional,false,true
 2368,Civilización Maya,Historia,Evento,Alta,Media,Histórica,Internacional,false,true
+2369,Día D,Historia,Evento,Alta,Media,Histórica,Internacional,false,true
 2370,Caída del Muro de Berlín,Historia,Evento,Muy alta,Fácil,Histórica,Internacional,false,true
 2371,Hundimiento del Titanic,Historia,Evento,Muy alta,Fácil,Clásica,Internacional,false,true
 2372,Peste Negra,Historia,Civilizaciones y acontecimientos,Alta,Media,Histórica,Internacional,false,true
@@ -2249,9 +2043,9 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2402,Michael Faraday,Ciencia,Personas y descubrimientos,Baja,Muy difícil,Histórica,Internacional,false,true
 2403,Robert Hooke,Ciencia,Personas y descubrimientos,Baja,Muy difícil,Histórica,Internacional,false,true
 2404,Antoine Lavoisier,Ciencia,Personas y descubrimientos,Baja,Muy difícil,Histórica,Internacional,false,true
+2405,Arquímedes,Ciencia,Personas y descubrimientos,Alta,Media,Histórica,Internacional,false,true
 2406,Santiago Ramón y Cajal,Ciencia,Personas y descubrimientos,Alta,Media,Histórica,Internacional,false,true
 2407,Severo Ochoa,Ciencia,Personas y descubrimientos,Media,Difícil,Histórica,Internacional,false,true
-2411,Motivos personales,Series,Drama,Media,Difícil,Histórica,Nacional,false,false
 2412,Bobobo,Personajes,Anime,Media,Difícil,Histórica,Internacional,false,true
 2413,Aruba,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2414,Afganistán,Lugares,País,Muy alta,Fácil,Actual,Internacional,false,true
@@ -2263,6 +2057,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2421,Armenia,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2422,Samoa Americana,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2423,Antártida,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
+2424,Territorios Australes Franceses,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2425,Antigua y Barbuda,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2426,Azerbaiyán,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2427,Burundi,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
@@ -2282,9 +2077,11 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2444,Bután,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2445,Isla Bouvet,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2446,Botsuana,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
+2447,República Centroafricana,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2448,Islas Cocos,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2450,Costa de Marfil,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2451,Camerún,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
+2452,República Democrática del Congo,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2453,República del Congo,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2454,Islas Cook,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2455,Comoras,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
@@ -2323,6 +2120,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2500,Honduras,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2502,Haití,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2504,Isla de Man,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
+2505,Territorio Británico del Océano Índico,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2507,Irán,Lugares,País,Muy alta,Fácil,Actual,Internacional,false,true
 2508,Irak,Lugares,País,Muy alta,Fácil,Actual,Internacional,false,true
 2510,Italia,Lugares,País,Muy alta,Fácil,Actual,Internacional,true,true
@@ -2385,6 +2183,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2575,Palestina,Lugares,País,Media,Difícil,Actual,Internacional,false,true
 2576,Polinesia Francesa,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2577,Catar,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
+2578,Reunión,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2581,Ruanda,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2583,Sudán,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2584,Senegal,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
@@ -2404,6 +2203,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2598,Surinam,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2599,Eslovaquia,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2600,Eslovenia,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
+2602,Esuatini,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2603,Sint Maarten,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2604,Seychelles,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2605,Siria,Lugares,País,Muy alta,Fácil,Actual,Internacional,false,true
@@ -2426,6 +2226,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2627,San Vicente y las Granadinas,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2629,Islas Vírgenes Británicas,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2630,Islas Vírgenes de EE. UU.,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
+2631,Vanuatu,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2632,Wallis y Futuna,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2633,Samoa,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
 2634,Yemen,Lugares,País,Baja,Muy difícil,Actual,Internacional,false,true
@@ -2481,19 +2282,11 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2689,Vince Carter,Deportes,Deportista,Media,Difícil,Actual,Internacional,false,true
 2690,Dwyane Wade,Deportes,Deportista,Media,Difícil,Actual,Internacional,false,true
 2692,Anuel AA,Música,Cantante,Muy alta,Fácil,Clásica,Internacional,false,true
-2693,Pablo López,Música,Cantante,Muy alta,Fácil,Clásica,Nacional,false,false
-2694,Massiel,Música,Cantante,Media,Difícil,Clásica,Nacional,false,false
 2695,Yandel,Música,Cantante,Media,Difícil,Clásica,Internacional,false,true
 2696,Celia Cruz,Música,Cantante,Media,Difícil,Clásica,Internacional,false,true
 2697,Rubén Blades,Música,Cantante,Media,Difícil,Clásica,Internacional,false,true
 2698,Molotov,Música,Grupo,Media,Difícil,Clásica,Internacional,false,true
-2699,Izal,Música,Grupo,Media,Difícil,Clásica,Nacional,false,false
-2700,Love of Lesbian,Música,Grupo,Media,Difícil,Clásica,Nacional,false,false
-2701,Viva Suecia,Música,Grupo,Media,Difícil,Clásica,Nacional,false,false
-2702,Pignoise,Música,Grupo,Media,Difícil,Clásica,Nacional,false,false
-2703,La Casa Azul,Música,Grupo,Media,Difícil,Clásica,Nacional,false,false
-2704,Camela,Música,Grupo,Muy alta,Fácil,Clásica,Nacional,false,false
-2705,Los Ronaldos,Música,Grupo,Media,Difícil,Clásica,Nacional,false,false
+2707,A-ha,Música,Grupo,Media,Difícil,Clásica,Internacional,false,true
 2708,Wham!,Música,Grupo,Media,Difícil,Clásica,Internacional,false,true
 2710,Twenty One Pilots,Música,Grupo,Media,Difícil,Clásica,Internacional,false,true
 2711,Billie Joe Armstrong,Música,Cantante,Media,Difícil,Clásica,Internacional,false,true
@@ -2515,6 +2308,8 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2732,La novia cadáver,Películas,Película,Media,Difícil,Clásica,Internacional,false,true
 2733,"El bueno, el feo y el malo",Películas,Película,Alta,Media,Clásica,Internacional,false,true
 2734,Por un puñado de dólares,Películas,Película,Media,Difícil,Clásica,Internacional,false,true
+2735,Érase una vez en América,Películas,Película,Media,Difícil,Clásica,Internacional,false,true
+2736,Érase una vez en el Oeste,Películas,Película,Media,Difícil,Clásica,Internacional,false,true
 2738,Stardust,Películas,Película,Media,Difícil,Clásica,Internacional,false,true
 2739,Drácula de Bram Stoker,Películas,Película,Media,Difícil,Clásica,Internacional,false,true
 2740,El fantasma de la ópera,Películas,Película,Alta,Media,Clásica,Internacional,false,true
@@ -2524,7 +2319,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2744,Demon Slayer,Series,Serie,Alta,Media,Actual,Internacional,false,true
 2745,My Hero Academia,Series,Serie,Alta,Media,Actual,Internacional,false,true
 2746,Los Caballeros del Zodiaco,Series,Serie,Muy alta,Fácil,Clásica,Internacional,false,true
-2747,La mesita del comedor,Series,Serie,Media,Difícil,Actual,Nacional,false,false
 2748,Parks and Recreation,Series,Serie,Alta,Media,Actual,Internacional,false,true
 2749,Ahsoka,Series,Serie,Alta,Media,Actual,Internacional,false,true
 2750,The Punisher,Series,Serie,Alta,Media,Actual,Internacional,false,true
@@ -2532,13 +2326,24 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2753,Colombo,Series,Serie,Alta,Media,Actual,Internacional,false,true
 2754,Xena,Series,Serie,Media,Difícil,Clásica,Internacional,false,true
 2756,Melrose Place,Series,Serie,Alta,Media,Actual,Internacional,false,true
-2757,Gym Tony,Series,Serie,Alta,Media,Actual,Nacional,false,false
-2758,La víctima número 8,Series,Serie,Media,Difícil,Actual,Nacional,false,false
+2759,Velma,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
+2760,Daphne,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
+2761,Fred,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 2762,Maggie Simpson,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
+2764,Arenita,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
+2765,Nobita,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
+2766,Trunks,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
+2767,Krillin,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
+2768,Sasuke,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
+2769,Zoro,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
+2770,Nami,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 2771,Bowser,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
+2772,Tails,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 2775,Wolverine,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
 2776,Darth Maul,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
+2778,Jessie,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 2779,Mr. Potato,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
+2780,Fiona,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
 2781,Gato con Botas,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
 2782,Jafar,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
 2783,Mushu,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
@@ -2560,6 +2365,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2799,Chandler Bing,Personajes,Personaje,Alta,Media,Actual,Internacional,false,true
 2800,Monica Geller,Personajes,Personaje,Alta,Media,Actual,Internacional,false,true
 2802,Cersei Lannister,Personajes,Personaje,Alta,Media,Actual,Internacional,false,true
+2803,Vecna,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 2804,Joel Miller,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 2805,Ellie Williams,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 2806,Free Fire,Videojuegos,Videojuegos,Media,Difícil,Actual,Internacional,false,true
@@ -2583,21 +2389,16 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2825,Rodin,Historia,Personaje histórico,Media,Difícil,Histórica,Internacional,false,true
 2830,Goethe,Historia,Personaje histórico,Media,Difícil,Histórica,Internacional,false,true
 2831,Miguel Hernández,Historia,Personaje histórico,Media,Difícil,Histórica,Internacional,false,true
-2832,Benidorm,Lugares,Lugar,Muy alta,Fácil,Clásica,Internacional,false,false
-2833,Marbella,Lugares,Lugar,Muy alta,Fácil,Clásica,Internacional,false,false
 2834,Patagonia,Lugares,Lugar,Media,Difícil,Clásica,Internacional,false,true
 2836,Delhi,Lugares,Lugar,Media,Difícil,Clásica,Internacional,false,true
 2838,Museo del Louvre,Lugares,Lugar,Media,Difícil,Clásica,Internacional,false,true
 2840,Acrópolis,Lugares,Lugar,Media,Difícil,Clásica,Internacional,false,true
+2841,Casa Blanca,Lugares,Lugar,Muy alta,Fácil,Clásica,Internacional,false,true
 2842,Wall Street,Lugares,Lugar,Media,Difícil,Clásica,Internacional,false,true
 2843,Downing Street,Lugares,Lugar,Media,Difícil,Clásica,Internacional,false,true
 2844,Buckingham Palace,Lugares,Lugar,Media,Difícil,Clásica,Internacional,false,true
 2845,Montecarlo,Lugares,Lugar,Media,Difícil,Clásica,Internacional,false,true
 2846,Cannes,Lugares,Lugar,Media,Difícil,Clásica,Internacional,false,true
-2847,Polseres vermelles,Series,Serie,Media,Difícil,Actual,Nacional,false,false
-2848,Pulseras rojas,Series,Serie,Alta,Media,Actual,Nacional,false,false
-2849,Sin tetas no hay paraíso,Series,Serie,Alta,Media,Actual,Nacional,false,false
-2851,Los mundos de Yupi,Series,Serie,Alta,Media,Actual,Nacional,false,false
 2852,Los padrinos mágicos,Series,Serie,Alta,Media,Actual,Internacional,false,true
 2853,American Dad,Series,Serie,Alta,Media,Actual,Internacional,false,true
 2854,Black Sails,Series,Serie,Media,Difícil,Actual,Internacional,false,true
@@ -2614,24 +2415,15 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2866,House of Cards,Series,Serie,Alta,Media,Actual,Internacional,false,true
 2867,Unbreakable Kimmy Schmidt,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 2868,Derry Girls,Series,Serie,Media,Difícil,Actual,Internacional,false,true
-2869,Engaños,Series,Serie,Media,Difícil,Actual,Nacional,false,false
 2870,The Night Agent,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 2871,The Recruit,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 2872,Rauw Alejandro,Música,Cantante,Muy alta,Fácil,Actual,Internacional,false,true
-2873,David Otero,Música,Cantante,Media,Difícil,Actual,Nacional,false,false
-2874,Camarón de la Isla,Música,Cantante,Muy alta,Fácil,Actual,Nacional,false,false
-2875,Paco de Lucía,Música,Cantante,Muy alta,Fácil,Actual,Nacional,false,false
-2876,Kortatu,Música,Grupo,Media,Difícil,Actual,Nacional,false,false
-2877,La Polla Records,Música,Grupo,Media,Difícil,Actual,Nacional,false,false
-2878,Zahara,Música,Cantante,Media,Difícil,Actual,Nacional,false,false
-2879,Niña Pastori,Música,Cantante,Alta,Media,Actual,Nacional,false,false
-2880,Rosario Flores,Música,Cantante,Alta,Media,Actual,Nacional,false,false
-2881,Antonio Flores,Música,Cantante,Media,Difícil,Actual,Nacional,false,false
-2882,Bunbury,Música,Cantante,Media,Difícil,Actual,Nacional,false,false
+2883,The Black Eyed Peas,Música,Grupo,Alta,Media,Actual,Internacional,false,true
 2884,Jonas Brothers,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
 2885,Westlife,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
 2886,Take That,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
 2887,Rudy Fernández,Deportes,Deportista,Muy alta,Fácil,Actual,Internacional,false,true
+2888,Felipe Reyes,Deportes,Deportista,Media,Difícil,Actual,Internacional,false,true
 2889,José Calderón,Deportes,Deportista,Media,Difícil,Actual,Internacional,false,true
 2890,Laia Palau,Deportes,Deportista,Media,Difícil,Actual,Internacional,false,true
 2891,Jennifer Hermoso,Deportes,Deportista,Muy alta,Fácil,Actual,Internacional,false,true
@@ -2645,15 +2437,15 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2899,Severiano Ballesteros,Deportes,Deportista,Alta,Media,Actual,Internacional,false,true
 2900,Meta,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
 2901,Intel,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
+2902,AMD,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
 2903,NVIDIA,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
 2904,Chevrolet,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 2905,Subway,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 2906,Domino's,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
-2907,Telepizza,Marcas,Marca,Muy alta,Fácil,Actual,Nacional,false,false
 2908,Lacoste,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 2909,Ralph Lauren,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
+2910,Hermès París,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
 2911,Leroy Merlin,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
-2912,Cabify,Marcas,Marca,Media,Difícil,Actual,Nacional,false,false
 2913,LinkedIn,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 2914,Amazon Prime,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 2915,HBO Max,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
@@ -2674,12 +2466,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2931,Matar a un ruiseñor,Literatura,Obra,Alta,Media,Actual,Internacional,false,true
 2932,Las uvas de la ira,Literatura,Obra,Baja,Muy difícil,Actual,Internacional,false,true
 2933,El guardián entre el centeno,Literatura,Obra,Media,Difícil,Actual,Internacional,false,true
-2935,Bodas de sangre,Literatura,Obra,Alta,Media,Actual,Nacional,false,false
-2936,Yerma,Literatura,Obra,Media,Difícil,Actual,Nacional,false,false
-2937,Luces de bohemia,Literatura,Obra,Media,Difícil,Actual,Nacional,false,false
-2938,Los pazos de Ulloa,Literatura,Obra,Baja,Muy difícil,Actual,Nacional,false,false
-2939,Tiempo de silencio,Literatura,Obra,Baja,Muy difícil,Actual,Nacional,false,false
-2940,Soldados de Salamina,Literatura,Obra,Baja,Muy difícil,Actual,Nacional,false,false
 2941,La verdad sobre el caso Harry Quebert,Literatura,Obra,Baja,Muy difícil,Actual,Internacional,false,true
 2942,Millennium,Literatura,Obra,Alta,Media,Actual,Internacional,false,true
 2943,Misery,Literatura,Obra,Alta,Media,Actual,Internacional,false,true
@@ -2693,11 +2479,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2951,"Yo, robot",Literatura,Obra,Media,Difícil,Actual,Internacional,false,true
 2952,Neuromante,Literatura,Obra,Baja,Muy difícil,Actual,Internacional,false,true
 2953,Trajano,Historia,Personaje histórico,Media,Difícil,Actual,Internacional,false,true
-2958,Carlos III,Historia,Personaje histórico,Alta,Media,Actual,Nacional,false,false
-2960,Fernando VII,Historia,Personaje histórico,Alta,Media,Actual,Nacional,false,false
-2963,Adolfo Suárez,Historia,Personaje histórico,Alta,Media,Actual,Nacional,false,false
-2964,Felipe González,Historia,Personaje histórico,Alta,Media,Actual,Nacional,false,false
-2965,Francisco Franco,Historia,Personaje histórico,Muy alta,Fácil,Histórica,Nacional,false,false
 2968,Lenin,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
 2969,Trotski,Historia,Personaje histórico,Media,Difícil,Actual,Internacional,false,true
 2973,Juan Pablo II,Historia,Personaje histórico,Alta,Media,Actual,Internacional,false,true
@@ -2714,7 +2495,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2985,Shogun,Historia,Personaje histórico,Media,Difícil,Actual,Internacional,false,true
 2986,Samurái,Historia,Personaje histórico,Media,Difícil,Actual,Internacional,false,true
 2987,Templarios,Historia,Personaje histórico,Media,Difícil,Actual,Internacional,false,true
-2989,Transición española,Historia,Evento,Alta,Media,Actual,Nacional,false,false
 2990,Guernica,Arte,Obra,Alta,Media,Actual,Internacional,false,true
 2991,La maja vestida,Arte,Obra,Media,Difícil,Actual,Internacional,false,true
 2992,David de Donatello,Arte,Obra,Media,Difícil,Actual,Internacional,false,true
@@ -2727,6 +2507,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 2999,Nighthawks,Arte,Obra,Baja,Muy difícil,Actual,Internacional,false,true
 3000,Nenúfares,Arte,Obra,Media,Difícil,Actual,Internacional,false,true
 3001,El almuerzo de los remeros,Arte,Obra,Baja,Muy difícil,Actual,Internacional,false,true
+3002,Bailarina de Degas,Arte,Obra,Baja,Muy difícil,Actual,Internacional,false,true
 3003,La balsa de la Medusa,Arte,Obra,Media,Difícil,Actual,Internacional,false,true
 3004,El 3 de mayo en Madrid,Arte,Obra,Media,Difícil,Actual,Internacional,false,true
 3005,El coloso,Arte,Obra,Media,Difícil,Actual,Internacional,false,true
@@ -2737,11 +2518,13 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3010,Tiziano,Arte,Artista,Alta,Media,Actual,Internacional,false,true
 3011,Brancusi,Arte,Artista,Baja,Muy difícil,Actual,Internacional,false,true
 3012,Paul Klee,Arte,Artista,Media,Difícil,Actual,Internacional,false,true
+3013,Toulouse-Lautrec,Arte,Artista,Media,Difícil,Actual,Internacional,false,true
 3014,Egon Schiele,Arte,Artista,Baja,Muy difícil,Actual,Internacional,false,true
 3015,Edward Hopper,Arte,Artista,Media,Difícil,Actual,Internacional,false,true
 3016,Jean-Michel Basquiat,Arte,Artista,Media,Difícil,Actual,Internacional,false,true
 3017,Damien Hirst,Arte,Artista,Media,Difícil,Actual,Internacional,false,true
 3018,Jeff Koons,Arte,Artista,Media,Difícil,Actual,Internacional,false,true
+3019,Ai Weiwei,Arte,Artista,Media,Difícil,Actual,Internacional,false,true
 3020,Anish Kapoor,Arte,Artista,Baja,Muy difícil,Actual,Internacional,false,true
 3021,Louise Bourgeois,Arte,Artista,Baja,Muy difícil,Actual,Internacional,false,true
 3022,Casa Batlló,Arte,Obra,Media,Difícil,Actual,Internacional,false,true
@@ -2806,6 +2589,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3081,Brian Griffin,Personajes,Personaje,Alta,Media,Actual,Internacional,false,true
 3082,Rick Sánchez,Personajes,Personaje,Alta,Media,Actual,Internacional,false,true
 3083,Morty Smith,Personajes,Personaje,Alta,Media,Actual,Internacional,false,true
+3084,Addams,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 3085,Katniss Everdeen,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 3086,Optimus Prime,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
 3087,Megatron,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
@@ -2827,11 +2611,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3105,Algo pasa con Mary,Películas,Película,Alta,Media,Actual,Internacional,false,true
 3106,Mentiroso compulsivo,Películas,Película,Media,Difícil,Actual,Internacional,false,true
 3107,Asterix y Obelix,Películas,Película,Media,Difícil,Actual,Internacional,false,true
-3108,El milagro de P. Tinto,Películas,Película,Media,Difícil,Actual,Nacional,false,false
-3109,Los lunes al sol,Películas,Película,Media,Difícil,Actual,Nacional,false,false
-3110,Truman,Películas,Película,Media,Difícil,Actual,Nacional,false,false
-3111,El verdugo,Películas,Película,Media,Difícil,Actual,Nacional,false,false
-3112,Plácido,Películas,Película,Media,Difícil,Actual,Nacional,false,false
 3113,Viridiana,Películas,Película,Media,Difícil,Actual,Internacional,false,true
 3114,Dolor y gloria,Películas,Película,Media,Difícil,Actual,Internacional,false,true
 3117,Taz,Personajes,Personaje,Alta,Media,Actual,Internacional,false,true
@@ -2843,14 +2622,24 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3124,Oogie Boogie,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 3125,Lotso,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 3126,Forky,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
+3128,Eva,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 3129,Miguel Rivera,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
+3130,Héctor,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 3131,Mirabel,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
 3132,Bruno Madrigal,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 3133,Lilo,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
 3134,Baymax,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,true,true
 3135,Hiro Hamada,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
+3136,Ralph,Personajes,Personaje,Alta,Media,Actual,Internacional,false,true
 3137,Vanellope,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 3139,Kristoff,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
+3140,Sven,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
+3141,Ryder,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
+3142,Marshall,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
+3143,Chase,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
+3144,Brock,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
+3145,Misty,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
+3146,Peach,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 3147,Ganondorf,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 3148,Knuckles,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 3149,Samus Aran,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
@@ -2859,7 +2648,11 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3152,Cloud Strife,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 3153,Sephiroth,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 3154,Arthur Morgan,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
+3155,Ellie,Personajes,Personaje,Alta,Media,Actual,Internacional,false,true
 3156,Ezio Auditore,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
+3157,Altair,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
+3159,Alex,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
+3160,Creeper,Personajes,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
 3161,Doomguy,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 3162,Sub-Zero,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
 3163,Scorpion,Personajes,Personaje,Media,Difícil,Actual,Internacional,false,true
@@ -2920,12 +2713,15 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3221,Jack Grealish,Deportes,Deportista,Media,Difícil,Actual,Internacional,false,true
 3222,Cole Palmer,Deportes,Deportista,Media,Difícil,Actual,Internacional,false,true
 3223,Declan Rice,Deportes,Deportista,Media,Difícil,Actual,Internacional,false,true
+3224,Martin Ødegaard,Deportes,Deportista,Media,Difícil,Actual,Internacional,false,true
 3226,Takefusa Kubo,Deportes,Deportista,Media,Difícil,Actual,Internacional,false,true
 3227,Kaoru Mitoma,Deportes,Deportista,Media,Difícil,Actual,Internacional,false,true
 3228,Ritsu Doan,Deportes,Deportista,Media,Difícil,Actual,Internacional,false,true
 3229,Christian Pulisic,Deportes,Deportista,Media,Difícil,Actual,Internacional,false,true
 3230,Weston McKennie,Deportes,Deportista,Media,Difícil,Actual,Internacional,false,true
 3231,Tim Weah,Deportes,Deportista,Media,Difícil,Actual,Internacional,false,true
+3232,Alphonso Davies,Deportes,Deportista,Media,Difícil,Actual,Internacional,false,true
+3233,Achraf Hakimi,Deportes,Deportista,Media,Difícil,Actual,Internacional,false,true
 3234,Sofyan Amrabat,Deportes,Deportista,Media,Difícil,Actual,Internacional,false,true
 3235,Victor Osimhen,Deportes,Deportista,Media,Difícil,Actual,Internacional,false,true
 3236,Khvicha Kvaratskhelia,Deportes,Deportista,Media,Difícil,Actual,Internacional,false,true
@@ -2956,6 +2752,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3262,Camila Cabello,Música,Cantante,Media,Difícil,Actual,Internacional,false,true
 3263,Halsey,Música,Cantante,Media,Difícil,Actual,Internacional,false,true
 3264,Kesha,Música,Cantante,Media,Difícil,Actual,Internacional,false,true
+3265,P!nk,Música,Cantante,Alta,Media,Actual,Internacional,false,true
 3266,Nelly Furtado,Música,Cantante,Alta,Media,Actual,Internacional,false,true
 3267,Fergie,Música,Cantante,Media,Difícil,Actual,Internacional,false,true
 3268,Alanis Morissette,Música,Cantante,Media,Difícil,Actual,Internacional,false,true
@@ -2998,6 +2795,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3305,Nightwish,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
 3306,Manowar,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
 3307,Judas Priest,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
+3308,Dio,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
 3309,Alice Cooper,Música,Cantante,Media,Difícil,Actual,Internacional,false,true
 3310,Marilyn Manson,Música,Cantante,Media,Difícil,Actual,Internacional,false,true
 3311,Placebo,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
@@ -3044,15 +2842,16 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3352,Ace of Base,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
 3353,Vengaboys,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
 3354,Aqua,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
-3355,Las Ketchup,Música,Grupo,Muy alta,Fácil,Actual,Nacional,false,false
 3356,Blue,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
 3357,Boyzone,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
+3358,S Club 7,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
 3359,Sugababes,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
 3360,All Saints,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
 3361,Little Mix,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
 3362,Fifth Harmony,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
 3363,The Pussycat Dolls,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
 3364,Girls Aloud,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
+3365,5 Seconds of Summer,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
 3366,Ben Affleck,Cine y TV,Actor/Actriz,Alta,Media,Actual,Internacional,false,true
 3367,Nicolas Cage,Cine y TV,Actor/Actriz,Alta,Media,Actual,Internacional,false,true
 3368,Adam Sandler,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,Internacional,false,true
@@ -3089,13 +2888,10 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3399,Candela Peña,Cine y TV,Actor/Actriz,Media,Difícil,Actual,Internacional,false,true
 3400,Najwa Nimri,Cine y TV,Actor/Actriz,Media,Difícil,Actual,Internacional,false,true
 3401,Bárbara Lennie,Cine y TV,Actor/Actriz,Media,Difícil,Actual,Internacional,false,true
-3402,Javier Gutiérrez,Cine y TV,Actor/Actriz,Media,Difícil,Actual,Internacional,false,false
 3403,Karra Elejalde,Cine y TV,Actor/Actriz,Media,Difícil,Actual,Internacional,false,true
 3404,Eduard Fernández,Cine y TV,Actor/Actriz,Media,Difícil,Actual,Internacional,false,true
 3405,Luis Zahera,Cine y TV,Actor/Actriz,Media,Difícil,Actual,Internacional,false,true
 3406,José Sacristán,Cine y TV,Actor/Actriz,Media,Difícil,Actual,Internacional,false,true
-3407,Fernando Fernán Gómez,Cine y TV,Actor/Actriz,Media,Difícil,Actual,Internacional,false,false
-3408,Paco Rabal,Cine y TV,Actor/Actriz,Media,Difícil,Actual,Internacional,false,false
 3409,Lola Dueñas,Cine y TV,Actor/Actriz,Media,Difícil,Actual,Internacional,false,true
 3410,Victoria Abril,Cine y TV,Actor/Actriz,Media,Difícil,Actual,Internacional,false,true
 3411,Rosa María Sardà,Cine y TV,Actor/Actriz,Media,Difícil,Actual,Internacional,false,true
@@ -3103,7 +2899,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3413,Agustín González,Cine y TV,Actor/Actriz,Media,Difícil,Actual,Internacional,false,true
 3414,José Luis López Vázquez,Cine y TV,Actor/Actriz,Media,Difícil,Actual,Internacional,false,true
 3415,Alfredo Landa,Cine y TV,Actor/Actriz,Muy alta,Fácil,Clásica,Internacional,false,true
-3416,Fernando Esteso,Cine y TV,Actor/Actriz,Alta,Media,Actual,Internacional,false,false
 3417,Andrés Pajares,Cine y TV,Actor/Actriz,Alta,Media,Actual,Internacional,false,true
 3419,Daniel Day-Lewis,Cine y TV,Actor/Actriz,Media,Difícil,Actual,Internacional,false,true
 3420,Michael Caine,Cine y TV,Actor/Actriz,Media,Difícil,Actual,Internacional,false,true
@@ -3112,6 +2907,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3423,Richard Gere,Cine y TV,Actor/Actriz,Alta,Media,Actual,Internacional,false,true
 3424,Rami Malek,Cine y TV,Actor/Actriz,Media,Difícil,Actual,Internacional,false,true
 3425,Oscar Isaac,Cine y TV,Actor/Actriz,Media,Difícil,Actual,Internacional,false,true
+3426,Adam Driver,Cine y TV,Actor/Actriz,Media,Difícil,Actual,Internacional,false,true
 3427,Mads Mikkelsen,Cine y TV,Actor/Actriz,Media,Difícil,Actual,Internacional,false,true
 3428,Christoph Waltz,Cine y TV,Actor/Actriz,Media,Difícil,Actual,Internacional,false,true
 3429,Daniel Craig,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,Internacional,false,true
@@ -3135,29 +2931,8 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3447,Jordan Peele,Cine y TV,Director/a,Media,Difícil,Actual,Internacional,false,true
 3448,Alejandro González Iñárritu,Cine y TV,Director/a,Media,Difícil,Actual,Internacional,false,true
 3449,Alfonso Cuarón,Cine y TV,Director/a,Media,Difícil,Clásica,Internacional,false,true
-3450,Álex de la Iglesia,Cine y TV,Director/a,Alta,Media,Actual,Nacional,false,false
 3451,Juan Antonio Bayona,Cine y TV,Director/a,Media,Difícil,Actual,Internacional,false,true
-3453,Isabel Coixet,Cine y TV,Director/a,Media,Difícil,Actual,Nacional,false,false
-3454,Fernando León de Aranoa,Cine y TV,Director/a,Media,Difícil,Actual,Nacional,false,false
-3455,Fernando Trueba,Cine y TV,Director/a,Media,Difícil,Actual,Nacional,false,false
 3456,Alejandro Amenábar,Cine y TV,Director/a,Alta,Media,Actual,Internacional,false,true
-3457,Rodrigo Sorogoyen,Cine y TV,Director/a,Media,Difícil,Actual,Nacional,false,false
-3458,Daniel Monzón,Cine y TV,Director/a,Media,Difícil,Actual,Nacional,false,false
-3459,Jaime de Armiñán,Cine y TV,Director/a,Media,Difícil,Actual,Nacional,false,false
-3460,Luis García Berlanga,Cine y TV,Director/a,Alta,Media,Actual,Nacional,false,false
-3461,José Luis Garci,Cine y TV,Director/a,Media,Difícil,Actual,Nacional,false,false
-3462,Carlos Saura,Cine y TV,Director/a,Media,Difícil,Actual,Nacional,false,false
-3463,Víctor Erice,Cine y TV,Director/a,Media,Difícil,Actual,Nacional,false,false
-3464,Pilar Miró,Cine y TV,Director/a,Media,Difícil,Actual,Nacional,false,false
-3465,Icíar Bollaín,Cine y TV,Director/a,Media,Difícil,Actual,Nacional,false,false
-3466,Gracia Querejeta,Cine y TV,Director/a,Media,Difícil,Actual,Nacional,false,false
-3467,Emilio Martínez Lázaro,Cine y TV,Director/a,Media,Difícil,Actual,Nacional,false,false
-3468,Javier Fesser,Cine y TV,Director/a,Media,Difícil,Actual,Nacional,false,false
-3469,José Luis Cuerda,Cine y TV,Director/a,Media,Difícil,Actual,Nacional,false,false
-3470,Agustí Villaronga,Cine y TV,Director/a,Media,Difícil,Actual,Nacional,false,false
-3471,Bigas Luna,Cine y TV,Director/a,Media,Difícil,Actual,Nacional,false,false
-3472,Jaime Chávarri,Cine y TV,Director/a,Media,Difícil,Actual,Nacional,false,false
-3473,Montxo Armendáriz,Cine y TV,Director/a,Media,Difícil,Actual,Nacional,false,false
 3474,Ken Loach,Cine y TV,Director/a,Media,Difícil,Actual,Internacional,false,true
 3475,Alfred Hitchcock,Cine y TV,Director/a,Muy alta,Fácil,Clásica,Internacional,false,true
 3476,Stanley Kubrick,Cine y TV,Director/a,Alta,Media,Clásica,Internacional,false,true
@@ -3191,29 +2966,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3504,Terry Gilliam,Cine y TV,Director/a,Media,Difícil,Actual,Internacional,false,true
 3505,Takeshi Kitano,Cine y TV,Director/a,Media,Difícil,Actual,Internacional,false,true
 3506,Laura Esquivel,Literatura,Escritor,Baja,Muy difícil,Actual,Internacional,false,true
-3507,Javier Marías,Literatura,Escritor,Media,Difícil,Actual,Nacional,false,false
-3508,Almudena Grandes,Literatura,Escritor,Media,Difícil,Actual,Nacional,false,false
-3509,Rosa Montero,Literatura,Escritor,Media,Difícil,Actual,Nacional,false,false
-3510,Javier Cercas,Literatura,Escritor,Media,Difícil,Actual,Nacional,false,false
-3511,Fernando Aramburu,Literatura,Escritor,Media,Difícil,Actual,Nacional,false,false
-3512,Dolores Redondo,Literatura,Escritor,Media,Difícil,Actual,Nacional,false,false
-3513,María Dueñas,Literatura,Escritor,Media,Difícil,Actual,Nacional,false,false
-3514,Eva García Sáenz de Urturi,Literatura,Escritor,Baja,Muy difícil,Actual,Nacional,false,false
-3515,Juan Gómez-Jurado,Literatura,Escritor,Media,Difícil,Actual,Nacional,false,false
-3516,Santiago Posteguillo,Literatura,Escritor,Media,Difícil,Actual,Nacional,false,false
-3517,Elvira Lindo,Literatura,Escritor,Media,Difícil,Actual,Nacional,false,false
-3518,Góngora,Literatura,Escritor,Media,Difícil,Actual,Nacional,false,false
-3520,Leopoldo Alas Clarín,Literatura,Escritor,Media,Difícil,Actual,Nacional,false,false
-3521,Miguel Delibes,Literatura,Escritor,Alta,Media,Actual,Nacional,false,false
-3522,Pío Baroja,Literatura,Escritor,Media,Difícil,Actual,Nacional,false,false
-3523,Valle-Inclán,Literatura,Escritor,Media,Difícil,Actual,Nacional,false,false
-3524,Juan Ramón Jiménez,Literatura,Escritor,Media,Difícil,Actual,Nacional,false,false
-3525,Vicente Blasco Ibáñez,Literatura,Escritor,Media,Difícil,Actual,Nacional,false,false
-3526,Carmen Laforet,Literatura,Escritor,Media,Difícil,Actual,Nacional,false,false
-3527,Ana María Matute,Literatura,Escritor,Media,Difícil,Actual,Nacional,false,false
-3528,Mercè Rodoreda,Literatura,Escritor,Baja,Muy difícil,Actual,Nacional,false,false
-3529,Josep Pla,Literatura,Escritor,Baja,Muy difícil,Actual,Nacional,false,false
-3530,Salvador Espriu,Literatura,Escritor,Baja,Muy difícil,Actual,Nacional,false,false
 3531,Stephenie Meyer,Literatura,Escritor,Media,Difícil,Actual,Internacional,false,true
 3532,Suzanne Collins,Literatura,Escritor,Media,Difícil,Actual,Internacional,false,true
 3533,John Grisham,Literatura,Escritor,Media,Difícil,Actual,Internacional,false,true
@@ -3269,6 +3021,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3585,Oysho,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
 3586,Uniqlo,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
 3587,Sprinter,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
+3588,JD Sports,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
 3589,Foot Locker,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
 3590,eBay,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 3591,Etsy,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
@@ -3280,13 +3033,11 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3597,Glovo,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 3598,Just Eat,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 3599,Deliveroo,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
-3600,Bizum,Marcas,Marca,Muy alta,Fácil,Actual,Nacional,false,false
 3601,PayPal,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 3602,Visa,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 3603,Mastercard,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 3604,American Express,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
-3605,SEUR,Marcas,Marca,Media,Difícil,Actual,Nacional,false,false
-3606,MRW,Marcas,Marca,Media,Difícil,Actual,Nacional,false,false
+3607,DHL,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 3608,FedEx,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
 3609,UPS,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
 3610,Iberia,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
@@ -3298,10 +3049,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3616,Lufthansa,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
 3617,Air France,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
 3618,British Airways,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
-3619,San Miguel,Marcas,Marca,Muy alta,Fácil,Actual,Nacional,false,false
-3620,Damm,Marcas,Marca,Media,Difícil,Actual,Nacional,false,false
-3621,Estrella Damm,Marcas,Marca,Muy alta,Fácil,Actual,Nacional,false,false
-3622,Voll-Damm,Marcas,Marca,Media,Difícil,Actual,Nacional,false,false
 3623,Amstel,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
 3624,Guinness,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 3625,Corona,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
@@ -3325,22 +3072,12 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3643,Orbit,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 3644,Actimel,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 3645,Activia,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
-3646,Central Lechera Asturiana,Marcas,Marca,Muy alta,Fácil,Actual,Nacional,false,false
-3647,Puleva,Marcas,Marca,Muy alta,Fácil,Actual,Nacional,false,false
-3648,Gallina Blanca,Marcas,Marca,Muy alta,Fácil,Actual,Nacional,false,false
-3649,La Casera,Marcas,Marca,Muy alta,Fácil,Actual,Nacional,false,false
-3650,Cepsa,Marcas,Marca,Muy alta,Fácil,Actual,Nacional,false,false
-3651,Repsol,Marcas,Marca,Muy alta,Fácil,Actual,Nacional,false,false
-3652,Endesa,Marcas,Marca,Muy alta,Fácil,Actual,Nacional,false,false
-3653,Iberdrola,Marcas,Marca,Muy alta,Fácil,Actual,Nacional,false,false
-3654,Movistar,Marcas,Marca,Muy alta,Fácil,Actual,Nacional,false,false
 3655,Vodafone,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 3656,Orange,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
-3657,Yoigo,Marcas,Marca,Media,Difícil,Actual,Nacional,false,false
-3658,Lowi,Marcas,Marca,Media,Difícil,Actual,Nacional,false,false
 3659,Amazon Echo,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
 3660,Alexa,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 3661,Google Maps,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
+3662,Google Drive,Marcas,Marca,Media,Difícil,Actual,Internacional,false,true
 3663,Gmail,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 3664,Android,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 3665,Windows,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
@@ -3350,40 +3087,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3669,MacBook,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 3670,AirPods,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
 3671,PlayStation 5,Marcas,Marca,Muy alta,Fácil,Actual,Internacional,false,true
-3672,Valladolid,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-3673,Cáceres,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-3674,Santander,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-3675,Burgos,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-3676,Segovia,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-3677,Cuenca,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-3678,Ronda,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-3679,Torremolinos,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-3680,Sitges,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-3681,Lloret de Mar,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-3682,Salou,Lugares,Lugar,Muy alta,Fácil,Actual,Nacional,false,false
-3683,Rías Baixas,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-3684,Costa Blanca,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-3685,Doñana,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-3686,Tablas de Daimiel,Lugares,Lugar,Baja,Muy difícil,Actual,Nacional,false,false
-3687,Cabo de Gata,Lugares,Lugar,Baja,Muy difícil,Actual,Nacional,false,false
-3688,Ordesa,Lugares,Lugar,Baja,Muy difícil,Actual,Nacional,false,false
-3690,Monasterio de El Escorial,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-3691,Ávila,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-3693,Cartagena,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-3694,Tarragona,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-3695,Ampurias,Lugares,Lugar,Baja,Muy difícil,Actual,Nacional,false,false
-3696,Atapuerca,Lugares,Lugar,Baja,Muy difícil,Actual,Nacional,false,false
-3697,Altamira,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-3698,Delta del Ebro,Lugares,Lugar,Baja,Muy difícil,Actual,Nacional,false,false
-3699,Mar Menor,Lugares,Lugar,Baja,Muy difícil,Actual,Nacional,false,false
-3700,Río Ebro,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-3701,Río Tajo,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-3702,Río Duero,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-3703,Río Guadalquivir,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
-3704,Río Guadiana,Lugares,Lugar,Baja,Muy difícil,Actual,Nacional,false,false
 3705,Estrecho de Gibraltar,Lugares,Lugar,Media,Difícil,Actual,Internacional,false,true
-3706,Golfo de Vizcaya,Lugares,Lugar,Baja,Muy difícil,Actual,Nacional,false,false
-3707,Mar Cantábrico,Lugares,Lugar,Media,Difícil,Actual,Nacional,false,false
 3708,Mar del Norte,Lugares,Lugar,Baja,Muy difícil,Actual,Internacional,false,true
 3709,Canal de la Mancha,Lugares,Lugar,Media,Difícil,Actual,Internacional,false,true
 3710,Mar Rojo,Lugares,Lugar,Media,Difícil,Actual,Internacional,false,true
@@ -3411,6 +3115,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3734,Zanzíbar,Lugares,Lugar,Baja,Muy difícil,Actual,Internacional,false,true
 3736,Canal de Suez,Lugares,Lugar,Media,Difícil,Actual,Internacional,false,true
 3737,Tel Aviv,Lugares,Lugar,Baja,Muy difícil,Actual,Internacional,false,true
+3738,Amán,Lugares,Lugar,Baja,Muy difícil,Actual,Internacional,false,true
 3739,Doha,Lugares,Lugar,Baja,Muy difícil,Actual,Internacional,false,true
 3740,Riad,Lugares,Lugar,Baja,Muy difícil,Actual,Internacional,false,true
 3741,La Meca,Lugares,Lugar,Media,Difícil,Actual,Internacional,false,true
@@ -3447,13 +3152,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3778,Tallin,Lugares,Lugar,Baja,Muy difícil,Actual,Internacional,false,true
 3779,Riga,Lugares,Lugar,Baja,Muy difícil,Actual,Internacional,false,true
 3780,Vilna,Lugares,Lugar,Baja,Muy difícil,Actual,Internacional,false,true
-3783,Sancho III,Historia,Personaje histórico,Baja,Muy difícil,Histórica,Nacional,false,false
-3785,Jaime I el Conquistador,Historia,Personaje histórico,Media,Difícil,Histórica,Nacional,false,false
-3787,Pedro el Cruel,Historia,Personaje histórico,Media,Difícil,Histórica,Nacional,false,false
-3790,Juan II de Castilla,Historia,Personaje histórico,Baja,Muy difícil,Histórica,Nacional,false,false
-3791,Juana la Beltraneja,Historia,Personaje histórico,Media,Difícil,Histórica,Nacional,false,false
-3792,Boabdil,Historia,Personaje histórico,Alta,Media,Histórica,Nacional,false,false
-3793,Viriato,Historia,Personaje histórico,Media,Difícil,Histórica,Nacional,false,false
 3794,Séneca,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
 3795,Adriano,Historia,Personaje histórico,Media,Difícil,Histórica,Internacional,false,true
 3796,Cómodo,Historia,Personaje histórico,Baja,Muy difícil,Histórica,Internacional,false,true
@@ -3472,11 +3170,11 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3810,Temístocles,Historia,Personaje histórico,Baja,Muy difícil,Histórica,Internacional,false,true
 3811,Nabucodonosor II,Historia,Personaje histórico,Baja,Muy difícil,Histórica,Internacional,false,true
 3812,Sargón de Acad,Historia,Personaje histórico,Baja,Muy difícil,Histórica,Internacional,false,true
+3813,Asurbanipal,Historia,Personaje histórico,Baja,Muy difícil,Histórica,Internacional,false,true
 3814,Justiniano,Historia,Personaje histórico,Baja,Muy difícil,Histórica,Internacional,false,true
 3815,Teodora,Historia,Personaje histórico,Baja,Muy difícil,Histórica,Internacional,false,true
 3816,Basilio II,Historia,Personaje histórico,Baja,Muy difícil,Histórica,Internacional,false,true
 3817,Mahoma,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
-3818,Abderramán III,Historia,Personaje histórico,Media,Difícil,Histórica,Nacional,false,false
 3819,Averroes,Historia,Personaje histórico,Media,Difícil,Histórica,Internacional,false,true
 3820,Maimónides,Historia,Personaje histórico,Media,Difícil,Histórica,Internacional,false,true
 3821,Gutenberg,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
@@ -3486,6 +3184,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3825,Calvino,Historia,Personaje histórico,Baja,Muy difícil,Histórica,Internacional,false,true
 3826,Tycho Brahe,Historia,Personaje histórico,Baja,Muy difícil,Histórica,Internacional,false,true
 3828,Isaac Newton,Historia,Personaje histórico,Muy alta,Fácil,Histórica,Internacional,false,true
+3829,René Descartes,Historia,Personaje histórico,Media,Difícil,Histórica,Internacional,false,true
 3830,Spinoza,Historia,Personaje histórico,Baja,Muy difícil,Histórica,Internacional,false,true
 3831,Voltaire,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
 3832,Rousseau,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
@@ -3509,21 +3208,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3850,Bill Clinton,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
 3851,George W. Bush,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
 3852,Joe Biden,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
-3853,Pedro Sánchez,Historia,Personaje histórico,Alta,Media,Histórica,Nacional,false,false
-3854,Mariano Rajoy,Historia,Personaje histórico,Alta,Media,Histórica,Nacional,false,false
-3855,José María Aznar,Historia,Personaje histórico,Alta,Media,Histórica,Nacional,false,false
-3856,Leopoldo Calvo-Sotelo,Historia,Personaje histórico,Baja,Muy difícil,Histórica,Nacional,false,false
-3857,Manuel Azaña,Historia,Personaje histórico,Alta,Media,Histórica,Nacional,false,false
-3858,Clara Campoamor,Historia,Personaje histórico,Alta,Media,Histórica,Nacional,false,false
-3859,Dolores Ibárruri,Historia,Personaje histórico,Alta,Media,Histórica,Nacional,false,false
-3860,Federica Montseny,Historia,Personaje histórico,Baja,Muy difícil,Histórica,Nacional,false,false
-3861,Santiago Carrillo,Historia,Personaje histórico,Alta,Media,Histórica,Nacional,false,false
-3862,Juan Negrín,Historia,Personaje histórico,Baja,Muy difícil,Histórica,Nacional,false,false
-3863,Buenaventura Durruti,Historia,Personaje histórico,Baja,Muy difícil,Histórica,Nacional,false,false
-3865,Miguel Primo de Rivera,Historia,Personaje histórico,Alta,Media,Histórica,Nacional,false,false
-3866,Victoria Kent,Historia,Personaje histórico,Baja,Muy difícil,Histórica,Nacional,false,false
-3867,Blas Infante,Historia,Personaje histórico,Baja,Muy difícil,Histórica,Nacional,false,false
-3868,Sabino Arana,Historia,Personaje histórico,Baja,Muy difícil,Histórica,Nacional,false,false
 3869,Andrés de Urdaneta,Historia,Personaje histórico,Baja,Muy difícil,Histórica,Internacional,false,true
 3870,Elcano,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
 3873,Moctezuma,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
@@ -3532,6 +3216,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3876,George Stephenson,Historia,Personaje histórico,Baja,Muy difícil,Histórica,Internacional,false,true
 3877,James Watt,Historia,Personaje histórico,Baja,Muy difícil,Histórica,Internacional,false,true
 3878,Henry Ford,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
+3879,Hermanos Wright,Historia,Personaje histórico,Alta,Media,Histórica,Internacional,false,true
 3882,Donatello,Arte,Artista,Alta,Media,Actual,Internacional,false,true
 3884,Antonio López,Arte,Artista,Media,Difícil,Actual,Internacional,false,true
 3885,Maruja Mallo,Arte,Artista,Baja,Muy difícil,Actual,Internacional,false,true
@@ -3546,6 +3231,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3894,Marina Abramović,Arte,Artista,Baja,Muy difícil,Actual,Internacional,false,true
 3895,Yoko Ono,Arte,Artista,Media,Difícil,Actual,Internacional,false,true
 3896,Olafur Eliasson,Arte,Artista,Baja,Muy difícil,Actual,Internacional,false,true
+3897,JR,Arte,Artista,Baja,Muy difícil,Actual,Internacional,false,true
 3898,Cindy Sherman,Arte,Artista,Baja,Muy difícil,Actual,Internacional,false,true
 3899,Annie Leibovitz,Arte,Artista,Media,Difícil,Actual,Internacional,false,true
 3900,Steve McCurry,Arte,Artista,Baja,Muy difícil,Actual,Internacional,false,true
@@ -3582,6 +3268,7 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3931,Frank Gehry,Arte,Artista,Media,Difícil,Actual,Internacional,false,true
 3932,Renzo Piano,Arte,Artista,Baja,Muy difícil,Actual,Internacional,false,true
 3933,Richard Rogers,Arte,Artista,Baja,Muy difícil,Actual,Internacional,false,true
+3935,The Morning Show,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 3936,The Newsroom,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 3937,The Americans,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 3938,Six Feet Under,Series,Serie,Media,Difícil,Actual,Internacional,false,true
@@ -3620,30 +3307,39 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 3972,Band of Brothers,Series,Serie,Alta,Media,Actual,Internacional,false,true
 3973,The Pacific,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 3974,Generation Kill,Series,Serie,Media,Difícil,Actual,Internacional,false,true
+3975,The Night Of,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 3976,When They See Us,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 3977,Unbelievable,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 3978,Maid,Series,Serie,Alta,Media,Actual,Internacional,false,true
+3979,The Queen's Gambit,Series,Serie,Alta,Media,Actual,Internacional,false,true
+3980,The Haunting of Hill House,Series,Serie,Alta,Media,Actual,Internacional,false,true
+3981,The Haunting of Bly Manor,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 3982,American Horror Story,Series,Serie,Alta,Media,Actual,Internacional,false,true
 3983,Yellowjackets,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 3984,Fear the Walking Dead,Series,Serie,Alta,Media,Actual,Internacional,false,true
 3985,Gen V,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 3986,Invincible,Series,Serie,Alta,Media,Actual,Internacional,false,true
 3987,Moon Knight,Series,Serie,Alta,Media,Actual,Internacional,false,true
+3988,The Falcon and the Winter Soldier,Series,Serie,Alta,Media,Actual,Internacional,false,true
 3989,Ms. Marvel,Series,Serie,Alta,Media,Actual,Internacional,false,true
 3990,The Book of Boba Fett,Series,Serie,Alta,Media,Actual,Internacional,false,true
 3991,Star Trek: Picard,Series,Serie,Alta,Media,Actual,Internacional,false,true
+3992,Star Trek: Discovery,Series,Serie,Alta,Media,Actual,Internacional,false,true
 3994,Archer,Series,Serie,Alta,Media,Actual,Internacional,false,true
 3995,Disenchantment,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 3996,Bob's Burgers,Series,Serie,Alta,Media,Actual,Internacional,false,true
 3997,Superstore,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 3998,The IT Crowd,Series,Serie,Alta,Media,Actual,Internacional,false,true
+3999,30 Rock,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 4000,Arrested Development,Series,Serie,Alta,Media,Actual,Internacional,false,true
+4001,Curb Your Enthusiasm,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 4002,Veep,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 4003,Entourage,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 4004,Girls,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 4005,Skins,Series,Serie,Alta,Media,Actual,Internacional,false,true
 4006,Misfits,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 4007,Shameless,Series,Serie,Alta,Media,Actual,Internacional,false,true
+4008,The Vampire Diaries,Series,Serie,Alta,Media,Actual,Internacional,false,true
 4009,True Blood,Series,Serie,Alta,Media,Actual,Internacional,false,true
 4010,Teen Wolf,Series,Serie,Alta,Media,Actual,Internacional,false,true
 4011,Arrow,Series,Serie,Alta,Media,Actual,Internacional,false,true
@@ -3657,8 +3353,10 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 4019,Good Omens,Series,Serie,Alta,Media,Actual,Internacional,false,true
 4020,His Dark Materials,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 4021,Shadow and Bone,Series,Serie,Media,Difícil,Actual,Internacional,false,true
+4022,The Wheel of Time,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 4023,The Rings of Power,Series,Serie,Alta,Media,Actual,Internacional,false,true
 4024,Arcane,Series,Serie,Alta,Media,Actual,Internacional,false,true
+4025,Cyberpunk: Edgerunners,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 4026,Castlevania,Series,Serie,Alta,Media,Actual,Internacional,false,true
 4027,Blue Eye Samurai,Series,Serie,Media,Difícil,Actual,Internacional,false,true
 4028,Cowboy Bebop,Series,Serie,Alta,Media,Actual,Internacional,false,true
@@ -3744,25 +3442,6 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 4110,Silvio Berlusconi,Cultura,Persona/Personaje,Alta,Media,Actual,Internacional,false,true
 4111,Giorgia Meloni,Cultura,Persona/Personaje,Alta,Media,Actual,Internacional,false,true
 4112,Sergio Mattarella,Cultura,Persona/Personaje,Baja,Muy difícil,Actual,Internacional,false,true
-4113,Pablo Iglesias,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4114,Alberto Núñez Feijóo,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4115,Isabel Díaz Ayuso,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4116,Yolanda Díaz,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4117,José Luis Rodríguez Zapatero,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4118,Manuel Fraga,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4119,Santiago Abascal,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4120,Ada Colau,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4121,Manuela Carmena,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4122,Jordi Pujol,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4123,Artur Mas,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4124,Carles Puigdemont,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4125,Oriol Junqueras,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4126,Rita Barberá,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4127,Esperanza Aguirre,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4128,Cristina Cifuentes,Cultura,Persona/Personaje,Media,Difícil,Actual,Nacional,false,false
-4129,Alfonso Guerra,Cultura,Persona/Personaje,Media,Difícil,Clásica,Nacional,false,false
-4130,Joaquín Almunia,Cultura,Persona/Personaje,Baja,Muy difícil,Actual,Nacional,false,false
-4131,Margarita Nelken,Cultura,Persona/Personaje,Baja,Muy difícil,Actual,Nacional,false,false
 4132,José Ortega y Gasset,Cultura,Persona/Personaje,Alta,Media,Actual,Internacional,false,true
 4133,María Zambrano,Cultura,Persona/Personaje,Baja,Muy difícil,Actual,Internacional,false,true
 4134,José Saramago,Cultura,Persona/Personaje,Alta,Media,Actual,Internacional,false,true
@@ -3783,15 +3462,14 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 4150,Ariel Sharon,Cultura,Persona/Personaje,Baja,Muy difícil,Actual,Internacional,false,true
 4151,Papa Francisco,Cultura,Persona/Personaje,Muy alta,Fácil,Actual,Internacional,true,true
 4152,Benedicto XVI,Cultura,Persona/Personaje,Alta,Media,Actual,Internacional,false,true
+4153,Papa Juan XXIII,Cultura,Persona/Personaje,Media,Difícil,Actual,Internacional,false,true
 4154,Teresa de Calcuta,Cultura,Persona/Personaje,Alta,Media,Actual,Internacional,false,true
 4155,Desmond Morris,Cultura,Persona/Personaje,Baja,Muy difícil,Actual,Internacional,false,true
 4156,Warren Buffett,Cultura,Persona/Personaje,Alta,Media,Actual,Internacional,false,true
 4157,Richard Branson,Cultura,Persona/Personaje,Alta,Media,Actual,Internacional,false,true
+4158,Jack Ma,Cultura,Persona/Personaje,Alta,Media,Actual,Internacional,false,true
 4159,Carlos Slim,Cultura,Persona/Personaje,Alta,Media,Actual,Internacional,false,true
-4160,Amancio Ortega,Cultura,Persona/Personaje,Alta,Media,Actual,Internacional,false,false
-4161,Ana Botín,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4162,Juan Roig,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4163,Florentino Pérez,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
+4164,Jeffrey Bezos,Cultura,Persona/Personaje,Alta,Media,Actual,Internacional,false,true
 4165,Oprah Winfrey,Cultura,Persona/Personaje,Alta,Media,Actual,Internacional,false,true
 4166,Kim Kardashian,Cultura,Persona/Personaje,Muy alta,Fácil,Actual,Internacional,false,true
 4167,Kylie Jenner,Cultura,Persona/Personaje,Alta,Media,Actual,Internacional,false,true
@@ -3799,144 +3477,9 @@ id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,infantil,
 4169,Martha Stewart,Cultura,Persona/Personaje,Alta,Media,Actual,Internacional,false,true
 4170,Gordon Ramsay,Cultura,Persona/Personaje,Alta,Media,Actual,Internacional,false,true
 4171,Jamie Oliver,Cultura,Persona/Personaje,Alta,Media,Actual,Internacional,false,true
-4172,Martín Berasategui,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4173,Ferran Adrià,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
 4174,José Andrés,Cultura,Persona/Personaje,Alta,Media,Actual,Internacional,false,true
-4175,Dabiz Muñoz,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4176,Jordi Cruz,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4177,Alberto Chicote,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4179,Risto Mejide,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4180,Ana Rosa Quintana,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4181,Susanna Griso,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4182,Matías Prats,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4183,Iñaki Gabilondo,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4184,José María Carrascal,Cultura,Persona/Personaje,Media,Difícil,Actual,Nacional,false,false
-4185,Jesús Hermida,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4186,Ramón García,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4187,Juan y Medio,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4188,Dani Mateo,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4190,Carlos Latre,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4191,Florentino Fernández,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4192,Pablo Chiapella,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4193,Eduardo Gómez,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4194,Javier Cansado,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4195,Joaquín Reyes,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4196,Ernesto Sevilla,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4197,Raúl Cimas,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4198,Goyo Jiménez,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4199,Eva Hache,Cultura,Persona/Personaje,Alta,Media,Actual,Nacional,false,false
-4200,Trancas y Barrancas,Personajes,Personaje,Muy alta,Fácil,Actual,Nacional,false,false
 4201,ThunderCats,Series,Serie,Alta,Media,Actual,Internacional,false,true
 4202,Power Rangers,Series,Serie,Muy alta,Fácil,Actual,Internacional,true,true
-657,Cézanne,Arte,Pintor,Alta,Media,Actual,Internacional,false,true
-2061,La Venus de Milo,Arte,Escultura,Alta,Media,Actual,Internacional,false,true
-3754,Van Gogh,Arte,Pintor,Alta,Media,Actual,Internacional,false,true
-805,Crónicas Vampiricas,Cine y TV,Serie,Alta,Media,Actual,Internacional,false,true
-898,Denzel Washington,Cine y TV,Actor,Alta,Media,Actual,Internacional,false,true
-1064,El cuento de la criada,Cine y TV,Serie,Alta,Media,Actual,Internacional,false,true
-1153,Elsa Pataky,Cine y TV,Actriz,Alta,Media,Actual,Internacional,false,true
-1380,Gambito de dama,Cine y TV,Serie,Alta,Media,Actual,Internacional,false,true
-2050,La rueda del tiempo,Cine y TV,Serie,Alta,Media,Actual,Internacional,false,true
-2674,Nicole Kidman,Cine y TV,Actriz,Alta,Media,Actual,Internacional,false,true
-36,Adriana Lima,Cultura,Modelo,Alta,Media,Actual,Internacional,false,true
-1439,Gisele Bündchen,Cultura,Modelo,Alta,Media,Actual,Internacional,false,true
-1562,Heidi Klum,Cultura,Modelo,Alta,Media,Actual,Internacional,false,true
-1886,Judit Mascó,Cultura,Modelo,Alta,Media,Actual,Nacional,false,false
-1915,Kate Moss,Cultura,Modelo,Alta,Media,Actual,Internacional,false,true
-2676,Nieves Álvarez,Cultura,Modelo,Alta,Media,Actual,Nacional,false,false
-2097,Lazarillo de Tormes,Literatura,Novela,Alta,Media,Actual,Internacional,false,true
-2594,Muralla China,Lugares,Monumento,Alta,Media,Actual,Internacional,false,true
-9,30 Seconds to Mars,Música,Grupo,Alta,Media,Actual,Internacional,false,true
-2370,Mario Vaquerizo,Música,Cantante,Alta,Media,Actual,Nacional,false,false
-2737,Olvido Gara (Alaska),Música,Cantante,Alta,Media,Actual,Internacional,false,true
-1067,El David,Arte,Escultura,Alta,Media,Histórica,Internacional,false,true
-1090,El Guernica,Arte,Cuadro,Alta,Media,Histórica,Internacional,false,true
-212,Antonio Gaudí,Cultura,Arquitecto,Alta,Media,Histórica,Internacional,false,true
-315,Baldur,Cultura,Mitología nórdica,Alta,Media,Histórica,Internacional,false,true
-931,Dionisio,Cultura,Mitología griega,Alta,Media,Histórica,Internacional,false,true
-2358,Marie Antoinette,Historia,Reina,Alta,Media,Histórica,Internacional,false,true
-3523,Termópilas,Historia,Evento histórico,Alta,Media,Histórica,Internacional,false,true
-3788,Victoria del Reino Unido,Historia,Reina,Alta,Media,Histórica,Internacional,false,true
-1575,Hércules Poirot,Literatura,Personaje,Alta,Media,Histórica,Internacional,false,true
-2108,Leo Tolstoy,Literatura,Escritor,Alta,Media,Histórica,Internacional,false,true
-521,Caballeros del Zodiaco,Cine y TV,Serie,Alta,Media,Siglo XX,Internacional,false,true
-733,Claudia Schiffer,Cultura,Modelo,Alta,Media,Siglo XX,Internacional,false,true
-1209,Ester Cañadas,Cultura,Modelo,Alta,Media,Siglo XX,Internacional,false,true
-1717,J. A. Bayona,Cine y TV,Director,Media,Difícil,Actual,Internacional,false,true
-2426,Maze Runner,Cine y TV,Película,Media,Difícil,Actual,Internacional,false,true
-3660,Tortugas Ninja,Cine y TV,Serie,Alta,Difícil,Actual,Internacional,false,true
-3891,Gran Wyoming,Cultura,Humorista,Media,Difícil,Actual,Nacional,false,false
-1782,Jenni Hermoso,Deportes,Futbolista,Media,Difícil,Actual,Internacional,false,true
-1877,Juan XXIII,Historia,Político,Media,Difícil,Actual,Internacional,false,true
-2880,Perón,Historia,Político,Media,Difícil,Actual,Internacional,false,true
-345,Bécquer,Literatura,Escritor,Media,Difícil,Actual,Nacional,false,false
-942,Divina Comedia,Literatura,Poema,Media,Difícil,Actual,Internacional,false,true
-1606,Homer,Literatura,Escritor,Media,Difícil,Actual,Internacional,false,true
-284,Atlántico,Lugares,Ciudad,Media,Difícil,Actual,Internacional,false,true
-745,Coliseo,Lugares,Monumento,Alta,Difícil,Actual,Internacional,false,true
-2666,Niágara,Lugares,Ciudad,Alta,Difícil,Actual,Internacional,false,true
-2602,Museo,Música,Grupo,Media,Difícil,Actual,Internacional,false,true
-3548,The Fresh Prince of Bel-Air,Música,Obra musical,Media,Difícil,Actual,Internacional,false,true
-1810,Joaquín Sorolla,Arte,Pintor,Media,Difícil,Histórica,Internacional,false,true
-234,Archimedes,Ciencia,Científico,Media,Difícil,Histórica,Internacional,false,true
-773,Copérnico,Ciencia,Científico,Media,Difícil,Histórica,Internacional,false,true
-1376,Galileo,Ciencia,Astrónomo,Alta,Difícil,Histórica,Internacional,false,true
-1935,Kepler,Ciencia,Científico,Media,Difícil,Histórica,Internacional,false,true
-2664,Newton,Ciencia,Físico,Media,Difícil,Histórica,Internacional,false,true
-1185,Érase una vez...,Cine y TV,Serie,Media,Difícil,Histórica,Internacional,false,true
-904,Descartes,Cultura,Filósofo,Media,Difícil,Histórica,Internacional,false,true
-2728,Odiseo,Cultura,Mitología griega,Media,Difícil,Histórica,Internacional,false,true
-3016,Rafa Benítez,Deportes,Entrenador de fútbol,Media,Difícil,Histórica,Internacional,false,true
-2974,Primo de Rivera,Historia,Político,Media,Difícil,Histórica,Nacional,false,false
-852,Dante,Literatura,Escritor,Media,Difícil,Histórica,Internacional,false,true
-2764,Orville Wright,Ciencia,Inventor,Media,Difícil,Siglo XX,Internacional,false,true
-3868,Wilbur Wright,Ciencia,Inventor,Media,Difícil,Siglo XX,Internacional,false,true
-3890,Wright brothers,Ciencia,Inventores,Media,Difícil,Siglo XX,Internacional,false,true
-2175,Los Gremlins,Cine y TV,Película,Media,Difícil,Siglo XX,Internacional,false,true
-500,Buffy,Cine y TV,Serie,Muy alta,Media,Actual,Internacional,false,true
-698,Chris Hemsworth,Cine y TV,Actor,Muy alta,Media,Actual,Internacional,false,true
-1009,Dwayne Johnson,Cine y TV,Actor,Alta,Media,Actual,Internacional,false,true
-1116,El precio del poder,Cine y TV,Película,Alta,Media,Actual,Internacional,false,true
-1891,Julia Roberts,Cine y TV,Actriz,Muy alta,Media,Actual,Internacional,false,true
-1926,Keanu Reeves,Cine y TV,Actor,Muy alta,Media,Actual,Internacional,false,true
-2102,Una rubia muy legal,Cine y TV,Película,Alta,Media,Actual,Internacional,false,true
-2127,Lightning McQueen,Cine y TV,Personaje,Alta,Fácil,Actual,Internacional,false,true
-2455,Merida,Cine y TV,Personaje,Muy alta,Fácil,Actual,Internacional,false,true
-2568,Morgan Freeman,Cine y TV,Actor,Muy alta,Media,Actual,Internacional,false,true
-3234,Sandra Bullock,Cine y TV,Actriz,Muy alta,Media,Actual,Internacional,false,true
-3259,Scarlett Johansson,Cine y TV,Actriz,Muy alta,Media,Actual,Internacional,false,true
-3416,Los juegos del calamar,Cine y TV,Serie,Muy alta,Media,Actual,Internacional,false,true
-3465,Superbad,Cine y TV,Película,Alta,Media,Actual,Internacional,false,true
-717,Cindy Crawford,Cultura,Modelo,Muy alta,Media,Actual,Internacional,false,true
-2623,Naomi Campbell,Cultura,Modelo,Muy alta,Media,Actual,Internacional,false,true
-2785,Pablo Motos,Cultura,Presentador,Muy alta,Media,Actual,Nacional,false,false
-604,Carlos Sainz Sr.,Deportes,Piloto de automovilismo,Muy alta,Fácil,Actual,Internacional,false,true
-1587,Heung-min Son,Deportes,Futbolista,Muy alta,Media,Actual,Internacional,false,true
-3218,Samuel Eto’o,Deportes,Futbolista,Muy alta,Media,Actual,Internacional,false,true
-3304,Seve Ballesteros,Deportes,Golfista,Muy alta,Fácil,Actual,Internacional,false,true
-3357,Sir Alex Ferguson,Deportes,Futbolista,Muy alta,Media,Actual,Internacional,false,true
-139,Amazonas,Lugares,Paisaje natural,Muy alta,Fácil,Actual,Internacional,false,true
-589,Caribe,Lugares,Costa/Playa,Muy alta,Fácil,Actual,Internacional,false,true
-1230,Everest,Lugares,Montaña,Muy alta,Fácil,Actual,Internacional,false,true
-1373,Galápagos,Lugares,Isla/archipiélago,Muy alta,Fácil,Actual,Internacional,false,true
-2219,Louvre,Lugares,Monumento,Muy alta,Fácil,Actual,Internacional,false,true
-2687,Nilo,Lugares,Ciudad,Muy alta,Fácil,Actual,Internacional,false,true
-2706,Notre Dame,Lugares,Monumento,Muy alta,Fácil,Actual,Internacional,false,true
-3775,Versalles,Lugares,Monumento,Muy alta,Fácil,Actual,Internacional,false,true
-1580,Hermès,Marcas,Moda,Muy alta,Fácil,Actual,Internacional,false,true
-912,Destiny’s Child,Música,Grupo,Muy alta,Media,Actual,Internacional,false,true
-2979,Princesas,Música,Cantante,Muy alta,Media,Actual,Internacional,false,true
-2366,Mario Bros,Ocio,Videojuego,Muy alta,Fácil,Actual,Internacional,false,true
-74,Albert Einstein,Ciencia,Físico,Muy alta,Fácil,Histórica,Internacional,false,true
-665,Charles Darwin,Ciencia,Científico,Muy alta,Media,Histórica,Internacional,false,true
-2359,Marie Curie,Ciencia,Científica,Muy alta,Media,Histórica,Internacional,false,true
-569,Canarias,Lugares,Ciudad,Muy alta,Fácil,Histórica,Internacional,false,true
-2920,Pirámides de Egipto,Lugares,Monumento,Muy alta,Fácil,Histórica,Internacional,false,true
-3201,Sáhara,Lugares,Desierto,Muy alta,Fácil,Histórica,Internacional,false,true
-405,Black Eyed Peas,Música,Grupo,Muy alta,Media,Histórica,Internacional,false,true
-829,Daffy Duck,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,Internacional,false,true
-968,Donald Duck,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,Internacional,false,true
-1447,Goku,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,Internacional,false,true
-2631,Naruto,Cine y TV,Personaje,Muy alta,Media,Siglo XX,Internacional,false,true
-3313,Sexto sentido,Cine y TV,Película,Muy alta,Media,Siglo XX,Internacional,false,true
-3820,Voldemort,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,Internacional,false,true
+4212,Steve de Minecraft,Personajes,Videojuegos,Muy alta,Fácil,Actual,Internacional,true,true
+4213,BTS,Música,Grupo,Alta,Media,Actual,Internacional,true,true
+4214,BLACKPINK,Música,Grupo,Alta,Media,Actual,Internacional,true,true

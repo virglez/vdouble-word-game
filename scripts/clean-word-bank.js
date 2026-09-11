@@ -26,6 +26,17 @@ const esc = v => /[",\n]/.test(v) ? `"${v.replace(/"/g, '""')}"` : v;
 const toCsv = (headers, rows) => [headers, ...rows].map(r => r.map(esc).join(',')).join('\n') + '\n';
 const norm = s => s.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[’']/g, "'").replace(/\s+/g, ' ').trim();
 const S = (...names) => new Set(names.map(norm));
+const parseBoolean = value => ['true', '1', 'si', 'yes'].includes(norm(String(value ?? '')));
+const NON_INTERNATIONAL = S(
+  'Rosalía', 'Aitana', 'David Bisbal', 'Estopa', 'Hombres G', 'Mecano', 'La Oreja de Van Gogh',
+  'El Canto del Loco', 'Alejandro Sanz', 'Joaquín Sabina', 'Leiva', 'Melendi', 'Pablo Alborán',
+  'Lola Índigo', 'Quevedo', 'Ana Mena', 'Manuel Carrasco', 'Malú', 'Dani Martín', 'Chenoa',
+  'David Bustamante', 'Rosa López', 'Camela', 'Pablo López', 'Las Ketchup', 'Fito & Fitipaldis',
+  'Héroes del Silencio', 'Rosalía de Castro', 'Campos de Castilla', 'Pedro Almodóvar',
+  'Javier Gutiérrez', 'Fernando Fernán Gómez', 'Paco Rabal', 'Fernando Esteso', 'Benidorm',
+  'Bilbao', 'Sevilla', 'Valencia', 'Marbella', 'Costa Brava', 'Costa del Sol', 'Mango', 'SEAT',
+  'Sevilla FC', 'Valencia CF', 'Vuelta a España', 'Amancio Ortega', 'Selección española',
+);
 
 // ---------- 1. Eliminaciones (duplicados / entradas sin sentido) ----------
 const REMOVE = new Set([
@@ -47,16 +58,16 @@ const RENAME = {
 };
 // 2304 queda duplicado de 1102 tras el renombre; se elimina más abajo por nombre normalizado.
 
-// ---------- 3. Recolocaciones de categoría / subcategoría / tipo ----------
+// ---------- 3. Recolocaciones de categoría / subcategoría ----------
 const range = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => String(a + i));
 const MOVE = {};
 const set = (ids, patch) => { for (const id of [].concat(ids).map(String)) MOVE[id] = { ...(MOVE[id] ?? {}), ...patch }; };
 
 // Cine y TV -> Series / Películas
-set([...range(1356, 1381), ...range(2241, 2250)], { categoria: 'Series', subcategoria: 'Serie', tipo: 'Serie' });
-set(range(2732, 2740), { categoria: 'Películas', subcategoria: 'Película', tipo: 'Película' });
-set([2727], { categoria: 'Películas', subcategoria: 'Película', tipo: 'Película' });
-set([2724, 2729], { categoria: 'Películas', subcategoria: 'Saga', tipo: 'Saga' });
+set([...range(1356, 1381), ...range(2241, 2250)], { categoria: 'Series', subcategoria: 'Serie' });
+set(range(2732, 2740), { categoria: 'Películas', subcategoria: 'Película' });
+set([2727], { categoria: 'Películas', subcategoria: 'Película' });
+set([2724, 2729], { categoria: 'Películas', subcategoria: 'Saga' });
 // Actores y directores fuera de Películas
 set(range(2050, 2060), { categoria: 'Cine y TV', subcategoria: 'Actor/Actriz' });
 set(range(2061, 2072), { categoria: 'Cine y TV', subcategoria: 'Director/a' });
@@ -64,48 +75,48 @@ set(range(2061, 2072), { categoria: 'Cine y TV', subcategoria: 'Director/a' });
 set(range(1006, 1015), { categoria: 'Arte', subcategoria: 'Pintor' });
 set([1018, 1019, 1020], { categoria: 'Arte', subcategoria: 'Pintor' });
 set([1016, 1017], { categoria: 'Arte', subcategoria: 'Arquitectura' });
-set([1021, 1022, 1023, 1025], { categoria: 'Arte', subcategoria: 'Pintura', tipo: 'Obra' });
-set([1024], { categoria: 'Arte', subcategoria: 'Escultura', tipo: 'Obra' });
+set([1021, 1022, 1023, 1025], { categoria: 'Arte', subcategoria: 'Pintura' });
+set([1024], { categoria: 'Arte', subcategoria: 'Escultura' });
 set(range(1026, 1044), { categoria: 'Literatura', subcategoria: 'Escritor' });
 set([1029, 1032, 1036, 1042, 1043], { subcategoria: 'Escritora' });
-set(range(1045, 1060), { categoria: 'Literatura', subcategoria: 'Obra', tipo: 'Obra' });
-set([1052], { subcategoria: 'Personaje', tipo: 'Personaje' });
+set(range(1045, 1060), { categoria: 'Literatura', subcategoria: 'Obra' });
+set([1052], { subcategoria: 'Personaje' });
 // Cultura -> Personajes / Series
-set([4200], { categoria: 'Personajes', subcategoria: 'Personaje', tipo: 'Personaje' });
-set([4201, 4202], { categoria: 'Series', subcategoria: 'Serie', tipo: 'Serie' });
-set([4212], { categoria: 'Personajes', subcategoria: 'Videojuegos', tipo: 'Personaje' });
+set([4200], { categoria: 'Personajes', subcategoria: 'Personaje' });
+set([4201, 4202], { categoria: 'Series', subcategoria: 'Serie' });
+set([4212], { categoria: 'Personajes', subcategoria: 'Videojuegos' });
 // Historia: monumentos y ciudades -> Lugares; épocas -> Evento
-set([1520, 1521, 1523, 1524, 1525, 2320, 2321, 2322], { categoria: 'Lugares', subcategoria: 'Monumento', tipo: 'Lugar' });
-set([1518, 1519, 2318], { categoria: 'Lugares', subcategoria: 'Ciudad', tipo: 'Lugar' });
-set([1507, 1513, 2313, 2315, 1517], { subcategoria: 'Evento', tipo: 'Evento' });
-set([1508], { subcategoria: 'Civilización', tipo: 'Evento' });
+set([1520, 1521, 1523, 1524, 1525, 2320, 2321, 2322], { categoria: 'Lugares', subcategoria: 'Monumento' });
+set([1518, 1519, 2318], { categoria: 'Lugares', subcategoria: 'Ciudad' });
+set([1507, 1513, 2313, 2315, 1517], { subcategoria: 'Evento' });
+set([1508], { subcategoria: 'Civilización' });
 set([2311, 2989], { subcategoria: 'Evento' });
 // Obras marcadas como Persona
-set([2301], { tipo: 'Obra' });
+set([2301], { subcategoria: 'Obra' });
 // Personajes literarios marcados como Obra
-set([38, 39, 40, 1455, 1459, 1461, 2287, 2289, 2291, 1458, 1457, 228], { subcategoria: 'Personaje', tipo: 'Personaje' });
-set([2292], { categoria: 'Series', subcategoria: 'Animación', tipo: 'Serie' });
+set([38, 39, 40, 1455, 1459, 1461, 2287, 2289, 2291, 1458, 1457, 228], { subcategoria: 'Personaje' });
+set([2292], { categoria: 'Series', subcategoria: 'Animación' });
 // Mitología: lugares y objetos
-set([1326, 1327, 1328, 1607], { tipo: 'Lugar' });
-set([1606], { tipo: 'Obra' });
+set([1326, 1327, 1328, 1607], { subcategoria: 'Lugar' });
+set([1606], { subcategoria: 'Obra' });
 // Música: grupos marcados como Persona y viceversa
 set([1388, 904, ...range(2698, 2710), 2877, 3355, 3364, 2885, 2886, 3278, ...range(3279, 3297), ...range(3300, 3308),
-  ...range(3311, 3329), ...range(3342, 3365), 2876], { tipo: 'Grupo' });
-set([2276], { categoria: 'Personajes', subcategoria: 'Animación', tipo: 'Personaje' });
+  ...range(3311, 3329), ...range(3342, 3365), 2876], { subcategoria: 'Grupo' });
+set([2276], { categoria: 'Personajes', subcategoria: 'Animación' });
 // Deportes
-set([1405], { categoria: 'Lugares', subcategoria: 'País', tipo: 'Lugar' });
+set([1405], { categoria: 'Lugares', subcategoria: 'País' });
 set([1642, 1643, 3257, 3258, 2039, 2040, 958], { subcategoria: 'Entrenador' });
 set([1693], { subcategoria: 'Baloncesto' });
 set([2045], { subcategoria: 'Futbolista' });
 set([2261, 2262, 2263], { subcategoria: 'País' });
 // Videojuegos: personajes a Personajes; consola
-set([254, 255, 256], { categoria: 'Personajes', subcategoria: 'Videojuegos', tipo: 'Personaje' });
-set([260], { tipo: 'Consola' });
+set([254, 255, 256], { categoria: 'Personajes', subcategoria: 'Videojuegos' });
+set([260], { subcategoria: 'Consola' });
 set([...range(1266, 1285), 1278], { subcategoria: 'Juegos de mesa y cartas' });
 
 // Unificación de subcategorías redundantes (aplicada tras MOVE)
 function unifySubcategory(r) {
-  const c = r.categoria, s = r.subcategoria, t = r.tipo;
+  const c = r.categoria, s = r.subcategoria;
   const map = {
     Futbolistas: 'Futbolista', Ciudades: 'Ciudad', 'Monumentos y lugares famosos': 'Monumento', 'Marcas populares': 'Marca',
     Entrenadores: 'Entrenador', 'Actores y actrices': 'Actor/Actriz', Actor: 'Actor/Actriz', Actriz: 'Actor/Actriz',
@@ -116,12 +127,12 @@ function unifySubcategory(r) {
     'Dioses y criaturas': 'Mitología', Cine: 'Película', Videojuego: 'Videojuegos', 'Series internacionales': 'Serie',
   };
   let out = map[s] ?? s;
-  if (c === 'Música' && (s === 'Cantante/Grupo' || s === 'Música' || (s === 'Cantante' && t === 'Grupo'))) out = t === 'Grupo' ? 'Grupo' : 'Cantante';
-  if (c === 'Historia' && s === 'Historia') out = t === 'Evento' ? 'Evento' : t === 'Lugar' ? 'Lugar' : 'Personaje histórico';
-  if (c === 'Literatura' && (s === 'Literatura' || s === 'Autor/Obra')) out = t === 'Persona' ? 'Escritor' : t === 'Personaje' ? 'Personaje' : 'Obra';
-  if (c === 'Arte' && s === 'Arte') out = t === 'Obra' ? 'Obra' : 'Artista';
-  if (c === 'Deportes' && (s === 'Deporte' || s === 'Fútbol')) out = t === 'Equipo' ? 'Equipos y clubes' : t === 'Evento' ? 'Evento' : t === 'Persona' ? 'Futbolista' : s;
-  if (c === 'Videojuegos' && s === 'Juego' && t === 'Juego') out = 'Videojuegos';
+  if (c === 'Música' && (s === 'Cantante/Grupo' || s === 'Música')) out = 'Cantante';
+  if (c === 'Historia' && s === 'Historia') out = 'Personaje histórico';
+  if (c === 'Literatura' && (s === 'Literatura' || s === 'Autor/Obra')) out = 'Obra';
+  if (c === 'Arte' && s === 'Arte') out = 'Artista';
+  if (c === 'Deportes' && (s === 'Deporte' || s === 'Fútbol')) out = s;
+  if (c === 'Videojuegos' && s === 'Juego') out = 'Videojuegos';
   return out;
 }
 
@@ -871,7 +882,7 @@ const ADULT = S(
   'Grand Theft Auto', 'Call of Duty', 'Counter-Strike', 'Mortal Kombat', 'Free Fire', 'World of Warcraft', 'League of Legends', 'Blackjack',
   'Heineken', 'Bacardi', 'Cruzcampo', 'Mahou', 'Estrella Galicia', 'Amstel', 'Guinness', 'Corona', 'Desperados', 'Absolut', 'J&B', 'Martini',
   'Campari', 'Baileys', 'San Miguel', 'Damm', 'Estrella Damm', 'Voll-Damm', 'Tinder', 'Red Bull', 'Monster', 'Mata Hari', 'Marilyn Monroe',
-  'Hitler', 'Adolf Hitler', 'Stalin', 'Joseph Stalin', 'Mussolini', 'Benito Mussolini', 'Francisco Franco', 'Kim Jong-un', 'Vladimir Putin',
+  'Hitler', 'Adolf Hitler', 'Stalin', 'Joseph Stalin', 'Mussolini', 'Benito Mussolini', 'Francisco Franco', 'Nelson Mandela', 'Kim Jong-un', 'Vladimir Putin',
   'Mao Zedong', 'Lenin', 'Trotski', 'Fidel Castro', 'Calígula', 'Nerón', 'Messalina', 'Agripina', 'Rasputín', 'Sigmund Freud', 'Karl Marx',
   'Friedrich Nietzsche', 'Bad Bunny', 'Bad Gyal', 'Anuel AA', 'Cardi B', 'Nicki Minaj', 'Megan Thee Stallion', 'Doja Cat', 'Travis Scott',
   'Eminem', '50 Cent', 'Dr. Dre', 'Snoop Dogg', 'Tupac', 'Notorious B.I.G.', 'Kendrick Lamar', 'Marilyn Manson', 'Slipknot', 'Rammstein',
@@ -885,17 +896,63 @@ const ADULT = S(
   'Cruzadas', 'Batalla de Lepanto', 'Batalla de Waterloo', 'Batalla de Trafalgar', 'Batalla de las Termópilas', 'Guerra Fría',
 );
 const KID_CATEGORIES = new Set(['Personajes', 'Videojuegos', 'Marcas', 'Lugares', 'Deportes', 'Naturaleza', 'Mitología']);
+const KID_SPORTS = S(
+  'Lionel Messi', 'Cristiano Ronaldo', 'Rafa Nadal', 'Fernando Alonso', 'Michael Jordan', 'Serena Williams',
+  'Diego Maradona', 'Pelé', 'Real Madrid', 'FC Barcelona', 'Selección española', 'Mundial de Fútbol', 'Juegos Olímpicos',
+);
+const KID_MUSIC = S(
+  'Rosalía', 'Shakira', 'Michael Jackson', 'Freddie Mercury', 'Adele', 'The Beatles', 'Queen', 'ABBA', 'Coldplay',
+  'Imagine Dragons', 'One Direction', 'Taylor Swift', 'Justin Bieber', 'Ed Sheeran', 'Bruno Mars', 'Beyoncé', 'Aitana',
+  'Dua Lipa', 'Billie Eilish', 'BTS', 'BLACKPINK',
+);
+const KID_GAMES = S(
+  'Tetris', 'Pokémon Go', 'Minecraft', 'Fortnite', 'Roblox', 'Brawl Stars', 'Among Us', 'Super Mario Bros.', 'Mario Kart',
+  'Wii Sports', 'Just Dance', 'Animal Crossing', 'Candy Crush', 'Clash Royale', 'Nintendo',
+);
+const KID_MYTHOLOGY = S(
+  'Zeus', 'Hércules', 'Medusa', 'Poseidón', 'Hades', 'Pegaso', 'Cupido', 'Sirena', 'Unicornio', 'Dragón', 'Fénix',
+  'Minotauro', 'Cíclope', 'Yeti', 'Bigfoot', 'Kraken', 'Cerbero', 'Ogro', 'Hada', 'Elfo', 'Vampiro', 'Zombi',
+);
+const KID_ARTE = S('Frida Kahlo', 'Pablo Picasso', 'Vincent van Gogh', 'Salvador Dalí', 'Leonardo da Vinci', 'La Gioconda', 'Miguel Ángel', 'Las Meninas', 'La última cena', 'El grito');
+const KID_CIENCE = S('Stephen Hawking', 'Galileo Galilei', 'Nikola Tesla', 'Thomas Edison', 'Alexander Fleming');
+const KID_CULTURE = S('Papa Francisco');
+const KID_HISTORY = S('Tutankamón', 'Antiguo Egipto', 'Llegada a la Luna', 'Imperio Romano', 'Julio César', 'Cristóbal Colón');
+const KID_LITERATURE = S('Miguel de Cervantes', 'William Shakespeare', 'J. K. Rowling', 'Don Quijote', 'Harry Potter', 'Sherlock Holmes', 'Romeo y Julieta', 'Hansel y Gretel', 'Pulgarcito', 'Alí Babá', 'El Principito', 'Rapunzel', 'Julio Verne', 'Robinson Crusoe');
+const KID_PLACES = S('Torre Eiffel', 'Sagrada Familia', 'Estatua de la Libertad', 'Nueva York', 'París', 'Londres', 'Roma', 'Madrid', 'Barcelona', 'Egipto', 'Gran Muralla China', 'Taj Mahal', 'Disneyland', 'Big Ben', 'Coliseo de Roma', 'Pirámides de Giza', 'Machu Picchu', 'Cristo Redentor', 'Monte Everest', 'Desierto del Sáhara', 'Islas Canarias', 'Venecia', 'Tokio', 'España', 'Francia', 'Italia', 'Japón', 'Estados Unidos', 'México', 'Argentina', 'Brasil');
+const KID_BRANDS = S('Coca-Cola', "McDonald's", 'Lego', 'Apple', 'Google', 'Netflix', 'Amazon', 'IKEA', 'Nike', 'Adidas', 'Zara', 'Disney', 'Ferrari', 'Mercedes-Benz', 'Volkswagen', 'Burger King', 'Nutella', 'Kinder', 'Nesquik', 'Colacao', 'Chupa Chups', 'Donuts', 'Pepsi', 'Samsung', 'Spotify', 'Pixar', 'Nintendo', 'Play-Doh', 'Hot Wheels', 'Mattel', 'Roblox', 'YouTube', 'TikTok', 'WhatsApp');
+const KID_MOVIES = S('El Rey León', 'Frozen', 'Toy Story', 'Coco', 'Los Increíbles', 'Shrek', 'Madagascar', 'Buscando a Nemo', 'Monstruos, S.A.', 'Up', 'Ratatouille', 'La Bella y la Bestia', 'Aladdín', 'Mulán', 'Vaiana', 'Encanto', 'Wall-E', 'Enredados', 'El libro de la selva', 'Alicia en el País de las Maravillas', 'Blancanieves y los siete enanitos', 'Tarzán', 'Cómo entrenar a tu dragón', 'Gru, mi villano favorito', 'Los Croods', 'Ice Age', 'Hotel Transilvania', 'Lilo y Stitch', 'Del revés', 'Elemental', 'Luca', 'Cars', 'Brave');
+const KID_CHARACTERS = S('Mafalda', 'Tintín', 'Astérix', 'Obélix', 'Darth Vader', 'La Sirenita', 'Pitufina', 'Woody', 'Buzz Lightyear', 'Mickey Mouse', 'Pato Donald', 'Goofy', 'Simba', 'Ariel', 'Cenicienta', 'Blancanieves', 'Peter Pan', 'Campanilla', 'Bob Esponja', 'Scooby-Doo', 'Tom', 'Jerry', 'Superman', 'Batman', 'Spider-Man', 'Hulk', 'Iron Man', 'Thor', 'Capitán América', 'Wonder Woman', 'Hermione Granger', 'Ron Weasley', 'Pinocho', 'Caperucita Roja', 'Doraemon', 'Sonic', 'Pac-Man', 'Pikachu', 'Lucky Luke', 'Mortadelo', 'Filemón', 'Garfield', 'Snoopy', 'Hello Kitty', 'Stitch', 'Winnie the Pooh', 'Dumbo', 'Bambi', 'Gru', 'Minion', 'Kung Fu Panda', 'Mowgli', 'Baloo', 'Dora la Exploradora', 'Peppa Pig', 'Pocoyó', 'Ash Ketchum', 'Minnie Mouse', 'Pluto', 'La Pantera Rosa', 'Wally', 'Tom y Jerry', 'Mario', 'Luigi', 'Princesa Peach', 'Luke Skywalker', 'Yoda', 'Chewbacca', 'Mary Poppins', 'Pippi Calzaslargas', 'Son Goku', 'Nemo', 'Dory', 'Elsa', 'Anna', 'Genio', 'Bestia', 'Mr. Bean', 'Patricio Estrella', 'Popeye', 'Tigger', 'Po', 'Rayo McQueen', 'Olaf', 'Bella', 'Groot', 'Zipi y Zape', 'Bugs Bunny', 'Piolín', 'Shaggy', 'Mickey Mouse', 'Baymax', 'Patrulla Canina', 'Steve de Minecraft');
+const KID_SERIES = S('Heidi', 'Bola de Dragón', 'Los Simpson', 'Modern Family', 'Los Picapiedra', 'Tom y Jerry', 'Las Tortugas Ninja', 'Pokémon', 'Oliver y Benji', 'Los Lunnis', 'Phineas y Ferb', 'Hora de aventuras', 'Dragon Ball', 'Looney Tunes', 'Los Pitufos', 'Patrulla Canina', 'Power Rangers');
+const KID_CINE_TV = S('Antonio Banderas', 'Johnny Depp', 'Tom Hanks', 'Jackie Chan', 'Bruce Lee', 'Macaulay Culkin', 'Tom Holland', 'Robert Downey Jr.', 'Harrison Ford', 'Will Smith');
 function infantil(r, dif) {
   const k = norm(r.palabra);
-  if (ADULT.has(k)) return 'No';
-  if (dif === 'Fácil') return 'Sí';
-  if (dif === 'Media' && KID_CATEGORIES.has(r.categoria)) return 'Sí';
-  return 'No';
+  if (ADULT.has(k)) return false;
+  const allowed = {
+    Arte: KID_ARTE,
+    Ciencia: KID_CIENCE,
+    Cine: KID_CINE_TV,
+    'Cine y TV': KID_CINE_TV,
+    Cultura: KID_CULTURE,
+    Deportes: KID_SPORTS,
+    Historia: KID_HISTORY,
+    Literatura: KID_LITERATURE,
+    Lugares: KID_PLACES,
+    Marcas: KID_BRANDS,
+    Mitología: KID_MYTHOLOGY,
+    Música: KID_MUSIC,
+    Naturaleza: new Set(['orangutan', 'lince', 'murcielago', 'calamar', 'halcon', 'caiman', 'avispa', 'saltamontes', 'gusano']),
+    Personajes: KID_CHARACTERS,
+    Películas: KID_MOVIES,
+    Series: KID_SERIES,
+    Videojuegos: KID_GAMES,
+  }[r.categoria];
+  return allowed?.has(k) ?? false;
 }
 
 // ---------- Ejecución ----------
 const bankRows = parseCsv(fs.readFileSync(bankPath, 'utf8').replace(/^\uFEFF/, ''));
 const headers = bankRows.shift();
+if (!headers.includes('internacional')) headers.push('internacional');
 let rows = bankRows.map(r => Object.fromEntries(headers.map((h, i) => [h, (r[i] ?? '').trim()])));
 const before = rows.length;
 
@@ -908,6 +965,9 @@ for (const r of rows) {
   r.dificultad = difficulty(r);
   r.popularidad = POPULARITY[r.dificultad];
   r.infantil = infantil(r, r.dificultad);
+  r.internacional = !NON_INTERNATIONAL.has(norm(r.palabra)) && (
+    parseBoolean(r.internacional) || ['internacional', 'international', 'global'].includes(norm(r.alcance))
+  );
 }
 // Duplicados exactos que aparezcan tras renombrar: se conserva el de id más bajo.
 const seen = new Set();

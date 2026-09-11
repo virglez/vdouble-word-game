@@ -39,8 +39,17 @@ test('English has explicit UI translations and translated labels for every card'
   for (const card of WORD_BANK) {
     assert.ok(card.categoryTranslations?.en, card.categoria);
     assert.ok(card.subcategoryTranslations?.en, card.subcategoria);
-    assert.ok(UI_TEXT.en['cardType_' + card.tipo], card.tipo);
   }
+});
+
+test('El banco de palabras ya no depende del campo tipo', async () => {
+  const csv = readFileSync(new URL('../data/wordBank.csv', import.meta.url), 'utf8');
+  const header = csv.split(/\r?\n/, 1)[0].split(',');
+  assert.equal(header.includes('tipo'), false, 'El CSV todavía tiene la columna legacy tipo');
+
+  const { WORD_BANK } = await import('../data/wordBank.ts');
+  assert.ok(WORD_BANK.length > 0, 'El banco está vacío');
+  assert.equal(Object.hasOwn(WORD_BANK[0], 'tipo'), false, 'La tarjeta todavía expone el campo tipo');
 });
 
 test('Category and subcategory translations only reference values used by the word bank', async () => {

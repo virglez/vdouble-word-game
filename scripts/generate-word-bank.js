@@ -56,6 +56,10 @@ function parseCsv(text) {
   return rows;
 }
 
+function parseBoolean(value) {
+  return ['true', '1', 'si', 'yes'].includes(String(value ?? '').trim().toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, ''));
+}
+
 if (!fs.existsSync(inputPath)) {
   throw new Error(`No se encuentra el CSV definitivo: ${inputPath}`);
 }
@@ -63,7 +67,7 @@ if (!fs.existsSync(inputPath)) {
 const rows = parseCsv(fs.readFileSync(inputPath, 'utf8').replace(/^\uFEFF/, ''));
 const headers = rows.shift();
 const indexes = Object.fromEntries(headers.map((header, index) => [header.trim(), index]));
-const requiredHeaders = ['palabra', 'categoria', 'subcategoria', 'dificultad', 'tipo'];
+const requiredHeaders = ['palabra', 'categoria', 'subcategoria', 'dificultad'];
 for (const header of requiredHeaders) {
   if (indexes[header] === undefined) {
     throw new Error(`El CSV no contiene la columna requerida "${header}"`);
@@ -117,20 +121,20 @@ const cards = rows
     const category = row[indexes.categoria]?.trim() ?? 'Cultura';
     const subcategory = row[indexes.subcategoria]?.trim() ?? '';
     const difficulty = row[indexes.dificultad]?.trim() ?? 'Media';
-    const tipo = row[indexes.tipo]?.trim() ?? '';
     const alcance = row[indexes.alcance]?.trim().toLowerCase() ?? '';
     const internacionalByAlcance = alcance === 'internacional' || alcance === 'international' || alcance === 'global';
-    const internacionalFlagValue = indexes.internacional
-      ? (row[indexes.internacional]?.trim().toLowerCase() === 'sí' || row[indexes.internacional]?.trim().toLowerCase() === 'si' || row[indexes.internacional]?.trim().toLowerCase() === 'yes' || row[indexes.internacional]?.trim().toLowerCase() === 'true')
+    const internacionalFlagValue = indexes.internacional !== undefined
+      ? parseBoolean(row[indexes.internacional])
       : internacionalByAlcance;
+    const infantilFlagValue = indexes.infantil !== undefined ? parseBoolean(row[indexes.infantil]) : false;
     const id = String(row[indexes.id] ?? '').trim();
     const base = {
       palabra,
       categoria: category,
       subcategoria: subcategory,
       dificultad: difficulty,
-      tipo,
-      internacional: internacionalFlagValue ? true : undefined,
+      infantil: infantilFlagValue,
+      internacional: internacionalFlagValue,
       ...(id ? { id } : {}),
     };
     const cardTranslations = translations.get(id);
@@ -153,7 +157,11 @@ const difficulties = [...new Set(cards.map((card) => card.dificultad))];
 const difficultyType = difficulties.map((difficulty) => JSON.stringify(difficulty)).join(' | ');
 // Each entry is checked separately, avoiding an enormous inferred union.
 const body = cards.map((card) => `  defineCard(${JSON.stringify(card)})`).join(',\n');
-const output = `// Generado desde la base cultural definitiva. No editar a mano.\n// Regenerar con: pnpm run generate-word-bank\nexport type Difficulty = ${difficultyType};\n\nexport type WordCard = {\n  id?: string;\n  palabra: string;\n  categoria: string;\n  subcategoria: string;\n  dificultad: Difficulty;\n  tipo: string;\n  internacional?: boolean;\n  translations?: Partial<Record<string, string>>;\n  categoryTranslations?: Partial<Record<string, string>>;\n  subcategoryTranslations?: Partial<Record<string, string>>;\n};\n\nexport const WORD_BANK: WordCard[] = [\n${body}\n];\n`;
+const output = `// Generado desde la base cultural definitiva. No editar a mano.\n// Regenerar con: pnpm run generate-word-bank\nexport type Difficulty = ${difficultyType};\n\nexport type WordCard = {\n  id?: string;\n  palabra: string;\n  categoria: string;\n  subcategoria: string;\n  dificultad: Difficulty;\n  internacional?: boolean;\n  translations?: Partial<Record<string, string>>;\n  categoryTranslations?: Partial<Record<string, string>>;\n  subcategoryTranslations?: Partial<Record<string, string>>;\n};\n\nexport const WORD_BANK: WordCard[] = [\n${body}\n];\n`;
 
-fs.writeFileSync(outputPath, output.replace('export const WORD_BANK', 'function defineCard(card: WordCard): WordCard { return card; }\n\nexport const WORD_BANK'));
+const typedOutput = output.replace(
+  '  internacional?: boolean;',
+  '  infantil: boolean;\n  internacional: boolean;',
+);
+fs.writeFileSync(outputPath, typedOutput.replace('export const WORD_BANK', 'function defineCard(card: WordCard): WordCard { return card; }\n\nexport const WORD_BANK'));
 console.log(`Banco generado: ${cards.length} tarjetas desde ${path.basename(inputPath)}${fs.existsSync(translationInputPath) ? ` y ${path.basename(translationInputPath)}` : ''}`);

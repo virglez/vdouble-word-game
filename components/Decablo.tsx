@@ -18,7 +18,7 @@ export function DecabloLogo({ compact = false }: { compact?: boolean }) {
     <Text style={[s.logo, compact && s.logoSmall]}>
       <Text style={s.logoLight}>DEC</Text><Text style={s.logoAccent}>A</Text><Text style={s.logoLight}>BLO</Text><Text style={s.logoQuestion}>?</Text>
     </Text>
-    <Text style={s.signature}>by VDOUBLE</Text>
+    <Text style={s.signature}>by VCSTUDIO</Text>
   </View>;
 }
 

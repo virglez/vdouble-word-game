@@ -5,7 +5,7 @@ import { AppState } from 'react-native';
 import { answer, buildDeck, changeLanguage, confirmReview, correctReview, finishTurn, initialState, normalizedWord, resetForSetup, resetRound, returnHome, roundNames, TURN_LENGTH_MS, type CardCount, type GameState, type LanguageCode } from '@/lib/game';
 export { roundNames, TURN_LENGTH_MS, type CardCount, type LanguageCode } from '@/lib/game';
 
-const STORAGE_KEY = '@vdouble/state-v2';
+const STORAGE_KEY = '@vcstudio.games/state-v2';
 
 function useGameValue() {
   const [state, setState] = useState<GameState>(initialState);
@@ -22,7 +22,7 @@ function useGameValue() {
           !Array.isArray(parsed.remaining) || !Array.isArray(parsed.review) ||
           !Array.isArray(parsed.roundScores) || parsed.roundScores.length !== 3 ||
           ![0, 1, 2].includes(parsed.roundIndex) || ![0, 1].includes(parsed.currentTeam)) return;
-      setState(parsed.screen === 'play' ? finishTurn(parsed) : parsed);
+      setState(parsed.screen === 'play' ? finishTurn({ ...parsed, familyMode: parsed.familyMode === true }) : { ...parsed, familyMode: parsed.familyMode === true });
     }).catch(() => undefined).finally(() => { if (active) setHydrated(true); });
     return () => { active = false; };
   }, []);
@@ -58,6 +58,7 @@ function useGameValue() {
       return { ...current, teams };
     }),
     setLanguage: (language: LanguageCode) => setState(current => changeLanguage(current, language)),
+    setFamilyMode: (familyMode: boolean) => setState(current => ({ ...current, familyMode })),
     setCardCount: (cardCount: CardCount) => setState(current => ({ ...current, cardCount })),
     createGame: async () => {
       if (creating.current) return;
@@ -67,7 +68,7 @@ function useGameValue() {
       try {
         // Give the loading indicator a painted frame before building the deck.
         await new Promise<void>(resolve => requestAnimationFrame(() => setTimeout(resolve, 80)));
-        const deck = buildDeck(current.cardCount, current.usedWords, current.language);
+        const deck = buildDeck(current.cardCount, current.usedWords, current.language, current.familyMode);
         const teams: GameState['teams'] = [
           { customName: current.teams[0].customName, customIcon: current.teams[0].customIcon, name: current.teams[0].name.trim() || UI_TEXT[current.language].teamCreateIntro.replace('{n}', '1'), score: 0, icon: current.teams[0].icon || '☀️' },
           { customName: current.teams[1].customName, customIcon: current.teams[1].customIcon, name: current.teams[1].name.trim() || UI_TEXT[current.language].teamCreateIntro.replace('{n}', '2'), score: 0, icon: current.teams[1].icon || '🌙' },

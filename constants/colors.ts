@@ -1,22 +1,22 @@
 export const BRAND = {
-  navy: '#0B1B2B', yellow: '#FFD233', coral: '#FF6B6B', mint: '#02C39A', white: '#F7F7F7',
+  purple: '#180224', orange: '#e88421', lyla: '#a26bfd', indigo: '#0177e5', white: '#F7F7F7',
 } as const;
 
-export const TEAM_COLORS = ['#9B5DE5', '#FF8A3D'] as const;
-export const ROUND_COLORS = [BRAND.yellow, BRAND.coral, BRAND.mint] as const;
+export const TEAM_COLORS = ['#a97ae1', '#459cec'] as const;
+export const ROUND_COLORS = [BRAND.orange, BRAND.lyla, BRAND.indigo] as const;
 
 const colors = {
   light: {
-    text: BRAND.white, tint: BRAND.yellow,
-    background: BRAND.navy, foreground: BRAND.white,
-    card: '#142B40', cardForeground: BRAND.white,
-    primary: BRAND.yellow, primaryForeground: BRAND.navy,
-    secondary: '#1D374D', secondaryForeground: '#DFE8EE',
-    muted: '#142B40', mutedForeground: '#B4C4D1',
-    accent: BRAND.coral, accentForeground: BRAND.navy, heroGradient: BRAND.yellow,
-    destructive: BRAND.coral, destructiveForeground: BRAND.navy,
-    success: BRAND.mint, successForeground: BRAND.navy,
-    border: '#30495D', input: '#30495D',
+    text: BRAND.white, tint: BRAND.orange,
+    background: BRAND.purple, foreground: BRAND.white,
+    card: '#2d1440', cardForeground: BRAND.white,
+    primary: BRAND.orange, primaryForeground: BRAND.purple,
+    secondary: '#361d4d', secondaryForeground: '#e0dfee',
+    muted: '#2d1440', mutedForeground: '#bbb4d1',
+    accent: BRAND.lyla, accentForeground: BRAND.purple, heroGradient: BRAND.orange,
+    destructive: BRAND.lyla, destructiveForeground: BRAND.purple,
+    success: BRAND.indigo, successForeground: BRAND.purple,
+    border: '#42305d', input: '#42305d',
   },
   radius: 24,
 };

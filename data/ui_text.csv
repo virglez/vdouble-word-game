@@ -2,7 +2,7 @@ clave,idioma,texto
 finalTieSubtitle,es,Habéis quedado igualados. Una revancha lo decide todo.
 finalTieSubtitle,en,You are tied. A rematch will decide it.
 finalTieSubtitle,fr,Vous êtes à égalité. Une revanche vous départagera.
-app_name,es-ES,VDOUBLE
+app_name,es-ES,VCSTUDIO
 round_1_instruction,es-ES,Describe la palabra sin decirla
 round_2_instruction,es-ES,Una sola palabra
 round_3_instruction,es-ES,Haz mímica
@@ -18,6 +18,8 @@ round,es-ES,Ronda
 score,es-ES,Puntuación
 settings,es-ES,Ajustes
 language,es-ES,Idioma
+familyMode,es-ES,Modo familiar
+familyModeDescription,es-ES,Solo tarjetas infantiles
 new_game,es-ES,Nueva partida
 play_again,es-ES,Jugar de nuevo
 winner,es-ES,Ganador
@@ -26,7 +28,7 @@ join_room,es-ES,Unirse a sala
 create_room,es-ES,Crear sala
 confirm,es-ES,Confirmar
 cancel,es-ES,Cancelar
-app_name,en,VDOUBLE
+app_name,en,VCSTUDIO
 round_1_instruction,en,Describe the word without saying it
 round_2_instruction,en,One word only
 round_3_instruction,en,Act it out
@@ -42,6 +44,8 @@ round,en,Round
 score,en,Score
 settings,en,Settings
 language,en,Language
+familyMode,en,Family mode
+familyModeDescription,en,Children's cards only
 new_game,en,New game
 play_again,en,Play again
 winner,en,Winner
@@ -50,7 +54,7 @@ join_room,en,Join room
 create_room,en,Create room
 confirm,en,Confirm
 cancel,en,Cancel
-app_name,fr,VDOUBLE
+app_name,fr,VCSTUDIO
 round_1_instruction,fr,Décrivez le mot sans le dire
 round_2_instruction,fr,Un seul mot
 round_3_instruction,fr,Mimez-le
@@ -66,6 +70,8 @@ round,fr,Manche
 score,fr,Score
 settings,fr,Paramètres
 language,fr,Langue
+familyMode,fr,Mode famille
+familyModeDescription,fr,Cartes pour enfants uniquement
 new_game,fr,Nouvelle partie
 play_again,fr,Rejouer
 winner,fr,Gagnant
@@ -74,7 +80,7 @@ join_room,fr,Rejoindre une salle
 create_room,fr,Créer une salle
 confirm,fr,Confirmer
 cancel,fr,Annuler
-app_name,pt,VDOUBLE
+app_name,pt,VCSTUDIO
 round_1_instruction,pt,Descreve a palavra sem a dizer
 round_2_instruction,pt,Uma só palavra
 round_3_instruction,pt,Faz mímica
@@ -90,6 +96,8 @@ round,pt,Ronda
 score,pt,Pontuação
 settings,pt,Definições
 language,pt,Idioma
+familyMode,pt,Modo família
+familyModeDescription,pt,Apenas cartões infantis
 new_game,pt,Novo jogo
 play_again,pt,Jogar novamente
 winner,pt,Vencedor
@@ -395,9 +403,9 @@ startGameAgain,fr,Relancer la partie
 startNewGame,es,Iniciar partida de nuevo
 startNewGame,en,Start the game again
 startNewGame,fr,Relancer la partie
-homeScreenTitle,es,VDOUBLE
-homeScreenTitle,en,VDOUBLE
-homeScreenTitle,fr,VDOUBLE
+homeScreenTitle,es,VCSTUDIO
+homeScreenTitle,en,VCSTUDIO
+homeScreenTitle,fr,VCSTUDIO
 screenHeaderBack,es,Volver
 screenHeaderBack,en,Back
 screenHeaderBack,fr,Retour
@@ -516,7 +524,7 @@ playWaitText,pt-PT,Os cartões passados voltam a aparecer
 exitGame,pt-PT,Sair da partida
 startGameAgain,pt-PT,Começar outra partida
 startNewGame,pt-PT,Começar outra partida
-homeScreenTitle,pt-PT,VDOUBLE
+homeScreenTitle,pt-PT,VCSTUDIO
 screenHeaderBack,pt-PT,Voltar
 setupScreenHeaderTitle,pt-PT,Nova partida
 instructionsHeaderTitle,pt-PT,Como jogar

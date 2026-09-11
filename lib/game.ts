@@ -29,6 +29,7 @@ export function resetForSetup(state: GameState): GameState {
     cardCount: state.cardCount,
     usedWords: state.usedWords,
     language: state.language,
+    familyMode: state.familyMode,
     teams: [
       { customName: state.teams[0].customName, customIcon: state.teams[0].customIcon, name: state.teams[0].name, score: 0, icon: state.teams[0].customIcon ? state.teams[0].icon : '☀️' },
       { customName: state.teams[1].customName, customIcon: state.teams[1].customIcon, name: state.teams[1].name, score: 0, icon: state.teams[1].customIcon ? state.teams[1].icon : '🌙' },
@@ -43,6 +44,7 @@ export function returnHome(state: GameState): GameState {
     cardCount: state.cardCount,
     usedWords: state.usedWords,
     language: state.language,
+    familyMode: state.familyMode,
     teams: [
       { customName: state.teams[0].customName, customIcon: state.teams[0].customIcon, name: state.teams[0].name, score: 0, icon: state.teams[0].icon },
       { customName: state.teams[1].customName, customIcon: state.teams[1].customIcon, name: state.teams[1].name, score: 0, icon: state.teams[1].icon },
@@ -126,6 +128,7 @@ export type GameState = {
   review: { word: string; correct: boolean }[];
   roundScores: [number, number][];
   language: LanguageCode;
+  familyMode: boolean;
 };
 
 export const initialState: GameState = {
@@ -146,6 +149,7 @@ export const initialState: GameState = {
   review: [],
   roundScores: [[0, 0], [0, 0], [0, 0]],
   language: 'es',
+  familyMode: false,
 };
 
 export const roundNames = ['Descripción', 'Una palabra', 'Mímica'] as const;
@@ -172,14 +176,16 @@ function moveCardToEnd(queue: string[], card: string): string[] {
   return [...queue.filter((word) => word !== card), card];
 }
 
-export function buildDeck(cardCount: CardCount, excludedWords: string[], language: LanguageCode = 'es'): WordCard[] {
+export function buildDeck(cardCount: CardCount, excludedWords: string[], language: LanguageCode = 'es', familyMode = false): WordCard[] {
   const unique = new Map<string, WordCard>();
   for (const card of WORD_BANK) {
     unique.set(normalizedWord(card.palabra), card);
   }
   const allCandidates = Array.from(unique.values());
   const excluded = new Set(excludedWords);
-  const available = allCandidates.filter((card) => !excluded.has(normalizedWord(card.palabra)));
+  const available = allCandidates
+    .filter((card) => !excluded.has(normalizedWord(card.palabra)))
+    .filter((card) => !familyMode || card.infantil === true);
 
   const internationalOnly = language !== 'es';
   const internationalCandidates = available.filter((card) => card.internacional === true);

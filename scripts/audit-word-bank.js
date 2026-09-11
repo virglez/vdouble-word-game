@@ -22,10 +22,10 @@ const R = rows.map(r => Object.fromEntries(headers.map((h, i) => [h, r[i] ?? '']
 const out = [];
 const log = (...a) => out.push(a.join(' '));
 const count = (arr) => { const m = new Map(); for (const v of arr) m.set(v, (m.get(v) ?? 0) + 1); return [...m.entries()].sort((a, b) => b[1] - a[1]); };
-const fmt = (r) => `${r.id} | ${r.palabra} | ${r.categoria} | ${r.subcategoria} | ${r.tipo} | ${r.epoca}`;
+const fmt = (r) => `${r.id} | ${r.palabra} | ${r.categoria} | ${r.subcategoria} | ${r.epoca}`;
 
 log('ROWS', R.length);
-for (const f of ['categoria', 'popularidad', 'dificultad', 'epoca', 'alcance', 'tipo', 'infantil']) {
+for (const f of ['categoria', 'popularidad', 'dificultad', 'epoca', 'alcance', 'infantil']) {
   log(`\n## ${f}`); for (const [v, c] of count(R.map(r => r[f]))) log(`  ${c}\t${v}`);
 }
 log('\n## subcategoria per categoria');
@@ -75,27 +75,27 @@ for (let i = 0; i < keys.length; i++) for (let j = i + 1; j < keys.length; j++) 
 }
 
 const rule = (name, fn) => { log(`\n## RULE ${name}`); let n = 0; for (const r of R) if (fn(r)) { n++; log('  ', fmt(r)); } log('  count', n); };
-rule('Películas tipo!=Película', r => r.categoria === 'Películas' && r.tipo !== 'Película');
-rule('Series tipo!=Serie', r => r.categoria === 'Series' && r.tipo !== 'Serie');
-rule('Lugares tipo!=Lugar', r => r.categoria === 'Lugares' && r.tipo !== 'Lugar');
-rule('Marcas tipo!=Marca', r => r.categoria === 'Marcas' && r.tipo !== 'Marca');
-rule('Personajes tipo!=Personaje', r => r.categoria === 'Personajes' && r.tipo !== 'Personaje');
-rule('Cine y TV with Serie/Película tipo', r => r.categoria === 'Cine y TV' && ['Serie', 'Película'].includes(r.tipo));
-rule('Música grupo/cantante mismatch', r => r.categoria === 'Música' && ((['Grupo', 'Grupo musical'].includes(r.subcategoria) && r.tipo !== 'Grupo') || (r.subcategoria === 'Cantante' && r.tipo !== 'Persona')));
-rule('Música tipo Grupo but subcat not group', r => r.categoria === 'Música' && r.tipo === 'Grupo' && !['Grupo', 'Grupo musical'].includes(r.subcategoria));
-rule('Deportes tipo Evento/Lugar (countries?)', r => r.categoria === 'Deportes' && ['Evento', 'Lugar'].includes(r.tipo));
+rule('Películas categoria con encabezados diferentes', r => r.categoria === 'Películas' && ['Película', 'Film'].includes(r.subcategoria) === false);
+rule('Series categoria con encabezados diferentes', r => r.categoria === 'Series' && ['Serie', 'Show'].includes(r.subcategoria) === false);
+rule('Lugares categoria con encabezados diferentes', r => r.categoria === 'Lugares' && ['Lugar', 'Ciudad', 'País', 'Monumento'].includes(r.subcategoria) === false);
+rule('Marcas categoria con encabezados diferentes', r => r.categoria === 'Marcas' && ['Marca', 'Empresa'].includes(r.subcategoria) === false);
+rule('Personajes categoria con encabezados diferentes', r => r.categoria === 'Personajes' && ['Personaje', 'Superhéroe', 'Cómic'].includes(r.subcategoria) === false);
+rule('Cine y TV con subcategoría de serie o película', r => r.categoria === 'Cine y TV' && ['Serie', 'Película'].includes(r.subcategoria));
+rule('Música grupo/cantante mismatch', r => r.categoria === 'Música' && ((['Grupo', 'Grupo musical'].includes(r.subcategoria) && r.categoria !== 'Música') || (r.subcategoria === 'Cantante' && r.categoria !== 'Música')));
+rule('Música subcategoria fuera de grupo', r => r.categoria === 'Música' && ['Grupo', 'Grupo musical'].includes(r.subcategoria) === false && r.subcategoria === 'Cantante');
+rule('Deportes subcat evento/lugar', r => r.categoria === 'Deportes' && ['Evento', 'Lugar'].includes(r.subcategoria));
 rule('Deportes subcat Deporte/Deportista generic', r => r.categoria === 'Deportes' && ['Deporte', 'Deportista'].includes(r.subcategoria) && false);
-rule('tipo Persona with article start', r => r.tipo === 'Persona' && /^(El|La|Los|Las) /.test(r.palabra));
-rule('tipo Persona in Literatura/Cultura subcat Obra-like', r => r.tipo === 'Persona' && ['Obra', 'Literatura'].includes(r.subcategoria));
-rule('Literatura/Personaje with tipo Obra', r => r.subcategoria === 'Personaje' && r.tipo === 'Obra');
-rule('Historia tipo Lugar', r => r.categoria === 'Historia' && r.tipo === 'Lugar');
+rule('Personas con artículo inicial', r => /^(El|La|Los|Las) /.test(r.palabra) && r.categoria === 'Personajes');
+rule('Personas en Literatura/Cultura subcat Obra-like', r => r.categoria === 'Personajes' && ['Obra', 'Literatura'].includes(r.subcategoria));
+rule('Literatura/Personaje con obra', r => r.subcategoria === 'Personaje' && ['Obra', 'Libro'].includes(r.categoria));
+rule('Historia categoria lugar', r => r.categoria === 'Historia' && ['Lugar', 'Ciudad', 'País', 'Monumento'].includes(r.subcategoria));
 rule('Mitología tipo Personaje but place-like', r => r.categoria === 'Mitología' && /^(Olimpo|Valhalla|Atlantis|Atlántida|Asgard|Averno|Hades|Tártaro|Eldorado|El Dorado|Shangri)/.test(r.palabra));
 rule('Historia/Arte/Literatura/Mitología/Cultura epoca Actual', r => ['Historia', 'Arte', 'Literatura', 'Mitología', 'Cultura'].includes(r.categoria) && r.epoca === 'Actual');
-rule('tipo Obra/Personaje in Lugares/Marcas', r => ['Lugares', 'Marcas'].includes(r.categoria) && ['Obra', 'Personaje', 'Persona'].includes(r.tipo));
-rule('Videojuegos tipo Personaje', r => r.categoria === 'Videojuegos' && r.tipo === 'Personaje');
+rule('Obra/Personaje en Lugares/Marcas', r => ['Lugares', 'Marcas'].includes(r.categoria) && ['Obra', 'Personaje', 'Persona'].includes(r.subcategoria));
+rule('Videojuegos tipo Personaje', r => r.categoria === 'Videojuegos' && r.subcategoria === 'Personaje');
 
 const cross = (a, b) => { log(`\n## crosstab ${a} x ${b}`); const m = new Map(); for (const r of R) { const k = `${r[a]} | ${r[b]}`; m.set(k, (m.get(k) ?? 0) + 1); } for (const [k, c] of [...m.entries()].sort()) log(`  ${c}\t${k}`); };
-cross('dificultad', 'popularidad'); cross('dificultad', 'infantil'); cross('categoria', 'dificultad'); cross('categoria', 'epoca'); cross('tipo', 'infantil');
+cross('dificultad', 'popularidad'); cross('dificultad', 'infantil'); cross('categoria', 'dificultad'); cross('categoria', 'epoca'); cross('subcategoria', 'infantil');
 
 fs.writeFileSync(process.argv[3] || path.join(require('os').tmpdir(), 'wordbank-report.txt'), out.join('\n'), 'utf8');
 console.log('written', process.argv[3] || path.join(require('os').tmpdir(), 'wordbank-report.txt'), out.length, 'lines');
