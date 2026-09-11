@@ -1,0 +1,73 @@
+FILAS INFANTIL: 1091
+
+RECUENTOS
+Historia: 35
+Cultura: 2
+Ciencia: 2
+Arte: 7
+Literatura: 13
+Mitolog?a: 0
+Naturaleza: 9
+M?sica: 0
+Lugares: 170
+Marcas: 198
+Personajes: 175
+Deportes: 89
+Videojuegos: 49
+Pel?culas: 0
+Series: 50
+Cine y TV: 51
+
+[Historia]
+Julio César | Cristóbal Colón | Nelson Mandela | Napoleón | Alejandro Magno | Mahatma Gandhi | Martin Luther King | Abraham Lincoln | Reina Isabel II | Tutankamón | Che Guevara | Moisés | Neil Armstrong | Barack Obama | Buda | Jesús | Revolución Francesa | Primera Guerra Mundial | Segunda Guerra Mundial | Llegada a la Luna | Renacimiento | Antiguo Egipto | Imperio Romano | Walt Disney | Steve Jobs | Bill Gates | Donald Trump | Adolf Hitler | Guerra Civil Española | Descubrimiento de América | Edad Media | Caída del Muro de Berlín | Hundimiento del Titanic | Francisco Franco | Isaac Newton
+
+[Cultura]
+Papa Francisco | Kim Kardashian
+
+[Ciencia]
+Stephen Hawking | Elon Musk
+
+[Arte]
+Frida Kahlo | Pablo Picasso | Vincent van Gogh | Salvador Dalí | Leonardo da Vinci | La Gioconda | Miguel Ángel
+
+[Literatura]
+Miguel de Cervantes | William Shakespeare | J. K. Rowling | Don Quijote | Harry Potter | Sherlock Holmes | Romeo y Julieta | Hansel y Gretel | Pulgarcito | Alí Babá | Don Quijote de la Mancha | El Principito | Rapunzel
+
+[Mitolog?a]
+
+
+[Naturaleza]
+Orangután | Lince | Murciélago | Calamar | Halcón | Caimán | Avispa | Saltamontes | Gusano
+
+[SECUNDARIAS: EXCLUIR POR REFERENCIA ADULTA/POLITICA/HISTORICA/VIOLENTA/TERROR/ADULTA O DIFICULTAD]
+
+[M?sica ? 0]
+
+
+[Lugares ? 46]
+Torre Eiffel [hist?rica/cl?sica] | Sagrada Familia [hist?rica/cl?sica] | Estatua de la Libertad [hist?rica/cl?sica] | Roma [hist?rica/cl?sica] | Egipto [hist?rica/cl?sica] | Gran Muralla China [hist?rica/cl?sica] | Taj Mahal [hist?rica/cl?sica] | Big Ben [hist?rica/cl?sica] | Coliseo de Roma [hist?rica/cl?sica] | Pirámides de Giza [hist?rica/cl?sica] | Machu Picchu [hist?rica/cl?sica] | Cristo Redentor [hist?rica/cl?sica] | Alhambra [hist?rica/cl?sica] | Museo del Prado [hist?rica/cl?sica] | Berlín [hist?rica/cl?sica] | Atenas [hist?rica/cl?sica] | Los Ángeles [hist?rica/cl?sica] | San Francisco [hist?rica/cl?sica] | Río de Janeiro [hist?rica/cl?sica] | Buenos Aires [hist?rica/cl?sica] | Ciudad de México [hist?rica/cl?sica] | La Habana [hist?rica/cl?sica] | Muro de Berlín [hist?rica/cl?sica] | Times Square [hist?rica/cl?sica] | Central Park [hist?rica/cl?sica] | Camp Nou [hist?rica/cl?sica] | Santiago Bernabéu [hist?rica/cl?sica] | Puerta del Sol [hist?rica/cl?sica] | Mezquita de Córdoba [hist?rica/cl?sica] | Catedral de Santiago [hist?rica/cl?sica] | Teide [hist?rica/cl?sica] | Formentera [hist?rica/cl?sica] | Menorca [hist?rica/cl?sica] | Pekín [hist?rica/cl?sica] | Dubái [hist?rica/cl?sica] | Praga [hist?rica/cl?sica] | Viena [hist?rica/cl?sica] | Ámsterdam [hist?rica/cl?sica] | Bruselas [hist?rica/cl?sica] | Lisboa [hist?rica/cl?sica] | Dublín [hist?rica/cl?sica] | Mónaco [hist?rica/cl?sica] | Malta [hist?rica/cl?sica] | Benidorm [hist?rica/cl?sica] | Marbella [hist?rica/cl?sica] | Casa Blanca [hist?rica/cl?sica]
+
+[Marcas ? 1]
+Chupa Chups [hist?rica/cl?sica]
+
+[Personajes ? 83]
+Mafalda [hist?rica/cl?sica] | Tintín [hist?rica/cl?sica] | Astérix [hist?rica/cl?sica] | Obélix [hist?rica/cl?sica] | Darth Vader [hist?rica/cl?sica] | Indiana Jones [hist?rica/cl?sica] | La Sirenita [hist?rica/cl?sica] | Pitufina [hist?rica/cl?sica] | Mickey Mouse [hist?rica/cl?sica] | Pato Donald [hist?rica/cl?sica] | Goofy [hist?rica/cl?sica] | Simba [hist?rica/cl?sica] | Scar [hist?rica/cl?sica] | Ariel [hist?rica/cl?sica] | Cenicienta [hist?rica/cl?sica] | Blancanieves [hist?rica/cl?sica] | Peter Pan [hist?rica/cl?sica] | Campanilla [hist?rica/cl?sica] | Scooby-Doo [hist?rica/cl?sica] | Tom [hist?rica/cl?sica] | Jerry [hist?rica/cl?sica] | Joker [hist?rica/cl?sica] | Gandalf [hist?rica/cl?sica] | Frodo [hist?rica/cl?sica] | Gollum [hist?rica/cl?sica] | Drácula [hist?rica/cl?sica] | Frankenstein [hist?rica/cl?sica] | Pinocho [hist?rica/cl?sica] | Caperucita Roja [hist?rica/cl?sica] | Alicia [hist?rica/cl?sica] | Vegeta [hist?rica/cl?sica] | Pac-Man [hist?rica/cl?sica] | Pikachu [hist?rica/cl?sica] | Lucky Luke [hist?rica/cl?sica] | Mortadelo [hist?rica/cl?sica] | Filemón [hist?rica/cl?sica] | Garfield [hist?rica/cl?sica] | Snoopy [hist?rica/cl?sica] | Charlie Brown [hist?rica/cl?sica] | Hello Kitty [hist?rica/cl?sica] | Pocahontas [hist?rica/cl?sica] | Jasmine [hist?rica/cl?sica] | Genio de Aladdín [hist?rica/cl?sica] | Winnie the Pooh [hist?rica/cl?sica] | Dumbo [hist?rica/cl?sica] | Bambi [hist?rica/cl?sica] | 101 dálmatas [hist?rica/cl?sica] | Cruella de Vil [hist?rica/cl?sica] | Maléfica [hist?rica/cl?sica] | Capitán Garfio [hist?rica/cl?sica] | Pumba [hist?rica/cl?sica] | Timón [hist?rica/cl?sica] | Asno [hist?rica/cl?sica] | Mowgli [hist?rica/cl?sica] | Baloo [hist?rica/cl?sica] | Shin Chan [hist?rica/cl?sica] | Minnie Mouse [hist?rica/cl?sica] | Pluto [hist?rica/cl?sica] | Olivia [hist?rica/cl?sica] | La Pantera Rosa [hist?rica/cl?sica] | Wally [hist?rica/cl?sica] | Vilma Picapiedra [hist?rica/cl?sica] | Pedro Picapiedra [hist?rica/cl?sica] | Capitán Haddock [hist?rica/cl?sica] | Papá Pitufo [hist?rica/cl?sica] | Son Goku [hist?rica/cl?sica] | Piccolo [hist?rica/cl?sica] | Mario [hist?rica/cl?sica] | Luigi [hist?rica/cl?sica] | Princesa Peach [hist?rica/cl?sica] | Lara Croft [hist?rica/cl?sica] | Luke Skywalker [hist?rica/cl?sica] | Yoda [hist?rica/cl?sica] | Chewbacca [hist?rica/cl?sica] | Jack Sparrow [hist?rica/cl?sica] | Lobezno [hist?rica/cl?sica] | Marty McFly [hist?rica/cl?sica] | Mary Poppins [hist?rica/cl?sica] | Willy Wonka [hist?rica/cl?sica] | Pippi Calzaslargas [hist?rica/cl?sica] | Popeye [hist?rica/cl?sica] | Sancho Panza [hist?rica/cl?sica] | Rocky Balboa [hist?rica/cl?sica]
+
+[Deportes ? 27]
+Michael Jordan [hist?rica/cl?sica] | Diego Maradona [hist?rica/cl?sica] | Pelé [hist?rica/cl?sica] | Iker Casillas [hist?rica/cl?sica] | Fernando Torres [hist?rica/cl?sica] | Andrés Iniesta [hist?rica/cl?sica] | Xavi Hernández [hist?rica/cl?sica] | Zinedine Zidane [hist?rica/cl?sica] | Ronaldinho [hist?rica/cl?sica] | Usain Bolt [hist?rica/cl?sica] | Michael Phelps [hist?rica/cl?sica] | Tiger Woods [hist?rica/cl?sica] | Juegos Olímpicos [hist?rica/cl?sica] | David Beckham [hist?rica/cl?sica] | Raúl González [hist?rica/cl?sica] | Carles Puyol [hist?rica/cl?sica] | Gerard Piqué [hist?rica/cl?sica] | David Villa [hist?rica/cl?sica] | Alberto Contador [hist?rica/cl?sica] | Miguel Induráin [hist?rica/cl?sica] | Jorge Lorenzo [hist?rica/cl?sica] | Muhammad Ali [hist?rica/cl?sica] | Mike Tyson [hist?rica/cl?sica] | Tour de Francia [hist?rica/cl?sica] | Michael Schumacher [hist?rica/cl?sica] | Dani Pedrosa [hist?rica/cl?sica] | Copa del Rey [referencia sensible]
+
+[Videojuegos ? 8]
+Tetris [hist?rica/cl?sica] | Pokémon Go [hist?rica/cl?sica] | Wii [hist?rica/cl?sica] | Zelda [hist?rica/cl?sica] | FIFA [hist?rica/cl?sica] | Los Sims [hist?rica/cl?sica] | Grand Theft Auto [hist?rica/cl?sica] | Mario Kart [hist?rica/cl?sica]
+
+[Pel?culas ? 0]
+
+
+[Series ? 27]
+Friends [hist?rica/cl?sica] | El Príncipe de Bel-Air [hist?rica/cl?sica] | Heidi [hist?rica/cl?sica] | Los Simpson [hist?rica/cl?sica] | Juego de Tronos [hist?rica/cl?sica] | Breaking Bad [hist?rica/cl?sica] | Aquí no hay quien viva [hist?rica/cl?sica] | Aída [hist?rica/cl?sica] | The Big Bang Theory [hist?rica/cl?sica] | Física o Química [hist?rica/cl?sica] | El Internado [hist?rica/cl?sica] | Modern Family [hist?rica/cl?sica] | Machos Alfa [hist?rica/cl?sica] | Cómo conocí a vuestra madre [hist?rica/cl?sica] | Los Picapiedra [hist?rica/cl?sica] | Tom y Jerry [hist?rica/cl?sica] | Las Tortugas Ninja [hist?rica/cl?sica] | Oliver y Benji [hist?rica/cl?sica] | Los Lunnis [hist?rica/cl?sica] | Farmacia de Guardia [referencia sensible, hist?rica/cl?sica] | Cuéntame cómo pasó [hist?rica/cl?sica] | Verano Azul [hist?rica/cl?sica] | Los Serrano [hist?rica/cl?sica] | Los hombres de Paco [hist?rica/cl?sica] | Médico de familia [hist?rica/cl?sica] | Dragon Ball [hist?rica/cl?sica] | Los Caballeros del Zodiaco [hist?rica/cl?sica]
+
+[Cine y TV ? 4]
+Marilyn Monroe [hist?rica/cl?sica] | Tom Hanks [hist?rica/cl?sica] | Alfredo Landa [hist?rica/cl?sica] | Alfred Hitchcock [hist?rica/cl?sica]
+
+[RECOMENDACION EXACTA]
+CONSERVAR: Historia, Cultura, Ciencia, Arte, Literatura, Mitolog?a, Naturaleza completas; y, de M?sica, Lugares, Marcas, Personajes, Deportes, Videojuegos, Pel?culas, Series y Cine y TV ?nicamente las filas no incluidas en las listas de exclusi?n anteriores.
+EXCLUIR: todas las filas listadas en cada bloque SECUNDARIAS; adem?s, revisar manualmente cualquier secundaria no listada cuyo nombre requiera conocimiento espec?fico, aunque el CSV la marque f?cil.
