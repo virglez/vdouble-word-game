@@ -11,10 +11,6 @@ function localizedAsset(
 }
 
 export const LOCALIZED_ASSETS = {
-  setupTitle: localizedAsset(
-    require('@/assets/localized/setup-title.es.png'), require('@/assets/localized/setup-title.en.png'),
-    require('@/assets/localized/setup-title.fr.png'), require('@/assets/localized/setup-title.pt.png'),
-  ),
   timeUp: localizedAsset(
     require('@/assets/localized/tiempo.es.png'), require('@/assets/localized/tiempo.en.png'),
     require('@/assets/localized/tiempo.fr.png'), require('@/assets/localized/tiempo.pt.png'),

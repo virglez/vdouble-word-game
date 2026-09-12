@@ -232,9 +232,6 @@ rulesDescription3,fr,Gestures
 footnote,es,Sin registro ni salas. La partida se guarda en este teléfono.
 footnote,en,No signups or rooms. The game is saved on this phone.
 footnote,fr,Pas d’inscription ni de salle. La partie est enregistrée sur ce téléphone.
-setupTitle,es,Nueva partida
-setupTitle,en,New game
-setupTitle,fr,Nouvelle partie
 setupStep,es,PASO 1 DE 2
 setupStep,en,STEP 1 OF 2
 setupStep,fr,ÉTAPE 1 SUR 2
@@ -506,7 +503,6 @@ rulesDescription2,pt-PT,"Dá uma única palavra como pista. Mantêm-se as proibi
 rulesTitle3,pt-PT,Mímica
 rulesDescription3,pt-PT,"Representa o cartão com gestos. Podes trautear e fazer sons, mas não dizer palavras. Mantém-se uma única tentativa por cartão."
 footnote,pt-PT,Sem registo nem salas. A partida fica guardada neste telemóvel.
-setupTitle,pt-PT,Nova partida
 setupStep,pt-PT,PASSO 1 DE 2
 setupPageTitle,pt-PT,Prepara as equipas
 setupSubtitle,pt-PT,Escolham os nomes e os ícones das equipas e o número de cartões.

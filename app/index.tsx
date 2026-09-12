@@ -265,10 +265,6 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
         <View style={styles.setupBackButtonPlaceholder} />
       </View>
 
-      <View style={styles.setupHeadingWrap}>
-        <Image source={LOCALIZED_ASSETS.setupTitle[state.language]} resizeMode="contain" style={styles.setupTitleArt} accessibilityLabel="Prepara la partida" />
-      </View>
-
       <View style={styles.setupTeamCards}>
         <TeamInput
           team={0}
