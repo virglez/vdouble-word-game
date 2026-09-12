@@ -3,13 +3,16 @@ const path = require('path');
 
 const projectRoot = path.resolve(__dirname, '..');
 const workspaceRoot = path.resolve(projectRoot, '../..');
-const localInputPath = path.join(projectRoot, 'data', 'wordBank.csv');
+const localInputPath = path.join(projectRoot, 'data', 'wordBank.free.csv');
+const originalLocalInputPath = path.join(projectRoot, 'data', 'wordBank.csv');
 const legacyLocalInputPath = path.join(projectRoot, 'data', 'base_palabras_juego_definitiva_3834_1788880342042.csv');
 const legacyInputPath = path.join(workspaceRoot, 'attached_assets', 'base_palabras_juego_definitiva_3834_1788880342042.csv');
 const inputPath = process.env.WORD_BANK_CSV
   ? path.resolve(process.env.WORD_BANK_CSV)
   : fs.existsSync(localInputPath)
     ? localInputPath
+    : fs.existsSync(originalLocalInputPath)
+      ? originalLocalInputPath
     : fs.existsSync(legacyLocalInputPath)
       ? legacyLocalInputPath
       : legacyInputPath;
@@ -154,6 +157,11 @@ const cards = rows
     return base;
   })
   .filter((card) => card.palabra);
+
+const usedCategories = new Set(cards.map((card) => card.categoria));
+const usedSubcategories = new Set(cards.map((card) => card.subcategoria));
+for (const value of categoryTranslations.keys()) if (!usedCategories.has(value)) categoryTranslations.delete(value);
+for (const value of subcategoryTranslations.keys()) if (!usedSubcategories.has(value)) subcategoryTranslations.delete(value);
 
 const difficulties = [...new Set(cards.map((card) => card.dificultad))];
 const difficultyType = difficulties.map((difficulty) => JSON.stringify(difficulty)).join(' | ');

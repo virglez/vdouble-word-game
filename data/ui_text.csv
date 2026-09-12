@@ -130,14 +130,6 @@ stackHint,fr,parle · résume · joue
 statsCards,es,tarjetas
 statsCards,en,cards
 statsCards,fr,cartes
-statsPlayersValue,es,A partir de 4
-statsPlayersValue,en,4+
-statsPlayersValue,fr,À partir de 4
-statsPlayersValue,pt,A partir de 4
-statsPlayers,es,jugadores
-statsPlayers,en,players
-statsPlayers,fr,joueurs
-statsPlayers,pt,jogadores
 statsTurn,es,por turno
 statsTurn,en,per turn
 statsTurn,fr,par tour
@@ -183,9 +175,6 @@ footnote,fr,Pas d’inscription ni de salle. La partie est enregistrée sur ce t
 setupTitle,es,Nueva partida
 setupTitle,en,New game
 setupTitle,fr,Nouvelle partie
-setupIllustrationTitle,es,Prepara la partida
-setupIllustrationTitle,en,Prepare the game
-setupIllustrationTitle,fr,Préparez la partie
 setupStep,es,PASO 1 DE 2
 setupStep,en,STEP 1 OF 2
 setupStep,fr,ÉTAPE 1 SUR 2
@@ -458,7 +447,6 @@ rulesTitle3,pt-PT,Mímica
 rulesDescription3,pt-PT,"Representa o cartão com gestos. Podes trautear e fazer sons, mas não dizer palavras. Mantém-se uma única tentativa por cartão."
 footnote,pt-PT,Sem registo nem salas. A partida fica guardada neste telemóvel.
 setupTitle,pt-PT,Nova partida
-setupIllustrationTitle,pt-PT,Prepara a partida
 setupStep,pt-PT,PASSO 1 DE 2
 setupPageTitle,pt-PT,Prepara as equipas
 setupSubtitle,pt-PT,Escolham os nomes e os ícones das equipas e o número de cartões.
@@ -656,22 +644,6 @@ decabloRound3,es,"Hazlo"
 decabloRound3,en,"Act it out"
 decabloRound3,fr,"Mime-le"
 decabloRound3,pt,"Representa"
-homeMottoWords,es,"Mismas palabras, más risas"
-homeMottoWords,en,"Same words, more laughs"
-homeMottoWords,fr,"Les mêmes mots, plus de rires"
-homeMottoWords,pt,"As mesmas palavras, mais risos"
-homeMottoWays,es,"Tres formas de jugar"
-homeMottoWays,en,"Three ways to play"
-homeMottoWays,fr,"Trois façons de jouer"
-homeMottoWays,pt,"Três formas de jogar"
-homeMottoMemory,es,"La memoria también juega"
-homeMottoMemory,en,"Memory plays too"
-homeMottoMemory,fr,"La mémoire joue aussi"
-homeMottoMemory,pt,"A memória também joga"
-homeMottoWin,es,"Gana el equipo que mejor se entienda"
-homeMottoWin,en,"The team that understands each other best wins"
-homeMottoWin,fr,"L'équipe qui se comprend le mieux gagne"
-homeMottoWin,pt,"Ganha a equipa que melhor se entender"
 decabloSameDeck,es,"Las mismas palabras vuelven"
 decabloSameDeck,en,"The same words return"
 decabloSameDeck,fr,"Les mêmes mots reviennent"

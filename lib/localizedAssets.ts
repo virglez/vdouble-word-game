@@ -37,4 +37,28 @@ export const LOCALIZED_ASSETS = {
     localizedAsset(require('@/assets/localized/card-una-palabra.es.png'), require('@/assets/localized/card-una-palabra.en.png'), require('@/assets/localized/card-una-palabra.fr.png'), require('@/assets/localized/card-una-palabra.pt.png')),
     localizedAsset(require('@/assets/localized/card-hazlo.es.png'), require('@/assets/localized/card-hazlo.en.png'), require('@/assets/localized/card-hazlo.fr.png'), require('@/assets/localized/card-hazlo.pt.png')),
   ],
+  roundBreakCompleted: [
+    localizedAsset(
+      require('@/assets/localized/round1-completed.es.png'), require('@/assets/localized/round1-completed.en.png'),
+      require('@/assets/localized/round1-completed.fr.png'), require('@/assets/localized/round1-completed.pt.png'),
+    ),
+    localizedAsset(
+      require('@/assets/localized/round2-completed.es.png'), require('@/assets/localized/round2-completed.en.png'),
+      require('@/assets/localized/round2-completed.fr.png'), require('@/assets/localized/round2-completed.pt.png'),
+    ),
+  ],
+  roundBreakCards: [
+    localizedAsset(
+      require('@/assets/localized/round2-card.es.png'), require('@/assets/localized/round2-card.en.png'),
+      require('@/assets/localized/round2-card.fr.png'), require('@/assets/localized/round2-card.pt.png'),
+    ),
+    localizedAsset(
+      require('@/assets/localized/round3-card.es.png'), require('@/assets/localized/round3-card.en.png'),
+      require('@/assets/localized/round3-card.fr.png'), require('@/assets/localized/round3-card.pt.png'),
+    ),
+  ],
+  deckRepeats: localizedAsset(
+    require('@/assets/localized/deck-repeats.es.png'), require('@/assets/localized/deck-repeats.en.png'),
+    require('@/assets/localized/deck-repeats.fr.png'), require('@/assets/localized/deck-repeats.pt.png'),
+  ),
 } as const;

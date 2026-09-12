@@ -54,7 +54,7 @@ function AppContent() {
   const insets = useSafeAreaInsets();
   const game = useGame();
   const roundColor = ['instructions', 'ready', 'play', 'review', 'roundBreak'].includes(game.state.screen)
-    ? ROUND_COLORS[game.state.roundIndex] : BRAND.orange;
+    ? ROUND_COLORS[game.state.roundIndex] : BRAND.yellow;
   const styles = useMemo(() => createStyles(colors, roundColor), [colors, roundColor]);
   const [seconds, setSeconds] = useState(30);
 
@@ -161,25 +161,10 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
         <View accessible accessibilityLabel={t.cardIllustration}>
           <RoundCards labels={[t.decabloRound1, t.decabloRound2, t.decabloRound3]} rounds={[t.rulesRound1, t.rulesRound2, t.rulesRound3]} language={state.language} />
         </View>
-        <View style={styles.homeMottoList}>
-          {[
-            { text: t.homeMottoWords, icon: 'message-circle' as const, color: BRAND.orange },
-            { text: t.homeMottoWays, icon: 'layers' as const, color: BRAND.lyla },
-            { text: t.homeMottoMemory, icon: 'refresh-cw' as const, color: BRAND.indigo },
-            { text: t.homeMottoWin, icon: 'award' as const, color: BRAND.mint },
-          ].map((motto) => (
-            <View key={motto.text} style={styles.homeMottoRow}>
-              <View style={[styles.homeMottoIcon, { backgroundColor: motto.color }]}>
-                <Feather name={motto.icon} size={16} color={BRAND.navy} />
-              </View>
-              <Text style={styles.homeMottoText}>{motto.text}</Text>
-            </View>
-          ))}
-        </View>
       </View>
 
       <View style={styles.statsRow}>
-        <Stat value={t.statsPlayersValue} label={t.statsPlayers} asset={require('@/assets/icons/decablo/players.png')} styles={styles} />
+        <Stat value="A partir de 4" label="jugadores" asset={require('@/assets/icons/decablo/players.png')} styles={styles} />
         <Stat value="30 s" label={t.statsTurn} asset={require('@/assets/icons/decablo/clock.png')} styles={styles} />
         <Stat value="3" label={t.statsRounds} asset={require('@/assets/icons/decablo/repeat.png')} styles={styles} />
       </View>
@@ -190,9 +175,14 @@ function HomeScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
         onPress={() => (hasSavedGame ? confirmDiscardSavedGame(startSetup, t) : press(startSetup))}
         style={({ pressed }) => [styles.primaryButton, pressed && styles.pressed]}
       >
-        <Text style={styles.primaryButtonText}>{t.newGameButton}</Text>
+        <Text style={styles.primaryButtonText}>NUEVA PARTIDA</Text>
         <View style={styles.ctaArrow}><Feather name="arrow-up-right" size={21} color={colors.primaryForeground} /></View>
       </Pressable>
+
+      <View style={styles.homeFooterClaims} pointerEvents="none">
+        <Image source={require('@/assets/branding/home-footer-left.png')} resizeMode="contain" style={styles.homeFooterClaimLeft} accessibilityLabel="Mismas palabras, más risas" />
+        <Image source={require('@/assets/branding/home-footer-right.png')} resizeMode="contain" style={styles.homeFooterClaimRight} accessibilityLabel="La memoria también juega" />
+      </View>
 
     </ScrollView>
   );
@@ -261,7 +251,7 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
       </View>
 
       <View style={styles.setupHeadingWrap}>
-        <Image source={LOCALIZED_ASSETS.setupTitle[state.language]} resizeMode="contain" style={styles.setupTitleArt} accessibilityLabel={t.setupIllustrationTitle} />
+        <Image source={LOCALIZED_ASSETS.setupTitle[state.language]} resizeMode="contain" style={styles.setupTitleArt} accessibilityLabel="Prepara la partida" />
       </View>
 
       <View style={styles.setupTeamCards}>
@@ -506,7 +496,7 @@ function ReviewScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
               style={({ pressed }) => [styles.checkRow, item.correct && styles.checkRowCorrect,
                 index === state.review.length - 1 && { borderBottomWidth: 0 }, pressed && styles.pressed]}>
               <View style={[styles.checkBox, item.correct && styles.checkBoxCorrect]}>
-                <Feather name={item.correct ? 'check' : 'minus'} size={19} color={item.correct ? BRAND.navy : BRAND.orange} />
+                <Feather name={item.correct ? 'check' : 'minus'} size={19} color={item.correct ? BRAND.navy : BRAND.coral} />
               </View>
               <Text style={styles.checkWord}>{item.word}</Text>
               <Text style={[styles.checkStatus, item.correct && styles.checkStatusCorrect]}>{item.correct ? t.cardStatusCorrect : t.cardStatusPassed}</Text>
@@ -558,7 +548,7 @@ function ReadyScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
           source={LOCALIZED_ASSETS.passMobile[state.language]}
           resizeMode="contain"
           style={styles.readyPassArt}
-          accessibilityLabel={UI_TEXT[state.language].readyMobile}
+          accessibilityLabel="Pasa el móvil"
         />
         <Image
           source={LOCALIZED_ASSETS.passPhone[state.language]}
@@ -650,7 +640,7 @@ function PlayScreen({ styles, seconds }: { styles: ReturnType<typeof createStyle
               <View style={styles.cardTopRow}>
                 <Text style={styles.cardCategory}>{currentCard.categoryTranslations?.[state.language] ?? currentCard.categoria}</Text>
                 <View style={styles.cardDot} />
-                <Text style={styles.cardSubcategory}>{(currentCard.subcategoryTranslations?.[state.language] ?? currentCard.subcategoria) || t.cardCultureSubcategory}</Text>
+                <Text style={styles.cardCategory}>{(currentCard.subcategoryTranslations?.[state.language] ?? currentCard.subcategoria) || t.cardCultureSubcategory}</Text>
               </View>
               <Text style={styles.wordText}>{currentCard.palabra}</Text>
             </>
@@ -692,9 +682,9 @@ function RoundBreakScreenRedesign({ styles }: { styles: ReturnType<typeof create
   const completedScores = state.roundScores[state.roundIndex];
   const isCompletedState = state.roundIndex < 2;
   const completedRoundArt =
-    state.roundIndex === 0 ? require('@/assets/rounds/round1-completed.png') : require('@/assets/rounds/round2-completed.png');
+    LOCALIZED_ASSETS.roundBreakCompleted[state.roundIndex][state.language];
   const nextRoundArt =
-    state.roundIndex === 0 ? require('@/assets/rounds/round2-card.png') : require('@/assets/rounds/round3-card.png');
+    LOCALIZED_ASSETS.roundBreakCards[state.roundIndex][state.language];
 
   return (
     <ScrollView contentContainerStyle={styles.roundBreakScroll} showsVerticalScrollIndicator={false}>
@@ -718,7 +708,7 @@ function RoundBreakScreenRedesign({ styles }: { styles: ReturnType<typeof create
         ))}
       </View>
 
-      <Image source={require('@/assets/rounds/deck-repeats.png')} resizeMode="contain" style={styles.roundBreakRepeatArt} />
+      <Image source={LOCALIZED_ASSETS.deckRepeats[state.language]} resizeMode="contain" style={styles.roundBreakRepeatArt} />
 
       {isCompletedState ? (
         <View style={styles.roundBreakNextArtWrap}>
@@ -757,7 +747,7 @@ function RoundBreakScreen({ styles }: { styles: ReturnType<typeof createStyles> 
       <Text style={styles.pageTitle}>{[t.decabloRound1, t.decabloRound2, t.decabloRound3][state.roundIndex]}</Text>
       <Text style={styles.pageSubtitle}>{t.roundBreakSubtitle}</Text>
       <RoundScoreList styles={styles} roundIndex={state.roundIndex} />
-      <Image source={require('@/assets/rounds/deck-repeats.png')} resizeMode="contain" style={styles.referenceArt} />
+      <Image source={LOCALIZED_ASSETS.deckRepeats[state.language]} resizeMode="contain" style={styles.referenceArt} />
       <View style={styles.repeatMessage}>
         <Text style={styles.repeatTitle}>{t.decabloSameDeck}</Text>
         <Text style={styles.pageSubtitle}>{t.roundBreakDeckInfo.replace('{count}', String(state.deck.length))}</Text>
