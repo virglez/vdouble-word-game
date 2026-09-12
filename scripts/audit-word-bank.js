@@ -25,7 +25,7 @@ const count = (arr) => { const m = new Map(); for (const v of arr) m.set(v, (m.g
 const fmt = (r) => `${r.id} | ${r.palabra} | ${r.categoria} | ${r.subcategoria} | ${r.epoca}`;
 
 log('ROWS', R.length);
-for (const f of ['categoria', 'popularidad', 'dificultad', 'epoca', 'alcance', 'infantil']) {
+for (const f of ['categoria', 'popularidad', 'dificultad', 'epoca', 'alcance', 'infantil'].filter(field => headers.includes(field))) {
   log(`\n## ${f}`); for (const [v, c] of count(R.map(r => r[f]))) log(`  ${c}\t${v}`);
 }
 log('\n## subcategoria per categoria');
@@ -95,7 +95,7 @@ rule('Obra/Personaje en Lugares/Marcas', r => ['Lugares', 'Marcas'].includes(r.c
 rule('Videojuegos tipo Personaje', r => r.categoria === 'Videojuegos' && r.subcategoria === 'Personaje');
 
 const cross = (a, b) => { log(`\n## crosstab ${a} x ${b}`); const m = new Map(); for (const r of R) { const k = `${r[a]} | ${r[b]}`; m.set(k, (m.get(k) ?? 0) + 1); } for (const [k, c] of [...m.entries()].sort()) log(`  ${c}\t${k}`); };
-cross('dificultad', 'popularidad'); cross('dificultad', 'infantil'); cross('categoria', 'dificultad'); cross('categoria', 'epoca'); cross('subcategoria', 'infantil');
+cross('dificultad', 'popularidad'); cross('categoria', 'dificultad'); cross('categoria', 'epoca');
 
 fs.writeFileSync(process.argv[3] || path.join(require('os').tmpdir(), 'wordbank-report.txt'), out.join('\n'), 'utf8');
 console.log('written', process.argv[3] || path.join(require('os').tmpdir(), 'wordbank-report.txt'), out.length, 'lines');

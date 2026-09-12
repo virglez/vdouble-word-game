@@ -440,9 +440,6 @@ palabra_id,idioma,nombre_localizado
 689,en,The Persistence of Memory
 689,fr,La Persistance de la mémoire
 689,pt,A Persistência da Memória
-694,en,Hercule Poirot
-694,fr,Hercule Poirot
-694,pt,Hercule Poirot
 697,en,Seville
 697,fr,Séville
 697,pt,Sevilha
@@ -455,9 +452,6 @@ palabra_id,idioma,nombre_localizado
 705,en,Tokyo
 705,fr,Tokyo
 705,pt,Tóquio
-707,en,Disneyland Paris
-707,fr,Disneyland Paris
-707,pt,Disneyland Paris
 710,en,The Sims
 710,fr,Les Sims
 710,pt,The Sims
@@ -562,9 +556,6 @@ palabra_id,idioma,nombre_localizado
 766,en,Stand by Me
 766,fr,Stand by Me
 766,pt,Conta Comigo
-768,en,Robin Hood: Prince of Thieves
-768,fr,"Robin des Bois, prince des voleurs"
-768,pt,Robin dos Bosques: Príncipe dos Ladrões
 769,en,Coming to America
 769,fr,Un prince à New York
 769,pt,Um Príncipe em Nova Iorque
@@ -607,9 +598,6 @@ palabra_id,idioma,nombre_localizado
 794,en,Thelma & Louise
 794,fr,Thelma et Louise
 794,pt,Thelma e Louise
-795,en,Legally Blonde
-795,fr,La Revanche d'une blonde
-795,pt,Legalmente Loira
 797,en,Mrs. Doubtfire
 797,fr,Madame Doubtfire
 797,pt,Papá para Sempre
@@ -827,7 +815,6 @@ palabra_id,idioma,nombre_localizado
 1290,en,Artemis
 1290,fr,Artémis
 1290,pt,Ártemis
-1291,fr,Hermès
 1293,fr,Héra
 1294,en,Demeter
 1294,fr,Déméter
@@ -977,9 +964,6 @@ palabra_id,idioma,nombre_localizado
 1482,en,The Kiss
 1482,fr,Le Baiser
 1482,pt,O Beijo
-1483,en,"Impression, Sunrise"
-1483,fr,"Impression, soleil levant"
-1483,pt,"Impressão, nascer do sol"
 1484,en,The Burial of the Count of Orgaz
 1484,fr,L'Enterrement du comte d'Orgaz
 1484,pt,O Enterro do Conde de Orgaz
@@ -1015,12 +999,6 @@ palabra_id,idioma,nombre_localizado
 1509,en,Roman Empire
 1509,fr,Empire romain
 1509,pt,Império Romano
-1510,en,Aztec Empire
-1510,fr,Empire aztèque
-1510,pt,Império Asteca
-1511,en,Inca Empire
-1511,fr,Empire inca
-1511,pt,Império Inca
 1512,en,Conquest of Granada
 1512,fr,Conquête de Grenade
 1514,en,Normandy landings
@@ -1032,8 +1010,6 @@ palabra_id,idioma,nombre_localizado
 1516,en,Battle of Trafalgar
 1516,fr,bataille de Trafalgar
 1516,pt,Batalha de Trafalgar
-1517,en,Thermopylae
-1517,fr,Thermopyles
 1520,en,Parthenon
 1520,fr,Parthénon
 1520,pt,Parténon
@@ -1258,8 +1234,6 @@ palabra_id,idioma,nombre_localizado
 1950,en,Solitaire
 1950,fr,Solitaire
 1950,pt,Paciência
-1958,en,Dionysus
-1958,fr,Dionysos
 1960,en,Cyclops
 1960,fr,Cyclope
 1960,pt,Ciclope
@@ -1455,9 +1429,6 @@ palabra_id,idioma,nombre_localizado
 2196,en,Treasure Planet
 2196,fr,La Planète au trésor
 2196,pt,O Planeta do Tesouro
-2198,en,Once Upon a Time... Man
-2198,fr,Il était une fois… l'Homme
-2198,pt,Era uma Vez... o Homem
 2206,en,Corto Maltese
 2206,fr,Corto Maltese
 2206,pt,Corto Maltese
@@ -1520,14 +1491,9 @@ palabra_id,idioma,nombre_localizado
 2269,en,European Golden Shoe
 2269,fr,Soulier d'or européen
 2269,pt,Bota de Ouro
-2272,en,Sylvester
-2272,fr,Grosminet
 2273,en,Bilbo Baggins
 2273,fr,Bilbon Sacquet
 2273,pt,Bilbo Baggins
-2279,en,Belle
-2279,fr,Belle
-2279,pt,Bela
 2280,en,Dirty Harry
 2280,fr,L'Inspecteur Harry
 2280,pt,"Harry, o Implacável"
@@ -1561,9 +1527,6 @@ palabra_id,idioma,nombre_localizado
 2313,en,Middle Ages
 2313,fr,Moyen Âge
 2313,pt,Idade Média
-2314,en,Greek Empire
-2314,fr,Empire grec
-2314,pt,Império Grego
 2315,en,Crusades
 2315,fr,Croisades
 2316,en,Treaty of Versailles
@@ -1614,21 +1577,9 @@ palabra_id,idioma,nombre_localizado
 2360,en,Merlin
 2360,fr,Merlin
 2360,pt,Merlim
-2365,en,Byzantine Empire
-2365,fr,Empire byzantin
-2365,pt,Império Bizantino
-2366,en,Ottoman Empire
-2366,fr,Empire ottoman
-2366,pt,Império Otomano
-2367,en,Mongol Empire
-2367,fr,Empire mongol
-2367,pt,Império Mongol
 2368,en,Maya civilization
 2368,fr,civilisation maya
 2368,pt,Civilização Maia
-2369,en,D-Day
-2369,fr,Jour J
-2369,pt,Dia D
 2370,en,Fall of the Berlin Wall
 2370,fr,Chute du mur de Berlin
 2370,pt,Queda do Muro de Berlim
@@ -1652,9 +1603,6 @@ palabra_id,idioma,nombre_localizado
 2422,fr,Samoa américaines
 2423,en,Antarctica
 2423,fr,Antarctique
-2424,en,French Southern Territories
-2424,fr,Terres australes françaises
-2424,pt,Territórios Austrais Franceses
 2425,en,Antigua & Barbuda
 2425,fr,Antigua-et-Barbuda
 2425,pt,Antígua e Barbuda
@@ -1701,9 +1649,6 @@ palabra_id,idioma,nombre_localizado
 2445,pt,Ilha Bouvet
 2446,en,Botswana
 2446,fr,Botswana
-2447,en,Central African Republic
-2447,fr,République centrafricaine
-2447,pt,República Centro-Africana
 2448,en,Cocos (Keeling) Islands
 2448,fr,Îles Cocos
 2448,pt,Ilhas dos Cocos (Keeling)
@@ -1713,9 +1658,6 @@ palabra_id,idioma,nombre_localizado
 2451,en,Cameroon
 2451,fr,Cameroun
 2451,pt,Camarões
-2452,en,Congo - Kinshasa
-2452,fr,Congo-Kinshasa
-2452,pt,Congo-Kinshasa
 2453,en,Congo - Brazzaville
 2453,fr,Congo-Brazzaville
 2453,pt,Congo-Brazzaville
@@ -1800,9 +1742,6 @@ palabra_id,idioma,nombre_localizado
 2504,en,Isle of Man
 2504,fr,Île de Man
 2504,pt,Ilha de Man
-2505,en,British Indian Ocean Territory
-2505,fr,Territoire britannique de l’océan Indien
-2505,pt,Território Britânico do Oceano Índico
 2507,en,Iran
 2507,fr,Iran
 2507,pt,Irão
@@ -1938,9 +1877,6 @@ palabra_id,idioma,nombre_localizado
 2576,pt,Polinésia Francesa
 2577,en,Qatar
 2577,fr,Qatar
-2578,en,Réunion
-2578,fr,La Réunion
-2578,pt,Reunião
 2581,en,Rwanda
 2581,fr,Rwanda
 2583,en,Sudan
@@ -2065,12 +2001,6 @@ palabra_id,idioma,nombre_localizado
 2734,en,A Fistful of Dollars
 2734,fr,Pour une poignée de dollars
 2734,pt,Por um Punhado de Dólares
-2735,en,Once Upon a Time in America
-2735,fr,Il était une fois en Amérique
-2735,pt,Era Uma Vez na América
-2736,en,Once Upon a Time in the West
-2736,fr,Il était une fois dans l'Ouest
-2736,pt,Era Uma Vez no Oeste
 2739,en,Bram Stoker's Dracula
 2739,fr,Dracula
 2740,en,The Phantom of the Opera
@@ -2102,9 +2032,6 @@ palabra_id,idioma,nombre_localizado
 2840,en,Acropolis
 2840,fr,Acropole
 2840,pt,Acrópole
-2841,en,White House
-2841,fr,Maison-Blanche
-2841,pt,Casa Branca
 2845,en,Monte Carlo
 2845,fr,Monte-Carlo
 2845,pt,Monte Carlo
@@ -2178,8 +2105,6 @@ palabra_id,idioma,nombre_localizado
 3001,en,Luncheon of the Boating Party
 3001,fr,Le Déjeuner des canotiers
 3001,pt,Almoço dos Remadores
-3002,en,Degas' Dancer
-3002,fr,Danseuse de Degas
 3003,en,The Raft of the Medusa
 3003,fr,Le Radeau de La Méduse
 3003,pt,A Jangada da Medusa
@@ -2309,8 +2234,6 @@ palabra_id,idioma,nombre_localizado
 3123,en,Queen of Hearts
 3123,fr,Reine de cœur
 3123,pt,Rainha de Copas
-3130,en,Hector
-3130,fr,Hector
 3705,en,Strait of Gibraltar
 3705,fr,détroit de Gibraltar
 3705,pt,Estreito de Gibraltar
@@ -2346,9 +2269,6 @@ palabra_id,idioma,nombre_localizado
 3736,en,Suez Canal
 3736,fr,canal de Suez
 3736,pt,Canal do Suez
-3738,en,Amman
-3738,fr,Amman
-3738,pt,Amã
 3741,en,Mecca
 3741,fr,La Mecque
 3741,pt,Meca

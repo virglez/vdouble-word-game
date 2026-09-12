@@ -19,7 +19,7 @@ score,es-ES,Puntuación
 settings,es-ES,Ajustes
 language,es-ES,Idioma
 familyMode,es-ES,Modo familiar
-familyModeDescription,es-ES,Solo tarjetas infantiles
+familyModeDescription,es-ES,Cartas familiares
 new_game,es-ES,Nueva partida
 play_again,es-ES,Jugar de nuevo
 winner,es-ES,Ganador
@@ -45,7 +45,7 @@ score,en,Score
 settings,en,Settings
 language,en,Language
 familyMode,en,Family mode
-familyModeDescription,en,Children's cards only
+familyModeDescription,en,Family cards
 new_game,en,New game
 play_again,en,Play again
 winner,en,Winner
@@ -71,7 +71,7 @@ score,fr,Score
 settings,fr,Paramètres
 language,fr,Langue
 familyMode,fr,Mode famille
-familyModeDescription,fr,Cartes pour enfants uniquement
+familyModeDescription,fr,Cartes familiales
 new_game,fr,Nouvelle partie
 play_again,fr,Rejouer
 winner,fr,Gagnant
@@ -97,7 +97,7 @@ score,pt,Pontuação
 settings,pt,Definições
 language,pt,Idioma
 familyMode,pt,Modo família
-familyModeDescription,pt,Apenas cartões infantis
+familyModeDescription,pt,Cartas familiares
 new_game,pt,Novo jogo
 play_again,pt,Jogar novamente
 winner,pt,Vencedor

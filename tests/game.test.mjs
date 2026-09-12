@@ -95,3 +95,13 @@ test('El paquete inicial usa palabras de popularidad muy alta', () => {
   assert.equal(deck.length, 40);
   assert.ok(deck.every(card => card.popularidad === 'Muy alta'));
 });
+test('El modo familiar usa el CSV familiar curado', async () => {
+  const { WORD_BANK_FAMILY } = await import('../data/wordBankFamily.ts');
+  const familyWords = new Set(WORD_BANK_FAMILY.map(card => normalizedWord(card.palabra)));
+  const adultExamples = ['Serena Williams', 'Antiguo Egipto', 'Cristóbal Colón', 'Julio César', 'Stephen Hawking', 'Pablo Picasso'];
+  const deck = buildDeck(40, [], 'es', true);
+
+  assert.equal(deck.length, 40);
+  assert.ok(deck.every(card => familyWords.has(normalizedWord(card.palabra))));
+  assert.ok(adultExamples.every(word => !familyWords.has(normalizedWord(word))));
+});

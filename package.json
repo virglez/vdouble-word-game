@@ -5,6 +5,7 @@
   "main": "expo-router/entry",
   "scripts": {
     "generate-word-bank": "node scripts/generate-word-bank.js",
+    "create-family-package": "node scripts/create-family-package.js",
     "create-free-package": "node scripts/create-free-package.js",
     "generate-ui-text": "node scripts/generate-ui-text.js",
     "dev": "expo start",

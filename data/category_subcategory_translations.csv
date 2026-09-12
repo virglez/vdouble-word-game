@@ -19,10 +19,6 @@ categoria,Literatura,es,Literatura
 categoria,Literatura,en,Literature
 categoria,Literatura,fr,Littérature
 categoria,Literatura,pt,Literatura
-categoria,Personajes,es,Personajes
-categoria,Personajes,en,Characters
-categoria,Personajes,fr,Personnages
-categoria,Personajes,pt,Personagens
 categoria,Naturaleza,es,Naturaleza
 categoria,Naturaleza,en,Nature
 categoria,Naturaleza,fr,Nature
@@ -68,22 +64,6 @@ subcategoria,Pintor,es,Pintor
 subcategoria,Pintor,en,Painter
 subcategoria,Pintor,fr,Peintre
 subcategoria,Pintor,pt,Pintor
-subcategoria,Artista,es,Artista
-subcategoria,Artista,en,Artist
-subcategoria,Artista,fr,Artiste
-subcategoria,Artista,pt,Artista
-subcategoria,Cómic,es,Cómic
-subcategoria,Cómic,en,Comic
-subcategoria,Cómic,fr,Bande dessinée
-subcategoria,Cómic,pt,Comics
-subcategoria,Animación,es,Animación
-subcategoria,Animación,en,Animation
-subcategoria,Animación,fr,Animation
-subcategoria,Animación,pt,Animação
-subcategoria,Superhéroe,es,Superhéroe
-subcategoria,Superhéroe,en,Superhero
-subcategoria,Superhéroe,fr,Super-héros
-subcategoria,Superhéroe,pt,Super-herói
 subcategoria,Personaje,es,Personaje
 subcategoria,Personaje,en,Character
 subcategoria,Personaje,fr,Personnage
@@ -108,176 +88,230 @@ categoria,Marcas,es,Marcas
 categoria,Marcas,en,Brands
 categoria,Marcas,fr,Marques
 categoria,Marcas,pt,Marcas
-categoria,Mitología,es,Mitología
-categoria,Mitología,en,Mythology
-categoria,Mitología,fr,Mythologie
-categoria,Mitología,pt,Mitologia
-categoria,Películas,es,Películas
-categoria,Películas,en,Films
-categoria,Películas,fr,Films
-categoria,Películas,pt,Filmes
-categoria,Series,es,Series
-categoria,Series,en,Series
-categoria,Series,fr,Séries
-categoria,Series,pt,Séries
-categoria,Videojuegos,es,Videojuegos
-categoria,Videojuegos,en,Video games
-categoria,Videojuegos,fr,Jeux vidéo
-categoria,Videojuegos,pt,Videojogos
-subcategoria,Acción,en,Action
 subcategoria,Activista,en,Activist
-subcategoria,Actor,en,Actor
-subcategoria,Actriz,en,Actress
-subcategoria,Actor/Actriz,en,Actor
 subcategoria,Alimentación,en,Food
 subcategoria,Animales,en,Animals
-subcategoria,Anime,en,Anime
-subcategoria,Arquitectura,en,Architecture
-subcategoria,Artes marciales,en,Martial arts
-subcategoria,Astrónomo,en,Astronomer
 subcategoria,Atletismo,en,Athletics
 subcategoria,Automoción,en,Automotive
-subcategoria,Automovilismo y motociclismo,en,Motor racing
-subcategoria,Aventura,en,Adventure
-subcategoria,Aventura española,en,Spanish adventure
-subcategoria,Aventuras,en,Adventures
-subcategoria,Aviadora,en,Aviator
 subcategoria,Barrio,en,Neighbourhood
-subcategoria,Battle royale,en,Battle royale
-subcategoria,Bebida,en,Drink
-subcategoria,Boxeo,en,Boxing
-subcategoria,Bádminton,en,Badminton
-subcategoria,Carreras,en,Racing
-subcategoria,Ciclismo,en,Cycling
-subcategoria,Ciencia ficción,en,Science fiction
-subcategoria,Ciencia ficción española,en,Spanish science fiction
-subcategoria,Científico,en,Scientist
-subcategoria,Científicos e inventores,en,Scientists and inventors
-subcategoria,Cine de atracos,en,Heist films
-subcategoria,Cine y literatura,en,Cinema and literature
 subcategoria,Ciudad,en,City
-subcategoria,Civilizaciones y acontecimientos,en,Civilisations and events
 subcategoria,Civilización,en,Civilisation
-subcategoria,Comedia,en,Comedy
-subcategoria,Comedia española,en,Spanish comedy
-subcategoria,Comedia negra,en,Black comedy
-subcategoria,Comercio,en,Retail
 subcategoria,Consola,en,Console
-subcategoria,Criatura mitológica,en,Mythological creature
-subcategoria,Cuento,en,Tale
-subcategoria,Cómic y cine,en,Comics and cinema
-subcategoria,Cómic y ficción,en,Comics and fiction
-subcategoria,Deporte,en,Sport
-subcategoria,Deportes,en,Sports
-subcategoria,Deportista,en,Athlete
 subcategoria,Destino,en,Destination
-subcategoria,Diosa griega,en,Greek goddess
-subcategoria,Director/a,en,Director
-subcategoria,Drama,en,Drama
-subcategoria,Drama bélico,en,War drama
-subcategoria,Drama español,en,Spanish drama
-subcategoria,Drama histórico,en,Historical drama
-subcategoria,Drama histórico español,en,Spanish historical drama
-subcategoria,Drama juvenil español,en,Spanish teen drama
 subcategoria,Empresa,en,Company
 subcategoria,Entrenador,en,Coach
 subcategoria,Entretenimiento,en,Entertainment
 subcategoria,Equipos y clubes,en,Teams and clubs
-subcategoria,Escalada,en,Climbing
-subcategoria,Escultura,en,Sculpture
-subcategoria,Espionaje,en,Espionage
 subcategoria,Evento,en,Event
 subcategoria,Explorador,en,Explorer
-subcategoria,Fantasía,en,Fantasy
 subcategoria,Faraón,en,Pharaoh
 subcategoria,Físico,en,Physicist
-subcategoria,Fútbol,en,Football
-subcategoria,Gimnasia,en,Gymnastics
 subcategoria,Golf,en,Golf
 subcategoria,Grupo,en,Group
-subcategoria,Histórica,en,Historical
 subcategoria,Hogar,en,Home
-subcategoria,Héroe griego,en,Greek hero
-subcategoria,Infantil,en,Children’s
-subcategoria,Infantil española,en,Spanish children’s
-subcategoria,Infraestructura,en,Infrastructure
-subcategoria,Inventor,en,Inventor
 subcategoria,Isla,en,Island
-subcategoria,Juegos de mesa y cartas,en,Board and card games
-subcategoria,Juguetes,en,Toys
-subcategoria,Literatura,en,Literature
-subcategoria,Literatura infantil,en,Children’s literature
-subcategoria,Literatura y TV,en,Literature and TV
-subcategoria,Lucha,en,Wrestling
 subcategoria,Lugar,en,Place
-subcategoria,Marca,en,Brand
-subcategoria,Misterio,en,Mystery
 subcategoria,Mitología,en,Mythology
 subcategoria,Mitología griega,en,Greek mythology
-subcategoria,Mitología nórdica,en,Norse mythology
 subcategoria,Mitología romana,en,Roman mythology
 subcategoria,Moda,en,Fashion
 subcategoria,Monumento,en,Monument
 subcategoria,Motociclismo,en,Motorcycling
-subcategoria,Musical,en,Musical
-subcategoria,Móvil,en,Mobile
 subcategoria,Natación,en,Swimming
 subcategoria,Naturaleza,en,Nature
 subcategoria,Obra,en,Work
-subcategoria,Otros deportes,en,Other sports
 subcategoria,Parque temático,en,Theme park
 subcategoria,País,en,Country
-subcategoria,Película,en,Film
-subcategoria,Películas y franquicias,en,Films and franchises
 subcategoria,Persona/Personaje,en,Person/Character
 subcategoria,Personaje histórico,en,Historical figure
-subcategoria,Personas y descubrimientos,en,People and discoveries
-subcategoria,Pintura,en,Painting
-subcategoria,Policiaca,en,Crime
-subcategoria,Político,en,Politician
-subcategoria,Político romano,en,Roman politician
 subcategoria,Presidente,en,President
-subcategoria,Puzzle,en,Puzzle
-subcategoria,Rap,en,Rap
-subcategoria,Reguetón,en,Reggaeton
-subcategoria,Reina egipcia,en,Egyptian queen
-subcategoria,Restauración,en,Dining
-subcategoria,Romance,en,Romance
-subcategoria,Romántica,en,Romantic
-subcategoria,Saga,en,Saga
-subcategoria,Sandbox,en,Sandbox
-subcategoria,Serie,en,Series
-subcategoria,Simulación,en,Simulation
-subcategoria,Streaming,en,Streaming
-subcategoria,Superhéroes,en,Superheroes
 subcategoria,Tecnología,en,Technology
-subcategoria,Tenis y pádel,en,Tennis and padel
-subcategoria,Terror,en,Horror
-subcategoria,Terror español,en,Spanish horror
-subcategoria,Thriller,en,Thriller
-subcategoria,Thriller español,en,Spanish thriller
-subcategoria,Videojuegos,en,Video games
-subcategoria,Arquitecto,en,Architect
-subcategoria,Científica,en,Scientist
-subcategoria,Costa/Playa,en,Coast/Beach
-subcategoria,Cuadro,en,Painting
-subcategoria,Desierto,en,Desert
-subcategoria,Director,en,Director
-subcategoria,Entrenador de fútbol,en,Football coach
-subcategoria,Evento histórico,en,Historical event
-subcategoria,Filósofo,en,Philosopher
-subcategoria,Golfista,en,Golfer
-subcategoria,Humorista,en,Comedian
-subcategoria,Inventores,en,Inventors
-subcategoria,Isla/archipiélago,en,Island/Archipelago
-subcategoria,Modelo,en,Model
-subcategoria,Montaña,en,Mountain
-subcategoria,Novela,en,Novel
-subcategoria,Obra musical,en,Musical work
-subcategoria,Paisaje natural,en,Natural landscape
-subcategoria,Piloto de automovilismo,en,Racing driver
-subcategoria,Poema,en,Poem
-subcategoria,Presentador,en,Presenter
-subcategoria,Reina,en,Queen
+categoria,Ocio,es,Ocio
+categoria,Ocio,fr,Loisirs
+categoria,Ocio,pt,Lazer
 subcategoria,Videojuego,en,Video game
-subcategoria,Épica,en,Epic
+subcategoria,Videojuego,es,Videojuego
+subcategoria,Físico,fr,Physicien
+subcategoria,Físico,pt,Físico
+subcategoria,Tecnología,fr,Technologie
+subcategoria,Tecnología,pt,Tecnologia
+subcategoria,Persona/Personaje,fr,Personnalité
+subcategoria,Persona/Personaje,pt,Personalidade
+subcategoria,Motociclismo,fr,Moto
+subcategoria,Motociclismo,pt,Motociclismo
+subcategoria,Atletismo,fr,Athlétisme
+subcategoria,Atletismo,pt,Atletismo
+subcategoria,Natación,fr,Natation
+subcategoria,Natación,pt,Natação
+subcategoria,Golf,fr,Golf
+subcategoria,Golf,pt,Golfe
+subcategoria,Entrenador,fr,Entraîneur
+subcategoria,Entrenador,pt,Treinador
+subcategoria,Equipos y clubes,fr,Équipes et clubs
+subcategoria,Equipos y clubes,pt,Equipas e clubes
+subcategoria,Personaje histórico,fr,Personnage historique
+subcategoria,Personaje histórico,pt,Personagem histórica
+subcategoria,Explorador,fr,Explorateur
+subcategoria,Explorador,pt,Explorador
+subcategoria,Activista,fr,Militant
+subcategoria,Activista,pt,Ativista
+subcategoria,Presidente,fr,Président
+subcategoria,Presidente,pt,Presidente
+subcategoria,Faraón,fr,Pharaon
+subcategoria,Faraón,pt,Faraó
+subcategoria,Evento,fr,Événement
+subcategoria,Evento,pt,Evento
+subcategoria,Civilización,fr,Civilisation
+subcategoria,Civilización,pt,Civilização
+subcategoria,Obra,fr,Œuvre
+subcategoria,Obra,pt,Obra
+subcategoria,Monumento,fr,Monument
+subcategoria,Monumento,pt,Monumento
+subcategoria,Ciudad,fr,Ville
+subcategoria,Ciudad,pt,Cidade
+subcategoria,País,fr,Pays
+subcategoria,País,pt,País
+subcategoria,Parque temático,fr,Parc à thème
+subcategoria,Parque temático,pt,Parque temático
+subcategoria,Naturaleza,fr,Nature
+subcategoria,Naturaleza,pt,Natureza
+subcategoria,Destino,fr,Destination
+subcategoria,Destino,pt,Destino
+subcategoria,Hogar,fr,Maison
+subcategoria,Hogar,pt,Casa
+subcategoria,Moda,fr,Mode
+subcategoria,Moda,pt,Moda
+subcategoria,Entretenimiento,fr,Divertissement
+subcategoria,Entretenimiento,pt,Entretenimento
+subcategoria,Automoción,fr,Automobile
+subcategoria,Automoción,pt,Automóvel
+subcategoria,Alimentación,fr,Alimentation
+subcategoria,Alimentación,pt,Alimentação
+subcategoria,Mitología griega,fr,Mythologie grecque
+subcategoria,Mitología griega,pt,Mitologia grega
+subcategoria,Mitología romana,fr,Mythologie romaine
+subcategoria,Mitología romana,pt,Mitologia romana
+subcategoria,Grupo,fr,Groupe
+subcategoria,Grupo,pt,Grupo
+subcategoria,Animales,fr,Animaux
+subcategoria,Animales,pt,Animais
+subcategoria,Videojuego,fr,Jeu vidéo
+subcategoria,Videojuego,pt,Videojogo
+subcategoria,Consola,fr,Console
+subcategoria,Consola,pt,Consola
+subcategoria,Empresa,fr,Entreprise
+subcategoria,Empresa,pt,Empresa
+subcategoria,Isla,fr,Île
+subcategoria,Isla,pt,Ilha
+subcategoria,Barrio,fr,Quartier
+subcategoria,Barrio,pt,Bairro
+subcategoria,Lugar,fr,Lieu
+subcategoria,Lugar,pt,Lugar
+subcategoria,Mitología,fr,Mythologie
+subcategoria,Mitología,pt,Mitologia
+subcategoria,Escultor,en,Sculptor
+subcategoria,Escultor,es,Escultor
+subcategoria,Juego de mesa,en,Board game
+subcategoria,Juego de mesa,es,Juego de mesa
+subcategoria,Actriz,en,Actress
+subcategoria,Actor,en,Actor
+subcategoria,Director,en,Director
+subcategoria,Reguetón,en,Reggaeton
+subcategoria,Cuadro,en,Painting
+subcategoria,Ciclismo,en,Cycling
+subcategoria,Gimnasia,en,Gymnastics
+subcategoria,Boxeo,en,Boxing
+subcategoria,Deportista,en,Athlete
+subcategoria,Serie,en,Series
+subcategoria,Película,en,Film
+categoria,Objetos,es,Objetos
+categoria,Objetos,en,Objects
+categoria,Objetos,fr,Objets
+categoria,Objetos,pt,Objetos
+categoria,Comida,es,Comida
+categoria,Comida,en,Food
+categoria,Comida,fr,Nourriture
+categoria,Comida,pt,Comida
+categoria,Acciones,es,Acciones
+categoria,Acciones,en,Actions
+categoria,Acciones,fr,Actions
+categoria,Acciones,pt,Ações
+categoria,Conceptos,es,Conceptos
+categoria,Conceptos,en,Concepts
+categoria,Conceptos,fr,Concepts
+categoria,Conceptos,pt,Conceitos
+subcategoria,Higiene,en,Hygiene
+subcategoria,Higiene,fr,Hygiène
+subcategoria,Higiene,pt,Higiene
+subcategoria,Colegio,en,School
+subcategoria,Colegio,fr,École
+subcategoria,Colegio,pt,Escola
+subcategoria,Juguete,en,Toy
+subcategoria,Juguete,fr,Jouet
+subcategoria,Juguete,pt,Brinquedo
+subcategoria,Ropa,en,Clothing
+subcategoria,Ropa,fr,Vêtements
+subcategoria,Ropa,pt,Roupa
+subcategoria,Casa,en,Home
+subcategoria,Casa,fr,Maison
+subcategoria,Casa,pt,Casa
+subcategoria,Plato,en,Dish
+subcategoria,Plato,fr,Plat
+subcategoria,Plato,pt,Prato
+subcategoria,Postre,en,Dessert
+subcategoria,Postre,fr,Dessert
+subcategoria,Postre,pt,Sobremesa
+subcategoria,Dulce,en,Sweet
+subcategoria,Dulce,fr,Sucré
+subcategoria,Dulce,pt,Doce
+subcategoria,Aperitivo,en,Snack
+subcategoria,Aperitivo,fr,Apéritif
+subcategoria,Aperitivo,pt,Aperitivo
+subcategoria,Fruta,en,Fruit
+subcategoria,Fruta,fr,Fruit
+subcategoria,Fruta,pt,Fruta
+subcategoria,Rutina,en,Routine
+subcategoria,Rutina,fr,Routine
+subcategoria,Rutina,pt,Rotina
+subcategoria,Movimiento,en,Movement
+subcategoria,Movimiento,fr,Mouvement
+subcategoria,Movimiento,pt,Movimento
+subcategoria,Emoción,en,Emotion
+subcategoria,Emoción,fr,Émotion
+subcategoria,Emoción,pt,Emoção
+subcategoria,Gestos,en,Gestures
+subcategoria,Gestos,fr,Gestes
+subcategoria,Gestos,pt,Gestos
+subcategoria,Familia,en,Family
+subcategoria,Familia,fr,Famille
+subcategoria,Familia,pt,Família
+subcategoria,Celebración,en,Celebration
+subcategoria,Celebración,fr,Fête
+subcategoria,Celebración,pt,Celebração
+subcategoria,Tiempo libre,en,Free time
+subcategoria,Tiempo libre,fr,Temps libre
+subcategoria,Tiempo libre,pt,Tempo livre
+subcategoria,Equipo,en,Team
+subcategoria,Equipo,fr,Équipe
+subcategoria,Equipo,pt,Equipa
+subcategoria,Juego,en,Game
+subcategoria,Juego,fr,Jeu
+subcategoria,Juego,pt,Jogo
+subcategoria,Fantasía,en,Fantasy
+subcategoria,Fantasía,fr,Fantaisie
+subcategoria,Fantasía,pt,Fantasia
+subcategoria,Juguetes,en,Toys
+subcategoria,Juguetes,fr,Jouets
+subcategoria,Juguetes,pt,Brinquedos
+subcategoria,Transporte,en,Transport
+subcategoria,Transporte,fr,Transport
+subcategoria,Transporte,pt,Transporte
+subcategoria,Deporte,en,Sport
+subcategoria,Deporte,fr,Sport
+subcategoria,Deporte,pt,Desporto
+subcategoria,Ocio,en,Leisure
+subcategoria,Ocio,fr,Loisirs
+subcategoria,Ocio,pt,Lazer
+subcategoria,Música,en,Music
+subcategoria,Música,fr,Musique
+subcategoria,Música,pt,Música

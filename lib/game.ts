@@ -1,7 +1,13 @@
 import { WORD_BANK, type Difficulty, type WordCard } from '../data/wordBank.ts';
+import { WORD_BANK_FAMILY } from '../data/wordBankFamily.ts';
 import { DEFAULT_WORD_PACKAGE } from '../data/wordPackages.ts';
 
 export type LanguageCode = 'es' | 'en' | 'fr' | 'pt';
+
+export function localizedWord(card: Pick<WordCard, 'palabra' | 'translations'> | null | undefined, language: LanguageCode): string {
+  if (!card) return '';
+  return card.translations?.[language] ?? card.palabra;
+}
 
 const defaultTeamNames: Record<LanguageCode, [string, string]> = {
   es: ['Equipo Sol', 'Equipo Luna'],
@@ -179,17 +185,17 @@ function moveCardToEnd(queue: string[], card: string): string[] {
 
 export function buildDeck(cardCount: CardCount, excludedWords: string[], language: LanguageCode = 'es', familyMode = false): WordCard[] {
   const unique = new Map<string, WordCard>();
-  for (const card of WORD_BANK) {
+  const baseBank = familyMode ? WORD_BANK_FAMILY : WORD_BANK;
+  for (const card of baseBank) {
     unique.set(normalizedWord(card.palabra), card);
   }
   const allCandidates = Array.from(unique.values());
   const excluded = new Set(excludedWords);
-  const packageCandidates = DEFAULT_WORD_PACKAGE === 'core'
+  const packageCandidates = familyMode || DEFAULT_WORD_PACKAGE === 'core'
     ? allCandidates.filter((card) => card.popularidad === 'Muy alta')
     : allCandidates;
   const available = (packageCandidates.length >= cardCount ? packageCandidates : allCandidates)
-    .filter((card) => !excluded.has(normalizedWord(card.palabra)))
-    .filter((card) => !familyMode || card.infantil === true);
+    .filter((card) => !excluded.has(normalizedWord(card.palabra)));
 
   const internationalOnly = language !== 'es';
   const internationalCandidates = available.filter((card) => card.internacional === true);

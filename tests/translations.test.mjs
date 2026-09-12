@@ -36,9 +36,15 @@ test('English has explicit UI translations and translated labels for every card'
   assert.match(UI_TEXT.en.instructionsBody, /30 seconds/);
   assert.equal(UI_TEXT.es.createDeck, 'Crear partida');
   const { WORD_BANK } = await import('../data/wordBank.ts');
-  for (const card of WORD_BANK) {
+  const { WORD_BANK_FAMILY } = await import('../data/wordBankFamily.ts');
+  for (const card of [...WORD_BANK, ...WORD_BANK_FAMILY]) {
     assert.ok(card.categoryTranslations?.en, card.categoria);
     assert.ok(card.subcategoryTranslations?.en, card.subcategoria);
+  }
+  for (const card of WORD_BANK_FAMILY.filter(card => card.internacional)) {
+    assert.ok(card.translations?.en, `Missing family English: ${card.palabra}`);
+    assert.ok(card.translations?.fr, `Missing family French: ${card.palabra}`);
+    assert.ok(card.translations?.pt, `Missing family Portuguese: ${card.palabra}`);
   }
 });
 
@@ -55,8 +61,10 @@ test('El banco de palabras ya no depende del campo tipo', async () => {
 test('Category and subcategory translations only reference values used by the word bank', async () => {
   const csv = readFileSync(new URL('../data/category_subcategory_translations.csv', import.meta.url), 'utf8');
   const { WORD_BANK } = await import('../data/wordBank.ts');
-  const usedCategories = new Set(WORD_BANK.map(card => card.categoria));
-  const usedSubcategories = new Set(WORD_BANK.map(card => card.subcategoria));
+  const { WORD_BANK_FAMILY } = await import('../data/wordBankFamily.ts');
+  const usedCards = [...WORD_BANK, ...WORD_BANK_FAMILY];
+  const usedCategories = new Set(usedCards.map(card => card.categoria));
+  const usedSubcategories = new Set(usedCards.map(card => card.subcategoria));
   const translatedValues = new Map([
     ['categoria', usedCategories],
     ['subcategoria', usedSubcategories],

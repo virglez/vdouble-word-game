@@ -30,7 +30,7 @@ export const UI_TEXT: Record<LanguageCode, Record<string, string>> = {
     "settings": "Ajustes",
     "language": "Idioma",
     "familyMode": "Modo familiar",
-    "familyModeDescription": "Solo tarjetas infantiles",
+    "familyModeDescription": "Cartas familiares",
     "new_game": "Nueva partida",
     "play_again": "Jugar de nuevo",
     "winner": "Ganador",
@@ -194,7 +194,7 @@ export const UI_TEXT: Record<LanguageCode, Record<string, string>> = {
     "settings": "Settings",
     "language": "Language",
     "familyMode": "Family mode",
-    "familyModeDescription": "Children's cards only",
+    "familyModeDescription": "Family cards",
     "new_game": "New game",
     "play_again": "Play again",
     "winner": "Winner",
@@ -358,7 +358,7 @@ export const UI_TEXT: Record<LanguageCode, Record<string, string>> = {
     "settings": "Paramètres",
     "language": "Langue",
     "familyMode": "Mode famille",
-    "familyModeDescription": "Cartes pour enfants uniquement",
+    "familyModeDescription": "Cartes familiales",
     "new_game": "Nouvelle partie",
     "play_again": "Rejouer",
     "winner": "Gagnant",
@@ -522,7 +522,7 @@ export const UI_TEXT: Record<LanguageCode, Record<string, string>> = {
     "settings": "Definições",
     "language": "Idioma",
     "familyMode": "Modo família",
-    "familyModeDescription": "Apenas cartões infantis",
+    "familyModeDescription": "Cartas familiares",
     "new_game": "Novo jogo",
     "play_again": "Jogar novamente",
     "winner": "Vencedor",
@@ -668,7 +668,3 @@ export const UI_TEXT: Record<LanguageCode, Record<string, string>> = {
     "decabloSameDeck": "As mesmas palavras voltam",
   },
 };
-
-export function getText(language: LanguageCode, key: string) {
-  return UI_TEXT[language]?.[key] ?? UI_TEXT.es[key] ?? key;
-}

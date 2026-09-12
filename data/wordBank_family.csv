@@ -1,0 +1,181 @@
+id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,alcance,internacional
+F001,Cepillo de dientes,Objetos,Higiene,Muy alta,Fácil,Actual,Internacional,true
+F002,Mochila,Objetos,Colegio,Muy alta,Fácil,Actual,Internacional,true
+F003,Lápiz,Objetos,Colegio,Muy alta,Fácil,Actual,Internacional,true
+F004,Goma de borrar,Objetos,Colegio,Muy alta,Fácil,Actual,Internacional,true
+F005,Libro,Objetos,Colegio,Muy alta,Fácil,Actual,Internacional,true
+F006,Cuaderno,Objetos,Colegio,Muy alta,Fácil,Actual,Internacional,true
+F007,Tijeras,Objetos,Colegio,Muy alta,Fácil,Actual,Internacional,true
+F008,Pegamento,Objetos,Colegio,Muy alta,Fácil,Actual,Internacional,true
+F009,Balón,Objetos,Deporte,Muy alta,Fácil,Actual,Internacional,true
+F010,Patinete,Objetos,Juguete,Muy alta,Fácil,Actual,Internacional,true
+F011,Bicicleta,Objetos,Transporte,Muy alta,Fácil,Actual,Internacional,true
+F012,Casco,Objetos,Deporte,Muy alta,Fácil,Actual,Internacional,true
+F013,Gafas de sol,Objetos,Ropa,Muy alta,Fácil,Actual,Internacional,true
+F014,Zapatillas,Objetos,Ropa,Muy alta,Fácil,Actual,Internacional,true
+F015,Paraguas,Objetos,Casa,Muy alta,Fácil,Actual,Internacional,true
+F016,Llaves,Objetos,Casa,Muy alta,Fácil,Actual,Internacional,true
+F017,Mando a distancia,Objetos,Casa,Muy alta,Fácil,Actual,Internacional,true
+F018,Sofá,Objetos,Casa,Muy alta,Fácil,Actual,Internacional,true
+F019,Cama,Objetos,Casa,Muy alta,Fácil,Actual,Internacional,true
+F020,Almohada,Objetos,Casa,Muy alta,Fácil,Actual,Internacional,true
+F021,Teléfono móvil,Objetos,Tecnología,Muy alta,Fácil,Actual,Internacional,true
+F022,Tablet,Objetos,Tecnología,Muy alta,Fácil,Actual,Internacional,true
+F023,Auriculares,Objetos,Tecnología,Muy alta,Fácil,Actual,Internacional,true
+F024,Cargador,Objetos,Tecnología,Muy alta,Fácil,Actual,Internacional,true
+F025,Cámara,Objetos,Tecnología,Muy alta,Fácil,Actual,Internacional,true
+F026,Reloj,Objetos,Tecnología,Muy alta,Fácil,Actual,Internacional,true
+F027,Cepillo del pelo,Objetos,Higiene,Muy alta,Fácil,Actual,Internacional,true
+F028,Champú,Objetos,Higiene,Muy alta,Fácil,Actual,Internacional,true
+F029,Jabón,Objetos,Higiene,Muy alta,Fácil,Actual,Internacional,true
+F030,Toalla,Objetos,Higiene,Muy alta,Fácil,Actual,Internacional,true
+F031,Pizza,Comida,Plato,Muy alta,Fácil,Actual,Internacional,true
+F032,Hamburguesa,Comida,Plato,Muy alta,Fácil,Actual,Internacional,true
+F033,Helado,Comida,Postre,Muy alta,Fácil,Actual,Internacional,true
+F034,Chocolate,Comida,Dulce,Muy alta,Fácil,Actual,Internacional,true
+F035,Palomitas,Comida,Aperitivo,Muy alta,Fácil,Actual,Internacional,true
+F036,Patatas fritas,Comida,Aperitivo,Muy alta,Fácil,Actual,Internacional,true
+F037,Tarta,Comida,Postre,Muy alta,Fácil,Actual,Internacional,true
+F038,Galletas,Comida,Dulce,Muy alta,Fácil,Actual,Internacional,true
+F039,Manzana,Comida,Fruta,Muy alta,Fácil,Actual,Internacional,true
+F040,Plátano,Comida,Fruta,Muy alta,Fácil,Actual,Internacional,true
+F041,Sandía,Comida,Fruta,Muy alta,Fácil,Actual,Internacional,true
+F042,Espaguetis,Comida,Plato,Muy alta,Fácil,Actual,Internacional,true
+F043,Tortilla de patatas,Comida,Plato,Muy alta,Fácil,Actual,Nacional,false
+F044,Croquetas,Comida,Plato,Muy alta,Fácil,Actual,Nacional,false
+F045,Churros,Comida,Dulce,Muy alta,Fácil,Actual,Nacional,false
+F046,Dormir,Acciones,Rutina,Muy alta,Fácil,Actual,Internacional,true
+F047,Comer,Acciones,Rutina,Muy alta,Fácil,Actual,Internacional,true
+F048,Bailar,Acciones,Movimiento,Muy alta,Fácil,Actual,Internacional,true
+F049,Cantar,Acciones,Movimiento,Muy alta,Fácil,Actual,Internacional,true
+F050,Saltar,Acciones,Movimiento,Muy alta,Fácil,Actual,Internacional,true
+F051,Correr,Acciones,Movimiento,Muy alta,Fácil,Actual,Internacional,true
+F052,Nadar,Acciones,Deporte,Muy alta,Fácil,Actual,Internacional,true
+F053,Patinar,Acciones,Deporte,Muy alta,Fácil,Actual,Internacional,true
+F054,Reír,Acciones,Emoción,Muy alta,Fácil,Actual,Internacional,true
+F055,Llorar,Acciones,Emoción,Muy alta,Fácil,Actual,Internacional,true
+F056,Estornudar,Acciones,Gestos,Muy alta,Fácil,Actual,Internacional,true
+F057,Lavarse los dientes,Acciones,Rutina,Muy alta,Fácil,Actual,Internacional,true
+F058,Hacer deberes,Acciones,Colegio,Muy alta,Fácil,Actual,Internacional,true
+F059,Jugar a videojuegos,Acciones,Ocio,Muy alta,Fácil,Actual,Internacional,true
+F060,Tocar la guitarra,Acciones,Música,Muy alta,Fácil,Actual,Internacional,true
+F061,Perro,Naturaleza,Animales,Muy alta,Fácil,Actual,Internacional,true
+F062,Gato,Naturaleza,Animales,Muy alta,Fácil,Actual,Internacional,true
+F063,León,Naturaleza,Animales,Muy alta,Fácil,Actual,Internacional,true
+F064,Tigre,Naturaleza,Animales,Muy alta,Fácil,Actual,Internacional,true
+F065,Elefante,Naturaleza,Animales,Muy alta,Fácil,Actual,Internacional,true
+F066,Jirafa,Naturaleza,Animales,Muy alta,Fácil,Actual,Internacional,true
+F067,Mono,Naturaleza,Animales,Muy alta,Fácil,Actual,Internacional,true
+F068,Delfín,Naturaleza,Animales,Muy alta,Fácil,Actual,Internacional,true
+F069,Tiburón,Naturaleza,Animales,Muy alta,Fácil,Actual,Internacional,true
+F070,Pingüino,Naturaleza,Animales,Muy alta,Fácil,Actual,Internacional,true
+F071,Serpiente,Naturaleza,Animales,Muy alta,Fácil,Actual,Internacional,true
+F072,Araña,Naturaleza,Animales,Muy alta,Fácil,Actual,Internacional,true
+F073,Mosquito,Naturaleza,Animales,Muy alta,Fácil,Actual,Internacional,true
+F074,Rana,Naturaleza,Animales,Muy alta,Fácil,Actual,Internacional,true
+F075,Caballo,Naturaleza,Animales,Muy alta,Fácil,Actual,Internacional,true
+F076,Bebé,Conceptos,Familia,Muy alta,Fácil,Actual,Internacional,true
+F077,Abuela,Conceptos,Familia,Muy alta,Fácil,Actual,Internacional,true
+F078,Cumpleaños,Conceptos,Celebración,Muy alta,Fácil,Actual,Internacional,true
+F079,Navidad,Conceptos,Celebración,Muy alta,Fácil,Actual,Internacional,true
+F080,Halloween,Conceptos,Celebración,Muy alta,Fácil,Actual,Internacional,true
+F081,Vacaciones,Conceptos,Tiempo libre,Muy alta,Fácil,Actual,Internacional,true
+F082,Colegio,Conceptos,Colegio,Muy alta,Fácil,Actual,Internacional,true
+F083,Recreo,Conceptos,Colegio,Muy alta,Fácil,Actual,Internacional,true
+F084,Examen,Conceptos,Colegio,Muy alta,Fácil,Actual,Internacional,true
+F085,Amigo invisible,Conceptos,Celebración,Muy alta,Fácil,Actual,Internacional,true
+F086,Fútbol,Deportes,Deporte,Muy alta,Fácil,Actual,Internacional,true
+F087,Baloncesto,Deportes,Deporte,Muy alta,Fácil,Actual,Internacional,true
+F088,Tenis,Deportes,Deporte,Muy alta,Fácil,Actual,Internacional,true
+F089,Natación,Deportes,Deporte,Muy alta,Fácil,Actual,Internacional,true
+F090,Gimnasia,Deportes,Deporte,Muy alta,Fácil,Actual,Internacional,true
+F091,Karate,Deportes,Deporte,Muy alta,Fácil,Actual,Internacional,true
+F092,Lionel Messi,Deportes,Futbolista,Muy alta,Fácil,Actual,Internacional,true
+F093,Cristiano Ronaldo,Deportes,Futbolista,Muy alta,Fácil,Actual,Internacional,true
+F094,Lamine Yamal,Deportes,Futbolista,Muy alta,Fácil,Actual,Internacional,true
+F095,Carlos Alcaraz,Deportes,Tenista,Muy alta,Fácil,Actual,Internacional,true
+F096,Real Madrid,Deportes,Equipo,Muy alta,Fácil,Actual,Internacional,true
+F097,FC Barcelona,Deportes,Equipo,Muy alta,Fácil,Actual,Internacional,true
+F098,Parque de atracciones,Lugares,Lugar,Muy alta,Fácil,Actual,Internacional,true
+F099,Piscina,Lugares,Lugar,Muy alta,Fácil,Actual,Internacional,true
+F100,Playa,Lugares,Lugar,Muy alta,Fácil,Actual,Internacional,true
+F101,Cine,Lugares,Lugar,Muy alta,Fácil,Actual,Internacional,true
+F102,Supermercado,Lugares,Lugar,Muy alta,Fácil,Actual,Internacional,true
+F103,Hospital,Lugares,Lugar,Muy alta,Fácil,Actual,Internacional,true
+F104,Aeropuerto,Lugares,Lugar,Muy alta,Fácil,Actual,Internacional,true
+F105,Nueva York,Lugares,Ciudad,Muy alta,Fácil,Actual,Internacional,true
+F106,París,Lugares,Ciudad,Muy alta,Fácil,Actual,Internacional,true
+F107,Londres,Lugares,Ciudad,Muy alta,Fácil,Actual,Internacional,true
+F108,Madrid,Lugares,Ciudad,Muy alta,Fácil,Actual,Internacional,true
+F109,Barcelona,Lugares,Ciudad,Muy alta,Fácil,Actual,Internacional,true
+F110,Disneyland,Lugares,Parque temático,Muy alta,Fácil,Actual,Internacional,true
+F111,Coca-Cola,Marcas,Alimentación,Muy alta,Fácil,Actual,Internacional,true
+F112,McDonald's,Marcas,Alimentación,Muy alta,Fácil,Actual,Internacional,true
+F113,Lego,Marcas,Juguetes,Muy alta,Fácil,Actual,Internacional,true
+F114,Google,Marcas,Tecnología,Muy alta,Fácil,Actual,Internacional,true
+F115,YouTube,Marcas,Tecnología,Muy alta,Fácil,Actual,Internacional,true
+F116,TikTok,Marcas,Tecnología,Muy alta,Fácil,Actual,Internacional,true
+F117,WhatsApp,Marcas,Tecnología,Muy alta,Fácil,Actual,Internacional,true
+F118,Netflix,Marcas,Tecnología,Muy alta,Fácil,Actual,Internacional,true
+F119,Nintendo,Marcas,Entretenimiento,Muy alta,Fácil,Actual,Internacional,true
+F120,PlayStation,Marcas,Entretenimiento,Muy alta,Fácil,Actual,Internacional,true
+F121,Zara,Marcas,Moda,Muy alta,Fácil,Actual,Internacional,true
+F122,Nike,Marcas,Moda,Muy alta,Fácil,Actual,Internacional,true
+F123,Adidas,Marcas,Moda,Muy alta,Fácil,Actual,Internacional,true
+F124,Minecraft,Ocio,Videojuego,Muy alta,Fácil,Actual,Internacional,true
+F125,Fortnite,Ocio,Videojuego,Muy alta,Fácil,Actual,Internacional,true
+F126,Roblox,Ocio,Videojuego,Muy alta,Fácil,Actual,Internacional,true
+F127,Brawl Stars,Ocio,Videojuego,Muy alta,Fácil,Actual,Internacional,true
+F128,Among Us,Ocio,Videojuego,Muy alta,Fácil,Actual,Internacional,true
+F129,Super Mario Bros.,Ocio,Videojuego,Muy alta,Fácil,Actual,Internacional,true
+F130,Mario Kart,Ocio,Videojuego,Muy alta,Fácil,Actual,Internacional,true
+F131,Just Dance,Ocio,Videojuego,Muy alta,Fácil,Actual,Internacional,true
+F132,UNO,Ocio,Juego de mesa,Muy alta,Fácil,Actual,Internacional,true
+F133,Monopoly,Ocio,Juego de mesa,Muy alta,Fácil,Actual,Internacional,true
+F134,Jenga,Ocio,Juego de mesa,Muy alta,Fácil,Actual,Internacional,true
+F135,Pictionary,Ocio,Juego de mesa,Muy alta,Fácil,Actual,Internacional,true
+F136,Twister,Ocio,Juego de mesa,Muy alta,Fácil,Actual,Internacional,true
+F137,Ajedrez,Ocio,Juego de mesa,Muy alta,Fácil,Actual,Internacional,true
+F138,Damas,Ocio,Juego de mesa,Muy alta,Fácil,Actual,Internacional,true
+F139,Rosalía,Música,Cantante,Muy alta,Fácil,Actual,Nacional,false
+F140,Aitana,Música,Cantante,Muy alta,Fácil,Actual,Nacional,false
+F141,Taylor Swift,Música,Cantante,Muy alta,Fácil,Actual,Internacional,true
+F142,Dua Lipa,Música,Cantante,Muy alta,Fácil,Actual,Internacional,true
+F143,Billie Eilish,Música,Cantante,Muy alta,Fácil,Actual,Internacional,true
+F144,Shakira,Música,Cantante,Muy alta,Fácil,Actual,Internacional,true
+F145,Bad Bunny,Música,Cantante,Muy alta,Fácil,Actual,Internacional,true
+F146,Karol G,Música,Cantante,Muy alta,Fácil,Actual,Internacional,true
+F147,Mickey Mouse,Cine y TV,Personaje,Muy alta,Fácil,Actual,Internacional,true
+F148,Bob Esponja,Cine y TV,Personaje,Muy alta,Fácil,Actual,Internacional,true
+F149,Pikachu,Cine y TV,Personaje,Muy alta,Fácil,Actual,Internacional,true
+F150,Mario,Cine y TV,Personaje,Muy alta,Fácil,Actual,Internacional,true
+F151,Doraemon,Cine y TV,Personaje,Muy alta,Fácil,Actual,Internacional,true
+F152,Spider-Man,Cine y TV,Personaje,Muy alta,Fácil,Actual,Internacional,true
+F153,Batman,Cine y TV,Personaje,Muy alta,Fácil,Actual,Internacional,true
+F154,Elsa,Cine y TV,Personaje,Muy alta,Fácil,Actual,Internacional,true
+F155,Peppa Pig,Cine y TV,Personaje,Muy alta,Fácil,Actual,Internacional,true
+F156,Patrulla Canina,Cine y TV,Serie,Muy alta,Fácil,Actual,Internacional,true
+F157,Pokémon,Cine y TV,Serie,Muy alta,Fácil,Actual,Internacional,true
+F158,Los Simpson,Cine y TV,Serie,Muy alta,Fácil,Actual,Internacional,true
+F159,El Rey León,Cine y TV,Película,Muy alta,Fácil,Actual,Internacional,true
+F160,Frozen,Cine y TV,Película,Muy alta,Fácil,Actual,Internacional,true
+F161,Toy Story,Cine y TV,Película,Muy alta,Fácil,Actual,Internacional,true
+F162,Shrek,Cine y TV,Película,Muy alta,Fácil,Actual,Internacional,true
+F163,Coco,Cine y TV,Película,Muy alta,Fácil,Actual,Internacional,true
+F164,Del revés,Cine y TV,Película,Muy alta,Fácil,Actual,Internacional,true
+F165,Encanto,Cine y TV,Película,Muy alta,Fácil,Actual,Internacional,true
+F166,Hércules,Cultura,Mitología,Muy alta,Fácil,Actual,Internacional,true
+F167,Sirena,Cultura,Mitología,Muy alta,Fácil,Actual,Internacional,true
+F168,Unicornio,Cultura,Mitología,Muy alta,Fácil,Actual,Internacional,true
+F169,Dragón,Cultura,Mitología,Muy alta,Fácil,Actual,Internacional,true
+F170,Hada,Cultura,Mitología,Muy alta,Fácil,Actual,Internacional,true
+F171,Vampiro,Cultura,Mitología,Muy alta,Fácil,Actual,Internacional,true
+F172,Mago,Cultura,Fantasía,Muy alta,Fácil,Actual,Internacional,true
+F173,Bruja,Cultura,Fantasía,Muy alta,Fácil,Actual,Internacional,true
+F174,Charadas,Ocio,Juego,Alta,Media,Actual,Internacional,true
+F175,Karaoke,Ocio,Juego,Alta,Media,Actual,Internacional,true
+F176,Videollamada,Conceptos,Tecnología,Alta,Media,Actual,Internacional,true
+F177,Selfie,Conceptos,Tecnología,Alta,Media,Actual,Internacional,true
+F178,Emoji,Conceptos,Tecnología,Alta,Media,Actual,Internacional,true
+F179,Contraseña,Conceptos,Tecnología,Alta,Media,Actual,Internacional,true
+F180,Wifi,Conceptos,Tecnología,Alta,Media,Actual,Internacional,true

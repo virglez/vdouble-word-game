@@ -17,3 +17,8 @@ app/src/main/java/inline/
 
 # Bundle artifacts
 *.jsbundle
+
+# Release signing (never commit real keystore/credentials)
+keystore.properties
+*.jks
+*.keystore

@@ -22,6 +22,7 @@ import { createStyles } from '@/components/decabloStyles';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useColors } from '@/hooks/useColors';
 import { GameProvider, TURN_LENGTH_MS, useGame, type CardCount } from '@/context/GameContext';
+import { localizedWord } from '@/lib/game.ts';
 import { LANGUAGE_OPTIONS, UI_TEXT, type LanguageCode } from '@/data/ui_text';
 import { LOCALIZED_ASSETS } from '@/lib/localizedAssets';
 
@@ -288,7 +289,7 @@ function SetupScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
           <Feather name="users" size={21} color={state.familyMode ? colors.primaryForeground : colors.primary} />
           <View style={styles.familyModeCopy}>
             <Text style={[styles.familyModeTitle, state.familyMode && styles.familyModeTitleSelected]}>{t.familyMode ?? 'MODO FAMILIAR'}</Text>
-            <Text style={[styles.familyModeNote, state.familyMode && styles.familyModeNoteSelected]}>{t.familyModeDescription ?? 'Solo tarjetas infantiles'}</Text>
+            <Text style={[styles.familyModeNote, state.familyMode && styles.familyModeNoteSelected]}>{t.familyModeDescription ?? 'Cartas familiares'}</Text>
           </View>
           <Feather name={state.familyMode ? 'check-circle' : 'circle'} size={22} color={state.familyMode ? colors.primaryForeground : colors.mutedForeground} />
         </Pressable>
@@ -473,6 +474,7 @@ function ReviewScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
   const t = UI_TEXT[state.language] ?? UI_TEXT.es;
   const correct = state.review.filter(item => item.correct).length;
   const nextTeam = state.teams[state.currentTeam === 0 ? 1 : 0].name;
+  const cardByWord = new Map(state.deck.map(card => [card.palabra, card]));
   return (
     <View style={styles.flex}>
       <ScrollView contentContainerStyle={styles.pageScroll}>
@@ -487,10 +489,12 @@ function ReviewScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
         </View>
         <View style={styles.checklist}>
           {state.review.length === 0 && <Text style={[styles.pageSubtitle, { padding: 20 }]}>{t.reviewNoCard}</Text>}
-          {state.review.map((item, index) => (
+          {state.review.map((item, index) => {
+            const label = localizedWord(cardByWord.get(item.word), state.language) || item.word;
+            return (
             <Pressable key={item.word} accessibilityRole="checkbox"
               accessibilityState={{ checked: item.correct }}
-              accessibilityLabel={`${item.word}: ${item.correct ? t.cardStatusCorrect : t.cardStatusPassed}`}
+              accessibilityLabel={`${label}: ${item.correct ? t.cardStatusCorrect : t.cardStatusPassed}`}
               accessibilityHint={t.reviewEditHint}
               onPress={() => press(() => correctReview(item.word))}
               style={({ pressed }) => [styles.checkRow, item.correct && styles.checkRowCorrect,
@@ -498,10 +502,11 @@ function ReviewScreen({ styles }: { styles: ReturnType<typeof createStyles> }) {
               <View style={[styles.checkBox, item.correct && styles.checkBoxCorrect]}>
                 <Feather name={item.correct ? 'check' : 'minus'} size={19} color={item.correct ? BRAND.navy : BRAND.coral} />
               </View>
-              <Text style={styles.checkWord}>{item.word}</Text>
+              <Text style={styles.checkWord}>{label}</Text>
               <Text style={[styles.checkStatus, item.correct && styles.checkStatusCorrect]}>{item.correct ? t.cardStatusCorrect : t.cardStatusPassed}</Text>
             </Pressable>
-          ))}
+            );
+          })}
         </View>
         {state.remaining.length > 0 ? (
           <Text style={styles.reviewWarning}>Asegúrate de darle a <Text style={styles.reviewWarningStrong}>SIGUIENTE</Text> antes de pasar el móvil al equipo <Text style={styles.reviewWarningStrong}>{nextTeam}</Text></Text>
@@ -642,7 +647,7 @@ function PlayScreen({ styles, seconds }: { styles: ReturnType<typeof createStyle
                 <View style={styles.cardDot} />
                 <Text style={styles.cardCategory}>{(currentCard.subcategoryTranslations?.[state.language] ?? currentCard.subcategoria) || t.cardCultureSubcategory}</Text>
               </View>
-              <Text style={styles.wordText}>{currentCard.palabra}</Text>
+              <Text style={styles.wordText}>{localizedWord(currentCard, state.language)}</Text>
             </>
           ) : (
             <Text style={styles.wordText}>{t.cardCurrent}</Text>

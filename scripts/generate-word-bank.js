@@ -19,10 +19,13 @@ const inputPath = process.env.WORD_BANK_CSV
 const translationInputPath = process.env.WORD_BANK_TRANSLATIONS_CSV
   ? path.resolve(process.env.WORD_BANK_TRANSLATIONS_CSV)
   : path.join(projectRoot, 'data', 'wordBank_translations.csv');
+const familyTranslationInputPath = path.join(projectRoot, 'data', 'wordBank_family_translations.csv');
 const categorySubcategoryInputPath = process.env.CATEGORY_SUBCATEGORY_TRANSLATIONS_CSV
   ? path.resolve(process.env.CATEGORY_SUBCATEGORY_TRANSLATIONS_CSV)
   : path.join(projectRoot, 'data', 'category_subcategory_translations.csv');
 const outputPath = path.join(projectRoot, 'data', 'wordBank.ts');
+const familyInputPath = path.join(projectRoot, 'data', 'wordBank_family.csv');
+const familyOutputPath = path.join(projectRoot, 'data', 'wordBankFamily.ts');
 
 function parseCsv(text) {
   const rows = [];
@@ -78,8 +81,8 @@ for (const header of requiredHeaders) {
 }
 
 const translations = new Map();
-if (fs.existsSync(translationInputPath)) {
-  const translationRows = parseCsv(fs.readFileSync(translationInputPath, 'utf8').replace(/^\uFEFF/, ''));
+for (const currentTranslationPath of [translationInputPath, familyTranslationInputPath]) if (fs.existsSync(currentTranslationPath)) {
+  const translationRows = parseCsv(fs.readFileSync(currentTranslationPath, 'utf8').replace(/^\uFEFF/, ''));
   const translationHeaders = translationRows.shift();
   const translationIndex = Object.fromEntries(translationHeaders.map((header, index) => [header.trim(), index]));
   const translationKeys = translationRows.filter((row) => row.length >= 3);
@@ -130,7 +133,6 @@ const cards = rows
     const internacionalFlagValue = indexes.internacional !== undefined
       ? parseBoolean(row[indexes.internacional])
       : internacionalByAlcance;
-    const infantilFlagValue = indexes.infantil !== undefined ? parseBoolean(row[indexes.infantil]) : false;
     const id = String(row[indexes.id] ?? '').trim();
     const base = {
       palabra,
@@ -138,7 +140,6 @@ const cards = rows
       subcategoria: subcategory,
       dificultad: difficulty,
       popularidad: popularity,
-      infantil: infantilFlagValue,
       internacional: internacionalFlagValue,
       ...(id ? { id } : {}),
     };
@@ -160,6 +161,15 @@ const cards = rows
 
 const usedCategories = new Set(cards.map((card) => card.categoria));
 const usedSubcategories = new Set(cards.map((card) => card.subcategoria));
+if (fs.existsSync(familyInputPath)) {
+  const familyRowsForTranslations = parseCsv(fs.readFileSync(familyInputPath, 'utf8').replace(/^\uFEFF/, ''));
+  const familyHeadersForTranslations = familyRowsForTranslations.shift();
+  const familyIndexForTranslations = Object.fromEntries(familyHeadersForTranslations.map((header, index) => [header.trim(), index]));
+  for (const row of familyRowsForTranslations) {
+    usedCategories.add(row[familyIndexForTranslations.categoria]);
+    usedSubcategories.add(row[familyIndexForTranslations.subcategoria]);
+  }
+}
 for (const value of categoryTranslations.keys()) if (!usedCategories.has(value)) categoryTranslations.delete(value);
 for (const value of subcategoryTranslations.keys()) if (!usedSubcategories.has(value)) subcategoryTranslations.delete(value);
 
@@ -169,9 +179,52 @@ const difficultyType = difficulties.map((difficulty) => JSON.stringify(difficult
 const body = cards.map((card) => `  defineCard(${JSON.stringify(card)})`).join(',\n');
 const output = `// Generado desde la base cultural definitiva. No editar a mano.\n// Regenerar con: pnpm run generate-word-bank\nexport type Difficulty = ${difficultyType};\n\nexport type WordCard = {\n  id?: string;\n  palabra: string;\n  categoria: string;\n  subcategoria: string;\n  dificultad: Difficulty;\n  popularidad: "Muy alta" | "Alta" | "Media" | "Baja";\n  internacional?: boolean;\n  translations?: Partial<Record<string, string>>;\n  categoryTranslations?: Partial<Record<string, string>>;\n  subcategoryTranslations?: Partial<Record<string, string>>;\n};\n\nexport const WORD_BANK: WordCard[] = [\n${body}\n];\n`;
 
-const typedOutput = output.replace(
-  '  internacional?: boolean;',
-  '  infantil: boolean;\n  internacional: boolean;',
-);
-fs.writeFileSync(outputPath, typedOutput.replace('export const WORD_BANK', 'function defineCard(card: WordCard): WordCard { return card; }\n\nexport const WORD_BANK'));
+fs.writeFileSync(outputPath, output.replace('export const WORD_BANK', 'function defineCard(card: WordCard): WordCard { return card; }\n\nexport const WORD_BANK'));
 console.log(`Banco generado: ${cards.length} tarjetas desde ${path.basename(inputPath)}${fs.existsSync(translationInputPath) ? ` y ${path.basename(translationInputPath)}` : ''}`);
+
+if (fs.existsSync(familyInputPath)) {
+  const familyRows = parseCsv(fs.readFileSync(familyInputPath, 'utf8').replace(/^\uFEFF/, ''));
+  const familyHeaders = familyRows.shift();
+  const familyIndex = Object.fromEntries(familyHeaders.map((header, index) => [header.trim(), index]));
+  const familyCards = familyRows
+    .map((row) => {
+      const palabra = row[familyIndex.palabra]?.trim() ?? '';
+      const category = row[familyIndex.categoria]?.trim() ?? 'Cultura';
+      const subcategory = row[familyIndex.subcategoria]?.trim() ?? '';
+      const difficulty = row[familyIndex.dificultad]?.trim() ?? 'Media';
+      const popularity = row[familyIndex.popularidad]?.trim() ?? 'Media';
+      const alcance = row[familyIndex.alcance]?.trim().toLowerCase() ?? '';
+      const internacionalByAlcance = alcance === 'internacional' || alcance === 'international' || alcance === 'global';
+      const internacionalFlagValue = familyIndex.internacional !== undefined
+        ? parseBoolean(row[familyIndex.internacional])
+        : internacionalByAlcance;
+      const id = String(row[familyIndex.id] ?? '').trim();
+      const base = {
+        palabra,
+        categoria: category,
+        subcategoria: subcategory,
+        dificultad: difficulty,
+        popularidad: popularity,
+        internacional: internacionalFlagValue,
+        ...(id ? { id } : {}),
+      };
+      const cardTranslations = translations.get(id);
+      if (cardTranslations && Object.keys(cardTranslations).length > 0) {
+        base.translations = cardTranslations;
+      }
+      const categoryMap = categoryTranslations.get(category);
+      if (categoryMap && Object.keys(categoryMap).length > 0) {
+        base.categoryTranslations = categoryMap;
+      }
+      const subcategoryMap = subcategoryTranslations.get(subcategory);
+      if (subcategoryMap && Object.keys(subcategoryMap).length > 0) {
+        base.subcategoryTranslations = subcategoryMap;
+      }
+      return base;
+    })
+    .filter((card) => card.palabra);
+  const familyBody = familyCards.map((card) => `  defineCard(${JSON.stringify(card)})`).join(',\n');
+  const familyOutput = `// Generado desde data/wordBank_family.csv. No editar a mano.\n// Regenerar con: pnpm run generate-word-bank\nimport { type WordCard } from './wordBank.ts';\n\nfunction defineCard(card: WordCard): WordCard { return card; }\n\nexport const WORD_BANK_FAMILY: WordCard[] = [\n${familyBody}\n];\n`;
+  fs.writeFileSync(familyOutputPath, familyOutput, 'utf8');
+  console.log(`Banco familiar generado: ${familyCards.length} tarjetas desde ${path.basename(familyInputPath)}`);
+}

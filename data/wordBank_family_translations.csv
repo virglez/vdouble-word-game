@@ -1,0 +1,541 @@
+palabra_id,idioma,nombre_localizado
+F001,en,Toothbrush
+F001,fr,Brosse à dents
+F001,pt,Escova de dentes
+F002,en,Backpack
+F002,fr,Sac à dos
+F002,pt,Mochila
+F003,en,Pencil
+F003,fr,Crayon
+F003,pt,Lápis
+F004,en,Eraser
+F004,fr,Gomme
+F004,pt,Borracha
+F005,en,Book
+F005,fr,Livre
+F005,pt,Livro
+F006,en,Notebook
+F006,fr,Cahier
+F006,pt,Caderno
+F007,en,Scissors
+F007,fr,Ciseaux
+F007,pt,Tesoura
+F008,en,Glue
+F008,fr,Colle
+F008,pt,Cola
+F009,en,Ball
+F009,fr,Ballon
+F009,pt,Bola
+F010,en,Scooter
+F010,fr,Trottinette
+F010,pt,Trotinete
+F011,en,Bicycle
+F011,fr,Vélo
+F011,pt,Bicicleta
+F012,en,Helmet
+F012,fr,Casque
+F012,pt,Capacete
+F013,en,Sunglasses
+F013,fr,Lunettes de soleil
+F013,pt,Óculos de sol
+F014,en,Sneakers
+F014,fr,Baskets
+F014,pt,Ténis
+F015,en,Umbrella
+F015,fr,Parapluie
+F015,pt,Guarda-chuva
+F016,en,Keys
+F016,fr,Clés
+F016,pt,Chaves
+F017,en,Remote control
+F017,fr,Télécommande
+F017,pt,Comando
+F018,en,Sofa
+F018,fr,Canapé
+F018,pt,Sofá
+F019,en,Bed
+F019,fr,Lit
+F019,pt,Cama
+F020,en,Pillow
+F020,fr,Oreiller
+F020,pt,Almofada
+F021,en,Mobile phone
+F021,fr,Téléphone portable
+F021,pt,Telemóvel
+F022,en,Tablet
+F022,fr,Tablette
+F022,pt,Tablet
+F023,en,Headphones
+F023,fr,Casque audio
+F023,pt,Auscultadores
+F024,en,Charger
+F024,fr,Chargeur
+F024,pt,Carregador
+F025,en,Camera
+F025,fr,Appareil photo
+F025,pt,Câmara
+F026,en,Watch
+F026,fr,Montre
+F026,pt,Relógio
+F027,en,Hairbrush
+F027,fr,Brosse à cheveux
+F027,pt,Escova de cabelo
+F028,en,Shampoo
+F028,fr,Shampoing
+F028,pt,Champô
+F029,en,Soap
+F029,fr,Savon
+F029,pt,Sabão
+F030,en,Towel
+F030,fr,Serviette
+F030,pt,Toalha
+F031,en,Pizza
+F031,fr,Pizza
+F031,pt,Pizza
+F032,en,Hamburger
+F032,fr,Hamburger
+F032,pt,Hambúrguer
+F033,en,Ice cream
+F033,fr,Glace
+F033,pt,Gelado
+F034,en,Chocolate
+F034,fr,Chocolat
+F034,pt,Chocolate
+F035,en,Popcorn
+F035,fr,Pop-corn
+F035,pt,Pipocas
+F036,en,French fries
+F036,fr,Frites
+F036,pt,Batatas fritas
+F037,en,Cake
+F037,fr,Gâteau
+F037,pt,Bolo
+F038,en,Cookies
+F038,fr,Biscuits
+F038,pt,Bolachas
+F039,en,Apple
+F039,fr,Pomme
+F039,pt,Maçã
+F040,en,Banana
+F040,fr,Banane
+F040,pt,Banana
+F041,en,Watermelon
+F041,fr,Pastèque
+F041,pt,Melancia
+F042,en,Spaghetti
+F042,fr,Spaghetti
+F042,pt,Esparguete
+F043,en,Spanish omelette
+F043,fr,Tortilla espagnole
+F043,pt,Tortilha de batata
+F044,en,Croquettes
+F044,fr,Croquettes
+F044,pt,Croquetes
+F045,en,Churros
+F045,fr,Churros
+F045,pt,Churros
+F046,en,Sleeping
+F046,fr,Dormir
+F046,pt,Dormir
+F047,en,Eating
+F047,fr,Manger
+F047,pt,Comer
+F048,en,Dancing
+F048,fr,Danser
+F048,pt,Dançar
+F049,en,Singing
+F049,fr,Chanter
+F049,pt,Cantar
+F050,en,Jumping
+F050,fr,Sauter
+F050,pt,Saltar
+F051,en,Running
+F051,fr,Courir
+F051,pt,Correr
+F052,en,Swimming
+F052,fr,Nager
+F052,pt,Nadar
+F053,en,Skating
+F053,fr,Patiner
+F053,pt,Patinar
+F054,en,Laughing
+F054,fr,Rire
+F054,pt,Rir
+F055,en,Crying
+F055,fr,Pleurer
+F055,pt,Chorar
+F056,en,Sneezing
+F056,fr,Éternuer
+F056,pt,Espirrar
+F057,en,Brushing your teeth
+F057,fr,Se brosser les dents
+F057,pt,Lavar os dentes
+F058,en,Doing homework
+F058,fr,Faire ses devoirs
+F058,pt,Fazer os trabalhos de casa
+F059,en,Playing video games
+F059,fr,Jouer aux jeux vidéo
+F059,pt,Jogar videojogos
+F060,en,Playing the guitar
+F060,fr,Jouer de la guitare
+F060,pt,Tocar guitarra
+F061,en,Dog
+F061,fr,Chien
+F061,pt,Cão
+F062,en,Cat
+F062,fr,Chat
+F062,pt,Gato
+F063,en,Lion
+F063,fr,Lion
+F063,pt,Leão
+F064,en,Tiger
+F064,fr,Tigre
+F064,pt,Tigre
+F065,en,Elephant
+F065,fr,Éléphant
+F065,pt,Elefante
+F066,en,Giraffe
+F066,fr,Girafe
+F066,pt,Girafa
+F067,en,Monkey
+F067,fr,Singe
+F067,pt,Macaco
+F068,en,Dolphin
+F068,fr,Dauphin
+F068,pt,Golfinho
+F069,en,Shark
+F069,fr,Requin
+F069,pt,Tubarão
+F070,en,Penguin
+F070,fr,Manchot
+F070,pt,Pinguim
+F071,en,Snake
+F071,fr,Serpent
+F071,pt,Cobra
+F072,en,Spider
+F072,fr,Araignée
+F072,pt,Aranha
+F073,en,Mosquito
+F073,fr,Moustique
+F073,pt,Mosquito
+F074,en,Frog
+F074,fr,Grenouille
+F074,pt,Rã
+F075,en,Horse
+F075,fr,Cheval
+F075,pt,Cavalo
+F076,en,Baby
+F076,fr,Bébé
+F076,pt,Bebé
+F077,en,Grandmother
+F077,fr,Grand-mère
+F077,pt,Avó
+F078,en,Birthday
+F078,fr,Anniversaire
+F078,pt,Aniversário
+F079,en,Christmas
+F079,fr,Noël
+F079,pt,Natal
+F080,en,Halloween
+F080,fr,Halloween
+F080,pt,Halloween
+F081,en,Holidays
+F081,fr,Vacances
+F081,pt,Férias
+F082,en,School
+F082,fr,École
+F082,pt,Escola
+F083,en,Recess
+F083,fr,Récréation
+F083,pt,Recreio
+F084,en,Exam
+F084,fr,Examen
+F084,pt,Exame
+F085,en,Secret Santa
+F085,fr,Père Noël secret
+F085,pt,Amigo secreto
+F086,en,Football
+F086,fr,Football
+F086,pt,Futebol
+F087,en,Basketball
+F087,fr,Basketball
+F087,pt,Basquetebol
+F088,en,Tennis
+F088,fr,Tennis
+F088,pt,Ténis
+F089,en,Swimming
+F089,fr,Natation
+F089,pt,Natação
+F090,en,Gymnastics
+F090,fr,Gymnastique
+F090,pt,Ginástica
+F091,en,Karate
+F091,fr,Karaté
+F091,pt,Karaté
+F092,en,Lionel Messi
+F092,fr,Lionel Messi
+F092,pt,Lionel Messi
+F093,en,Cristiano Ronaldo
+F093,fr,Cristiano Ronaldo
+F093,pt,Cristiano Ronaldo
+F094,en,Lamine Yamal
+F094,fr,Lamine Yamal
+F094,pt,Lamine Yamal
+F095,en,Carlos Alcaraz
+F095,fr,Carlos Alcaraz
+F095,pt,Carlos Alcaraz
+F096,en,Real Madrid
+F096,fr,Real Madrid
+F096,pt,Real Madrid
+F097,en,FC Barcelona
+F097,fr,FC Barcelone
+F097,pt,FC Barcelona
+F098,en,Amusement park
+F098,fr,Parc d'attractions
+F098,pt,Parque de diversões
+F099,en,Swimming pool
+F099,fr,Piscine
+F099,pt,Piscina
+F100,en,Beach
+F100,fr,Plage
+F100,pt,Praia
+F101,en,Cinema
+F101,fr,Cinéma
+F101,pt,Cinema
+F102,en,Supermarket
+F102,fr,Supermarché
+F102,pt,Supermercado
+F103,en,Hospital
+F103,fr,Hôpital
+F103,pt,Hospital
+F104,en,Airport
+F104,fr,Aéroport
+F104,pt,Aeroporto
+F105,en,New York
+F105,fr,New York
+F105,pt,Nova Iorque
+F106,en,Paris
+F106,fr,Paris
+F106,pt,Paris
+F107,en,London
+F107,fr,Londres
+F107,pt,Londres
+F108,en,Madrid
+F108,fr,Madrid
+F108,pt,Madrid
+F109,en,Barcelona
+F109,fr,Barcelone
+F109,pt,Barcelona
+F110,en,Disneyland
+F110,fr,Disneyland
+F110,pt,Disneyland
+F111,en,Coca-Cola
+F111,fr,Coca-Cola
+F111,pt,Coca-Cola
+F112,en,McDonald's
+F112,fr,McDonald's
+F112,pt,McDonald's
+F113,en,Lego
+F113,fr,Lego
+F113,pt,Lego
+F114,en,Google
+F114,fr,Google
+F114,pt,Google
+F115,en,YouTube
+F115,fr,YouTube
+F115,pt,YouTube
+F116,en,TikTok
+F116,fr,TikTok
+F116,pt,TikTok
+F117,en,WhatsApp
+F117,fr,WhatsApp
+F117,pt,WhatsApp
+F118,en,Netflix
+F118,fr,Netflix
+F118,pt,Netflix
+F119,en,Nintendo
+F119,fr,Nintendo
+F119,pt,Nintendo
+F120,en,PlayStation
+F120,fr,PlayStation
+F120,pt,PlayStation
+F121,en,Zara
+F121,fr,Zara
+F121,pt,Zara
+F122,en,Nike
+F122,fr,Nike
+F122,pt,Nike
+F123,en,Adidas
+F123,fr,Adidas
+F123,pt,Adidas
+F124,en,Minecraft
+F124,fr,Minecraft
+F124,pt,Minecraft
+F125,en,Fortnite
+F125,fr,Fortnite
+F125,pt,Fortnite
+F126,en,Roblox
+F126,fr,Roblox
+F126,pt,Roblox
+F127,en,Brawl Stars
+F127,fr,Brawl Stars
+F127,pt,Brawl Stars
+F128,en,Among Us
+F128,fr,Among Us
+F128,pt,Among Us
+F129,en,Super Mario Bros.
+F129,fr,Super Mario Bros.
+F129,pt,Super Mario Bros.
+F130,en,Mario Kart
+F130,fr,Mario Kart
+F130,pt,Mario Kart
+F131,en,Just Dance
+F131,fr,Just Dance
+F131,pt,Just Dance
+F132,en,UNO
+F132,fr,UNO
+F132,pt,UNO
+F133,en,Monopoly
+F133,fr,Monopoly
+F133,pt,Monopoly
+F134,en,Jenga
+F134,fr,Jenga
+F134,pt,Jenga
+F135,en,Pictionary
+F135,fr,Pictionary
+F135,pt,Pictionary
+F136,en,Twister
+F136,fr,Twister
+F136,pt,Twister
+F137,en,Chess
+F137,fr,Échecs
+F137,pt,Xadrez
+F138,en,Checkers
+F138,fr,Dames
+F138,pt,Damas
+F139,en,Rosalía
+F139,fr,Rosalía
+F139,pt,Rosalía
+F140,en,Aitana
+F140,fr,Aitana
+F140,pt,Aitana
+F141,en,Taylor Swift
+F141,fr,Taylor Swift
+F141,pt,Taylor Swift
+F142,en,Dua Lipa
+F142,fr,Dua Lipa
+F142,pt,Dua Lipa
+F143,en,Billie Eilish
+F143,fr,Billie Eilish
+F143,pt,Billie Eilish
+F144,en,Shakira
+F144,fr,Shakira
+F144,pt,Shakira
+F145,en,Bad Bunny
+F145,fr,Bad Bunny
+F145,pt,Bad Bunny
+F146,en,Karol G
+F146,fr,Karol G
+F146,pt,Karol G
+F147,en,Mickey Mouse
+F147,fr,Mickey Mouse
+F147,pt,Mickey Mouse
+F148,en,SpongeBob SquarePants
+F148,fr,Bob l'éponge
+F148,pt,Bob Esponja
+F149,en,Pikachu
+F149,fr,Pikachu
+F149,pt,Pikachu
+F150,en,Mario
+F150,fr,Mario
+F150,pt,Mario
+F151,en,Doraemon
+F151,fr,Doraemon
+F151,pt,Doraemon
+F152,en,Spider-Man
+F152,fr,Spider-Man
+F152,pt,Homem-Aranha
+F153,en,Batman
+F153,fr,Batman
+F153,pt,Batman
+F154,en,Elsa
+F154,fr,Elsa
+F154,pt,Elsa
+F155,en,Peppa Pig
+F155,fr,Peppa Pig
+F155,pt,Peppa Pig
+F156,en,PAW Patrol
+F156,fr,La Pat' Patrouille
+F156,pt,Patrulha Pata
+F157,en,Pokémon
+F157,fr,Pokémon
+F157,pt,Pokémon
+F158,en,The Simpsons
+F158,fr,Les Simpson
+F158,pt,Os Simpsons
+F159,en,The Lion King
+F159,fr,Le Roi Lion
+F159,pt,O Rei Leão
+F160,en,Frozen
+F160,fr,La Reine des neiges
+F160,pt,Frozen
+F161,en,Toy Story
+F161,fr,Toy Story
+F161,pt,Toy Story
+F162,en,Shrek
+F162,fr,Shrek
+F162,pt,Shrek
+F163,en,Coco
+F163,fr,Coco
+F163,pt,Coco
+F164,en,Inside Out
+F164,fr,Vice-versa
+F164,pt,Divertida-Mente
+F165,en,Encanto
+F165,fr,Encanto
+F165,pt,Encanto
+F166,en,Hercules
+F166,fr,Hercule
+F166,pt,Hércules
+F167,en,Mermaid
+F167,fr,Sirène
+F167,pt,Sereia
+F168,en,Unicorn
+F168,fr,Licorne
+F168,pt,Unicórnio
+F169,en,Dragon
+F169,fr,Dragon
+F169,pt,Dragão
+F170,en,Fairy
+F170,fr,Fée
+F170,pt,Fada
+F171,en,Vampire
+F171,fr,Vampire
+F171,pt,Vampiro
+F172,en,Wizard
+F172,fr,Magicien
+F172,pt,Feiticeiro
+F173,en,Witch
+F173,fr,Sorcière
+F173,pt,Bruxa
+F174,en,Charades
+F174,fr,Charades
+F174,pt,Mímica
+F175,en,Karaoke
+F175,fr,Karaoké
+F175,pt,Karaoke
+F176,en,Video call
+F176,fr,Appel vidéo
+F176,pt,Videochamada
+F177,en,Selfie
+F177,fr,Selfie
+F177,pt,Selfie
+F178,en,Emoji
+F178,fr,Emoji
+F178,pt,Emoji
+F179,en,Password
+F179,fr,Mot de passe
+F179,pt,Palavra-passe
+F180,en,Wi-Fi
+F180,fr,Wi-Fi
+F180,pt,Wi-Fi

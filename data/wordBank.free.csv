@@ -1,401 +1,401 @@
-id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,infantil,internacional
-28,Frida Kahlo,Arte,Pintora,Muy alta,Fácil,Histórica,true,true
-29,Pablo Picasso,Arte,Pintor,Muy alta,Fácil,Histórica,true,true
-30,Vincent van Gogh,Arte,Pintor,Muy alta,Fácil,Histórica,true,true
-31,Salvador Dalí,Arte,Pintor,Muy alta,Fácil,Histórica,true,true
-32,Leonardo da Vinci,Arte,Artista,Muy alta,Fácil,Histórica,true,true
-220,La Gioconda,Arte,Pintura,Muy alta,Fácil,Histórica,true,true
-456,Miguel Ángel,Arte,Artista,Muy alta,Fácil,Histórica,true,true
-229,Stephen Hawking,Ciencia,Físico,Muy alta,Fácil,Histórica,true,true
-2389,Elon Musk,Ciencia,Tecnología,Muy alta,Fácil,Actual,false,true
-74,Albert Einstein,Ciencia,Físico,Muy alta,Fácil,Histórica,false,true
-665,Charles Darwin,Ciencia,Científico,Muy alta,Media,Histórica,false,true
-2359,Marie Curie,Ciencia,Científica,Muy alta,Media,Histórica,false,true
-18,Penélope Cruz,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,false,true
-19,Antonio Banderas,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,true,true
-20,Javier Bardem,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,false,true
-21,Johnny Depp,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,true,true
-22,Leonardo DiCaprio,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,false,true
-24,Marilyn Monroe,Cine y TV,Actor/Actriz,Muy alta,Fácil,Histórica,false,true
-25,Tom Hanks,Cine y TV,Actor/Actriz,Muy alta,Fácil,Histórica,true,true
-26,Pedro Almodóvar,Cine y TV,Director/a,Muy alta,Fácil,Actual,false,false
-1728,Mario Casas,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,false,true
-1735,Úrsula Corberó,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,false,true
-1737,Álvaro Morte,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,false,true
-1738,Sylvester Stallone,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,false,true
-1739,Charlize Theron,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,false,true
-1740,Natalie Portman,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,false,true
-1741,Jennifer Aniston,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,false,true
-1742,Matt Damon,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,false,true
-1743,Harrison Ford,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,true,true
-1744,Christian Bale,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,false,true
-1745,Ryan Gosling,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,false,true
-1746,Robert Downey Jr.,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,true,true
-1748,Anne Hathaway,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,false,true
-1753,Cameron Diaz,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,false,true
-1755,Kate Winslet,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,false,true
-1756,Hugh Grant,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,false,true
-2054,Jackie Chan,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,true,true
-4151,Papa Francisco,Cultura,Persona/Personaje,Muy alta,Fácil,Actual,true,true
-4166,Kim Kardashian,Cultura,Persona/Personaje,Muy alta,Fácil,Actual,false,true
-717,Cindy Crawford,Cultura,Modelo,Muy alta,Media,Actual,false,true
-2623,Naomi Campbell,Cultura,Modelo,Muy alta,Media,Actual,false,true
-2785,Pablo Motos,Cultura,Presentador,Muy alta,Media,Actual,false,false
-1,Lionel Messi,Deportes,Futbolista,Muy alta,Fácil,Actual,true,true
-2,Cristiano Ronaldo,Deportes,Futbolista,Muy alta,Fácil,Actual,true,true
-3,Rafa Nadal,Deportes,Tenista,Muy alta,Fácil,Actual,true,true
-4,Fernando Alonso,Deportes,Automovilismo,Muy alta,Fácil,Actual,true,true
-5,Michael Jordan,Deportes,Baloncesto,Muy alta,Fácil,Histórica,true,true
-6,Serena Williams,Deportes,Tenis,Muy alta,Fácil,Actual,true,true
-7,Diego Maradona,Deportes,Futbolista,Muy alta,Fácil,Histórica,true,true
-8,Pelé,Deportes,Futbolista,Muy alta,Fácil,Histórica,true,true
-9,Iker Casillas,Deportes,Futbolista,Muy alta,Fácil,Histórica,false,true
-201,Fernando Torres,Deportes,Futbolista,Muy alta,Fácil,Histórica,false,true
-202,Andrés Iniesta,Deportes,Futbolista,Muy alta,Fácil,Histórica,false,true
-203,Xavi Hernández,Deportes,Futbolista,Muy alta,Fácil,Histórica,false,true
-204,Sergio Ramos,Deportes,Futbolista,Muy alta,Fácil,Actual,false,true
-205,Zinedine Zidane,Deportes,Futbolista,Muy alta,Fácil,Histórica,false,true
-206,Ronaldinho,Deportes,Futbolista,Muy alta,Fácil,Histórica,false,true
-207,Neymar,Deportes,Futbolista,Muy alta,Fácil,Actual,false,true
-208,Kylian Mbappé,Deportes,Futbolista,Muy alta,Fácil,Actual,false,true
-209,Lewis Hamilton,Deportes,Automovilismo,Muy alta,Fácil,Actual,false,true
-210,Marc Márquez,Deportes,Motociclismo,Muy alta,Fácil,Actual,false,true
-211,Usain Bolt,Deportes,Atletismo,Muy alta,Fácil,Histórica,false,true
-212,Michael Phelps,Deportes,Natación,Muy alta,Fácil,Histórica,false,true
-213,Tiger Woods,Deportes,Golf,Muy alta,Fácil,Histórica,false,true
-214,Pep Guardiola,Deportes,Entrenador,Muy alta,Fácil,Actual,false,true
-215,Real Madrid,Deportes,Equipos y clubes,Muy alta,Fácil,Actual,true,true
-216,FC Barcelona,Deportes,Equipos y clubes,Muy alta,Fácil,Actual,true,true
-233,Julio César,Historia,Personaje histórico,Muy alta,Fácil,Histórica,true,true
-234,Cristóbal Colón,Historia,Explorador,Muy alta,Fácil,Histórica,true,true
-236,Nelson Mandela,Historia,Personaje histórico,Muy alta,Fácil,Histórica,false,true
-237,Napoleón,Historia,Personaje histórico,Muy alta,Fácil,Histórica,false,true
-459,Alejandro Magno,Historia,Personaje histórico,Muy alta,Fácil,Histórica,false,true
-460,Mahatma Gandhi,Historia,Personaje histórico,Muy alta,Fácil,Histórica,false,true
-461,Martin Luther King,Historia,Activista,Muy alta,Fácil,Histórica,false,true
-462,Abraham Lincoln,Historia,Presidente,Muy alta,Fácil,Histórica,false,true
-684,Tutankamón,Historia,Faraón,Muy alta,Fácil,Histórica,true,true
-1069,Che Guevara,Historia,Personaje histórico,Muy alta,Fácil,Histórica,false,true
-1076,Moisés,Historia,Personaje histórico,Muy alta,Fácil,Histórica,false,true
-1112,Neil Armstrong,Historia,Personaje histórico,Muy alta,Fácil,Histórica,false,true
-1493,Barack Obama,Historia,Personaje histórico,Muy alta,Fácil,Histórica,false,true
-1498,Buda,Historia,Personaje histórico,Muy alta,Fácil,Histórica,false,true
-1499,Jesús,Historia,Personaje histórico,Muy alta,Fácil,Histórica,false,true
-1501,Revolución Francesa,Historia,Evento,Muy alta,Fácil,Histórica,false,true
-1502,Primera Guerra Mundial,Historia,Evento,Muy alta,Fácil,Histórica,false,true
-1503,Segunda Guerra Mundial,Historia,Evento,Muy alta,Fácil,Histórica,false,true
-1505,Llegada a la Luna,Historia,Evento,Muy alta,Fácil,Histórica,true,true
-1507,Renacimiento,Historia,Evento,Muy alta,Fácil,Actual,false,true
-1508,Antiguo Egipto,Historia,Civilización,Muy alta,Fácil,Actual,true,true
-1509,Imperio Romano,Historia,Civilización,Muy alta,Fácil,Actual,true,true
-1863,Walt Disney,Historia,Personaje histórico,Muy alta,Fácil,Histórica,false,true
-1864,Steve Jobs,Historia,Personaje histórico,Muy alta,Fácil,Histórica,false,true
-1865,Bill Gates,Historia,Personaje histórico,Muy alta,Fácil,Histórica,false,true
-33,Miguel de Cervantes,Literatura,Escritor,Muy alta,Fácil,Histórica,true,true
-34,William Shakespeare,Literatura,Escritor,Muy alta,Fácil,Histórica,true,true
-35,J. K. Rowling,Literatura,Escritora,Muy alta,Fácil,Actual,true,true
-38,Don Quijote,Literatura,Personaje,Muy alta,Fácil,Histórica,true,true
-39,Harry Potter,Literatura,Personaje,Muy alta,Fácil,Actual,true,true
-40,Sherlock Holmes,Literatura,Personaje,Muy alta,Fácil,Histórica,true,true
-227,Romeo y Julieta,Literatura,Obra,Muy alta,Fácil,Histórica,true,true
-1457,Hansel y Gretel,Literatura,Personaje,Muy alta,Fácil,Actual,true,true
-1458,Pulgarcito,Literatura,Personaje,Muy alta,Fácil,Actual,true,true
-1459,Alí Babá,Literatura,Personaje,Muy alta,Fácil,Actual,true,true
-1830,Don Quijote de la Mancha,Literatura,Obra,Muy alta,Fácil,Histórica,false,true
-2073,El Principito,Literatura,Obra,Muy alta,Fácil,Histórica,true,true
-2287,Rapunzel,Literatura,Personaje,Muy alta,Fácil,Actual,true,true
-238,Torre Eiffel,Lugares,Monumento,Muy alta,Fácil,Histórica,true,true
-239,Sagrada Familia,Lugares,Monumento,Muy alta,Fácil,Histórica,true,true
-240,Estatua de la Libertad,Lugares,Monumento,Muy alta,Fácil,Histórica,true,true
-241,Nueva York,Lugares,Ciudad,Muy alta,Fácil,Actual,true,true
-242,París,Lugares,Ciudad,Muy alta,Fácil,Actual,true,true
-243,Londres,Lugares,Ciudad,Muy alta,Fácil,Actual,true,true
-244,Roma,Lugares,Ciudad,Muy alta,Fácil,Histórica,true,true
-245,Madrid,Lugares,Ciudad,Muy alta,Fácil,Actual,true,true
-246,Barcelona,Lugares,Ciudad,Muy alta,Fácil,Actual,true,true
-247,Egipto,Lugares,País,Muy alta,Fácil,Histórica,true,true
-248,Gran Muralla China,Lugares,Monumento,Muy alta,Fácil,Histórica,true,true
-249,Taj Mahal,Lugares,Monumento,Muy alta,Fácil,Histórica,true,true
-250,Las Vegas,Lugares,Ciudad,Muy alta,Fácil,Actual,false,true
-251,Disneyland,Lugares,Parque temático,Muy alta,Fácil,Actual,true,true
-471,Big Ben,Lugares,Monumento,Muy alta,Fácil,Histórica,true,true
-472,Coliseo de Roma,Lugares,Monumento,Muy alta,Fácil,Histórica,true,true
-473,Pirámides de Giza,Lugares,Monumento,Muy alta,Fácil,Histórica,true,true
-474,Machu Picchu,Lugares,Monumento,Muy alta,Fácil,Histórica,true,true
-475,Cristo Redentor,Lugares,Monumento,Muy alta,Fácil,Histórica,true,true
-477,Monte Everest,Lugares,Naturaleza,Muy alta,Fácil,Actual,true,true
-478,Desierto del Sáhara,Lugares,Naturaleza,Muy alta,Fácil,Actual,true,true
-480,Islas Canarias,Lugares,Destino,Muy alta,Fácil,Actual,true,true
-697,Sevilla,Lugares,Ciudad,Muy alta,Fácil,Actual,false,false
-698,Valencia,Lugares,Ciudad,Muy alta,Fácil,Actual,false,false
-699,Bilbao,Lugares,Ciudad,Muy alta,Fácil,Actual,false,false
-261,Coca-Cola,Marcas,Bebida,Muy alta,Fácil,Actual,true,true
-262,McDonald's,Marcas,Restauración,Muy alta,Fácil,Actual,true,true
-263,Lego,Marcas,Juguetes,Muy alta,Fácil,Actual,true,true
-264,Apple,Marcas,Tecnología,Muy alta,Fácil,Actual,true,true
-265,Google,Marcas,Tecnología,Muy alta,Fácil,Actual,true,true
-266,Netflix,Marcas,Streaming,Muy alta,Fácil,Actual,true,true
-267,Amazon,Marcas,Comercio,Muy alta,Fácil,Actual,true,true
-268,IKEA,Marcas,Hogar,Muy alta,Fácil,Actual,true,true
-269,Nike,Marcas,Deporte,Muy alta,Fácil,Actual,true,true
-270,Adidas,Marcas,Deporte,Muy alta,Fácil,Actual,true,true
-271,Zara,Marcas,Moda,Muy alta,Fácil,Actual,true,true
-272,Disney,Marcas,Entretenimiento,Muy alta,Fácil,Actual,true,true
-486,Ferrari,Marcas,Automoción,Muy alta,Fácil,Actual,true,true
-487,Mercedes-Benz,Marcas,Automoción,Muy alta,Fácil,Actual,true,true
-488,Volkswagen,Marcas,Automoción,Muy alta,Fácil,Actual,true,true
-489,Toyota,Marcas,Automoción,Muy alta,Fácil,Actual,false,true
-490,SEAT,Marcas,Automoción,Muy alta,Fácil,Actual,false,false
-491,Renault,Marcas,Automoción,Muy alta,Fácil,Actual,false,true
-492,Burger King,Marcas,Restauración,Muy alta,Fácil,Actual,true,true
-493,Starbucks,Marcas,Restauración,Muy alta,Fácil,Actual,false,true
-494,Pringles,Marcas,Alimentación,Muy alta,Fácil,Actual,false,true
-495,Nutella,Marcas,Alimentación,Muy alta,Fácil,Actual,true,true
-496,Kinder,Marcas,Alimentación,Muy alta,Fácil,Actual,true,true
-497,Nesquik,Marcas,Alimentación,Muy alta,Fácil,Actual,true,true
-498,Colacao,Marcas,Alimentación,Muy alta,Fácil,Actual,true,false
-501,Zeus,Mitología,Mitología griega,Muy alta,Fácil,Histórica,true,true
-502,Afrodita,Mitología,Mitología griega,Muy alta,Fácil,Histórica,false,true
-503,Hércules,Mitología,Mitología griega,Muy alta,Fácil,Histórica,true,true
-504,Medusa,Mitología,Mitología griega,Muy alta,Fácil,Histórica,true,true
-505,Poseidón,Mitología,Mitología griega,Muy alta,Fácil,Histórica,true,true
-507,Cupido,Mitología,Mitología romana,Muy alta,Fácil,Histórica,true,true
-718,Pegaso,Mitología,Criatura mitológica,Muy alta,Fácil,Histórica,true,true
-1306,Sirena,Mitología,Mitología,Muy alta,Fácil,Histórica,true,true
-1308,Unicornio,Mitología,Mitología,Muy alta,Fácil,Histórica,true,true
-1309,Fénix,Mitología,Mitología,Muy alta,Fácil,Histórica,true,true
-1310,Dragón,Mitología,Mitología,Muy alta,Fácil,Histórica,true,true
-1597,Hombre lobo,Mitología,Mitología,Muy alta,Fácil,Actual,false,true
-1598,Momia,Mitología,Mitología,Muy alta,Fácil,Actual,false,true
-1599,Zombi,Mitología,Mitología,Muy alta,Fácil,Actual,true,true
-1600,Duende,Mitología,Mitología,Muy alta,Fácil,Actual,false,true
-1601,Gnomo,Mitología,Mitología,Muy alta,Fácil,Actual,false,true
-1602,Ogro,Mitología,Mitología,Muy alta,Fácil,Actual,true,true
-1603,Troll,Mitología,Mitología,Muy alta,Fácil,Actual,false,true
-1604,Bruja,Mitología,Mitología,Muy alta,Fácil,Actual,false,true
-1605,Mago,Mitología,Mitología,Muy alta,Fácil,Actual,false,true
-2356,Vampiro,Mitología,Mitología,Muy alta,Fácil,Actual,true,true
-2357,Hada,Mitología,Mitología,Muy alta,Fácil,Actual,true,true
-2358,Elfo,Mitología,Mitología,Muy alta,Fácil,Actual,true,true
-2360,Merlín,Mitología,Mitología,Muy alta,Fácil,Actual,false,true
-10,Rosalía,Música,Cantante,Muy alta,Fácil,Actual,true,false
-11,Shakira,Música,Cantante,Muy alta,Fácil,Actual,true,true
-12,Michael Jackson,Música,Cantante,Muy alta,Fácil,Histórica,true,true
-13,Freddie Mercury,Música,Cantante,Muy alta,Fácil,Histórica,true,true
-14,Madonna,Música,Cantante,Muy alta,Fácil,Histórica,false,true
-15,Bad Bunny,Música,Cantante,Muy alta,Fácil,Actual,false,true
-17,Adele,Música,Cantante,Muy alta,Fácil,Actual,true,true
-164,Elton John,Música,Cantante,Muy alta,Fácil,Histórica,false,true
-165,Elvis Presley,Música,Cantante,Muy alta,Fácil,Histórica,false,true
-166,The Beatles,Música,Grupo,Muy alta,Fácil,Histórica,true,true
-167,Queen,Música,Grupo,Muy alta,Fácil,Histórica,true,true
-168,ABBA,Música,Grupo,Muy alta,Fácil,Histórica,true,true
-169,The Rolling Stones,Música,Grupo,Muy alta,Fácil,Histórica,false,true
-170,U2,Música,Grupo,Muy alta,Fácil,Histórica,false,true
-171,Nirvana,Música,Grupo,Muy alta,Fácil,Clásica,false,true
-172,Metallica,Música,Grupo,Muy alta,Fácil,Clásica,false,true
-173,AC/DC,Música,Grupo,Muy alta,Fácil,Clásica,false,true
-174,Coldplay,Música,Grupo,Muy alta,Fácil,Actual,true,true
-176,Spice Girls,Música,Grupo,Muy alta,Fácil,Clásica,false,true
-177,Backstreet Boys,Música,Grupo,Muy alta,Fácil,Clásica,false,true
-178,Britney Spears,Música,Cantante,Muy alta,Fácil,Clásica,false,true
-179,Lady Gaga,Música,Cantante,Muy alta,Fácil,Actual,false,true
-180,Beyoncé,Música,Cantante,Muy alta,Fácil,Actual,true,true
-181,Jennifer Lopez,Música,Cantante,Muy alta,Fácil,Actual,false,true
-182,Ricky Martin,Música,Cantante,Muy alta,Fácil,Clásica,false,true
-1921,Orangután,Naturaleza,Animales,Muy alta,Fácil,Actual,true,true
-1922,Lince,Naturaleza,Animales,Muy alta,Fácil,Actual,true,true
-1923,Murciélago,Naturaleza,Animales,Muy alta,Fácil,Actual,true,true
-1924,Calamar,Naturaleza,Animales,Muy alta,Fácil,Actual,true,true
-1925,Halcón,Naturaleza,Animales,Muy alta,Fácil,Actual,true,true
-1926,Caimán,Naturaleza,Animales,Muy alta,Fácil,Actual,true,true
-1927,Avispa,Naturaleza,Animales,Muy alta,Fácil,Actual,true,true
-1928,Saltamontes,Naturaleza,Animales,Muy alta,Fácil,Actual,true,true
-1929,Gusano,Naturaleza,Animales,Muy alta,Fácil,Actual,true,true
-2366,Mario Bros,Ocio,Videojuego,Muy alta,Fácil,Actual,false,true
-119,Titanic,Películas,Drama,Muy alta,Fácil,Clásica,false,true
-120,Jurassic Park,Películas,Aventuras,Muy alta,Fácil,Clásica,false,true
-122,E.T.,Películas,Ciencia ficción,Muy alta,Fácil,Histórica,false,true
-123,Grease,Películas,Musical,Muy alta,Fácil,Histórica,false,true
-124,Rocky,Películas,Deportes,Muy alta,Fácil,Clásica,false,true
-125,El Rey León,Películas,Animación,Muy alta,Fácil,Histórica,true,true
-126,Forrest Gump,Películas,Drama,Muy alta,Fácil,Histórica,false,true
-127,Regreso al Futuro,Películas,Ciencia ficción,Muy alta,Fácil,Histórica,false,true
-128,Pretty Woman,Películas,Romántica,Muy alta,Fácil,Histórica,false,true
-129,Avatar,Películas,Ciencia ficción,Muy alta,Fácil,Actual,false,true
-131,Gladiator,Películas,Histórica,Muy alta,Fácil,Histórica,false,true
-132,Solo en casa,Películas,Comedia,Muy alta,Fácil,Histórica,false,true
-133,Matrix,Películas,Ciencia ficción,Muy alta,Fácil,Clásica,false,true
-134,Frozen,Películas,Animación,Muy alta,Fácil,Actual,true,true
-135,Toy Story,Películas,Animación,Muy alta,Fácil,Actual,true,true
-136,Coco,Películas,Animación,Muy alta,Fácil,Actual,true,true
-137,El Padrino,Películas,Drama,Muy alta,Fácil,Histórica,false,true
-141,Dirty Dancing,Películas,Romántica,Muy alta,Fácil,Histórica,false,true
-143,Top Gun,Películas,Acción,Muy alta,Fácil,Histórica,false,true
-144,Terminator,Películas,Ciencia ficción,Muy alta,Fácil,Histórica,false,true
-146,La momia,Películas,Aventuras,Muy alta,Fácil,Histórica,false,true
-147,Piratas del Caribe,Películas,Aventuras,Muy alta,Fácil,Histórica,false,true
-148,El Señor de los Anillos,Películas,Fantasía,Muy alta,Fácil,Histórica,false,true
-149,Los Increíbles,Películas,Animación,Muy alta,Fácil,Actual,true,true
-150,Shrek,Películas,Animación,Muy alta,Fácil,Histórica,true,true
-41,Mafalda,Personajes,Cómic,Muy alta,Fácil,Histórica,true,true
-42,Tintín,Personajes,Cómic,Muy alta,Fácil,Histórica,true,true
-43,Astérix,Personajes,Cómic,Muy alta,Fácil,Histórica,true,true
-44,Obélix,Personajes,Cómic,Muy alta,Fácil,Histórica,true,true
-45,Darth Vader,Personajes,Ciencia ficción,Muy alta,Fácil,Histórica,true,true
-46,Indiana Jones,Personajes,Aventuras,Muy alta,Fácil,Clásica,false,true
-47,La Sirenita,Personajes,Animación,Muy alta,Fácil,Histórica,true,true
-48,Pitufina,Personajes,Animación,Muy alta,Fácil,Histórica,true,true
-49,Woody,Personajes,Animación,Muy alta,Fácil,Actual,true,true
-50,Buzz Lightyear,Personajes,Animación,Muy alta,Fácil,Actual,true,true
-51,Mickey Mouse,Personajes,Animación,Muy alta,Fácil,Histórica,true,true
-52,Pato Donald,Personajes,Animación,Muy alta,Fácil,Histórica,true,true
-53,Goofy,Personajes,Animación,Muy alta,Fácil,Histórica,true,true
-54,Simba,Personajes,Animación,Muy alta,Fácil,Histórica,true,true
-55,Scar,Personajes,Animación,Muy alta,Fácil,Histórica,false,true
-56,Ariel,Personajes,Animación,Muy alta,Fácil,Histórica,true,true
-57,Cenicienta,Personajes,Animación,Muy alta,Fácil,Histórica,true,true
-58,Blancanieves,Personajes,Animación,Muy alta,Fácil,Histórica,true,true
-59,Peter Pan,Personajes,Animación,Muy alta,Fácil,Histórica,true,true
-60,Campanilla,Personajes,Animación,Muy alta,Fácil,Histórica,true,true
-61,Homer Simpson,Personajes,Animación,Muy alta,Fácil,Actual,false,true
-62,Bart Simpson,Personajes,Animación,Muy alta,Fácil,Actual,false,true
-63,Bob Esponja,Personajes,Animación,Muy alta,Fácil,Actual,true,true
-64,Scooby-Doo,Personajes,Animación,Muy alta,Fácil,Histórica,true,true
-65,Tom,Personajes,Animación,Muy alta,Fácil,Histórica,true,true
-92,Friends,Series,Comedia,Muy alta,Fácil,Clásica,false,true
-93,El Príncipe de Bel-Air,Series,Comedia,Muy alta,Fácil,Histórica,false,true
-94,Stranger Things,Series,Ciencia ficción,Muy alta,Fácil,Actual,false,true
-95,The Walking Dead,Series,Drama,Muy alta,Fácil,Actual,false,true
-96,Heidi,Series,Animación,Muy alta,Fácil,Histórica,true,true
-97,Bola de Dragón,Series,Anime,Muy alta,Fácil,Actual,true,true
-98,Los Simpson,Series,Animación,Muy alta,Fácil,Clásica,true,true
-99,La casa de papel,Series,Drama,Muy alta,Fácil,Actual,false,true
-100,Juego de Tronos,Series,Fantasía,Muy alta,Fácil,Histórica,false,true
-101,Breaking Bad,Series,Drama,Muy alta,Fácil,Histórica,false,true
-102,Aquí no hay quien viva,Series,Comedia,Muy alta,Fácil,Clásica,false,false
-103,La que se avecina,Series,Comedia,Muy alta,Fácil,Actual,false,false
-104,Aída,Series,Comedia,Muy alta,Fácil,Histórica,false,false
-105,Élite,Series,Drama,Muy alta,Fácil,Actual,false,true
-109,The Big Bang Theory,Series,Comedia,Muy alta,Fácil,Histórica,false,true
-114,Física o Química,Series,Drama,Muy alta,Fácil,Histórica,false,false
-115,El Internado,Series,Misterio,Muy alta,Fácil,Histórica,false,false
-116,Miércoles,Series,Fantasía,Muy alta,Fácil,Actual,false,true
-312,Modern Family,Series,Comedia,Muy alta,Fácil,Histórica,true,true
-324,Vis a Vis,Series,Drama,Muy alta,Fácil,Actual,false,true
-326,Machos Alfa,Series,Comedia,Muy alta,Fácil,Clásica,false,true
-551,El juego del calamar,Series,Thriller,Muy alta,Fácil,Actual,false,true
-558,Cómo conocí a vuestra madre,Series,Comedia,Muy alta,Fácil,Histórica,false,true
-564,Velvet,Series,Drama español,Muy alta,Fácil,Actual,false,false
-623,Padre de familia,Series,Animación,Muy alta,Fácil,Actual,false,true
-257,Tetris,Videojuegos,Puzzle,Muy alta,Fácil,Histórica,true,true
-258,Minecraft,Videojuegos,Sandbox,Muy alta,Fácil,Actual,true,true
-259,Fortnite,Videojuegos,Battle royale,Muy alta,Fácil,Actual,true,true
-260,PlayStation,Videojuegos,Consola,Muy alta,Fácil,Actual,false,true
-481,Pokémon Go,Videojuegos,Móvil,Muy alta,Fácil,Clásica,true,true
-482,Wii,Videojuegos,Consola,Muy alta,Fácil,Histórica,false,true
-483,Xbox,Videojuegos,Consola,Muy alta,Fácil,Actual,false,true
-484,Nintendo,Videojuegos,Empresa,Muy alta,Fácil,Actual,true,true
-485,Zelda,Videojuegos,Aventura,Muy alta,Fácil,Histórica,false,true
-709,FIFA,Videojuegos,Fútbol,Muy alta,Fácil,Histórica,false,true
-710,Los Sims,Videojuegos,Simulación,Muy alta,Fácil,Histórica,false,true
-711,Grand Theft Auto,Videojuegos,Acción,Muy alta,Fácil,Histórica,false,true
-712,Mario Kart,Videojuegos,Carreras,Muy alta,Fácil,Histórica,true,true
-1250,Animal Crossing,Videojuegos,Videojuegos,Muy alta,Fácil,Actual,true,true
-1251,Candy Crush,Videojuegos,Videojuegos,Muy alta,Fácil,Actual,true,true
-1252,Clash Royale,Videojuegos,Videojuegos,Muy alta,Fácil,Actual,true,true
-1253,Super Mario Bros.,Videojuegos,Videojuegos,Muy alta,Fácil,Actual,true,true
-1254,The Legend of Zelda,Videojuegos,Videojuegos,Muy alta,Fácil,Actual,false,true
-1260,Among Us,Videojuegos,Videojuegos,Muy alta,Fácil,Actual,true,true
-1262,Call of Duty,Videojuegos,Videojuegos,Muy alta,Fácil,Actual,false,true
-1263,Wii Sports,Videojuegos,Videojuegos,Muy alta,Fácil,Actual,true,true
-1264,Just Dance,Videojuegos,Videojuegos,Muy alta,Fácil,Actual,true,true
-1266,Cluedo,Videojuegos,Juegos de mesa y cartas,Muy alta,Fácil,Actual,false,true
-1267,Monopoly,Videojuegos,Juegos de mesa y cartas,Muy alta,Fácil,Actual,false,true
-1268,Trivial Pursuit,Videojuegos,Juegos de mesa y cartas,Muy alta,Fácil,Actual,false,true
-2055,Bruce Lee,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,true,true
-217,Selección española,Deportes,Equipos y clubes,Muy alta,Fácil,Actual,true,false
-2306,Donald Trump,Historia,Personaje histórico,Muy alta,Fácil,Histórica,false,true
-700,Santiago de Compostela,Lugares,Ciudad,Muy alta,Fácil,Actual,false,true
-499,Chupa Chups,Marcas,Alimentación,Muy alta,Fácil,Histórica,true,true
-183,Enrique Iglesias,Música,Cantante,Muy alta,Fácil,Actual,false,true
-151,Madagascar,Películas,Animación,Muy alta,Fácil,Actual,true,true
-66,Jerry,Personajes,Animación,Muy alta,Fácil,Histórica,true,true
-625,Los Picapiedra,Series,Animación,Muy alta,Fácil,Histórica,true,true
-1270,Pictionary,Videojuegos,Juegos de mesa y cartas,Muy alta,Fácil,Actual,false,true
-2060,Macaulay Culkin,Cine y TV,Actor/Actriz,Muy alta,Fácil,Actual,true,true
-218,Mundial de Fútbol,Deportes,Evento,Muy alta,Fácil,Actual,true,true
-2307,Adolf Hitler,Historia,Personaje histórico,Muy alta,Fácil,Histórica,false,true
-701,Ibiza,Lugares,Isla,Muy alta,Fácil,Actual,false,true
-500,Donuts,Marcas,Alimentación,Muy alta,Fácil,Actual,true,true
-184,Julio Iglesias,Música,Cantante,Muy alta,Fácil,Clásica,false,true
-152,Buscando a Nemo,Películas,Animación,Muy alta,Fácil,Actual,true,true
-67,Superman,Personajes,Superhéroe,Muy alta,Fácil,Actual,true,true
-627,Tom y Jerry,Series,Animación,Muy alta,Fácil,Histórica,true,true
-1272,Jenga,Videojuegos,Juegos de mesa y cartas,Muy alta,Fácil,Actual,false,true
-2062,Steven Spielberg,Cine y TV,Director/a,Muy alta,Fácil,Actual,false,true
-219,Juegos Olímpicos,Deportes,Evento,Muy alta,Fácil,Histórica,true,true
-2311,Guerra Civil Española,Historia,Evento,Muy alta,Fácil,Histórica,false,false
-702,Mallorca,Lugares,Isla,Muy alta,Fácil,Actual,false,true
-715,Pepsi,Marcas,Bebida,Muy alta,Fácil,Actual,true,true
-185,Alejandro Sanz,Música,Cantante,Muy alta,Fácil,Actual,false,false
-153,"Monstruos, S.A.",Películas,Animación,Muy alta,Fácil,Actual,true,true
-68,Batman,Personajes,Superhéroe,Muy alta,Fácil,Actual,true,true
-630,Las Tortugas Ninja,Series,Animación,Muy alta,Fácil,Clásica,true,true
-1273,Twister,Videojuegos,Juegos de mesa y cartas,Muy alta,Fácil,Actual,false,true
-2064,Quentin Tarantino,Cine y TV,Director/a,Muy alta,Fácil,Actual,false,true
-427,David Beckham,Deportes,Futbolista,Muy alta,Fácil,Histórica,false,true
-2312,Descubrimiento de América,Historia,Evento,Muy alta,Fácil,Histórica,false,true
-703,Tenerife,Lugares,Isla,Muy alta,Fácil,Actual,false,true
-716,Samsung,Marcas,Tecnología,Muy alta,Fácil,Actual,true,true
-186,David Bisbal,Música,Cantante,Muy alta,Fácil,Actual,false,false
-154,Up,Películas,Animación,Muy alta,Fácil,Actual,true,true
-69,Spider-Man,Personajes,Superhéroe,Muy alta,Fácil,Actual,true,true
-631,Pokémon,Series,Animación,Muy alta,Fácil,Actual,true,true
-1274,Operación,Videojuegos,Juegos de mesa y cartas,Muy alta,Fácil,Actual,false,true
-2065,Christopher Nolan,Cine y TV,Director/a,Muy alta,Fácil,Actual,false,true
-431,Raúl González,Deportes,Futbolista,Muy alta,Fácil,Histórica,false,true
-2313,Edad Media,Historia,Evento,Muy alta,Fácil,Actual,false,true
-704,Venecia,Lugares,Ciudad,Muy alta,Fácil,Actual,true,true
-1185,Spotify,Marcas,Marca,Muy alta,Fácil,Actual,true,true
-187,Estopa,Música,Grupo,Muy alta,Fácil,Actual,false,false
-155,Ratatouille,Películas,Animación,Muy alta,Fácil,Actual,true,true
-70,Hulk,Personajes,Superhéroe,Muy alta,Fácil,Actual,true,true
-637,Oliver y Benji,Series,Anime,Muy alta,Fácil,Clásica,true,true
-1275,Hundir la flota,Videojuegos,Juegos de mesa y cartas,Muy alta,Fácil,Actual,false,true
-2066,Tim Burton,Cine y TV,Director/a,Muy alta,Fácil,Actual,false,true
-432,Carles Puyol,Deportes,Futbolista,Muy alta,Fácil,Histórica,false,true
-2370,Caída del Muro de Berlín,Historia,Evento,Muy alta,Fácil,Histórica,false,true
-705,Tokio,Lugares,Ciudad,Muy alta,Fácil,Actual,true,true
-1186,Microsoft,Marcas,Marca,Muy alta,Fácil,Actual,false,true
-188,Hombres G,Música,Grupo,Muy alta,Fácil,Clásica,false,false
-156,La Bella y la Bestia,Películas,Animación,Muy alta,Fácil,Histórica,true,true
-71,Iron Man,Personajes,Superhéroe,Muy alta,Fácil,Actual,true,true
-641,Los Lunnis,Series,Infantil española,Muy alta,Fácil,Histórica,true,false
-1276,Conecta 4,Videojuegos,Juegos de mesa y cartas,Muy alta,Fácil,Actual,false,true
-2067,Hayao Miyazaki,Cine y TV,Director/a,Muy alta,Fácil,Actual,false,true
-433,Gerard Piqué,Deportes,Futbolista,Muy alta,Fácil,Histórica,false,true
-2371,Hundimiento del Titanic,Historia,Evento,Muy alta,Fácil,Clásica,false,true
-706,Hollywood,Lugares,Barrio,Muy alta,Fácil,Actual,false,true
-1187,Porsche,Marcas,Marca,Muy alta,Fácil,Actual,false,true
-189,Mecano,Música,Grupo,Muy alta,Fácil,Clásica,false,false
-157,Aladdín,Películas,Animación,Muy alta,Fácil,Histórica,true,true
-72,Thor,Personajes,Superhéroe,Muy alta,Fácil,Actual,true,true
-643,El barco,Series,Aventura española,Muy alta,Fácil,Actual,false,false
-1277,Quién es quién,Videojuegos,Juegos de mesa y cartas,Muy alta,Fácil,Actual,false,true
-2068,Guillermo del Toro,Cine y TV,Director/a,Muy alta,Fácil,Actual,false,true
-435,David Villa,Deportes,Futbolista,Muy alta,Fácil,Histórica,false,true
-2965,Francisco Franco,Historia,Personaje histórico,Muy alta,Fácil,Histórica,false,false
-708,Parque Güell,Lugares,Monumento,Muy alta,Fácil,Actual,false,true
-1188,Peugeot,Marcas,Marca,Muy alta,Fácil,Actual,false,true
-190,La Oreja de Van Gogh,Música,Grupo,Muy alta,Fácil,Clásica,false,false
-158,Mulán,Películas,Animación,Muy alta,Fácil,Histórica,true,true
-73,Capitán América,Personajes,Superhéroe,Muy alta,Fácil,Actual,true,true
-1361,Phineas y Ferb,Series,Serie,Muy alta,Fácil,Actual,true,true
-1279,Cubo de Rubik,Videojuegos,Juegos de mesa y cartas,Muy alta,Fácil,Actual,false,true
-2069,James Cameron,Cine y TV,Director/a,Muy alta,Fácil,Actual,false,true
-436,Luis Suárez,Deportes,Futbolista,Muy alta,Fácil,Actual,false,true
-3828,Isaac Newton,Historia,Personaje histórico,Muy alta,Fácil,Histórica,false,true
-1115,Alhambra,Lugares,Lugar,Muy alta,Fácil,Histórica,false,true
-1189,Citroën,Marcas,Marca,Muy alta,Fácil,Actual,false,true
-191,El Canto del Loco,Música,Grupo,Muy alta,Fácil,Clásica,false,false
+id,palabra,categoria,subcategoria,popularidad,dificultad,epoca,internacional
+28,Frida Kahlo,Arte,Pintora,Muy alta,Fácil,Siglo XX,true
+29,Pablo Picasso,Arte,Pintor,Muy alta,Fácil,Siglo XX,true
+30,Vincent van Gogh,Arte,Pintor,Muy alta,Fácil,Histórica,true
+31,Salvador Dalí,Arte,Pintor,Muy alta,Fácil,Siglo XX,true
+32,Leonardo da Vinci,Arte,Pintor,Muy alta,Fácil,Histórica,true
+220,La Gioconda,Arte,Cuadro,Muy alta,Fácil,Histórica,true
+456,Miguel Ángel,Arte,Escultor,Muy alta,Fácil,Histórica,true
+229,Stephen Hawking,Ciencia,Físico,Muy alta,Fácil,Siglo XX,true
+2389,Elon Musk,Ciencia,Tecnología,Muy alta,Fácil,Actual,true
+4291,Albert Einstein,Ciencia,Físico,Muy alta,Fácil,Siglo XX,true
+18,Penélope Cruz,Cine y TV,Actriz,Muy alta,Fácil,Actual,true
+19,Antonio Banderas,Cine y TV,Actor,Muy alta,Fácil,Actual,true
+20,Javier Bardem,Cine y TV,Actor,Muy alta,Fácil,Actual,true
+21,Johnny Depp,Cine y TV,Actor,Muy alta,Fácil,Actual,true
+22,Leonardo DiCaprio,Cine y TV,Actor,Muy alta,Fácil,Actual,true
+24,Marilyn Monroe,Cine y TV,Actriz,Muy alta,Fácil,Siglo XX,true
+25,Tom Hanks,Cine y TV,Actor,Muy alta,Fácil,Siglo XX,true
+26,Pedro Almodóvar,Cine y TV,Director,Muy alta,Fácil,Actual,false
+41,Mafalda,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+42,Tintín,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+43,Astérix,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+44,Obélix,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+45,Darth Vader,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+46,Indiana Jones,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+47,La Sirenita,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+48,Pitufina,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+49,Woody,Cine y TV,Personaje,Muy alta,Fácil,Actual,true
+50,Buzz Lightyear,Cine y TV,Personaje,Muy alta,Fácil,Actual,true
+51,Mickey Mouse,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+52,Pato Donald,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+53,Goofy,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+54,Simba,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+55,Scar,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+56,Ariel,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+57,Cenicienta,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+501,Zeus,Cultura,Mitología griega,Muy alta,Fácil,Histórica,true
+502,Afrodita,Cultura,Mitología griega,Muy alta,Fácil,Histórica,true
+503,Hércules,Cultura,Mitología griega,Muy alta,Fácil,Histórica,true
+504,Medusa,Cultura,Mitología griega,Muy alta,Fácil,Histórica,true
+505,Poseidón,Cultura,Mitología griega,Muy alta,Fácil,Histórica,true
+507,Cupido,Cultura,Mitología romana,Muy alta,Fácil,Histórica,true
+718,Pegaso,Cultura,Mitología,Muy alta,Fácil,Histórica,true
+1306,Sirena,Cultura,Mitología,Muy alta,Fácil,Histórica,true
+1308,Unicornio,Cultura,Mitología,Muy alta,Fácil,Histórica,true
+1309,Fénix,Cultura,Mitología,Muy alta,Fácil,Histórica,true
+1310,Dragón,Cultura,Mitología,Muy alta,Fácil,Histórica,true
+1597,Hombre lobo,Cultura,Mitología,Muy alta,Fácil,Actual,true
+1598,Momia,Cultura,Mitología,Muy alta,Fácil,Actual,true
+1599,Zombi,Cultura,Mitología,Muy alta,Fácil,Actual,true
+1600,Duende,Cultura,Mitología,Muy alta,Fácil,Actual,true
+1601,Gnomo,Cultura,Mitología,Muy alta,Fácil,Actual,true
+1602,Ogro,Cultura,Mitología,Muy alta,Fácil,Actual,true
+1603,Troll,Cultura,Mitología,Muy alta,Fácil,Actual,true
+1604,Bruja,Cultura,Mitología,Muy alta,Fácil,Actual,true
+1605,Mago,Cultura,Mitología,Muy alta,Fácil,Actual,true
+2356,Vampiro,Cultura,Mitología,Muy alta,Fácil,Actual,true
+2357,Hada,Cultura,Mitología,Muy alta,Fácil,Actual,true
+2358,Elfo,Cultura,Mitología,Muy alta,Fácil,Actual,true
+2360,Merlín,Cultura,Mitología,Muy alta,Fácil,Actual,true
+4151,Papa Francisco,Cultura,Persona/Personaje,Muy alta,Fácil,Actual,true
+1,Lionel Messi,Deportes,Futbolista,Muy alta,Fácil,Actual,true
+2,Cristiano Ronaldo,Deportes,Futbolista,Muy alta,Fácil,Actual,true
+3,Rafa Nadal,Deportes,Tenista,Muy alta,Fácil,Actual,true
+4,Fernando Alonso,Deportes,Automovilismo,Muy alta,Fácil,Actual,true
+5,Michael Jordan,Deportes,Baloncesto,Muy alta,Fácil,Siglo XX,true
+6,Serena Williams,Deportes,Tenis,Muy alta,Fácil,Actual,true
+7,Diego Maradona,Deportes,Futbolista,Muy alta,Fácil,Siglo XX,true
+8,Pelé,Deportes,Futbolista,Muy alta,Fácil,Siglo XX,true
+9,Iker Casillas,Deportes,Futbolista,Muy alta,Fácil,Siglo XX,true
+201,Fernando Torres,Deportes,Futbolista,Muy alta,Fácil,Siglo XX,true
+202,Andrés Iniesta,Deportes,Futbolista,Muy alta,Fácil,Siglo XX,true
+203,Xavi Hernández,Deportes,Futbolista,Muy alta,Fácil,Siglo XX,true
+204,Sergio Ramos,Deportes,Futbolista,Muy alta,Fácil,Actual,true
+205,Zinedine Zidane,Deportes,Futbolista,Muy alta,Fácil,Siglo XX,true
+206,Ronaldinho,Deportes,Futbolista,Muy alta,Fácil,Siglo XX,true
+207,Neymar,Deportes,Futbolista,Muy alta,Fácil,Actual,true
+208,Kylian Mbappé,Deportes,Futbolista,Muy alta,Fácil,Actual,true
+209,Lewis Hamilton,Deportes,Automovilismo,Muy alta,Fácil,Actual,true
+210,Marc Márquez,Deportes,Motociclismo,Muy alta,Fácil,Actual,true
+211,Usain Bolt,Deportes,Atletismo,Muy alta,Fácil,Siglo XX,true
+212,Michael Phelps,Deportes,Natación,Muy alta,Fácil,Siglo XX,true
+213,Tiger Woods,Deportes,Golf,Muy alta,Fácil,Siglo XX,true
+214,Pep Guardiola,Deportes,Entrenador,Muy alta,Fácil,Actual,true
+215,Real Madrid,Deportes,Equipos y clubes,Muy alta,Fácil,Actual,true
+216,FC Barcelona,Deportes,Equipos y clubes,Muy alta,Fácil,Actual,true
+233,Julio César,Historia,Personaje histórico,Muy alta,Fácil,Histórica,true
+234,Cristóbal Colón,Historia,Explorador,Muy alta,Fácil,Histórica,true
+236,Nelson Mandela,Historia,Personaje histórico,Muy alta,Fácil,Siglo XX,true
+237,Napoleón,Historia,Personaje histórico,Muy alta,Fácil,Histórica,true
+459,Alejandro Magno,Historia,Personaje histórico,Muy alta,Fácil,Histórica,true
+460,Mahatma Gandhi,Historia,Personaje histórico,Muy alta,Fácil,Siglo XX,true
+461,Martin Luther King,Historia,Activista,Muy alta,Fácil,Siglo XX,true
+462,Abraham Lincoln,Historia,Presidente,Muy alta,Fácil,Siglo XX,true
+684,Tutankamón,Historia,Faraón,Muy alta,Fácil,Histórica,true
+1069,Che Guevara,Historia,Personaje histórico,Muy alta,Fácil,Siglo XX,true
+1076,Moisés,Historia,Personaje histórico,Muy alta,Fácil,Histórica,true
+1112,Neil Armstrong,Historia,Personaje histórico,Muy alta,Fácil,Siglo XX,true
+1493,Barack Obama,Historia,Personaje histórico,Muy alta,Fácil,Siglo XX,true
+1498,Buda,Historia,Personaje histórico,Muy alta,Fácil,Histórica,true
+1499,Jesús,Historia,Personaje histórico,Muy alta,Fácil,Histórica,true
+1501,Revolución Francesa,Historia,Evento,Muy alta,Fácil,Histórica,true
+1502,Primera Guerra Mundial,Historia,Evento,Muy alta,Fácil,Siglo XX,true
+1503,Segunda Guerra Mundial,Historia,Evento,Muy alta,Fácil,Siglo XX,true
+1505,Llegada a la Luna,Historia,Evento,Muy alta,Fácil,Siglo XX,true
+1507,Renacimiento,Historia,Evento,Muy alta,Fácil,Actual,true
+1508,Antiguo Egipto,Historia,Civilización,Muy alta,Fácil,Actual,true
+1509,Imperio Romano,Historia,Civilización,Muy alta,Fácil,Actual,true
+1863,Walt Disney,Historia,Personaje histórico,Muy alta,Fácil,Siglo XX,true
+1864,Steve Jobs,Historia,Personaje histórico,Muy alta,Fácil,Siglo XX,true
+1865,Bill Gates,Historia,Personaje histórico,Muy alta,Fácil,Siglo XX,true
+33,Miguel de Cervantes,Literatura,Escritor,Muy alta,Fácil,Histórica,true
+34,William Shakespeare,Literatura,Escritor,Muy alta,Fácil,Histórica,true
+35,J. K. Rowling,Literatura,Escritora,Muy alta,Fácil,Actual,true
+38,Don Quijote,Literatura,Personaje,Muy alta,Fácil,Histórica,true
+39,Harry Potter,Literatura,Personaje,Muy alta,Fácil,Actual,true
+40,Sherlock Holmes,Literatura,Personaje,Muy alta,Fácil,Histórica,true
+227,Romeo y Julieta,Literatura,Obra,Muy alta,Fácil,Histórica,true
+1457,Hansel y Gretel,Literatura,Personaje,Muy alta,Fácil,Actual,true
+1458,Pulgarcito,Literatura,Personaje,Muy alta,Fácil,Actual,true
+1459,Alí Babá,Literatura,Personaje,Muy alta,Fácil,Actual,true
+1830,Don Quijote de la Mancha,Literatura,Obra,Muy alta,Fácil,Histórica,true
+2073,El Principito,Literatura,Obra,Muy alta,Fácil,Histórica,true
+2287,Rapunzel,Literatura,Personaje,Muy alta,Fácil,Actual,true
+238,Torre Eiffel,Lugares,Monumento,Muy alta,Fácil,Histórica,true
+239,Sagrada Familia,Lugares,Monumento,Muy alta,Fácil,Histórica,true
+240,Estatua de la Libertad,Lugares,Monumento,Muy alta,Fácil,Histórica,true
+241,Nueva York,Lugares,Ciudad,Muy alta,Fácil,Actual,true
+242,París,Lugares,Ciudad,Muy alta,Fácil,Actual,true
+243,Londres,Lugares,Ciudad,Muy alta,Fácil,Actual,true
+244,Roma,Lugares,Ciudad,Muy alta,Fácil,Siglo XX,true
+245,Madrid,Lugares,Ciudad,Muy alta,Fácil,Actual,true
+246,Barcelona,Lugares,Ciudad,Muy alta,Fácil,Actual,true
+247,Egipto,Lugares,País,Muy alta,Fácil,Siglo XX,true
+248,Gran Muralla China,Lugares,Monumento,Muy alta,Fácil,Histórica,true
+249,Taj Mahal,Lugares,Monumento,Muy alta,Fácil,Histórica,true
+250,Las Vegas,Lugares,Ciudad,Muy alta,Fácil,Actual,true
+251,Disneyland,Lugares,Parque temático,Muy alta,Fácil,Actual,true
+471,Big Ben,Lugares,Monumento,Muy alta,Fácil,Histórica,true
+472,Coliseo de Roma,Lugares,Monumento,Muy alta,Fácil,Histórica,true
+473,Pirámides de Giza,Lugares,Monumento,Muy alta,Fácil,Histórica,true
+474,Machu Picchu,Lugares,Monumento,Muy alta,Fácil,Histórica,true
+475,Cristo Redentor,Lugares,Monumento,Muy alta,Fácil,Histórica,true
+477,Monte Everest,Lugares,Naturaleza,Muy alta,Fácil,Actual,true
+478,Desierto del Sáhara,Lugares,Naturaleza,Muy alta,Fácil,Actual,true
+480,Islas Canarias,Lugares,Destino,Muy alta,Fácil,Actual,true
+697,Sevilla,Lugares,Ciudad,Muy alta,Fácil,Actual,false
+698,Valencia,Lugares,Ciudad,Muy alta,Fácil,Actual,false
+699,Bilbao,Lugares,Ciudad,Muy alta,Fácil,Actual,false
+261,Coca-Cola,Marcas,Alimentación,Muy alta,Fácil,Actual,true
+262,McDonald's,Marcas,Alimentación,Muy alta,Fácil,Actual,true
+263,Lego,Marcas,Entretenimiento,Muy alta,Fácil,Actual,true
+264,Apple,Marcas,Tecnología,Muy alta,Fácil,Actual,true
+265,Google,Marcas,Tecnología,Muy alta,Fácil,Actual,true
+266,Netflix,Marcas,Tecnología,Muy alta,Fácil,Actual,true
+267,Amazon,Marcas,Tecnología,Muy alta,Fácil,Actual,true
+268,IKEA,Marcas,Hogar,Muy alta,Fácil,Actual,true
+269,Nike,Marcas,Moda,Muy alta,Fácil,Actual,true
+270,Adidas,Marcas,Moda,Muy alta,Fácil,Actual,true
+271,Zara,Marcas,Moda,Muy alta,Fácil,Actual,true
+272,Disney,Marcas,Entretenimiento,Muy alta,Fácil,Actual,true
+486,Ferrari,Marcas,Automoción,Muy alta,Fácil,Actual,true
+487,Mercedes-Benz,Marcas,Automoción,Muy alta,Fácil,Actual,true
+488,Volkswagen,Marcas,Automoción,Muy alta,Fácil,Actual,true
+489,Toyota,Marcas,Automoción,Muy alta,Fácil,Actual,true
+490,SEAT,Marcas,Automoción,Muy alta,Fácil,Actual,false
+491,Renault,Marcas,Automoción,Muy alta,Fácil,Actual,true
+492,Burger King,Marcas,Alimentación,Muy alta,Fácil,Actual,true
+493,Starbucks,Marcas,Alimentación,Muy alta,Fácil,Actual,true
+494,Pringles,Marcas,Alimentación,Muy alta,Fácil,Actual,true
+495,Nutella,Marcas,Alimentación,Muy alta,Fácil,Actual,true
+496,Kinder,Marcas,Alimentación,Muy alta,Fácil,Actual,true
+497,Nesquik,Marcas,Alimentación,Muy alta,Fácil,Actual,true
+498,Colacao,Marcas,Alimentación,Muy alta,Fácil,Actual,false
+10,Rosalía,Música,Cantante,Muy alta,Fácil,Actual,false
+11,Shakira,Música,Cantante,Muy alta,Fácil,Actual,true
+12,Michael Jackson,Música,Cantante,Muy alta,Fácil,Siglo XX,true
+13,Freddie Mercury,Música,Cantante,Muy alta,Fácil,Siglo XX,true
+14,Madonna,Música,Cantante,Muy alta,Fácil,Siglo XX,true
+15,Bad Bunny,Música,Cantante,Muy alta,Fácil,Actual,true
+17,Adele,Música,Cantante,Muy alta,Fácil,Actual,true
+164,Elton John,Música,Cantante,Muy alta,Fácil,Siglo XX,true
+165,Elvis Presley,Música,Cantante,Muy alta,Fácil,Siglo XX,true
+166,The Beatles,Música,Grupo,Muy alta,Fácil,Siglo XX,true
+167,Queen,Música,Grupo,Muy alta,Fácil,Siglo XX,true
+168,ABBA,Música,Grupo,Muy alta,Fácil,Siglo XX,true
+169,The Rolling Stones,Música,Grupo,Muy alta,Fácil,Siglo XX,true
+170,U2,Música,Grupo,Muy alta,Fácil,Siglo XX,true
+171,Nirvana,Música,Grupo,Muy alta,Fácil,Siglo XX,true
+172,Metallica,Música,Grupo,Muy alta,Fácil,Siglo XX,true
+173,AC/DC,Música,Grupo,Muy alta,Fácil,Siglo XX,true
+174,Coldplay,Música,Grupo,Muy alta,Fácil,Actual,true
+176,Spice Girls,Música,Grupo,Muy alta,Fácil,Siglo XX,true
+177,Backstreet Boys,Música,Grupo,Muy alta,Fácil,Siglo XX,true
+178,Britney Spears,Música,Cantante,Muy alta,Fácil,Siglo XX,true
+179,Lady Gaga,Música,Cantante,Muy alta,Fácil,Actual,true
+180,Beyoncé,Música,Cantante,Muy alta,Fácil,Actual,true
+181,Jennifer Lopez,Música,Cantante,Muy alta,Fácil,Actual,true
+182,Ricky Martin,Música,Cantante,Muy alta,Fácil,Siglo XX,true
+1921,Orangután,Naturaleza,Animales,Muy alta,Fácil,Actual,true
+1922,Lince,Naturaleza,Animales,Muy alta,Fácil,Actual,true
+1923,Murciélago,Naturaleza,Animales,Muy alta,Fácil,Actual,true
+1924,Calamar,Naturaleza,Animales,Muy alta,Fácil,Actual,true
+1925,Halcón,Naturaleza,Animales,Muy alta,Fácil,Actual,true
+1926,Caimán,Naturaleza,Animales,Muy alta,Fácil,Actual,true
+1927,Avispa,Naturaleza,Animales,Muy alta,Fácil,Actual,true
+1928,Saltamontes,Naturaleza,Animales,Muy alta,Fácil,Actual,true
+1929,Gusano,Naturaleza,Animales,Muy alta,Fácil,Actual,true
+257,Tetris,Ocio,Videojuego,Muy alta,Fácil,Siglo XX,true
+258,Minecraft,Ocio,Videojuego,Muy alta,Fácil,Actual,true
+259,Fortnite,Ocio,Videojuego,Muy alta,Fácil,Actual,true
+260,PlayStation,Ocio,Consola,Muy alta,Fácil,Actual,true
+481,Pokémon Go,Ocio,Videojuego,Muy alta,Fácil,Siglo XX,true
+482,Wii,Ocio,Consola,Muy alta,Fácil,Siglo XX,true
+483,Xbox,Ocio,Consola,Muy alta,Fácil,Actual,true
+484,Nintendo,Ocio,Videojuego,Muy alta,Fácil,Actual,true
+709,FIFA,Ocio,Videojuego,Muy alta,Fácil,Siglo XX,true
+710,Los Sims,Ocio,Videojuego,Muy alta,Fácil,Siglo XX,true
+711,Grand Theft Auto,Ocio,Videojuego,Muy alta,Fácil,Siglo XX,true
+712,Mario Kart,Ocio,Videojuego,Muy alta,Fácil,Siglo XX,true
+1250,Animal Crossing,Ocio,Videojuego,Muy alta,Fácil,Actual,true
+1251,Candy Crush,Ocio,Videojuego,Muy alta,Fácil,Actual,true
+1252,Clash Royale,Ocio,Videojuego,Muy alta,Fácil,Actual,true
+1253,Super Mario Bros.,Ocio,Videojuego,Muy alta,Fácil,Actual,true
+1254,The Legend of Zelda,Ocio,Videojuego,Muy alta,Fácil,Actual,true
+1260,Among Us,Ocio,Videojuego,Muy alta,Fácil,Actual,true
+1262,Call of Duty,Ocio,Videojuego,Muy alta,Fácil,Actual,true
+1263,Wii Sports,Ocio,Videojuego,Muy alta,Fácil,Actual,true
+1264,Just Dance,Ocio,Videojuego,Muy alta,Fácil,Actual,true
+1266,Cluedo,Ocio,Juego de mesa,Muy alta,Fácil,Actual,true
+1267,Monopoly,Ocio,Juego de mesa,Muy alta,Fácil,Actual,true
+1268,Trivial Pursuit,Ocio,Juego de mesa,Muy alta,Fácil,Actual,true
+1270,Pictionary,Ocio,Juego de mesa,Muy alta,Fácil,Actual,true
+58,Blancanieves,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+4166,Kim Kardashian,Cultura,Persona/Personaje,Muy alta,Fácil,Actual,true
+217,Selección española,Deportes,Equipos y clubes,Muy alta,Fácil,Actual,false
+2306,Donald Trump,Historia,Personaje histórico,Muy alta,Fácil,Siglo XX,true
+700,Santiago de Compostela,Lugares,Ciudad,Muy alta,Fácil,Actual,true
+499,Chupa Chups,Marcas,Alimentación,Muy alta,Fácil,Siglo XX,true
+183,Enrique Iglesias,Música,Cantante,Muy alta,Fácil,Actual,true
+1272,Jenga,Ocio,Juego de mesa,Muy alta,Fácil,Actual,true
+59,Peter Pan,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+218,Mundial de Fútbol,Deportes,Evento,Muy alta,Fácil,Actual,true
+2307,Adolf Hitler,Historia,Personaje histórico,Muy alta,Fácil,Siglo XX,true
+701,Ibiza,Lugares,Isla,Muy alta,Fácil,Actual,true
+500,Donuts,Marcas,Alimentación,Muy alta,Fácil,Actual,true
+184,Julio Iglesias,Música,Cantante,Muy alta,Fácil,Siglo XX,true
+1273,Twister,Ocio,Juego de mesa,Muy alta,Fácil,Actual,true
+60,Campanilla,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+219,Juegos Olímpicos,Deportes,Evento,Muy alta,Fácil,Siglo XX,true
+2311,Guerra Civil Española,Historia,Evento,Muy alta,Fácil,Siglo XX,false
+702,Mallorca,Lugares,Isla,Muy alta,Fácil,Actual,true
+715,Pepsi,Marcas,Alimentación,Muy alta,Fácil,Actual,true
+185,Alejandro Sanz,Música,Cantante,Muy alta,Fácil,Actual,false
+1274,Operación,Ocio,Juego de mesa,Muy alta,Fácil,Actual,true
+61,Homer Simpson,Cine y TV,Personaje,Muy alta,Fácil,Actual,true
+427,David Beckham,Deportes,Futbolista,Muy alta,Fácil,Siglo XX,true
+2312,Descubrimiento de América,Historia,Evento,Muy alta,Fácil,Siglo XX,true
+703,Tenerife,Lugares,Isla,Muy alta,Fácil,Actual,true
+716,Samsung,Marcas,Tecnología,Muy alta,Fácil,Actual,true
+186,David Bisbal,Música,Cantante,Muy alta,Fácil,Actual,false
+1275,Hundir la flota,Ocio,Juego de mesa,Muy alta,Fácil,Actual,true
+62,Bart Simpson,Cine y TV,Personaje,Muy alta,Fácil,Actual,true
+431,Raúl González,Deportes,Futbolista,Muy alta,Fácil,Siglo XX,true
+2313,Edad Media,Historia,Evento,Muy alta,Fácil,Actual,true
+704,Venecia,Lugares,Ciudad,Muy alta,Fácil,Actual,true
+1185,Spotify,Marcas,Tecnología,Muy alta,Fácil,Actual,true
+187,Estopa,Música,Grupo,Muy alta,Fácil,Actual,false
+1276,Conecta 4,Ocio,Juego de mesa,Muy alta,Fácil,Actual,true
+63,Bob Esponja,Cine y TV,Personaje,Muy alta,Fácil,Actual,true
+432,Carles Puyol,Deportes,Futbolista,Muy alta,Fácil,Siglo XX,true
+2370,Caída del Muro de Berlín,Historia,Evento,Muy alta,Fácil,Siglo XX,true
+705,Tokio,Lugares,Ciudad,Muy alta,Fácil,Actual,true
+1186,Microsoft,Marcas,Tecnología,Muy alta,Fácil,Actual,true
+188,Hombres G,Música,Grupo,Muy alta,Fácil,Siglo XX,false
+1277,Quién es quién,Ocio,Juego de mesa,Muy alta,Fácil,Actual,true
+64,Scooby-Doo,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+433,Gerard Piqué,Deportes,Futbolista,Muy alta,Fácil,Siglo XX,true
+2371,Hundimiento del Titanic,Historia,Evento,Muy alta,Fácil,Siglo XX,true
+706,Hollywood,Lugares,Barrio,Muy alta,Fácil,Actual,true
+1187,Porsche,Marcas,Automoción,Muy alta,Fácil,Actual,true
+189,Mecano,Música,Grupo,Muy alta,Fácil,Siglo XX,false
+1279,Cubo de Rubik,Ocio,Juego de mesa,Muy alta,Fácil,Actual,true
+67,Superman,Cine y TV,Personaje,Muy alta,Fácil,Actual,true
+435,David Villa,Deportes,Futbolista,Muy alta,Fácil,Siglo XX,true
+2965,Francisco Franco,Historia,Personaje histórico,Muy alta,Fácil,Siglo XX,false
+708,Parque Güell,Lugares,Monumento,Muy alta,Fácil,Actual,true
+1188,Peugeot,Marcas,Automoción,Muy alta,Fácil,Actual,true
+190,La Oreja de Van Gogh,Música,Grupo,Muy alta,Fácil,Siglo XX,false
+1280,Bingo,Ocio,Juego de mesa,Muy alta,Fácil,Actual,true
+68,Batman,Cine y TV,Personaje,Muy alta,Fácil,Actual,true
+436,Luis Suárez,Deportes,Futbolista,Muy alta,Fácil,Actual,true
+3828,Isaac Newton,Historia,Personaje histórico,Muy alta,Fácil,Siglo XX,true
+1115,Alhambra,Lugares,Lugar,Muy alta,Fácil,Siglo XX,true
+1189,Citroën,Marcas,Automoción,Muy alta,Fácil,Actual,true
+191,El Canto del Loco,Música,Grupo,Muy alta,Fácil,Siglo XX,false
+1281,Dominó,Ocio,Juego de mesa,Muy alta,Fácil,Actual,true
+69,Spider-Man,Cine y TV,Personaje,Muy alta,Fácil,Actual,true
+437,Karim Benzema,Deportes,Futbolista,Muy alta,Fácil,Actual,true
+1118,Museo del Prado,Lugares,Lugar,Muy alta,Fácil,Siglo XX,true
+1190,Ford,Marcas,Automoción,Muy alta,Fácil,Actual,true
+192,Maná,Música,Grupo,Muy alta,Fácil,Siglo XX,true
+1282,Ajedrez,Ocio,Juego de mesa,Muy alta,Fácil,Actual,true
+70,Hulk,Cine y TV,Personaje,Muy alta,Fácil,Actual,true
+438,Erling Haaland,Deportes,Futbolista,Muy alta,Fácil,Actual,true
+1120,Berlín,Lugares,Lugar,Muy alta,Fácil,Siglo XX,true
+1191,Cruzcampo,Marcas,Empresa,Muy alta,Fácil,Actual,false
+193,Juanes,Música,Cantante,Muy alta,Fácil,Siglo XX,true
+1283,Damas,Ocio,Juego de mesa,Muy alta,Fácil,Actual,true
+71,Iron Man,Cine y TV,Personaje,Muy alta,Fácil,Actual,true
+439,Vinícius Júnior,Deportes,Futbolista,Muy alta,Fácil,Actual,true
+1121,Atenas,Lugares,Lugar,Muy alta,Fácil,Siglo XX,true
+1192,Mahou,Marcas,Empresa,Muy alta,Fácil,Actual,false
+194,Daddy Yankee,Música,Reguetón,Muy alta,Fácil,Siglo XX,true
+1284,Parqués,Ocio,Juego de mesa,Muy alta,Fácil,Actual,true
+72,Thor,Cine y TV,Personaje,Muy alta,Fácil,Actual,true
+440,Luka Modrić,Deportes,Futbolista,Muy alta,Fácil,Actual,true
+1124,Los Ángeles,Lugares,Lugar,Muy alta,Fácil,Siglo XX,true
+1193,Estrella Galicia,Marcas,Empresa,Muy alta,Fácil,Actual,false
+195,Karol G,Música,Reguetón,Muy alta,Fácil,Actual,true
+1285,UNO,Ocio,Juego de mesa,Muy alta,Fácil,Actual,true
+73,Capitán América,Cine y TV,Personaje,Muy alta,Fácil,Actual,true
+441,Alberto Contador,Deportes,Ciclismo,Muy alta,Fácil,Siglo XX,true
+1125,San Francisco,Lugares,Lugar,Muy alta,Fácil,Siglo XX,true
+1194,Danone,Marcas,Alimentación,Muy alta,Fácil,Actual,true
+196,J Balvin,Música,Reguetón,Muy alta,Fácil,Actual,true
+1287,Mario Party,Ocio,Videojuego,Muy alta,Fácil,Actual,true
+74,Wonder Woman,Cine y TV,Personaje,Muy alta,Fácil,Actual,true
+442,Miguel Induráin,Deportes,Ciclismo,Muy alta,Fácil,Siglo XX,true
+1126,Río de Janeiro,Lugares,Lugar,Muy alta,Fácil,Siglo XX,true
+1195,KitKat,Marcas,Alimentación,Muy alta,Fácil,Actual,true
+197,Ozuna,Música,Reguetón,Muy alta,Fácil,Actual,true
+1429,Donkey Kong,Ocio,Videojuego,Muy alta,Fácil,Actual,true
+75,Joker,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+443,Carlos Sainz,Deportes,Automovilismo,Muy alta,Fácil,Actual,true
+1127,Buenos Aires,Lugares,Lugar,Muy alta,Fácil,Siglo XX,true
+1196,Kleenex,Marcas,Empresa,Muy alta,Fácil,Actual,true
+198,Aitana,Música,Cantante,Muy alta,Fácil,Actual,false
+1594,Angry Birds,Ocio,Videojuego,Muy alta,Fácil,Actual,true
+76,Harley Quinn,Cine y TV,Personaje,Muy alta,Fácil,Actual,true
+444,Jorge Lorenzo,Deportes,Motociclismo,Muy alta,Fácil,Siglo XX,true
+1128,Ciudad de México,Lugares,Lugar,Muy alta,Fácil,Siglo XX,true
+1197,Colgate,Marcas,Empresa,Muy alta,Fácil,Actual,true
+199,Dua Lipa,Música,Cantante,Muy alta,Fácil,Actual,true
+1939,Roblox,Ocio,Videojuego,Muy alta,Fácil,Actual,true
+77,Thanos,Cine y TV,Personaje,Muy alta,Fácil,Actual,true
+445,Simone Biles,Deportes,Gimnasia,Muy alta,Fácil,Actual,true
+1129,La Habana,Lugares,Lugar,Muy alta,Fácil,Siglo XX,true
+1198,Nivea,Marcas,Empresa,Muy alta,Fácil,Actual,true
+200,Taylor Swift,Música,Cantante,Muy alta,Fácil,Actual,true
+1940,Sonic the Hedgehog,Ocio,Videojuego,Muy alta,Fácil,Actual,true
+78,Hermione Granger,Cine y TV,Personaje,Muy alta,Fácil,Actual,true
+447,Muhammad Ali,Deportes,Boxeo,Muy alta,Fácil,Siglo XX,true
+1136,Muro de Berlín,Lugares,Lugar,Muy alta,Fácil,Siglo XX,true
+1199,Gillette,Marcas,Empresa,Muy alta,Fácil,Actual,true
+375,Whitney Houston,Música,Cantante,Muy alta,Fácil,Siglo XX,true
+1941,Brawl Stars,Ocio,Videojuego,Muy alta,Fácil,Actual,true
+79,Ron Weasley,Cine y TV,Personaje,Muy alta,Fácil,Actual,true
+448,Mike Tyson,Deportes,Boxeo,Muy alta,Fácil,Siglo XX,true
+1137,Times Square,Lugares,Lugar,Muy alta,Fácil,Siglo XX,true
+1200,Mango,Marcas,Moda,Muy alta,Fácil,Actual,false
+376,Céline Dion,Música,Cantante,Muy alta,Fácil,Actual,true
+1942,Parcheesi,Ocio,Juego de mesa,Muy alta,Fácil,Actual,true
+80,Gandalf,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+449,Tour de Francia,Deportes,Ciclismo,Muy alta,Fácil,Siglo XX,true
+1138,Central Park,Lugares,Lugar,Muy alta,Fácil,Siglo XX,true
+1201,H&M,Marcas,Moda,Muy alta,Fácil,Actual,true
+377,Mariah Carey,Música,Cantante,Muy alta,Fácil,Actual,true
+1943,La oca,Ocio,Juego de mesa,Muy alta,Fácil,Actual,true
+81,Frodo,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+674,Michael Schumacher,Deportes,Automovilismo,Muy alta,Fácil,Siglo XX,true
+1140,Camp Nou,Lugares,Lugar,Muy alta,Fácil,Siglo XX,true
+1202,Decathlon,Marcas,Empresa,Muy alta,Fácil,Actual,true
+381,Bob Marley,Música,Cantante,Muy alta,Fácil,Siglo XX,true
+1945,Cartas,Ocio,Juego de mesa,Muy alta,Fácil,Actual,true
+82,Gollum,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+681,Dani Pedrosa,Deportes,Motociclismo,Muy alta,Fácil,Siglo XX,true
+1141,Santiago Bernabéu,Lugares,Lugar,Muy alta,Fácil,Siglo XX,true
+1203,Carrefour,Marcas,Empresa,Muy alta,Fácil,Actual,true
+384,Frank Sinatra,Música,Cantante,Muy alta,Fácil,Siglo XX,true
+1950,Solitario,Ocio,Juego de mesa,Muy alta,Fácil,Actual,true
+83,Drácula,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+952,Novak Djokovic,Deportes,Deportista,Muy alta,Fácil,Actual,true
+1143,Puerta del Sol,Lugares,Lugar,Muy alta,Fácil,Siglo XX,false
+1204,Mercadona,Marcas,Empresa,Muy alta,Fácil,Actual,false
+389,Justin Bieber,Música,Cantante,Muy alta,Fácil,Actual,true
+84,Frankenstein,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+953,Roger Federer,Deportes,Deportista,Muy alta,Fácil,Actual,true
+1146,Mezquita de Córdoba,Lugares,Lugar,Muy alta,Fácil,Siglo XX,false
+1205,El Corte Inglés,Marcas,Empresa,Muy alta,Fácil,Actual,false
+390,Ed Sheeran,Música,Cantante,Muy alta,Fácil,Actual,true
+85,Pinocho,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+954,Carlos Alcaraz,Deportes,Deportista,Muy alta,Fácil,Actual,true
+1147,Catedral de Santiago,Lugares,Lugar,Muy alta,Fácil,Siglo XX,false
+1206,Wallapop,Marcas,Tecnología,Muy alta,Fácil,Actual,false
+391,Bruno Mars,Música,Cantante,Muy alta,Fácil,Actual,true
+86,Caperucita Roja,Cine y TV,Personaje,Muy alta,Fácil,Siglo XX,true
+957,Lamine Yamal,Deportes,Deportista,Muy alta,Fácil,Actual,true
+1150,Teide,Lugares,Lugar,Muy alta,Fácil,Siglo XX,true
+1207,Vinted,Marcas,Tecnología,Muy alta,Fácil,Actual,true
+392,The Weeknd,Música,Cantante,Muy alta,Fácil,Actual,true
