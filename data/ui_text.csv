@@ -19,7 +19,22 @@ score,es-ES,Puntuación
 settings,es-ES,Ajustes
 language,es-ES,Idioma
 familyMode,es-ES,Modo familiar
-familyModeDescription,es-ES,Cartas familiares
+familyModeDescription,es-ES,Palabras y conceptos para diversión en familia
+statsPlayers,es-ES,jugadores
+homeMottoFun,es-ES,Las mismas palabras. Más risas.
+homeMottoMemory,es-ES,La memoria también juega.
+homeRoundDescribe,es-ES,Descripción: sin decir la palabra
+homeRoundOneWord,es-ES,Una palabra como única pista
+homeRoundMime,es-ES,Mímica: todo vale menos hablar
+homeRoundRepeat,es-ES,El mismo mazo. Más risas.
+teamLabel,es-ES,Equipo {name}
+selectIcon,es-ES,Elige un icono
+instructionsStartTeam,es-ES,Empieza {team}
+reviewWarning,es-ES,Asegúrate de pulsar Siguiente antes de pasar el móvil al equipo {team}
+readyTeamLabel,es-ES,Equipo
+readyPrivacy,es-ES,Que nadie mire la pantalla
+cardsRemaining,es-ES,Quedan {count} cartas
+roundCompleted,es-ES,Ronda {n} completada
 new_game,es-ES,Nueva partida
 play_again,es-ES,Jugar de nuevo
 winner,es-ES,Ganador
@@ -45,7 +60,22 @@ score,en,Score
 settings,en,Settings
 language,en,Language
 familyMode,en,Family mode
-familyModeDescription,en,Family cards
+familyModeDescription,en,Words and ideas for family fun
+statsPlayers,en,players
+homeMottoFun,en,Same words. More laughs.
+homeMottoMemory,en,Memory plays too.
+homeRoundDescribe,en,Describe it without saying the word
+homeRoundOneWord,en,One word is your only clue
+homeRoundMime,en,Act it out. No talking allowed
+homeRoundRepeat,en,The same deck. More laughs
+teamLabel,en,Team {name}
+selectIcon,en,Choose an icon
+instructionsStartTeam,en,{team} starts
+reviewWarning,en,Make sure to tap Next before passing the phone to {team}
+readyTeamLabel,en,Team
+readyPrivacy,en,No peeking at the screen
+cardsRemaining,en,{count} cards left
+roundCompleted,en,Round {n} complete
 new_game,en,New game
 play_again,en,Play again
 winner,en,Winner
@@ -71,7 +101,22 @@ score,fr,Score
 settings,fr,Paramètres
 language,fr,Langue
 familyMode,fr,Mode famille
-familyModeDescription,fr,Cartes familiales
+familyModeDescription,fr,Mots et idées pour s'amuser en famille
+statsPlayers,fr,joueurs
+homeMottoFun,fr,Les mêmes mots. Plus de rires.
+homeMottoMemory,fr,La mémoire joue aussi.
+homeRoundDescribe,fr,Décrivez sans dire le mot
+homeRoundOneWord,fr,Un seul mot comme indice
+homeRoundMime,fr,Mimez-le sans dire un mot
+homeRoundRepeat,fr,Le même paquet. Plus de rires.
+teamLabel,fr,Équipe {name}
+selectIcon,fr,Choisissez une icône
+instructionsStartTeam,fr,{team} commence
+reviewWarning,fr,Appuyez sur Suivant avant de passer le téléphone à {team}
+readyTeamLabel,fr,Équipe
+readyPrivacy,fr,Ne regardez pas l'écran
+cardsRemaining,fr,{count} cartes restantes
+roundCompleted,fr,Manche {n} terminée
 new_game,fr,Nouvelle partie
 play_again,fr,Rejouer
 winner,fr,Gagnant
@@ -97,7 +142,22 @@ score,pt,Pontuação
 settings,pt,Definições
 language,pt,Idioma
 familyMode,pt,Modo família
-familyModeDescription,pt,Cartas familiares
+familyModeDescription,pt,Palavras e conceitos para diversão em família
+statsPlayers,pt,jogadores
+homeMottoFun,pt,As mesmas palavras. Mais risos.
+homeMottoMemory,pt,A memória também joga.
+homeRoundDescribe,pt,Descreve sem dizer a palavra
+homeRoundOneWord,pt,Uma só palavra como pista
+homeRoundMime,pt,Faz mímica sem falar
+homeRoundRepeat,pt,O mesmo baralho. Mais risos.
+teamLabel,pt,Equipa {name}
+selectIcon,pt,Escolhe um ícone
+instructionsStartTeam,pt,{team} começa
+reviewWarning,pt,Carrega em Seguinte antes de passar o telemóvel à equipa {team}
+readyTeamLabel,pt,Equipa
+readyPrivacy,pt,Ninguém pode olhar para o ecrã
+cardsRemaining,pt,Faltam {count} cartas
+roundCompleted,pt,Ronda {n} concluída
 new_game,pt,Novo jogo
 play_again,pt,Jogar novamente
 winner,pt,Vencedor
@@ -196,9 +256,9 @@ cardCountMix,fr,mélange de catégories et difficultés
 setupInfo,es,Se elegirán {count} tarjetas del banco cultural. El mismo mazo se reutiliza en las tres rondas y las partidas nuevas evitan repetir las anteriores.
 setupInfo,en,The game uses {count} cards from the cultural collection. The same cards return in all three rounds. New games avoid cards used in previous games.
 setupInfo,fr,Vous choisirez {count} cartes du paquet culturel. Le même paquet est réutilisé pendant les trois tours et les nouvelles parties évitent les cartes déjà utilisées.
-createDeck,es,Crear partida
-createDeck,en,Create game
-createDeck,fr,Créer la partie
+createDeck,es,Empezar
+createDeck,en,Start
+createDeck,fr,Commencer
 startRound,es,Empezar ronda
 startRound,en,Start round
 startRound,fr,Commencer la ronde
@@ -454,7 +514,7 @@ setupTeams,pt-PT,EQUIPAS
 setupCardCount,pt-PT,NÚMERO DE CARTÕES
 cardCountMix,pt-PT,mistura de categorias e dificuldades
 setupInfo,pt-PT,Serão escolhidos {count} cartões do banco cultural. O mesmo baralho é usado nas três rondas e as novas partidas evitam repetir os cartões anteriores.
-createDeck,pt-PT,Criar partida
+createDeck,pt-PT,Começar
 startRound,pt-PT,Começar ronda
 readyMobile,pt-PT,PASSA O TELEMÓVEL
 readyStartTurn,pt-PT,Começar turno

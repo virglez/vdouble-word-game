@@ -34,7 +34,7 @@ test('English has explicit UI translations and translated labels for every card'
   assert.match(UI_TEXT.en.setupSubtitle, /team names/);
   assert.match(UI_TEXT.en.confirmDiscardBody, /saved game/);
   assert.match(UI_TEXT.en.instructionsBody, /30 seconds/);
-  assert.equal(UI_TEXT.es.createDeck, 'Crear partida');
+  assert.equal(UI_TEXT.es.createDeck, 'Empezar');
   const { WORD_BANK } = await import('../data/wordBank.ts');
   const { WORD_BANK_FAMILY } = await import('../data/wordBankFamily.ts');
   for (const card of [...WORD_BANK, ...WORD_BANK_FAMILY]) {

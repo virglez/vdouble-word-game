@@ -36,7 +36,7 @@ export function resetForSetup(state: GameState): GameState {
     cardCount: state.cardCount,
     usedWords: state.usedWords,
     language: state.language,
-    familyMode: state.familyMode,
+    familyMode: false,
     teams: [
       { customName: state.teams[0].customName, customIcon: state.teams[0].customIcon, name: state.teams[0].name, score: 0, icon: state.teams[0].customIcon ? state.teams[0].icon : '☀️' },
       { customName: state.teams[1].customName, customIcon: state.teams[1].customIcon, name: state.teams[1].name, score: 0, icon: state.teams[1].customIcon ? state.teams[1].icon : '🌙' },
